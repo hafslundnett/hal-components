@@ -1,0 +1,49 @@
+@import '~@hafslundnett/hdd-style/variables/main';
+
+.header {
+    background-color: color('grey-light');
+    padding: 24px;
+  
+    .title {
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+  }
+  
+  .body {
+    margin: 32px;
+
+    display: flex;
+    flex-direction: row;
+  
+    .menu {
+      min-width: 200px;
+    }
+    
+    .menu-item {
+      color: color('grey-dark');
+      text-decoration: none;
+      margin: 16px 0;
+      font-size: 1rem;
+      font-weight: 400;
+    
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+  
+      &.active {
+        color: color('blue-light1');
+      }
+    }
+    
+    .divider {
+      background-color: rgba(color('grey'), .4);
+      height: 1px;
+      width: 100%;
+      display: block;
+    }
+
+    .content-container {
+        padding-left: 24px;
+    }
+  }

@@ -1,1 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+// This illustrates how a consumer must configure
+// their application to use the HDD components
+@import '~@hafslundnett/hdd-style/main';
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
