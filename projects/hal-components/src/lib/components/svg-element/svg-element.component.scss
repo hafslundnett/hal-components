@@ -1,0 +1,20 @@
+// ANY custom svg styling should to be added to src\component-styles\svg-icons.scss
+
+.hal-svg-element-container {
+	--svg-height: auto;
+	--svg-width: auto;
+	--svg-color: green;
+	svg {
+		width: var(--svg-width);
+		height: var(--svg-height);
+	}
+
+	&.svg-custom-color {
+		* {
+			stroke: var(--svg-color);
+			fill:  var(--svg-color);
+		}
+	}
+	
+}
+

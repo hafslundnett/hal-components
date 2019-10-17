@@ -3,17 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HalComponentsModule, TestButtonModule } from 'hal-components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HddStyleDocComponent } from './hdd-style-doc/hdd-style-doc.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShellModule } from './shell/shell.module';
+import { WelcomeModule } from './welcome/welcome.module';
 
 @NgModule({
    imports: [
       BrowserModule,
       AppRoutingModule,
-      HalComponentsModule,
-      TestButtonModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      HttpClientModule,
+      ShellModule,
+      WelcomeModule
    ],
    declarations: [
       AppComponent,

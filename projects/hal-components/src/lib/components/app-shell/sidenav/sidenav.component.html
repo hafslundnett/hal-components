@@ -1,0 +1,41 @@
+<div class="sidenav" [ngClass]="{'open': isOpen}">
+  <a routerLink="/" class="logo">
+    <hal-svg-element 
+      class="default-svg"
+      [width]="'45px'"
+      [height]="'40px'"
+      [svgFilePath]="'assets/logo.svg'"
+    ></hal-svg-element>
+  </a>
+  <mat-nav-list class="menu-list">
+    <ng-container *ngFor="let menuItem of menuItems">
+      <div class="group-title" *ngIf="menuItem.groupTitle">
+        {{ menuItem.groupTitle}}
+      </div>
+      <a mat-list-item class="menu-item" [routerLink]="['', menuItem.url]" routerLinkActive="active" (click)="isOpen = false">
+        <hal-svg-element 
+          class="default-svg"
+          [width]="iconWidth"
+          [height]="iconHeight"
+          [svgFilePath]="'assets/sideMenu/default/' + menuItem.svgName"
+        ></hal-svg-element>
+        <hal-svg-element 
+          class="active-svg"
+          [width]="iconWidth"
+          [height]="iconHeight"
+          [svgFilePath]="'assets/sideMenu/active/' + menuItem.svgName"
+        ></hal-svg-element>
+        <span class="menu-label"> {{menuItem.title }}</span>
+      </a>
+      <mat-divider class="nav-divider" *ngIf="menuItem.divider"></mat-divider>
+    </ng-container>
+  </mat-nav-list>
+  <div class="footer" (click)="isOpen = !isOpen">
+    <div class="toggle-box" [ngClass]="{'flipped': isOpen}">
+      <button type="button" class="hdd-button-icon is-transparent toggle-button">
+        <i class="fal fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="space-occupier"></div>

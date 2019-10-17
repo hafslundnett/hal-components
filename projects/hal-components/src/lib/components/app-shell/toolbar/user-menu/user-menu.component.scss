@@ -1,0 +1,146 @@
+@import "~@hafslundnett/hdd-style/variables/colors";
+
+$thumbnail-size: 40px;
+$large-image-size: 72px;
+
+@mixin full-size() {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.user-line-container {
+  place-content: center flex-end;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.user-name {
+  margin-right: 16px;
+  font-size: 0.85rem;
+  color: color("grey-dark");
+  opacity: 0.9;
+  // hide when small screen
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+
+.user-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  overflow: hidden;
+  background-color: transparent;
+  line-height: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+  img {
+    position: absolute;
+    width: $thumbnail-size;
+  }
+
+  .initials-container {
+    background-color: color("blue-light1");
+    @include full-size();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .user-initials {
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+  }
+
+  .overlay {
+    @include full-size();
+    transition: background-color 0.1s;
+
+    &.focus {
+      background-color: rgba(white, 0.3);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.sign-out-button {
+  text-align: center;
+}
+
+.content-wrapper {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  align-items: center;
+
+  padding: 24px 24px 0 24px;
+  min-width: 250px;
+
+  .default-picture {
+    align-self: center;
+    margin-bottom: 20px;
+    display: block;
+    font-size: $large-image-size;
+    opacity: 0.5;
+    user-select: none;
+    cursor: default;
+  }
+
+  .image-container {
+    width: $large-image-size;
+    height: $large-image-size;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: $large-image-size;
+    }
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .divider {
+    height: 1px;
+    width: 60px;
+    margin: 35px auto 20px auto;
+    display: block;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.settings-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

@@ -2,7 +2,13 @@
  * Public API Surface of hal-components
  */
 
-export * from './lib/hal-components.service';
-export * from './lib/hal-components.component';
-export * from './lib/hal-components.module';
-export * from './lib/test-button/test-button.module';
+export * from './lib/components/app-shell/app-shell.module';
+
+// export * from './lib/components/toolbar/toolbar.module';
+// export * from './lib/components/sidenav/sidenav.module';
+export * from './lib/components/app-shell/sidenav/sidenav.menu-element.interface';
+export * from './lib/components/app-shell/toolbar/user-menu/user.interface';
+
+export * from './lib/components/svg-element/svg-element.module';
+export * from './lib/services/svg/svg.service';
+

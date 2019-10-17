@@ -1,0 +1,21 @@
+.shell-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.body {
+    max-width: calc(100% - 64px);
+    flex: 1 1 0%;
+    
+    .main-content {
+      margin: 15px auto;
+      width: 94%;
+      box-sizing: border-box;
+    }
+    
+    .small-size {
+      width: 100%;
+      padding: 0 6px;
+    }
+  }
+  
