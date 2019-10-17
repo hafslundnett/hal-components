@@ -15,3 +15,9 @@ ng generate library hal-components
 library name: hal-components
 lib prefix: hal
 components file prefix: "none"
+
+
+
+
+## TODO doc
+svg-element
