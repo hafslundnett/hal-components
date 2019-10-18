@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShellComponent } from './shell.component';
 import { RouterModule } from '@angular/router';
-import { AppShellModule } from 'projects/hal-components/src/public-api';
+// import { AppShellModule } from 'dist/hal-components/public-api';
+import { AppShellModule } from 'hal-components';
 
 @NgModule({
   imports: [

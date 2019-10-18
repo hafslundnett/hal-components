@@ -27,3 +27,17 @@ svg-element
 broadcast channel
 table system. witch? drops or mdm or both?
 mdm-paginator
+
+
+## Versioning
+
+This project will be maintained under the Semantic Versioning guidelines as much as possible. Releases will be numbered
+with the following format:
+
+`<major>.<minor>.<patch>`
+
+## Publish to NPM
+
+- Build with `ng build ng-components`
+- Naviagte into dist/ng-components/
+- run `npm publish`
