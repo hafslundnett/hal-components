@@ -10,6 +10,7 @@ import { User } from './user.interface';
 export class UserMenuComponent implements OnInit, OnDestroy {
   @Input() user: User = { email: null, name: null, thumbnail: null};
   @Input() settingsPagePath = 'settings';
+  @Input() signOutPagePath = 'logout'; // TODO
 
   initials: string;
   hasFocus = false;

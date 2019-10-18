@@ -21,3 +21,9 @@ components file prefix: "none"
 
 ## TODO doc
 svg-element
+
+
+## TODO extract
+broadcast channel
+table system. witch? drops or mdm or both?
+mdm-paginator
