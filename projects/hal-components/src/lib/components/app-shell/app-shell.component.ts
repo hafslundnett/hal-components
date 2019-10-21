@@ -11,6 +11,7 @@ export class AppShellComponent implements OnInit {
 
   @Input() user: User = { email: null, name: null, thumbnail: null};
   @Input() settingsPagePath = 'settings';
+  @Input() signOutPagePath = 'logout';
   @Input() menuItems: MenuElement[];
 
   constructor() { }

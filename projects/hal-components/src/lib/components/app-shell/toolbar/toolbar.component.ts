@@ -10,6 +10,7 @@ export class ToolbarComponent implements OnInit {
 
   @Input() user: User = { email: null, name: null, thumbnail: null};
   @Input() settingsPagePath = 'settings';
+  @Input() signOutPagePath = 'logout';
 
   constructor() {}
 

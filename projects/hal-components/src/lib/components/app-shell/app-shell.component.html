@@ -1,7 +1,7 @@
 <div class="shell-container">
   <hal-sidenav [menuItems]="menuItems"></hal-sidenav>
   <div class="body">
-    <hal-toolbar [user]="user" [settingsPagePath]="settingsPagePath">
+    <hal-toolbar [user]="user" [settingsPagePath]="settingsPagePath" [signOutPagePath]="signOutPagePath">
       <ng-content select="pageTitle"></ng-content>
     </hal-toolbar>
     <div class="main-content" ngClass.lt-lg="small-size">

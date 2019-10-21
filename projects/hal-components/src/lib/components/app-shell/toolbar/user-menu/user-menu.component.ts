@@ -1,6 +1,7 @@
 import { Component, OnInit, Injector, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from './user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hal-user-menu',
@@ -10,7 +11,7 @@ import { User } from './user.interface';
 export class UserMenuComponent implements OnInit, OnDestroy {
   @Input() user: User = { email: null, name: null, thumbnail: null};
   @Input() settingsPagePath = 'settings';
-  @Input() signOutPagePath = 'logout'; // TODO
+  @Input() signOutPagePath = 'logout';
 
   initials: string;
   hasFocus = false;
@@ -26,7 +27,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   // private oidcSecurityService: OidcSecurityService;
   private subscriptions: Subscription = new Subscription();
 
-  constructor(private injector: Injector) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -36,6 +37,8 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   }
 
   signOut() {
+    console.log('logout');
+    this.router.navigate([this.signOutPagePath]);
     // this.oidcSecurityService.logoff();
   }
 
@@ -43,14 +46,14 @@ export class UserMenuComponent implements OnInit, OnDestroy {
     e.cancelBubble = true;
   }
 
-  // getInitials(user: User): string {
-  //   let initials = '';
+  getInitials(user: User): string {
+    let initials = '';
 
-  //   if (user && user.name) {
-  //     const nameParts = user.name.split(' ');
-  //     nameParts.forEach(part => initials = initials + part.substring(0, 1));
-  //   }
+    if (user && user.name) {
+      const nameParts = user.name.split(' ');
+      nameParts.forEach(part => initials = initials + part.substring(0, 1));
+    }
 
-  //   return initials;
-  // }
+    return initials;
+  }
 }
