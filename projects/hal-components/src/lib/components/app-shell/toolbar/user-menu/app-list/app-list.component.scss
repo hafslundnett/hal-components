@@ -1,0 +1,39 @@
+
+.open-applist-button {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+
+.app-list-wrapper {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+  
+    padding: 24px 24px 0 24px;
+    min-width: 250px;
+  
+    .title {
+        font-weight: bold;
+    }
+
+    .app-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      .app {
+        font-size: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 12px;
+        .app-name {
+            font-size: 12px;
+            text-align: center;
+        }
+      }
+    }
+  }

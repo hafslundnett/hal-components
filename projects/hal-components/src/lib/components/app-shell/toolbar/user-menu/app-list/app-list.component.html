@@ -1,0 +1,15 @@
+<button [matMenuTriggerFor]="applist" class="hdd-button-icon is-transparent open-applist-button">
+  <i class="fal fa-table"></i>
+</button>
+
+<mat-menu #applist="matMenu">
+  <div class="app-list-wrapper" (click)="cancelMouseEventBubble($event)">
+    <h2 class="title">Hafslund Nett Apps</h2>
+    <div class="app-list">
+      <a href="{{app.url}}" target="_blank" class="hdd-button-icon is-transparent app" *ngFor="let app of appList">
+        <i class="fal {{app.icon}}"></i>
+        <span class="app-name">{{app.name}}</span>
+      </a>
+    </div>
+  </div>
+</mat-menu>

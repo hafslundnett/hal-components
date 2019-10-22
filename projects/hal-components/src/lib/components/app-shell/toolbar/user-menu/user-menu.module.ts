@@ -4,6 +4,7 @@ import { UserMenuComponent } from './user-menu.component';
 import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { AppListComponent } from './app-list/app-list.component';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatMenuModule,
     MatIconModule
   ],
-  declarations: [UserMenuComponent],
+  declarations: [UserMenuComponent, AppListComponent],
   exports: [UserMenuComponent]
 })
 export class UserMenuModule { }
