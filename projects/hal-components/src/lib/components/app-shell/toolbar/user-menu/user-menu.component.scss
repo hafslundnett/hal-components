@@ -28,6 +28,31 @@ $large-image-size: 72px;
   }
 }
 
+.open-applist-button {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.applist-wrapper {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  align-items: center;
+
+  padding: 24px 24px 0 24px;
+  min-width: 250px;
+
+  .applist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .app {
+      font-size: 40px;
+    }
+  }
+}
 
 .user-button {
   display: flex;

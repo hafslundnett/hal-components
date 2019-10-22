@@ -1,4 +1,7 @@
 <div class="user-line-container">
+  <button [matMenuTriggerFor]="applist" class="hdd-button-icon is-transparent open-applist-button">
+    <i class="fal fa-table"></i>
+  </button>
   <span class="user-name">{{ user?.name }}</span>
   <button class="user-button" [matMenuTriggerFor]="menu" (focus)="hasFocus = true" (blur)="hasFocus = false">
     <img [src]="thumbnailUrl" *ngIf="user?.thumbnail; else defaultThumb">
@@ -26,4 +29,21 @@
     <div class="divider"></div>
   </div>
   <button mat-menu-item class="sign-out-button" (click)="signOut()">Logg ut</button>
+</mat-menu>
+
+
+<mat-menu #applist="matMenu">
+
+  <div class="applist-wrapper" (click)="cancelMouseEventBubble($event)">
+    <h2>Hafslund Nett Apps</h2>
+    <div class="applist">
+      <button class="hdd-button-icon is-transparent app">
+        <!-- <i class="fal fa-satellite"></i> -->
+        <i class="fal fa-table"></i>
+      </button>
+      <button class="hdd-button-icon is-transparent app">
+          <i class="fal fa-candy-corn"></i>
+      </button>
+    </div>
+  </div>
 </mat-menu>
