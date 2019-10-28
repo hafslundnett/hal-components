@@ -4,8 +4,6 @@
 
 export * from './lib/components/app-shell/app-shell.module';
 
-// export * from './lib/components/toolbar/toolbar.module';
-// export * from './lib/components/sidenav/sidenav.module';
 export * from './lib/components/app-shell/sidenav/sidenav.menu-element.interface';
 export * from './lib/components/app-shell/toolbar/user-menu/user.interface';
 

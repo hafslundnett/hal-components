@@ -1,8 +1,8 @@
 # HalPlayground
 
 ## Getting started
-1. `npm install` (TODO switch to yarn)
-2. `npm run serve-hal`
+1. `yarn`
+2. `yarn watch-hal`
 3. (in new terminal): `ng serve`
 4. Open http://localhost:4200/
 
