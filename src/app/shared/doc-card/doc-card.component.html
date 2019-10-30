@@ -1,0 +1,18 @@
+<div class="hdd-card doc-card">
+  <div class="hdd-card_header">
+    <div class="hdd-card_header_text">
+      <div class="hdd-card_title">
+        <ng-content select="cardTitle"></ng-content>
+      </div>
+      <div class="hdd-card_subtitle">
+        <ng-content select="cardSubtitle"></ng-content>
+      </div>
+    </div>
+  </div>
+  <div class="hdd-card_content">
+    <ng-content select="cardContent"></ng-content>
+  </div>
+  <div class="hdd-card_actions">
+    <a class="hdd-card_actions_action" [routerLink]="['', docUrl]">View more</a>
+  </div>
+</div>
