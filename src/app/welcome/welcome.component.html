@@ -8,3 +8,17 @@ All applications should use the app shell
   <li>SVG element</li>
   <li>App shell</li>
 </ul>
+
+<div class="card-list-container">
+  <hal-doc-card [docUrl]="'hdd'">
+    <ng-container ngProjectAs="cardTitle">
+      Hafslund Angular Components
+    </ng-container>
+    <ng-container ngProjectAs="cardSubtitle">
+      Sub
+    </ng-container>
+    <ng-container ngProjectAs="cardContent">
+      Content
+    </ng-container>
+  </hal-doc-card>
+</div>
