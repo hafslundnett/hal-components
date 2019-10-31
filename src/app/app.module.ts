@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShellModule } from './shell/shell.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { SvgDocModule } from './docs-pages/svg-doc/svg-doc.module';
+import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global-doc.module';
 
 @NgModule({
    imports: [
@@ -18,7 +19,8 @@ import { SvgDocModule } from './docs-pages/svg-doc/svg-doc.module';
       HttpClientModule,
       ShellModule,
       WelcomeModule,
-      SvgDocModule
+      SvgDocModule,
+      PopupGlobalDocModule
    ],
    declarations: [
       AppComponent,

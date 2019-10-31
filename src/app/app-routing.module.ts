@@ -5,6 +5,7 @@ import { ShellComponent } from './shell/shell.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { Pages } from './shared/models/pages.enum';
 import { SvgDocComponent } from './docs-pages/svg-doc/svg-doc.component';
+import { PopupGlobalDocComponent } from './docs-pages/popup-global-doc/popup-global-doc.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: Pages.SvgDoc,
         component: SvgDocComponent
+      },
+      {
+        path: Pages.PopupGlobalDoc,
+        component: PopupGlobalDocComponent
       },
     ]
   }

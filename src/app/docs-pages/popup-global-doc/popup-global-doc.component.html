@@ -1,0 +1,50 @@
+<div class="doc-page-container">
+
+    <h1 class="doc-title">Popup global service
+    </h1>
+  
+    <p class="doc-info">
+      This is the documentation for PopupGlobalService. The service has methods for opening and setting default size of an overlay. 
+      The overlay will appear in the middle of the screen. To close the overlay use the detach method.
+    </p>
+  
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} PopupGlobalService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    </hal-doc-import-line>
+  
+    <h2 class="doc-subtitle">Example</h2>
+    <div class="doc-info">
+      <button class="hdd-button" (click)="openPopupGlobal()">
+        Open popup
+      </button>
+    </div>
+
+    <h2 class="doc-subtitle">Code TS</h2>
+    <hal-code-highlighter [isTS]="true">
+      123
+    </hal-code-highlighter>
+  
+  
+    <h2 class="doc-subtitle">Additional Info</h2>
+    <table class="hdd-table has-shadow">
+      <tr class="hdd-table_header is-stripe">
+        <th>Method</th>
+        <th>Descirption</th>
+      </tr>
+      <tr>
+        <th>setupOverlay(maxWidth)</th>
+        <td>Sets the max-width of the popup.</td>
+      </tr>
+      <tr class="is-stripe">
+        <th>openOverlay(overlayRef, overlayComponent)</th>
+        <td>Opens the overlay(popup) by passing the OverlayRef and the overlayComponent to display. </td>
+      </tr>
+      <tr>
+        <th>detach(overlayRef)</th>
+        <td>Detaches the overlay by passing the OverlayRef.</td>
+      </tr>
+    </table>
+  
+  </div>
+  
+  <hal-doc-list></hal-doc-list>
