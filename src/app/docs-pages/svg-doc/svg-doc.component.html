@@ -1,0 +1,46 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">SVG component</h1>
+
+  <p class="doc-info">
+    This is the documentation for hal components.
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+    remaining
+    essentially unchanged.
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} SvgElementModule {{ '}' }} from 'hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <hal-svg-element 
+    class="default-svg"
+    [width]="'45px'"
+    [height]="'40px'"
+    [svgFilePath]="'assets/logo.svg'"
+  >
+  </hal-svg-element>
+
+  <h2 class="doc-subtitle">Code HTML</h2>
+  <hal-code-highlighter [isHTML]="true">
+    123
+  </hal-code-highlighter>
+  
+  <h2 class="doc-subtitle">Code TS</h2>
+  <hal-code-highlighter [isTS]="true">
+    123
+  </hal-code-highlighter>
+
+
+  <h2 class="doc-subtitle">Additional Info</h2>
+  <p class="doc-info">
+    Extra info and inputs
+  </p>
+
+</div>
+
+<hal-doc-list></hal-doc-list>

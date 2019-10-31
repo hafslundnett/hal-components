@@ -1,0 +1,15 @@
+.card-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content:flex-start;
+  
+}
+
+.card-list-title {
+	text-align: center;
+  font-size: 30px;
+  margin-top: calc(var(--default-margin) * 1.5);
+  margin-bottom: var(--default-margin);
+}
