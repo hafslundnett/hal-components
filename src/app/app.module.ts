@@ -8,6 +8,7 @@ import { HddStyleDocComponent } from './hdd-style-doc/hdd-style-doc.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShellModule } from './shell/shell.module';
 import { WelcomeModule } from './welcome/welcome.module';
+import { SvgDocModule } from './docs-pages/svg-doc/svg-doc.module';
 
 @NgModule({
    imports: [
@@ -16,7 +17,8 @@ import { WelcomeModule } from './welcome/welcome.module';
       BrowserAnimationsModule,
       HttpClientModule,
       ShellModule,
-      WelcomeModule
+      WelcomeModule,
+      SvgDocModule
    ],
    declarations: [
       AppComponent,

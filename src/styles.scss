@@ -12,7 +12,9 @@ body {
   overflow-y: scroll;
 }
 
-
+:root {
+  --default-margin: 20px;
+}
 
 @include mat-core();
 $primary-color: mat-palette($hdd-material_primary);
@@ -24,3 +26,29 @@ $typography: mat-typography-config($font-family: ('"Helvetica Neue LT Std", Aria
 
 @include angular-material-theme($theme);
 @include angular-material-typography($typography);
+
+// shared styles
+
+.doc-page-container {
+  width: 700px;
+  margin: auto;
+}
+
+.doc-title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: var(--default-margin);
+  margin-bottom: var(--default-margin);
+}
+
+.doc-info {
+  margin-bottom: calc(var(--default-margin) * (1.61));
+  line-height: 1.63rem; 
+}
+
+.doc-subtitle {
+  text-align: center;
+  font-size: 30px;
+  margin-top: calc(var(--default-margin) * 1.5);
+  margin-bottom: var(--default-margin);
+}

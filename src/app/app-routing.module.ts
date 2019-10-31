@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HddStyleDocComponent } from './hdd-style-doc/hdd-style-doc.component';
 import { ShellComponent } from './shell/shell.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { Pages } from './shared/models/pages.enum';
+import { SvgDocComponent } from './docs-pages/svg-doc/svg-doc.component';
 
 const routes: Routes = [
   {
@@ -11,17 +13,21 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'welcome',
+        redirectTo: Pages.Welcome,
         pathMatch: 'full'
       },
       {
-        path: 'welcome',
+        path: Pages.Welcome,
         component: WelcomeComponent,
         pathMatch: 'full'
       },
       {
-        path: 'hdd',
+        path: Pages.Hdd,
         component: HddStyleDocComponent
+      },
+      {
+        path: Pages.SvgDoc,
+        component: SvgDocComponent
       },
     ]
   }

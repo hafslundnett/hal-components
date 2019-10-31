@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WelcomeComponent } from './welcome.component';
-import { DocCardModule } from '../shared/doc-card/doc-card.module';
+import { DocListModule } from '../shared/doc-list/doc-list.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    DocCardModule
+    DocListModule
   ],
   declarations: [WelcomeComponent],
   exports: [WelcomeComponent]
