@@ -3,16 +3,21 @@
 .hal-svg-element-container {
 	--svg-height: auto;
 	--svg-width: auto;
-	--svg-color: green;
+	--svg-color-stroke: inherit;   
+	--svg-color-fill: inherit;   
 	svg {
 		width: var(--svg-width);
 		height: var(--svg-height);
 	}
 
-	&.svg-custom-color {
+	&.svg-custom-color-stroke {
 		* {
-			stroke: var(--svg-color);
-			fill:  var(--svg-color);
+			stroke: var(--svg-color-stroke);
+		}
+	}
+	&.svg-custom-color-fill {
+		* {
+			fill:  var(--svg-color-fill);
 		}
 	}
 	
