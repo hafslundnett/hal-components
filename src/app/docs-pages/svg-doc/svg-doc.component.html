@@ -37,14 +37,12 @@
 
 
   <h2 class="doc-subtitle">Additional Info</h2>
-  <p class="doc-info">
-    Extra info and inputs
+  
+
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="svgInputs"></hal-doc-api-table>
+  <p class="doc-info" style="margin-top: 10px;">
+    * If no size attributes are set on the svg-element, the size defaults to a 36*36px icon size.
   </p>
-
-  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="svgInputs">
-
-  </hal-doc-api-table>
-
 </div>
 
 <hal-doc-list></hal-doc-list>
