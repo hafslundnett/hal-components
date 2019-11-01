@@ -3,46 +3,71 @@
   <h1 class="doc-title">SVG component</h1>
 
   <p class="doc-info">
-    This is the documentation for hal components.
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining
-    essentially unchanged.
+    This is the documentation for the hal-svg-element component. 
+    The component can be utilised whenever you need a visual element like an icon or picture in your application. 
+    The size and color can be defined directly in the component, letting you easily customize the svg element to your need.
+    
   </p>
 
   <hal-doc-import-line>
-    <code><pre>import {{ '{' }} SvgElementModule {{ '}' }} from 'hal-components';</pre></code>
+    <code><pre>import {{ '{' }} SvgElementModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
 
   <h2 class="doc-subtitle">Examples</h2>
+ 
+  <div class="svg-examples-container">
+    <hal-svg-element 
+      class="default-svg" 
+      [width]="'25px'" 
+      [height]="'25px'" 
+      [colorFill]="'green'"
+      [svgFilePath]="'assets/logo.svg'">
+    </hal-svg-element>
 
-  <hal-svg-element 
-    class="default-svg"
-    [width]="'45px'"
-    [height]="'40px'"
-    [svgFilePath]="'assets/logo.svg'"
-  >
-  </hal-svg-element>
+    <hal-svg-element 
+      class="default-svg"
+      
+      [svgFilePath]="'assets/logo.svg'"
+    >
+    </hal-svg-element>
+  
+    <hal-svg-element 
+      class="default-svg" 
+      [width]="'55px'" 
+      [height]="'55px'" 
+      [colorFill]="'orange'"
+      [svgFilePath]="'assets/logo.svg'"
+      >
+    </hal-svg-element>
+    
+    <hal-svg-element 
+      class="default-svg" 
+      [width]="'65px'" 
+      [height]="'60px'" 
+      [colorFill]="'red'"
+      [svgFilePath]="'assets/logo.svg'"
+      >
+    </hal-svg-element>
+  </div>
 
   <h2 class="doc-subtitle">Code HTML</h2>
   <hal-code-highlighter [isHTML]="true">
-    123
+   TODO: Code in HTML
   </hal-code-highlighter>
   
   <h2 class="doc-subtitle">Code TS</h2>
   <hal-code-highlighter [isTS]="true">
-    123
+    TODO: Code in TS
   </hal-code-highlighter>
 
 
   <h2 class="doc-subtitle">Additional Info</h2>
-  
 
   <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="svgInputs"></hal-doc-api-table>
   <p class="doc-info" style="margin-top: 10px;">
     * If no size attributes are set on the svg-element, the size defaults to a 36*36px icon size.
   </p>
+
 </div>
 
 <hal-doc-list></hal-doc-list>

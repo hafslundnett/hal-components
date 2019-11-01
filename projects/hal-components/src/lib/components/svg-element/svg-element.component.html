@@ -1,1 +1,6 @@
-<span #svgContainer class="hal-svg-element-container" [ngClass]="{'svg-custom-color': color.length > 0}"[innerHTML]="svgContent"></span>
+<span 
+    #svgContainer 
+    class="hal-svg-element-container" 
+    [ngClass]="{'svg-custom-color-fill': colorFill.length > 0, 'svg-custom-color-stroke': colorStroke.length > 0}"
+    [innerHTML]="svgContent"
+></span>

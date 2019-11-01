@@ -14,7 +14,8 @@ export class SvgElementComponent implements OnInit, OnChanges {
   @Input() svgFilePath: string;
   @Input() width = 'auto';
   @Input() height = 'auto';
-  @Input() color = '';
+  @Input() colorStroke = '';
+  @Input() colorFill = '';
   @ViewChild('svgContainer', { static: true }) svgContainer;
   svgContent;
 
@@ -37,7 +38,10 @@ export class SvgElementComponent implements OnInit, OnChanges {
   }
 
   private getCssText() {
-    return '--svg-width: ' + this.width + '; --svg-height: ' + this.height + '; --svg-color: ' + this.color;
+    return '--svg-width: ' + this.width 
+    + '; --svg-height: ' + this.height 
+      + '; --svg-color-stroke: ' + this.colorStroke
+      + '; --svg-color-fill: ' + this.colorFill;
   }
 
 }
