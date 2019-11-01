@@ -26,25 +26,10 @@
   
   
     <h2 class="doc-subtitle">Additional Info</h2>
-    <table class="hdd-table has-shadow">
-      <tr class="hdd-table_header is-stripe">
-        <th>Method</th>
-        <th>Descirption</th>
-      </tr>
-      <tr>
-        <th>setupOverlay(maxWidth)</th>
-        <td>Sets the max-width of the popup.</td>
-      </tr>
-      <tr class="is-stripe">
-        <th>openOverlay(overlayRef, overlayComponent)</th>
-        <td>Opens the overlay(popup) by passing the OverlayRef and the overlayComponent to display. </td>
-      </tr>
-      <tr>
-        <th>detach(overlayRef)</th>
-        <td>Detaches the overlay by passing the OverlayRef.</td>
-      </tr>
-    </table>
-  
+    <hal-doc-api-table 
+      [apiTableHeader]="'Methods'"
+      [apiTableRows]="apiTableRows"
+    ></hal-doc-api-table>
   </div>
   
   <hal-doc-list></hal-doc-list>
