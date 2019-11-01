@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { PopupGlobalService } from 'hal-components';
 import { PopupGlobalExampleComponent } from './popup-global-example/popup-global-example.component';
-import { ApiTableRow } from 'src/app/shared/models/api-table-row.model';
+import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 
 @Component({
   selector: 'hal-popup-global-doc',
@@ -11,10 +11,10 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.model';
 })
 export class PopupGlobalDocComponent implements OnInit {
 
-  public apiTableRows = [
-    new ApiTableRow("setupOverlay(maxWidth)", "Sets the max-width of the popup."),
-    new ApiTableRow("openOverlay(overlayRef, overlayComponent)", "Opens the overlay(popup) by passing the OverlayRef and the overlayComponent to display."),
-    new ApiTableRow("detach(overlayRef)", "Detaches the overlay by passing the OverlayRef.")
+  public apiTableRows: ApiTableRow[] = [
+    {apiInput: "setupOverlay(maxWidth)", description: "Sets the max-width of the popup."},
+    {apiInput: "openOverlay(overlayRef, overlayComponent)", description: "Opens the overlay(popup) by passing the OverlayRef and the overlayComponent to display."},
+    {apiInput: "detach(overlayRef)", description: "Detaches the overlay by passing the OverlayRef."}
   ]
 
   constructor(private popupGlobalService: PopupGlobalService) { }

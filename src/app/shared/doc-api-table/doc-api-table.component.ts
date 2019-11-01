@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiTableRow } from '../models/api-table-row.model';
+import { ApiTableRow } from '../models/api-table-row.interface';
 
 @Component({
   selector: 'hal-doc-api-table',
