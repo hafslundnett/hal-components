@@ -1,22 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SvgDocComponent } from './svg-doc.component';
+import { PopupGlobalDocComponent } from './popup-global-doc.component';
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
-import { SvgElementModule } from 'hal-components';
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';
+import { PopupGlobalExampleComponent } from './popup-global-example/popup-global-example.component';
+import { PopupGlobalService } from 'hal-components';
 import { DocApiTableModule } from 'src/app/shared/doc-api-table/doc-api-table.module';
 
 @NgModule({
   imports: [
     CommonModule,
     DocImportLineModule,
-    SvgElementModule,
     CodeHighlighterModule,
     DocListModule,
     DocApiTableModule
   ],
-  declarations: [SvgDocComponent],
-  exports: [SvgDocComponent]
+  declarations: [
+    PopupGlobalDocComponent,
+    PopupGlobalExampleComponent,
+  ],
+  providers: [
+    PopupGlobalService
+  ],
+  bootstrap: [PopupGlobalExampleComponent],
+  exports: [PopupGlobalDocComponent]
 })
-export class SvgDocModule { }
+export class PopupGlobalDocModule { }

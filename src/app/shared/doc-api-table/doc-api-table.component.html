@@ -1,0 +1,14 @@
+<table class="hdd-table has-shadow is-striped">
+  <thead>
+    <tr class="hdd-table_header">
+      <th>{{ apiTableHeader }}</th>
+      <th>Descirption</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rows of apiTableRows">
+      <th>{{ rows.apiInput }}</th>
+      <td>{{ rows.description}}</td>
+    </tr>
+  </tbody>
+</table>

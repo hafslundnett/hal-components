@@ -1,0 +1,45 @@
+@import '~@hafslundnett/hdd-style/variables/main';
+
+.filter-popup-body {
+  background: color('white');
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.animation-wrapper {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+  transform-origin: right top;
+  width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+  border-radius: 2px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 700;
+  color: color('blue');
+
+  &:hover, &:focus {
+    outline: none;
+    color: color('blue-light1');
+  }
+
+  i {
+    color: color('black');
+  }
+}
+
+h2 {
+  font-weight: 600;
+  
+}
+
+.top-bar{
+  margin-bottom: 25px;
+}
