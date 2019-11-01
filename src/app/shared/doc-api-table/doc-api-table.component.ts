@@ -8,8 +8,8 @@ import { ApiTableRow } from '../models/api-table-row.interface';
 })
 export class DocApiTableComponent implements OnInit {
 
-  @Input() apiTableHeader = "Method/Input";
-  @Input() apiTableRows:ApiTableRow[] = [];
+  @Input() apiTableHeader = 'Method/Input';
+  @Input() apiTableRows: ApiTableRow[] = [];
 
   constructor() { }
 

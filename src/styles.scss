@@ -3,6 +3,9 @@
 @import '~@hafslundnett/hdd-style/variables/main';
 @import '~@angular/material/theming';
 
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+
 html,
 body {
   height: 100%;
