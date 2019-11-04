@@ -1,0 +1,46 @@
+<div class="doc-page-container">
+
+    <h1 class="doc-title">Popup connected component
+    </h1>
+  
+    <p class="doc-info">
+      This is the documentation for PopupConnectedComponent. This is a popup which is connected to an origin element! The default position of the popup is above the origin it is connected to.
+    </p>
+    <p class="doc-info"> 
+      <b>
+        Typical use: Displaying some kind of information where the popup is connected to an element. 
+      </b>
+    </p>
+  
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} PopupGlobalService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    </hal-doc-import-line>
+  
+    <h2 class="doc-subtitle">Example</h2>
+    <div class="doc-info">
+      <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+        <span>Open connected popup</span>
+      </button>
+      <hal-popup-connected [isOpen]="isOpenEx" [origin]="trigger" [relativePositionY]="'below'" (close)="isOpenEx = false">
+        <div class="popup-content-wrapper" *ngIf="isOpenEx">
+          <div class="hdd-card popup-container">
+            <div class="hdd-card_header">
+              <div class="hdd-card_header_text">
+                <div class="hdd-card_title">It works!</div>
+                <div class="hdd-card_subtitle">This is a card</div>
+              </div>
+            </div>
+            <div class="hdd-card_content">
+              <p>The card is displayed inside the popup.</p>
+            </div>
+          </div>
+        </div>
+      </hal-popup-connected>
+    </div>
+  
+    <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  
+    <hal-doc-api-table [apiTableHeader]="'Inputs'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+  </div>
+  
+  <hal-doc-list></hal-doc-list>

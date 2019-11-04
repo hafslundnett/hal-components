@@ -1,0 +1,60 @@
+@import '~@hafslundnett/hdd-style/variables/main';
+
+$arrow-size: 10px;
+
+.connected-popup-body {
+  background: color('white');
+  border-radius: 4px;
+}
+
+.animation-wrapper {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+  transform-origin: right top;
+  width: 100%;
+
+  .arrow-above {
+    width: 0;
+    height: 0;
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;
+    border-bottom: $arrow-size solid color('white');
+    top: -1px;
+    display: block;
+    margin-left: auto;
+    margin-right: 26px;
+  }
+  .arrow-below {
+    width: 0;
+    height: 0;
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;
+    border-top: $arrow-size solid color('white');
+    top: -1px;
+    display: block;
+    margin-left: auto;
+    margin-right: 26px;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 46px;
+  right: 20px;
+  border-radius: 2px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 700;
+  color: color('blue');
+
+  &:hover, &:focus {
+    outline: none;
+    color: color('blue-light1');
+  }
+
+  i {
+    color: color('black');
+  }
+}
