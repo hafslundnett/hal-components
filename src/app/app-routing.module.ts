@@ -6,6 +6,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { Pages } from './shared/models/pages.enum';
 import { SvgDocComponent } from './docs-pages/svg-doc/svg-doc.component';
 import { PopupGlobalDocComponent } from './docs-pages/popup-global-doc/popup-global-doc.component';
+import { DividerDocComponent } from './docs-pages/divider-doc/divider-doc.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: Pages.PopupGlobalDoc,
         component: PopupGlobalDocComponent
+      },
+      {
+        path: Pages.DividerDoc,
+        component: DividerDocComponent
       },
     ]
   }
