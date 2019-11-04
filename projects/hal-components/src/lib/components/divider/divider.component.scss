@@ -1,0 +1,10 @@
+@import '~@hafslundnett/hdd-style/variables/colors';
+
+.divider {
+  border: none;
+  border-top: 1px solid color('grey');
+
+  &.light {
+    border-top-color: color('grey-light');
+  }
+}
