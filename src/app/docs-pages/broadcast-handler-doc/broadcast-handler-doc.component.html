@@ -1,0 +1,45 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Broadcast handler</h1>
+
+  <p class="doc-info">
+    This is a service for sending messages between browser tabs. This can be used to coordinate tabs and create a cross
+    tab/window experience for the user.
+    Messages are sendt as broadcast, meaning the can have 0 to infinite subscribers. This is not 1-1 communication.
+  </p>
+
+  <p class="doc-info">
+    Master is the tab in charge, and slaves are the tabs listening. ACK is acknowledgement, a reply from any receiver that they got the message.
+  </p>
+
+  <p class="doc-info">
+    This feature is build on top of the BroadcastChannel api:<br>
+    <a class="hdd-link" href="https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel">
+      https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel
+    </a>
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} BroadcastHandlerService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} ChannelAction, ChannelPacket {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+  <p class="doc-info">
+    NB! You can not send a message to the current tab, only other tabs. You need two tabs with the example below for it to work
+  </p>
+  <div class="examples-container">
+    <button class="hdd-button" (click)="sendMessage()">
+      Send Message (see in console)
+    </button>
+  </div>
+
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'methods'" [apiTableRows]="api"></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>

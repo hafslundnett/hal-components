@@ -11,3 +11,6 @@ export * from './lib/components/svg-element/svg-element.module';
 export * from './lib/services/svg/svg.service';
 export * from './lib/services/popup-global/popup-global.service';
 
+export * from './lib/services/broadcast-handler/broadcast-handler.service';
+export * from './lib/services/broadcast-handler/broadcast-handler-types';
+
