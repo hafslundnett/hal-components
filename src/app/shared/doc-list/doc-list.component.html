@@ -19,9 +19,9 @@
   </hal-doc-card>
 
   <hal-doc-card [docUrl]="pages.PopupGlobalDoc">
-      <ng-container ngProjectAs="cardIcon">
-        <i class="fal fa-comment-alt"></i>
-      </ng-container>
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-comment-alt"></i>
+    </ng-container>
     <ng-container ngProjectAs="cardTitle">
       Popup Global Service
     </ng-container>
@@ -29,10 +29,23 @@
       For displaying a standard popup
     </ng-container>
   </hal-doc-card>
+
+  <hal-doc-card [docUrl]="pages.BroadcastHandler">
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-bullhorn"></i>
+    </ng-container>
+    <ng-container ngProjectAs="cardTitle">
+      Broadcast Handler
+    </ng-container>
+    <ng-container ngProjectAs="cardSubtitle">
+      For sending messages between browser tabs
+    </ng-container>
+  </hal-doc-card>
+
   <hal-doc-card [docUrl]="pages.DividerDoc">
-      <ng-container ngProjectAs="cardIcon">
-        <i class="fal fa-columns"></i>
-      </ng-container>
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-columns"></i>
+    </ng-container>
     <ng-container ngProjectAs="cardTitle">
       Divider Component
     </ng-container>

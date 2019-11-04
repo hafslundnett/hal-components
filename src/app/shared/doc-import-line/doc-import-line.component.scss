@@ -3,6 +3,6 @@
 	background: rgba(0,0,0,.06);
 	padding: 6px;
 	width: fit-content;
-	margin:0 auto;
+	margin: calc(var(--default-margin) / 2) auto;
 	border-radius: 10px;
 }
