@@ -5,7 +5,7 @@ export type ChannelAction = 'open'
   | 'reset';
 
 export interface ChannelPacket {
-  senderId: string;
+  senderId?: string;
   messageId?: number; // auto added (used for ack)
   action?: ChannelAction | null;
   message?: any | null;
