@@ -12,7 +12,7 @@ export class BroadcastHandlerDocComponent implements OnInit {
   api: ApiTableRow[] = [
     { apiInput: 'getChannelMessages', description: 'Get messages on one channel as an Observable' },
     { apiInput: 'sendMessageChannel', description: 'Send message without checking if it was received' },
-    { apiInput: 'sendMessageChannel', description: 'Send message and check if it was received within ackWaitTime' },
+    { apiInput: 'sendMessageChannelWithAck', description: 'Send message and check if it was received within ackWaitTime' },
     { apiInput: 'closeChannel', description: 'Close one underlying channel. Usually better to just unsub from the getChannelMessages' },
     { apiInput: 'closeAllChannels', description: 'Close all underlying channel' },
   ];
@@ -26,8 +26,6 @@ this.broadcastHandlerService.getChannelMessages(this.channelName).subscribe({
 
 // Sending message
 const packet: ChannelPacket = {
-  senderId: this.broadcastHandlerService.getMySenderId(true),
-  action: 'open',
   message: 'Hello You'
 };
 this.broadcastHandlerService.sendMessageChannel(this.channelName, packet);
@@ -49,8 +47,6 @@ this.broadcastHandlerService.sendMessageChannel(this.channelName, packet);
   sendMessage() {
     console.log('Sending message');
     const packet: ChannelPacket = {
-      senderId: this.broadcastHandlerService.getMySenderId(true),
-      action: 'open',
       message: 'Hello You'
     };
     this.broadcastHandlerService.sendMessageChannelWithAck(this.channelName, packet).subscribe({
