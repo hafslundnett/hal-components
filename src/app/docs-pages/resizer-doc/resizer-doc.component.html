@@ -1,3 +1,53 @@
-<p>
-  resizer-doc works!
-</p>
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Resizer component</h1>
+
+  <p class="doc-info">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi necessitatibus voluptatibus, quaerat nulla earum asperiores est nisi possimus vel sed cumque vitae inventore officia distinctio reiciendis blanditiis voluptate in ab.
+
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} ResizerModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <div class="hdd-card" #ExampleCard>
+    <div class="hdd-card_header">
+      <div class="hdd-card_header_text">
+        <div class="hdd-card_title">A card should have a title</div>
+      </div>
+    </div>
+    <div class="hdd-card_content">
+      <p>A card consist of some content.</p>
+      <p>The card can have multiple lines of content.</p>
+      <p>Cards are useful for displaying some kind of information</p>
+    </div>
+    <div class="hdd-card_header">
+      <div class="hdd-card_header_text">
+        <div class="hdd-card_title">A card can have more than one title</div>
+        <div class="hdd-card_subtitle">And a subtitle</div>
+      </div>
+    </div>
+    <div class="hdd-card_content">
+      <p>And more content.</p>
+    </div>
+  </div>
+  <hal-resizer [resizableElement]="ExampleCard" [resizeDirection]="'horisontal'"></hal-resizer>
+
+  <br>
+  <br>
+
+
+
+
+
+
+  <hal-code-highlighter [isHTML]="true" [code]=""></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]=""></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>

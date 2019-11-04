@@ -10,6 +10,10 @@ type direction = 'vertical' | 'horisontal';
 export class ResizerComponent {
   @Input() resizableElement: HTMLElement;
   @Input() resizeDirection: direction; // set outside, and remove default
+  @Input() minHeight?: number = 300;
+  @Input() minwidth?:number;
+  @Input() maxHeigth?: number = 850;
+  @Input() maxWidth?: number;
   isResizing = false;
   elementWidth: number;
   elementHeight: number;
@@ -29,8 +33,8 @@ export class ResizerComponent {
       this.resizableElement.style.maxWidth = '80%';
       this.resizableElement.style.minWidth = '20%';
     } else if (this.resizeDirection === 'horisontal') {
-      const min = 300;
-      const max = 850;
+      const min = this.minHeight;
+      const max = this.maxHeigth;
 
       const diff = event.clientY - this.initialCursorPosition;
       const newHeight = this.elementHeight + diff;
