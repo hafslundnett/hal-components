@@ -9,11 +9,11 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class DividerDocComponent implements OnInit {
 
   dividerInput: ApiTableRow[] = [
-    { apiInput: 'ligth', description: 'Optional input to make the line ligth/hidden or not' },
+    { apiInput: 'light', description: 'Optional input to make the line ligth or not' },
   ];
 
-  htmlCode = `<hal-divider></hal-divider> <!--Display the line-->
-<hal-divider light></hal-divider> <!--Hide the line-->`;
+  htmlCode = `<hal-divider></hal-divider>
+<hal-divider light></hal-divider>`;
 
   constructor() { }
 
