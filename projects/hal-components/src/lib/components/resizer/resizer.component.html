@@ -1,0 +1,11 @@
+<ng-container *ngIf="resizeDirection === 'vertical'">
+  <div class="resizer-vertical" (mousedown)="startResize($event)">
+    <div class="line"></div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="resizeDirection === 'horisontal'">
+  <div class="resizer-horisontal" (mousedown)="startResize($event)">
+    <div class="line"></div>
+  </div>
+</ng-container>

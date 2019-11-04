@@ -1,0 +1,65 @@
+import { Component, HostListener, Input } from '@angular/core';
+
+type direction = 'vertical' | 'horisontal';
+
+@Component({
+  selector: 'hal-resizer',
+  templateUrl: './resizer.component.html',
+  styleUrls: ['./resizer.component.scss']
+})
+export class ResizerComponent {
+  @Input() resizableElement: HTMLElement;
+  @Input() resizeDirection: direction; // set outside, and remove default
+  isResizing = false;
+  elementWidth: number;
+  elementHeight: number;
+  initialCursorPosition: number;
+
+  @HostListener('document:mousemove', ['$event'])
+  onResize(event: MouseEvent) {
+    if (!this.isResizing) {
+      return;
+    }
+
+    if (this.resizeDirection === 'vertical') {
+      const diff = event.clientX - this.initialCursorPosition;
+      const width = `${this.elementWidth + diff}px`;
+      this.resizableElement.style.flex = `0 0 ${width}`;
+      this.resizableElement.style.width = width;
+      this.resizableElement.style.maxWidth = '80%';
+      this.resizableElement.style.minWidth = '20%';
+    } else if (this.resizeDirection === 'horisontal') {
+      const min = 300;
+      const max = 850;
+
+      const diff = event.clientY - this.initialCursorPosition;
+      const newHeight = this.elementHeight + diff;
+      const height = `${newHeight}px`;
+      if (newHeight < min) {
+        this.resizableElement.style.height = `${min}px`;
+      } else if (newHeight > max) {
+        this.resizableElement.style.height = `${max}px`;
+      } else {
+        this.resizableElement.style.height = height;
+      }
+    }
+
+  }
+
+  @HostListener('document:mouseup', [])
+  onMouseUp() {
+    this.isResizing = false;
+  }
+
+  startResize(mouseEvent: MouseEvent): void {
+    if (this.resizeDirection === 'vertical') {
+      this.elementWidth = this.resizableElement.clientWidth;
+      this.isResizing = true;
+      this.initialCursorPosition = mouseEvent.clientX;
+    } else if (this.resizeDirection === 'horisontal') {
+      this.elementHeight = this.resizableElement.clientHeight;
+      this.isResizing = true;
+      this.initialCursorPosition = mouseEvent.clientY;
+    }
+  }
+}

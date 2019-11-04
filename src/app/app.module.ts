@@ -10,6 +10,7 @@ import { ShellModule } from './shell/shell.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { SvgDocModule } from './docs-pages/svg-doc/svg-doc.module';
 import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global-doc.module';
+import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 
 @NgModule({
    imports: [
@@ -20,7 +21,8 @@ import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global
       ShellModule,
       WelcomeModule,
       SvgDocModule,
-      PopupGlobalDocModule
+      PopupGlobalDocModule,
+      ResizerDocModule
    ],
    declarations: [
       AppComponent,
