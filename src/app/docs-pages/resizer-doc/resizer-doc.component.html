@@ -29,14 +29,15 @@
 
   <br>
   <br>
-    <div class="hdd-form_field" #ExampleInput>
+  <div class="resize-flex">
+    <div class="hdd-form_field resize-element" #ExampleInput>
       <label class="hdd-form_field_label" for="title">Resisable input field </label>
       <div class="hdd-form_input">
         <input id="title" placeholder="Placeholdertext">
       </div>
     </div>
-    <hal-resizer [resizableElement]="ExampleInput" [resizeDirection]="'vertical'"></hal-resizer>
-
+    <hal-resizer class="resizer-line" [resizableElement]="ExampleInput" [resizeDirection]="'vertical'"></hal-resizer>
+  </div>
 
 
 

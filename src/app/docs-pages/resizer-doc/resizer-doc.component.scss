@@ -1,0 +1,16 @@
+.resize-flex {
+    display: inline-flex;
+    flex-direction: row;
+    float: left;
+}
+
+.resize-element {
+    align-content: center;
+    margin: auto;
+    flex: 80%;
+}
+
+.resizer-line {
+    flex: auto;
+    align-content: center;
+}

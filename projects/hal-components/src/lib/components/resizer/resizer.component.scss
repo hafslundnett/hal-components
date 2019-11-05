@@ -11,8 +11,10 @@ $border-size: 1px;
   align-items: center;
 
   .line {
-    height: 30%;
+    height: 100%;
     width: 1px;
+    display: inline-flexbox;
+    align-content: center;
     border: $border-size solid;
     border-color: color('grey');
     box-shadow: $shadow-light;
