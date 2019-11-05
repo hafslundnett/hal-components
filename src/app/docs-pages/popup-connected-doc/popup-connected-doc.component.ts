@@ -23,24 +23,14 @@ export class PopupConnectedDocComponent implements OnInit {
     { apiInput: 'CdkOverlayOrigin', description: 'Directive applied to an element to make it usable as an origin for an Overlay.'}
   ]
 
-  htmlCode = `<button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-  <span>Open connected popup</span>
-</button>
-<hal-popup-connected [isOpen]="isOpenEx" [origin]="trigger" [relativePositionY]="'below'" (close)="isOpenEx = false">
-  <div class="popup-content-wrapper" *ngIf="isOpenEx">
-    <div class="hdd-card popup-container">
-      <div class="hdd-card_header">
-        <div class="hdd-card_header_text">
-          <div class="hdd-card_title">It works!</div>
-          <div class="hdd-card_subtitle">This is a card</div>
-        </div>
-      </div>
-      <div class="hdd-card_content">
-        <p>The card is displayed inside the popup.</p>
-      </div>
-    </div>
-  </div>
-</hal-popup-connected>`;
+  htmlCode = `<div>
+  <button type="button" (click)="isOpen = !isOpen" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
+    <span>Open connected popup</span>
+  </button>
+  <hal-popup-connected [isOpen]="isOpen" [origin]="trigger2" (close)="isOpen = false">
+    <hal-popup-connected-example></hal-popup-connected-example>
+  </hal-popup-connected>
+</div>`;
 
   constructor() { }
 

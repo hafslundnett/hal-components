@@ -28,19 +28,19 @@
     <h2 class="doc-subtitle">Example</h2>
     <div class="doc-info example-flex">
       <div>
-        <button type="button" (click)="isOpenEx2 = !isOpenEx2" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
+        <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
           <span>Open connected popup</span>
         </button>
-        <hal-popup-connected [isOpen]="isOpenEx2" [origin]="trigger2" (close)="isOpenEx2 = false">
+        <hal-popup-connected [isOpen]="isOpenEx" [origin]="trigger" (close)="isOpenEx = false">
           <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
       
       <div>
-        <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+        <button type="button" (click)="isOpenEx2 = !isOpenEx2" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
           <span>Open popup on top</span>
         </button>
-        <hal-popup-connected [isOpen]="isOpenEx" [small]="true" [origin]="trigger" [relativePositionY]="'above'" (close)="isOpenEx = false">
+        <hal-popup-connected [isOpen]="isOpenEx2" [small]="true" [origin]="trigger2" [relativePositionY]="'above'" (close)="isOpenEx2 = false">
           <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
