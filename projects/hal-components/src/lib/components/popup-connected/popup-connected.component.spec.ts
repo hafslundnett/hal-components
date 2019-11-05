@@ -9,9 +9,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
   template: `
     <button cdkOverlayOrigin #trigger="cdkOverlayOrigin">Open popup</button>
-    <mdm-popup-connected isOpen="true" [origin]="trigger" (close)="isOpen = false">
+    <hal-popup-connected isOpen="true" [origin]="trigger" (close)="isOpen = false">
       <p name="popup-content">I'm the content</p>
-    </mdm-popup-connected>
+    </hal-popup-connected>
   `
 })
 class TestComponent {
