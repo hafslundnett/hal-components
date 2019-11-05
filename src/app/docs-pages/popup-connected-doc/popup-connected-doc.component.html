@@ -31,7 +31,7 @@
         <button type="button" (click)="isOpenEx2 = !isOpenEx2" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
           <span>Open connected popup</span>
         </button>
-        <hal-popup-connected [isOpen]="isOpenEx2" [small]="true" [origin]="trigger2" (close)="isOpenEx2 = false">
+        <hal-popup-connected [isOpen]="isOpenEx2" [origin]="trigger2" (close)="isOpenEx2 = false">
           <div class="popup-content-wrapper" *ngIf="isOpenEx2">
             <div class="hdd-card popup-container">
               <div class="hdd-card_header">
@@ -41,7 +41,8 @@
                 </div>
               </div>
               <div class="hdd-card_content">
-                <p>The card is displayed inside the popup.</p>
+                <div class="doc-info">The card is displayed inside the popup.</div>
+                <div class="doc-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
               </div>
             </div>
           </div>
@@ -62,7 +63,8 @@
                 </div>
               </div>
               <div class="hdd-card_content">
-                <p>The card is displayed inside the popup.</p>
+                <div class="doc-info">The card is displayed inside the popup.</div>
+                <div class="doc-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
               </div>
             </div>
           </div>
