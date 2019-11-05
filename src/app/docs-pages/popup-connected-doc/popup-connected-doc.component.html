@@ -4,43 +4,71 @@
     </h1>
   
     <p class="doc-info">
-      This is the documentation for PopupConnectedComponent. This is a popup which is connected to an origin element! The default position of the popup is above the origin it is connected to.
+      This is the documentation for PopupConnectedComponent. This is a popup which is connected to an origin element! 
+      The default position of the popup is above the origin it is connected to. 
+      To be able to connect to an origin the CdkOverlayOrigin derective should be used on the origin element. 
+      The popup is also animated to appear and dissapear smoothly. 
     </p>
     <p class="doc-info"> 
       <b>
-        Typical use: Displaying some kind of information where the popup is connected to an element. 
+        Typical use: Displaying some kind of information where you want the popup to be connected to an element. 
       </b>
     </p>
   
     <hal-doc-import-line>
-      <code><pre>import {{ '{' }} PopupGlobalService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+      <code><pre>import {{ '{' }} PopupConnectedModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
     </hal-doc-import-line>
   
     <h2 class="doc-subtitle">Example</h2>
-    <div class="doc-info">
-      <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-        <span>Open connected popup</span>
-      </button>
-      <hal-popup-connected [isOpen]="isOpenEx" [origin]="trigger" [relativePositionY]="'below'" (close)="isOpenEx = false">
-        <div class="popup-content-wrapper" *ngIf="isOpenEx">
-          <div class="hdd-card popup-container">
-            <div class="hdd-card_header">
-              <div class="hdd-card_header_text">
-                <div class="hdd-card_title">It works!</div>
-                <div class="hdd-card_subtitle">This is a card</div>
+    <div class="doc-info example-flex">
+      <div>
+        <button type="button" (click)="isOpenEx2 = !isOpenEx2" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
+          <span>Open connected popup</span>
+        </button>
+        <hal-popup-connected [isOpen]="isOpenEx2" [small]="true" [origin]="trigger2" (close)="isOpenEx2 = false">
+          <div class="popup-content-wrapper" *ngIf="isOpenEx2">
+            <div class="hdd-card popup-container">
+              <div class="hdd-card_header">
+                <div class="hdd-card_header_text">
+                  <div class="hdd-card_title">It works!</div>
+                  <div class="hdd-card_subtitle">This is a card</div>
+                </div>
+              </div>
+              <div class="hdd-card_content">
+                <p>The card is displayed inside the popup.</p>
               </div>
             </div>
-            <div class="hdd-card_content">
-              <p>The card is displayed inside the popup.</p>
+          </div>
+        </hal-popup-connected>
+      </div>
+      
+      <div>
+        <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+          <span>Open popup below</span>
+        </button>
+        <hal-popup-connected [isOpen]="isOpenEx" [small]="true" [origin]="trigger" [relativePositionY]="'below'" (close)="isOpenEx = false">
+          <div class="popup-content-wrapper" *ngIf="isOpenEx">
+            <div class="hdd-card popup-container">
+              <div class="hdd-card_header">
+                <div class="hdd-card_header_text">
+                  <div class="hdd-card_title">This works too!</div>
+                  <div class="hdd-card_subtitle">This is a card</div>
+                </div>
+              </div>
+              <div class="hdd-card_content">
+                <p>The card is displayed inside the popup.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </hal-popup-connected>
+        </hal-popup-connected>
+      </div>
     </div>
   
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
   
-    <hal-doc-api-table [apiTableHeader]="'Inputs'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+    <hal-doc-api-table [apiTableHeader]="'Inputs/Outputs'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+
+    <hal-doc-api-table [apiTableHeader]="'Directives'" [apiTableRows]="directiveRows"></hal-doc-api-table>
   </div>
   
   <hal-doc-list></hal-doc-list>
