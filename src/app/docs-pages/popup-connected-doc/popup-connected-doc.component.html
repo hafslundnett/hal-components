@@ -33,16 +33,12 @@
         </button>
         <hal-popup-connected [isOpen]="isOpenEx2" [origin]="trigger2" (close)="isOpenEx2 = false">
           <div class="popup-content-wrapper" *ngIf="isOpenEx2">
-            <div class="hdd-card popup-container">
-              <div class="hdd-card_header">
-                <div class="hdd-card_header_text">
-                  <div class="hdd-card_title">It works!</div>
-                  <div class="hdd-card_subtitle">This is a card</div>
-                </div>
+            <div class="popup-container">
+              <div class="top-bar">
+                <h2>Popup works!</h2>
               </div>
-              <div class="hdd-card_content">
-                <div class="doc-info">The card is displayed inside the popup.</div>
-                <div class="doc-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+              <div class="doc-info">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
               </div>
             </div>
           </div>
@@ -53,18 +49,14 @@
         <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
           <span>Open popup below</span>
         </button>
-        <hal-popup-connected [isOpen]="isOpenEx" [small]="true" [origin]="trigger" [relativePositionY]="'below'" (close)="isOpenEx = false">
+        <hal-popup-connected [isOpen]="isOpenEx" [small]="true" [origin]="trigger" [relativePositionY]="'above'" (close)="isOpenEx = false">
           <div class="popup-content-wrapper" *ngIf="isOpenEx">
-            <div class="hdd-card popup-container">
-              <div class="hdd-card_header">
-                <div class="hdd-card_header_text">
-                  <div class="hdd-card_title">This works too!</div>
-                  <div class="hdd-card_subtitle">This is a card</div>
-                </div>
+            <div class="popup-container">
+              <div class="top-bar">
+                <h2>Popup works!</h2>
               </div>
-              <div class="hdd-card_content">
-                <div class="doc-info">The card is displayed inside the popup.</div>
-                <div class="doc-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+              <div class="doc-info">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
               </div>
             </div>
           </div>

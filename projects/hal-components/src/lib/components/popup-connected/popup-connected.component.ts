@@ -14,8 +14,8 @@ export type popupPosition = 'above' | 'below';
 export class PopupConnectedComponent implements OnInit {
 
   position: ConnectionPositionPair = new ConnectionPositionPair(
-    { originX: 'end', originY: 'top' },
-    { overlayX: 'end', overlayY: 'bottom' }
+    { originX: 'end', originY: 'bottom' },
+    { overlayX: 'end', overlayY: 'top' }
   );
 
   @Input() small = false;
@@ -26,7 +26,7 @@ export class PopupConnectedComponent implements OnInit {
   }
   set relativePositionY(relativePositionY: popupPosition) {
     if (!relativePositionY) {
-      relativePositionY = 'above'; // default
+      relativePositionY = 'below'; // default
     }
     this._relativePositionY = relativePositionY;
     this.wewValuerelativePositionY();
@@ -38,7 +38,7 @@ export class PopupConnectedComponent implements OnInit {
 
   scrollstrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
 
-  private _relativePositionY: popupPosition = 'above';
+  private _relativePositionY: popupPosition = 'below';
 
   constructor(private overlay: Overlay) {}
 

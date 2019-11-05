@@ -5,6 +5,7 @@ $arrow-size: 10px;
 .connected-popup-body {
   background: color('white');
   border-radius: 4px;
+  padding: 40px;
 }
 
 .animation-wrapper {
@@ -38,8 +39,8 @@ $arrow-size: 10px;
 
 .close-button {
   position: absolute;
-  top: 46px;
-  right: 20px;
+  top: 34px;
+  right: 34px;
   border-radius: 2px;
   padding: 6px;
   background: transparent;
