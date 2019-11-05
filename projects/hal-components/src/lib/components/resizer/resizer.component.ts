@@ -11,9 +11,8 @@ export class ResizerComponent {
   @Input() resizableElement: HTMLElement;
   @Input() resizeDirection: direction; // set outside, and remove default
   @Input() minHeight?: number = 300;
-  @Input() minwidth?:number;
   @Input() maxHeigth?: number = 850;
-  @Input() maxWidth?: number;
+
   isResizing = false;
   elementWidth: number;
   elementHeight: number;

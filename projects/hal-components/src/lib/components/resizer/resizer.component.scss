@@ -14,7 +14,6 @@ $border-size: 1px;
     height: 30%;
     width: 1px;
     border: $border-size solid;
-    // border-color: transparent rgba(color('grey'), .7);
     border-color: color('grey');
     box-shadow: $shadow-light;
     transition: border-color .2s linear, box-shadow .2s linear;
