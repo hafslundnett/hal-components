@@ -24,9 +24,9 @@ import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
       WelcomeModule,
       SvgDocModule,
       PopupGlobalDocModule,
-      PopupConnectedDocModule
+      PopupConnectedDocModule,
       BroadcastHandlerDocModule,
-      DividerDocModule
+      DividerDocModule,
    ],
    declarations: [
       AppComponent,
