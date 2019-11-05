@@ -7,6 +7,7 @@ import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-high
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PopupConnectedModule } from 'hal-components';
+import { PopupConnectedExampleComponent } from './popup-connected-example/popup-connected-example.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,9 @@ import { PopupConnectedModule } from 'hal-components';
     OverlayModule,
     PopupConnectedModule
   ],
-  declarations: [PopupConnectedDocComponent]
+  declarations: [
+    PopupConnectedDocComponent,
+    PopupConnectedExampleComponent,
+  ]
 })
 export class PopupConnectedDocModule { }

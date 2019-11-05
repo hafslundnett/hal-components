@@ -32,34 +32,16 @@
           <span>Open connected popup</span>
         </button>
         <hal-popup-connected [isOpen]="isOpenEx2" [origin]="trigger2" (close)="isOpenEx2 = false">
-          <div class="popup-content-wrapper" *ngIf="isOpenEx2">
-            <div class="popup-container">
-              <div class="top-bar">
-                <h2>Popup works!</h2>
-              </div>
-              <div class="doc-info">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-              </div>
-            </div>
-          </div>
+          <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
       
       <div>
         <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-          <span>Open popup below</span>
+          <span>Open popup on top</span>
         </button>
         <hal-popup-connected [isOpen]="isOpenEx" [small]="true" [origin]="trigger" [relativePositionY]="'above'" (close)="isOpenEx = false">
-          <div class="popup-content-wrapper" *ngIf="isOpenEx">
-            <div class="popup-container">
-              <div class="top-bar">
-                <h2>Popup works!</h2>
-              </div>
-              <div class="doc-info">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-              </div>
-            </div>
-          </div>
+          <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
     </div>
