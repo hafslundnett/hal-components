@@ -2,7 +2,7 @@
 
 $border-size: 1px;
 
-.resizer-vertical {
+.resizer-horizontal {
   cursor: col-resize;
   height: 100%;
   padding: 0 9px;
@@ -27,7 +27,7 @@ $border-size: 1px;
   }
 }
 
-.resizer-horizontal {
+.resizer-vertical {
   cursor: row-resize;
   width: 100%;
   padding: 9px 0px;

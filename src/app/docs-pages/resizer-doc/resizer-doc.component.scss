@@ -1,4 +1,4 @@
-.resize-box-horizontal {
+.resize-box-vertical {
     background: white;
     height: 200px;
     width: 100%;
@@ -8,7 +8,7 @@
     border-radius: 5px;
 }
 
-.resize-box-vertical {
+.resize-box-horizontal {
     background: white;
     height: 200px;
     width: 80%;
@@ -18,7 +18,7 @@
     border-radius: 5px;
 }
 
-.vertical-container {
+.horizontal-container {
     display: flex;
     flex-direction: row;
 }

@@ -20,27 +20,30 @@
 
   <h2 class="doc-subtitle">Examples</h2>
 
-  <div class="resize-box-horizontal" #ExampleBox1> 
-    You can resize me horizontally!
+  <div class="resize-box-vertical" #ExampleBox1> 
+    You can resize me Vertically!
   </div>
   <hal-resizer 
   [minHeight]="140"
   [maxHeigth]="400"
   [resizableElement]="ExampleBox1" 
-  [resizeDirection]="'horizontal'"
+  [resizeDirection]="'vertical'"
   ></hal-resizer>
   <br>
 
-  <div class="vertical-container">
-    <div class="resize-box-vertical" #ExampleBox2>
-      You can resize me vertically!
+  <div class="horizontal-container">
+    <div class="resize-box-horizontal" #ExampleBox2>
+      You can resize me horizontally!
     </div>
     <hal-resizer 
-    [maxWidth]="100" 
+    [maxWidth]="70" 
     [minWidth]="30"
     [resizableElement]="ExampleBox2" 
-    [resizeDirection]="'vertical'"
+    [resizeDirection]="'horizontal'"
     ></hal-resizer>
+    <div class="resize-box-horizontal">
+      Im just a flexible box!
+    </div>
   </div>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>

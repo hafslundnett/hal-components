@@ -26,14 +26,14 @@ export class ResizerComponent {
       return;
     }
 
-    if (this.resizeDirection === 'vertical') {
+    if (this.resizeDirection === 'horizontal') {
       const diff = event.clientX - this.initialCursorPosition;
       const width = `${this.elementWidth + diff}px`;
       this.resizableElement.style.flex = `0 0 ${width}`;
       this.resizableElement.style.width = width;
       this.resizableElement.style.maxWidth = this.maxWidth + '%';
       this.resizableElement.style.minWidth = this.minWidth + '%';
-    } else if (this.resizeDirection === 'horizontal') {
+    } else if (this.resizeDirection === 'vertical') {
       const min = this.minHeight;
       const max = this.maxHeigth;
 
@@ -57,11 +57,11 @@ export class ResizerComponent {
   }
 
   startResize(mouseEvent: MouseEvent): void {
-    if (this.resizeDirection === 'vertical') {
+    if (this.resizeDirection === 'horizontal') {
       this.elementWidth = this.resizableElement.clientWidth;
       this.isResizing = true;
       this.initialCursorPosition = mouseEvent.clientX;
-    } else if (this.resizeDirection === 'horizontal') {
+    } else if (this.resizeDirection === 'vertical') {
       this.elementHeight = this.resizableElement.clientHeight;
       this.isResizing = true;
       this.initialCursorPosition = mouseEvent.clientY;
