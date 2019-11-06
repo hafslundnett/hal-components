@@ -1,0 +1,60 @@
+<div class="doc-page-container">
+
+    <h1 class="doc-title">Popup connected component
+    </h1>
+  
+    <p class="doc-info">
+      PopupConnectedComponent is a popup which is connected to an origin element. 
+      The default position of the popup is above the origin it is connected to. 
+      To be able to connect to an origin the CdkOverlayOrigin directive should be used on the origin element. 
+      The popup is also animated to appear and dissapear smoothly. 
+    </p>
+    <p class="doc-info">
+      This feature is build on top of the CDK Overlay API:<br>
+      <a class="hdd-link" href="https://material.angular.io/cdk/overlay/api">
+        https://material.angular.io/cdk/overlay/api
+      </a>
+    </p>
+    <p class="doc-info"> 
+      <b>
+        Typical use: Displaying some kind of information where you want the popup to be connected to an element. 
+      </b>
+    </p>
+  
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} PopupConnectedModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    </hal-doc-import-line>
+
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} OverlayModule {{ '}' }} from '@angular/cdk/overlay';</pre></code>
+    </hal-doc-import-line>
+  
+    <h2 class="doc-subtitle">Example</h2>
+    <div class="doc-info example-flex">
+      <div>
+        <button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
+          <span>Open connected popup</span>
+        </button>
+        <hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (close)="popupIsOpen = false">
+          <hal-popup-connected-example></hal-popup-connected-example>
+        </hal-popup-connected>
+      </div>
+      
+      <div>
+        <button type="button" (click)="popupTopIsOpen = !popupTopIsOpen" class="hdd-button" cdkOverlayOrigin #popupTopTrigger="cdkOverlayOrigin">
+          <span>Open popup on top</span>
+        </button>
+        <hal-popup-connected [isOpen]="popupTopIsOpen" [small]="true" [origin]="popupTopTrigger" [relativePositionY]="'above'" (close)="popupTopIsOpen = false">
+          <hal-popup-connected-example></hal-popup-connected-example>
+        </hal-popup-connected>
+      </div>
+    </div>
+  
+    <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  
+    <hal-doc-api-table [apiTableHeader]="'Inputs/Outputs'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+
+    <hal-doc-api-table [apiTableHeader]="'Directives'" [apiTableRows]="directiveRows"></hal-doc-api-table>
+  </div>
+  
+  <hal-doc-list></hal-doc-list>
