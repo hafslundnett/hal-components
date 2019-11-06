@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-menu.component.scss']
 })
 export class UserMenuComponent implements OnInit, OnDestroy {
-  @Input() user: User = { email: null, name: null, thumbnail: null};
+  @Input() user: User = { email: '', name: '', thumbnail: undefined};
   @Input() settingsPagePath = 'settings';
   @Input() signOutPagePath = 'logout';
 
@@ -22,7 +22,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
     //   const thumb = this.user.thumbnail;
     //   return `data:image/${thumb.fileType};${thumb.encodingType},${thumb.data}`;
     // }
-    return null;
+    return '';
   }
   // private oidcSecurityService: OidcSecurityService;
   private subscriptions: Subscription = new Subscription();

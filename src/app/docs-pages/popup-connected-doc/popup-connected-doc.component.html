@@ -35,7 +35,7 @@
         <button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
           <span>Open connected popup</span>
         </button>
-        <hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (close)="popupIsOpen = false">
+        <hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (popupClose)="popupIsOpen = false">
           <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
@@ -44,7 +44,7 @@
         <button type="button" (click)="popupTopIsOpen = !popupTopIsOpen" class="hdd-button" cdkOverlayOrigin #popupTopTrigger="cdkOverlayOrigin">
           <span>Open popup on top</span>
         </button>
-        <hal-popup-connected [isOpen]="popupTopIsOpen" [small]="true" [origin]="popupTopTrigger" [relativePositionY]="'above'" (close)="popupTopIsOpen = false">
+        <hal-popup-connected [isOpen]="popupTopIsOpen" [small]="true" [origin]="popupTopTrigger" [relativePositionY]="'above'" (popupClose)="popupTopIsOpen = false">
           <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
