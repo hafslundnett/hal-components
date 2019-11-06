@@ -3,8 +3,8 @@
   <h1 class="doc-title">Resizer component</h1>
 
   <p class="doc-info">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi necessitatibus voluptatibus, quaerat nulla earum asperiores est nisi possimus vel sed cumque vitae inventore officia distinctio reiciendis blanditiis voluptate in ab.
-
+    This is the documentation for Resizer component. 
+    The component can be used in use cases where you want to enable the user to resize the element in UI. 
   </p>
 
   <hal-doc-import-line>
@@ -13,38 +13,29 @@
 
   <h2 class="doc-subtitle">Examples</h2>
 
-  <div class="hdd-card" #ExampleCard>
-    <div class="hdd-card_header">
-      <div class="hdd-card_header_text">
-        <div class="hdd-card_title">Resize horizontal</div>
-      </div>
-    </div>
-    <div class="hdd-card_content">
-      <p>The resizing is done by draggong the line below.</p>
-      <p>The minimum and maximum height can be defined in the resizer</p>
-      <p>Drag the line and resize me, try it!</p>
-    </div>
+  <div class="resize-box-horizontal" #Horizontal> 
+    You can resize me horizontally!
   </div>
-  <hal-resizer [minHeight]="140" [resizableElement]="ExampleCard" [resizeDirection]="'horisontal'"></hal-resizer>
+  <hal-resizer 
+  [minHeight]="140"
+  [maxHeigth]="400"
+  [resizableElement]="Horizontal" 
+  [resizeDirection]="'horisontal'"
+  ></hal-resizer>
+  <br>
 
-  <br>
-  <br>
-  <div class="resize-flex">
-    <div class="hdd-form_field resize-element" #ExampleInput>
-      <label class="hdd-form_field_label" for="title">Resisable input field </label>
-      <div class="hdd-form_input">
-        <input id="title" placeholder="Placeholdertext">
-      </div>
+  <div class="vertical-container">
+    <div class="resize-box-vertical" #Vertical>
+      You can resize me vertically!
     </div>
-    <hal-resizer class="resizer-line" [resizableElement]="ExampleInput" [resizeDirection]="'vertical'"></hal-resizer>
+    <hal-resizer 
+    [maxWidth]="200" 
+    [resizableElement]="Vertical" 
+    [resizeDirection]="'vertical'"
+    ></hal-resizer>
   </div>
 
-
-
-
-
-
-  <hal-code-highlighter [isHTML]="true" [code]=""></hal-code-highlighter>
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
 
   <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]=""></hal-doc-api-table>
 
