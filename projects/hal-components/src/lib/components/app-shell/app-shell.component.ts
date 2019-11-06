@@ -9,7 +9,7 @@ import { User } from './toolbar/user-menu/user.interface';
 })
 export class AppShellComponent implements OnInit {
 
-  @Input() user: User = { email: null, name: null, thumbnail: null};
+  @Input() user: User = { email: '', name: '', thumbnail: undefined};
   @Input() settingsPagePath = 'settings';
   @Input() signOutPagePath = 'logout';
   @Input() menuItems: MenuElement[];

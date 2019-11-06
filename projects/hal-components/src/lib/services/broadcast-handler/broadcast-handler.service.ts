@@ -103,7 +103,7 @@ export class BroadcastHandlerService {
   /** Only ACK messages */
   private getChannelMessagesAck(channelName: BroadcastHandlerChannels): Observable<ChannelPacket> {
     return this.getChannelObject(channelName).messages.pipe(filter(message => {
-      return message.acknowledgingPreviousMessage;
+      return message.acknowledgingPreviousMessage === true;
     }));
   }
 
@@ -144,7 +144,7 @@ export class BroadcastHandlerService {
 
   private getChannelObject(channelName: BroadcastHandlerChannels): ActiveChannel {
     const channelFullName: string = this.getChannelFullName(channelName);
-    const cachedChannel: ActiveChannel = this.activeChannels.find(current => current.channel.name === channelFullName);
+    const cachedChannel: ActiveChannel | undefined = this.activeChannels.find(current => current.channel.name === channelFullName);
     let channelObject: ActiveChannel;
 
     if (!cachedChannel) {
