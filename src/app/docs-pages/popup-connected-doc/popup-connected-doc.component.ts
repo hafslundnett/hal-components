@@ -23,14 +23,12 @@ export class PopupConnectedDocComponent implements OnInit {
     { apiInput: 'CdkOverlayOrigin', description: 'Directive applied to an element to make it usable as an origin for an Overlay.'}
   ]
 
-  htmlCode = `<div>
-  <button type="button" (click)="isOpen = !isOpen" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
-    <span>Open connected popup</span>
-  </button>
-  <hal-popup-connected [isOpen]="isOpen" [origin]="trigger2" (close)="isOpen = false">
-    <hal-popup-connected-example></hal-popup-connected-example>
-  </hal-popup-connected>
-</div>`;
+  htmlCode = `<button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
+  <span>Open connected popup</span>
+</button>
+<hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (close)="popupIsOpen = false">
+  <hal-popup-connected-example></hal-popup-connected-example>
+</hal-popup-connected>`;
 
   constructor() { }
 
