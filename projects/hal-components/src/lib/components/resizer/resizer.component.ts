@@ -1,6 +1,6 @@
 import { Component, HostListener, Input } from '@angular/core';
 
-type direction = 'vertical' | 'horisontal';
+type direction = 'vertical' | 'horizontal';
 
 @Component({
   selector: 'hal-resizer',
@@ -12,8 +12,8 @@ export class ResizerComponent {
   @Input() resizeDirection: direction; // set outside, and remove default
   @Input() minHeight?: number = 300;
   @Input() maxHeigth?: number = 850;
-  @Input() maxWidth?: number = 100;
   @Input() minWidth?: number = 20;
+  @Input() maxWidth?: number = 80;
 
   isResizing = false;
   elementWidth: number;
@@ -33,7 +33,7 @@ export class ResizerComponent {
       this.resizableElement.style.width = width;
       this.resizableElement.style.maxWidth = this.maxWidth + '%';
       this.resizableElement.style.minWidth = this.minWidth + '%';
-    } else if (this.resizeDirection === 'horisontal') {
+    } else if (this.resizeDirection === 'horizontal') {
       const min = this.minHeight;
       const max = this.maxHeigth;
 
@@ -61,7 +61,7 @@ export class ResizerComponent {
       this.elementWidth = this.resizableElement.clientWidth;
       this.isResizing = true;
       this.initialCursorPosition = mouseEvent.clientX;
-    } else if (this.resizeDirection === 'horisontal') {
+    } else if (this.resizeDirection === 'horizontal') {
       this.elementHeight = this.resizableElement.clientHeight;
       this.isResizing = true;
       this.initialCursorPosition = mouseEvent.clientY;

@@ -5,6 +5,13 @@
   <p class="doc-info">
     This is the documentation for Resizer component. 
     The component can be used in use cases where you want to enable the user to resize the element in UI. 
+    Attach the component through a html id, and optionally set the sizes for how much you want to resize the chosen elements. 
+  </p>
+  <p class="doc-info">
+    <b>
+      Since the components is linked to an external html element, some style changes might be necessary to give the component a logical position. 
+      This is most evident for the vertical resizer that should be inline with the element you want to resize. Consider creating a container for the element and the resizer as in the example below. 
+    </b>
   </p>
 
   <hal-doc-import-line>
@@ -13,32 +20,37 @@
 
   <h2 class="doc-subtitle">Examples</h2>
 
-  <div class="resize-box-horizontal" #Horizontal> 
+  <div class="resize-box-horizontal" #ExampleBox1> 
     You can resize me horizontally!
   </div>
   <hal-resizer 
   [minHeight]="140"
   [maxHeigth]="400"
-  [resizableElement]="Horizontal" 
-  [resizeDirection]="'horisontal'"
+  [resizableElement]="ExampleBox1" 
+  [resizeDirection]="'horizontal'"
   ></hal-resizer>
   <br>
 
   <div class="vertical-container">
-    <div class="resize-box-vertical" #Vertical>
+    <div class="resize-box-vertical" #ExampleBox2>
       You can resize me vertically!
     </div>
     <hal-resizer 
-    [maxWidth]="200" 
-    [resizableElement]="Vertical" 
+    [maxWidth]="100" 
+    [minWidth]="30"
+    [resizableElement]="ExampleBox2" 
     [resizeDirection]="'vertical'"
     ></hal-resizer>
   </div>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
 
-  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]=""></hal-doc-api-table>
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="resizerInputs"></hal-doc-api-table>
 
+  <p class="doc-info size-info">
+    If no size inputs are set on the resizer component the minimum and maximum of height and width are defaulted.
+    Max heigth are set to: 300px, Min heigth are set to: 850px, Max width are set to: 80%, and Min width are set to: 20%
+  </p>
 </div>
 
 <hal-doc-list></hal-doc-list>
