@@ -1,4 +1,6 @@
-<hr style="margin: 60px 0 50px 0; opacity: 0.5;"/>
+<div class="doc-list-divider">
+  <hal-divider></hal-divider>
+</div>
 
 <h2 class="card-list-title">All components</h2>
 
@@ -17,9 +19,9 @@
   </hal-doc-card>
 
   <hal-doc-card [docUrl]="pages.PopupGlobalDoc">
-      <ng-container ngProjectAs="cardIcon">
-        <i class="fal fa-comment-alt"></i>
-      </ng-container>
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-comment-alt"></i>
+    </ng-container>
     <ng-container ngProjectAs="cardTitle">
       Popup Global Service
     </ng-container>
@@ -28,7 +30,31 @@
     </ng-container>
   </hal-doc-card>
 
-  <hal-doc-card [docUrl]="pages.ResizerDoc">
+  <hal-doc-card [docUrl]="pages.BroadcastHandler">
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-bullhorn"></i>
+    </ng-container>
+    <ng-container ngProjectAs="cardTitle">
+      Broadcast Handler
+    </ng-container>
+    <ng-container ngProjectAs="cardSubtitle">
+      For sending messages between browser tabs
+    </ng-container>
+  </hal-doc-card>
+
+  <hal-doc-card [docUrl]="pages.DividerDoc">
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-columns"></i>
+    </ng-container>
+    <ng-container ngProjectAs="cardTitle">
+      Divider Component
+    </ng-container>
+    <ng-container ngProjectAs="cardSubtitle">
+      Component to divide UI elements
+    </ng-container>
+  </hal-doc-card>
+  
+    <hal-doc-card [docUrl]="pages.ResizerDoc">
       <ng-container ngProjectAs="cardIcon">
         <i class="fal fa-expand-arrows-alt"></i>
       </ng-container>
