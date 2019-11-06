@@ -29,7 +29,7 @@ export class PopupConnectedComponent implements OnInit {
       relativePositionY = 'below'; // default
     }
     this._relativePositionY = relativePositionY;
-    this.wewValuerelativePositionY();
+    this.newValuerelativePositionY();
   }
 
   @Input() origin: CdkOverlayOrigin;
@@ -45,7 +45,7 @@ export class PopupConnectedComponent implements OnInit {
   ngOnInit() {
   }
 
-  wewValuerelativePositionY() {
+  newValuerelativePositionY() {
     if (this.relativePositionY === 'above') {
       this.position = new ConnectionPositionPair(
         { originX: 'end', originY: 'top' },

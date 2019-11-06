@@ -10,10 +10,10 @@
       The popup is also animated to appear and dissapear smoothly. 
     </p>
     <p class="doc-info">
-        This feature is build on top of the CDK Overlay API:<br>
-        <a class="hdd-link" href="https://material.angular.io/cdk/overlay/api">
-          https://material.angular.io/cdk/overlay/api
-        </a>
+      This feature is build on top of the CDK Overlay API:<br>
+      <a class="hdd-link" href="https://material.angular.io/cdk/overlay/api">
+        https://material.angular.io/cdk/overlay/api
+      </a>
     </p>
     <p class="doc-info"> 
       <b>
@@ -24,23 +24,27 @@
     <hal-doc-import-line>
       <code><pre>import {{ '{' }} PopupConnectedModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
     </hal-doc-import-line>
+
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} OverlayModule {{ '}' }} from '@angular/cdk/overlay';</pre></code>
+    </hal-doc-import-line>
   
     <h2 class="doc-subtitle">Example</h2>
     <div class="doc-info example-flex">
       <div>
-        <button type="button" (click)="isOpenEx = !isOpenEx" class="hdd-button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+        <button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
           <span>Open connected popup</span>
         </button>
-        <hal-popup-connected [isOpen]="isOpenEx" [origin]="trigger" (close)="isOpenEx = false">
+        <hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (close)="popupIsOpen = false">
           <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
       
       <div>
-        <button type="button" (click)="isOpenEx2 = !isOpenEx2" class="hdd-button" cdkOverlayOrigin #trigger2="cdkOverlayOrigin">
+        <button type="button" (click)="popupTopIsOpen = !popupTopIsOpen" class="hdd-button" cdkOverlayOrigin #popupTopTrigger="cdkOverlayOrigin">
           <span>Open popup on top</span>
         </button>
-        <hal-popup-connected [isOpen]="isOpenEx2" [small]="true" [origin]="trigger2" [relativePositionY]="'above'" (close)="isOpenEx2 = false">
+        <hal-popup-connected [isOpen]="popupTopIsOpen" [small]="true" [origin]="popupTopTrigger" [relativePositionY]="'above'" (close)="popupTopIsOpen = false">
           <hal-popup-connected-example></hal-popup-connected-example>
         </hal-popup-connected>
       </div>
