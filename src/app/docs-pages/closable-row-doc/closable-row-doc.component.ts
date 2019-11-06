@@ -9,20 +9,20 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class ClosableRowDocComponent implements OnInit {
 
   closeableRowInputs: ApiTableRow[] = [
-    { apiInput: '[Height]', description: 'Optional input to change the height property of the svg element *' },
-    { apiInput: '[Width]', description: 'Optional input to change the width property of the svg element *' },
-    { apiInput: '[colorStroke]', description: 'Optional input to change the stroke property of the svg element' },
-    { apiInput: '[colorFill]', description: 'Optional input to change the fill property of the svg element' },
-    { apiInput: '[svgFilePath]', description: 'Set this to the path of the svg file you want to display' },
+    { apiInput: '[rowTitle]', description: 'Set the title in the header of the closeable row' },
+    // tslint:disable-next-line:max-line-length
+    { apiInput: '[rowTitleIcon]', description: 'Optional input to input a font awesome icon in front of the title. Only needs last class declaration, like ´fa-expand´ instead of full `fal fa-expand`' },
+    { apiInput: '[noPadding]', description: 'Optional input to add padding to the collapsebale body if the row' },
+    { apiInput: '[startExpanded]', description: 'Optional input to iniate the row expanded or not' }
   ];
 
-  htmlCode = `<hal-svg-element
-  class="default-svg"
-  [width]="'65px'"
-  [height]="'60px'"
-  [colorFill]="'red'"
-  [svgFilePath]="'assets/logo.svg'"
-></hal-svg-element>`;
+  htmlCode = `<hal-closable-row
+  [rowTitle]="'Closeable-Row Example'"
+  [rowTitleIcon]="'fa-expand'"
+  [noPadding]="false"
+  [startExpanded]="true">
+  Put content here
+</hal-closable-row>`;
 
   constructor() { }
 

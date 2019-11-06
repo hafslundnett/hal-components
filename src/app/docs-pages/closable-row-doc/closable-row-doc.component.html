@@ -18,7 +18,7 @@
   [rowTitle]="'Closeable-Row Example'"
   [rowTitleIcon]="'fa-expand'"
   [noPadding]="false"
-  [startExpanded]="true"
+  [startExpanded]="false"
 >
 <div class="hdd-card">
   <div class="hdd-card_header">
@@ -34,7 +34,10 @@
 </hal-closable-row>
 <br>
 <br>
-<hal-closable-row [rowTitle]="'Closeable-Row Example without icon'">
+<hal-closable-row 
+[rowTitle]="'Closeable-Row Example without icon'"
+[noPadding]="true"
+[startExpanded]="false">
 I have no Icon
 </hal-closable-row>
 
