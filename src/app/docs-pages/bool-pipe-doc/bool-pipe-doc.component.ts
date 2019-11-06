@@ -14,7 +14,12 @@ export class BoolPipeDocComponent implements OnInit {
   ngOnInit() {
   }
 
-  htmlCode = `<hal-divider></hal-divider>
-<hal-divider light></hal-divider>`;
+  htmlCode = `<button class="hdd-button" (click)="booleanValue =! booleanValue">
+  Change to <b>{{ !booleanValue }}</b>
+</button>
+<p class="example-text">
+  Boolean value <b>{{ booleanValue }}</b> is tranformed 
+  to <b>{{ booleanValue | bool }}</b>
+</p>`;
 
 }

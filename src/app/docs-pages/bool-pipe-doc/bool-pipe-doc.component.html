@@ -3,7 +3,7 @@
   <h1 class="doc-title">Bool Pipe</h1>
 
   <p class="doc-info">
-    The bool pipe can be used 
+    The bool pipe can be used to transform a boolean value to a string representing the value as "Ja" or "Nei". 
   </p>
 
   <hal-doc-import-line>
@@ -12,7 +12,12 @@
 
   <h2 class="doc-subtitle">Examples</h2>
   <div class="example-container">
-    <button class="hdd-button">{{ booleanValue | bool }}</button>
+    <button class="hdd-button" (click)="booleanValue =! booleanValue">
+      Change to <b>{{ !booleanValue }}</b>
+    </button>
+    <p class="example-text">
+      Boolean value <b>{{ booleanValue }}</b> is tranformed to <b>{{ booleanValue | bool }}.</b>
+    </p>
   </div>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>

@@ -5,4 +5,4 @@ import { BoolPipe } from './bool.pipe';
   declarations: [BoolPipe],
   exports: [BoolPipe],
 })
-export class PipesModule { }
+export class BoolPipeModule { }
