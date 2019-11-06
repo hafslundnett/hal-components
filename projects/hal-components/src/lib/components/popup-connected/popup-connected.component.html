@@ -10,7 +10,12 @@
 >
   <div class="animation-wrapper" @scaleUp role="dialog">
     <div class="arrow-above" *ngIf="relativePositionY === 'below'"></div>
-    <div class="connected-popup-body" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <div 
+      class="connected-popup-body" 
+      [ngClass]="small ? 'small-popup' : 'normal-popup'" 
+      cdkTrapFocus 
+      cdkTrapFocusAutoCapture
+    >
       <button class="close-button" (click)="onClose()" *ngIf="!small">
         Lukk
         <i class="fal fa-times"></i>
