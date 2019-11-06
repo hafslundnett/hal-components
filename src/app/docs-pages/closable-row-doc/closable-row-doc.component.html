@@ -1,3 +1,48 @@
-<p>
-  closable-row-doc works!
-</p>
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Closeable-Row component</h1>
+
+  <p class="doc-info">
+    This is the documentation for the hal-closeable-row component.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, iusto. Reiciendis accusamus rerum atque assumenda alias praesentium, ipsum facere ipsam eaque iste et quasi repellendus recusandae magnam exercitationem unde sapiente.
+
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} ClosableRowModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+<hal-closable-row
+  [rowTitle]="'Closeable-Row Example'"
+  [rowTitleIcon]="'fa-expand'"
+  [noPadding]="false"
+  [startExpanded]="true"
+>
+<div class="hdd-card">
+  <div class="hdd-card_header">
+    <div class="hdd-card_header_text">
+      <div class="hdd-card_title">A card inside a row</div>
+      <div class="hdd-card_subtitle">This is just an example</div>
+    </div>
+  </div>
+  <div class="hdd-card_content">
+    <p>Depending on what you need, you can put whatever you feel like in here.</p>
+  </div>
+</div>
+</hal-closable-row>
+<br>
+<br>
+<hal-closable-row [rowTitle]="'Closeable-Row Example without icon'">
+I have no Icon
+</hal-closable-row>
+
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="closeableRowInputs"></hal-doc-api-table>
+ 
+
+</div>
+
+<hal-doc-list></hal-doc-list>
