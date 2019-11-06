@@ -1,11 +1,7 @@
+import { NgModule } from '@angular/core';
 import { BoolPipe } from './bool.pipe';
 
-
 @NgModule({
-  imports: [
-    BoolPipe,
-  ],
-  declarations: [BoolPipe],
-  exports: [BoolPipe],
+  declarations: [BoolPipe]
 })
-export class BoolPipeModule { }
+export class PipesModule { }
