@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay } from '@angular/cdk/overlay';
 import { scaleUp } from '../../animations';
 export type popupPosition = 'above' | 'below';
@@ -11,7 +11,7 @@ export type popupPosition = 'above' | 'below';
   styleUrls: ['./popup-connected.component.scss'],
   animations: [ scaleUp ]
 })
-export class PopupConnectedComponent implements OnInit {
+export class PopupConnectedComponent implements OnInit, OnChanges {
 
   position: ConnectionPositionPair = new ConnectionPositionPair(
     { originX: 'end', originY: 'bottom' },
@@ -20,29 +20,22 @@ export class PopupConnectedComponent implements OnInit {
 
   @Input() small = false;
   @Input() isOpen = false;
-  @Input()
-  get relativePositionY(): popupPosition {
-    return this._relativePositionY;
-  }
-  set relativePositionY(relativePositionY: popupPosition) {
-    if (!relativePositionY) {
-      relativePositionY = 'below'; // default
-    }
-    this._relativePositionY = relativePositionY;
-    this.newValuerelativePositionY();
-  }
-
+  @Input() relativePositionY: popupPosition = 'below';
   @Input() origin: CdkOverlayOrigin;
 
   @Output() close: EventEmitter<void> = new EventEmitter();
 
   scrollstrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
 
-  private _relativePositionY: popupPosition = 'below';
-
   constructor(private overlay: Overlay) {}
 
   ngOnInit() {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['relativePositionY']){
+      this.newValuerelativePositionY();
+    }
   }
 
   newValuerelativePositionY() {
