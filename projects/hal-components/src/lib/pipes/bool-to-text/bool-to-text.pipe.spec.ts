@@ -1,7 +1,7 @@
-import { BoolPipe } from './bool.pipe';
+import { BoolToTextPipe } from './bool-to-text.pipe';
 
 describe('BoolPipe', () => {
-  const pipe = new BoolPipe();
+  const pipe = new BoolToTextPipe();
 
   describe('When a positive input is provided', () => {
     let response: string;
