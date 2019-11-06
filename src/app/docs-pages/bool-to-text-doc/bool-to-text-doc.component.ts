@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hal-bool-pipe-doc',
-  templateUrl: './bool-pipe-doc.component.html',
-  styleUrls: ['./bool-pipe-doc.component.scss']
+  selector: 'hal-bool-to-text-doc',
+  templateUrl: './bool-to-text-doc.component.html',
+  styleUrls: ['./bool-to-text-doc.component.scss']
 })
-export class BoolPipeDocComponent implements OnInit {
+export class BoolToTextDocComponent implements OnInit {
 
   booleanValue = false;
 

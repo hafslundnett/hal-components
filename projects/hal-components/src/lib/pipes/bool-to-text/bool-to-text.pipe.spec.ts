@@ -1,6 +1,6 @@
 import { BoolToTextPipe } from './bool-to-text.pipe';
 
-describe('BoolPipe', () => {
+describe('BoolToText', () => {
   const pipe = new BoolToTextPipe();
 
   describe('When a positive input is provided', () => {
