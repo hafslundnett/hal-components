@@ -8,6 +8,7 @@ import { SvgDocComponent } from './docs-pages/svg-doc/svg-doc.component';
 import { PopupGlobalDocComponent } from './docs-pages/popup-global-doc/popup-global-doc.component';
 import { BroadcastHandlerDocComponent } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.component';
 import { DividerDocComponent } from './docs-pages/divider-doc/divider-doc.component';
+import { BoolPipeDocComponent } from './docs-pages/bool-pipe-doc/bool-pipe-doc.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
       {
         path: Pages.DividerDoc,
         component: DividerDocComponent
+      },
+      {
+        path: Pages.BoolPipeDoc,
+        component: BoolPipeDocComponent
       },
     ]
   }

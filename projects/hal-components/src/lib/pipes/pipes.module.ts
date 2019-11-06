@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BoolPipe } from './bool.pipe';
 
 @NgModule({
-  declarations: [BoolPipe]
+  declarations: [BoolPipe],
+  exports: [BoolPipe],
 })
 export class PipesModule { }

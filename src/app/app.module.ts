@@ -12,6 +12,7 @@ import { SvgDocModule } from './docs-pages/svg-doc/svg-doc.module';
 import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global-doc.module';
 import { BroadcastHandlerDocModule } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.module';
 import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
+import { BoolPipeDocModule } from './docs-pages/bool-pipe-doc/bool-pipe-doc.module';
 
 @NgModule({
    imports: [
@@ -24,7 +25,8 @@ import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
       SvgDocModule,
       PopupGlobalDocModule,
       BroadcastHandlerDocModule,
-      DividerDocModule
+      DividerDocModule,
+      BoolPipeDocModule,
    ],
    declarations: [
       AppComponent,
