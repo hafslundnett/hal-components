@@ -13,20 +13,31 @@ export class PopupConnectedDocComponent implements OnInit {
 
   apiTableRows: ApiTableRow[] = [
     { apiInput: '[isOpen]', description: 'Input for determening wether the popup is open or closed.' },
-    { apiInput: '[origin]', description: 'Input for setting origin for what element the popup should connect to.'},
-    { apiInput: '[small]', description: 'Input for setting the popups size to small. If true the close button and padding will be removed to allow for more space.'},
-    { apiInput: '[relativePositionY]', description: 'Optional input to change the position of the popup in relation to the element its connected to. Options: above, bottom.' },
-    { apiInput: '(close)', description: 'Output that closes the popup if the a condition is set to true. The popup will close on default by clicking the close button.' },
+    { apiInput: '[origin]', description: 'Input for setting origin for what element the popup should connect to.' },
+    {
+      apiInput: '[small]',
+      description: 'Input for setting the popups size to small. If true the close button and padding will be removed to allow for more space.'
+    },
+    {
+      apiInput: '[relativePositionY]',
+      description: 'Optional input to change the position of the popup in relation to the element its connected to. Options: above, bottom.'
+    },
+    {
+      apiInput: '(popupClose)',
+      description:
+        'Output that closes the popup if the a condition is set to true. The popup will close on default by clicking the close button.'
+    },
   ];
 
   directiveRows: ApiTableRow[] = [
-    { apiInput: 'CdkOverlayOrigin', description: 'Directive applied to an element to make it usable as an origin for an Overlay.'}
-  ]
+    { apiInput: 'CdkOverlayOrigin', description: 'Directive applied to an element to make it usable as an origin for an Overlay.' }
+  ];
 
+  // tslint:disable-next-line:max-line-length
   htmlCode = `<button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
   <span>Open connected popup</span>
 </button>
-<hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (close)="popupIsOpen = false">
+<hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (popupClose)="popupIsOpen = false">
   <hal-popup-connected-example></hal-popup-connected-example>
 </hal-popup-connected>`;
 

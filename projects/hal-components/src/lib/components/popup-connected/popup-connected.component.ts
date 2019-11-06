@@ -9,7 +9,7 @@ export type popupPosition = 'above' | 'below';
   selector: 'hal-popup-connected',
   templateUrl: './popup-connected.component.html',
   styleUrls: ['./popup-connected.component.scss'],
-  animations: [ scaleUp ]
+  animations: [scaleUp]
 })
 export class PopupConnectedComponent implements OnInit, OnChanges {
 
@@ -23,22 +23,22 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   @Input() relativePositionY: popupPosition = 'below';
   @Input() origin: CdkOverlayOrigin;
 
-  @Output() close: EventEmitter<void> = new EventEmitter();
+  @Output() popupClose: EventEmitter<void> = new EventEmitter();
 
-  scrollstrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
+  scrollStrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
 
-  constructor(private overlay: Overlay) {}
+  constructor(private overlay: Overlay) { }
 
   ngOnInit() {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['relativePositionY']){
-      this.newValuerelativePositionY();
+    if (changes.relativePositionY) {
+      this.newValueRelativePositionY();
     }
   }
 
-  newValuerelativePositionY() {
+  newValueRelativePositionY() {
     if (this.relativePositionY === 'above') {
       this.position = new ConnectionPositionPair(
         { originX: 'end', originY: 'top' },
@@ -54,6 +54,6 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
 
   onClose() {
     this.isOpen = false;
-    this.close.emit();
+    this.popupClose.emit();
   }
 }

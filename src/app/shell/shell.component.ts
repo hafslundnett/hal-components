@@ -14,7 +14,7 @@ export class ShellComponent implements OnInit {
     { url: 'hdd', svgName: 'analysis.svg', title: 'HDD' },
     // { url: '', svgName: 'meterSearch.svg', title: 'Målepunktsøk' },
   ];
-  user: User = { email: 'jan.greger@gmail.com', name: 'Jan Greger Hemb', thumbnail: null};
+  user: User = { email: 'jan.greger@gmail.com', name: 'Jan Greger Hemb', thumbnail: undefined};
   settingsPagePath = 'settings-page'; // TODO add!
 
   constructor() { }
