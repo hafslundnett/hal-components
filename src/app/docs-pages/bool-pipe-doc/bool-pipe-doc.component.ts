@@ -9,17 +9,18 @@ export class BoolPipeDocComponent implements OnInit {
 
   booleanValue = false;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   htmlCode = `<button class="hdd-button" (click)="booleanValue =! booleanValue">
   Change to <b>{{ !booleanValue }}</b>
 </button>
 <p class="example-text">
-  Boolean value <b>{{ booleanValue }}</b> is tranformed 
+  Boolean value <b>{{ booleanValue }}</b> is tranformed
   to <b>{{ booleanValue | bool }}</b>
 </p>`;
+
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
 }
