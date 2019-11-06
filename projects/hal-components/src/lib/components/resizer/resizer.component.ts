@@ -10,10 +10,10 @@ type direction = 'vertical' | 'horizontal';
 export class ResizerComponent {
   @Input() resizableElement: HTMLElement;
   @Input() resizeDirection: direction; // set outside, and remove default
-  @Input() minHeight?: number = 300;
-  @Input() maxHeigth?: number = 850;
-  @Input() minWidth?: number = 20;
-  @Input() maxWidth?: number = 80;
+  @Input() minHeight?: 300;
+  @Input() maxHeigth?: 850;
+  @Input() minWidth?: 20;
+  @Input() maxWidth?: 80;
 
   isResizing = false;
   elementWidth: number;
