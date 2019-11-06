@@ -17,3 +17,5 @@ export * from './lib/services/broadcast-handler/broadcast-handler-types';
 
 export * from './lib/components/divider/divider.module';
 
+export * from './lib/components/closable-row/closable-row.module';
+
