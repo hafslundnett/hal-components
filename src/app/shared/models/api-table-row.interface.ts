@@ -1,4 +1,4 @@
 export interface ApiTableRow {
-    apiInput:string;
-    description:string;
+    apiInput: string;
+    description: string;
 }

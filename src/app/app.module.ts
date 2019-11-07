@@ -13,6 +13,7 @@ import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global
 import { PopupConnectedDocModule } from './docs-pages/popup-connected-doc/popup-connected-doc.module';
 import { BroadcastHandlerDocModule } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.module';
 import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
+import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-doc.module';
 import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
 
@@ -29,8 +30,9 @@ import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.modu
       PopupConnectedDocModule,
       BroadcastHandlerDocModule,
       DividerDocModule,
-      ResizerDocModule,
-      AppShellDocModule
+      AppShellDocModule,
+      BoolToTextDocModule,
+      ResizerDocModule
    ],
    declarations: [
       AppComponent,

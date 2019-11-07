@@ -6,6 +6,7 @@ export enum Pages {
   PopupConnectedDoc = 'popup-connected-doc',
   BroadcastHandlerDoc = 'broadcast-handler-doc',
   DividerDoc = 'divider-doc',
+  BoolToTextDoc = 'bool-to-text-doc',
   ResizerDoc = 'resizer-doc',
   AppShellDoc = 'app-shell-doc',
 }

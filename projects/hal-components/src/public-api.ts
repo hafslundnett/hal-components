@@ -18,5 +18,7 @@ export * from './lib/services/broadcast-handler/broadcast-handler-types';
 
 export * from './lib/components/divider/divider.module';
 
+export * from './lib/pipes/bool-to-text/bool-to-text.module';
+
 export * from './lib/components/resizer/resizer.module';
 
