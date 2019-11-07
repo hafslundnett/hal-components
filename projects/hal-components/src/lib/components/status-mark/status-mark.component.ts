@@ -7,4 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class StatusMarkComponent {
   @Input() status = true;
+
+  /** Do not show red cross for FALSE value, only green check for TRUE value */
+  @Input() showBlankWhenFalse = false;
 }
