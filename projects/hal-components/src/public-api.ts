@@ -11,6 +11,7 @@ export * from './lib/components/svg-element/svg-element.module';
 export * from './lib/services/svg/svg.service';
 
 export * from './lib/services/popup-global/popup-global.service';
+export * from './lib/components/popup-connected/popup-connected.module';
 
 export * from './lib/services/broadcast-handler/broadcast-handler.service';
 export * from './lib/services/broadcast-handler/broadcast-handler-types';
@@ -18,4 +19,7 @@ export * from './lib/services/broadcast-handler/broadcast-handler-types';
 export * from './lib/components/divider/divider.module';
 
 export * from './lib/components/closable-row/closable-row.module';
+export * from './lib/pipes/bool-to-text/bool-to-text.module';
+
+export * from './lib/components/resizer/resizer.module';
 

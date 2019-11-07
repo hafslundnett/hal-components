@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 
 @Component({
@@ -6,7 +6,7 @@ import { Subject, Subscription } from 'rxjs';
   templateUrl: './popup-global-example.component.html',
   styleUrls: ['./popup-global-example.component.scss']
 })
-export class PopupGlobalExampleComponent implements OnInit {
+export class PopupGlobalExampleComponent implements OnInit, OnDestroy {
 
   private onDestroy = new Subject();
   onDestroy$ = this.onDestroy.asObservable();

@@ -1,0 +1,27 @@
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayPositions]="[position]"
+  (backdropClick)="onClose()"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
+  (detach)="onClose()"
+>
+  <div class="animation-wrapper" @scaleUp role="dialog">
+    <div class="arrow-above" *ngIf="relativePositionY === 'below'"></div>
+    <div 
+      class="connected-popup-body" 
+      [ngClass]="small ? 'small-popup' : 'normal-popup'" 
+      cdkTrapFocus 
+      cdkTrapFocusAutoCapture
+    >
+      <button class="close-button" (click)="onClose()" *ngIf="!small">
+        Lukk
+        <i class="fal fa-times"></i>
+      </button>
+      <ng-content></ng-content>
+    </div>
+    <div class="arrow-below" *ngIf="relativePositionY === 'above'"></div>
+  </div>
+</ng-template>

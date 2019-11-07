@@ -8,7 +8,7 @@ import { User } from './user-menu/user.interface';
 })
 export class ToolbarComponent implements OnInit {
 
-  @Input() user: User = { email: null, name: null, thumbnail: null};
+  @Input() user: User = { email: '', name: '', thumbnail: undefined};
   @Input() settingsPagePath = 'settings';
   @Input() signOutPagePath = 'logout';
 

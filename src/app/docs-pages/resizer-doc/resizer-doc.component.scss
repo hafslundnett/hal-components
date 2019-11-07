@@ -1,0 +1,28 @@
+.resize-box-vertical {
+    background: white;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.resize-box-horizontal {
+    background: white;
+    height: 200px;
+    width: 80%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.size-info {
+    margin-top: 25px;
+}

@@ -1,0 +1,55 @@
+@import '~@hafslundnett/hdd-style/variables/main';
+
+$border-size: 1px;
+
+.resizer-horizontal {
+  cursor: col-resize;
+  height: 100%;
+  padding: 0 9px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+
+  .line {
+    height: 50%;
+    width: 1px;
+    border: $border-size solid;
+    border-color: color('grey');
+    box-shadow: $shadow-light;
+    transition: border-color .2s linear, box-shadow .2s linear;
+  }
+
+  &:hover {
+    .line {
+      border-color: color('grey-dark');
+      box-shadow: $shadow-medium;
+    }
+  }
+}
+
+.resizer-vertical {
+  cursor: row-resize;
+  width: 100%;
+  padding: 9px 0px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .line {
+    width: 30%;
+    height: 1px;
+    border-top: $border-size solid;
+    border-bottom: $border-size solid;
+    border-color: color('grey');
+    box-shadow: $shadow-light;
+    transition: border-color .2s linear, box-shadow .2s linear;
+  }
+
+  &:hover {
+    .line {
+      border-color: color('grey-dark');
+      box-shadow: $shadow-medium;
+    }
+  }
+}
