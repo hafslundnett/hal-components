@@ -6,27 +6,20 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
   templateUrl: './closable-row-doc.component.html',
   styleUrls: ['./closable-row-doc.component.scss']
 })
-export class ClosableRowDocComponent implements OnInit {
+export class ClosableRowDocComponent {
 
   closeableRowInputs: ApiTableRow[] = [
-    { apiInput: '[rowTitle]', description: 'Set the title in the header of the closeable row' },
-    // tslint:disable-next-line:max-line-length
-    { apiInput: '[rowTitleIcon]', description: 'Optional input to input a font awesome icon in front of the title. Only needs last class declaration, like ´fa-expand´ instead of full `fal fa-expand`' },
-    { apiInput: '[noPadding]', description: 'Optional input to add padding to the collapsebale body if the row' },
+    { apiInput: '[noPadding]', description: 'Optional input to add padding to the collapsebale body of the row' },
     { apiInput: '[startExpanded]', description: 'Optional input to iniate the row expanded or not' }
   ];
 
-  htmlCode = `<hal-closable-row
-  [rowTitle]="'Closeable-Row Example'"
-  [rowTitleIcon]="'fa-expand'"
-  [noPadding]="false"
-  [startExpanded]="true">
-  Put content here
+  htmlCode = `<hal-closable-row [noPadding]="true" [startExpanded]="false">
+  <ng-container ngProjectAs="RowHeader">
+    Closebale-Row Header Example
+  </ng-container>
+  <ng-container ngProjectAs="RowBody">
+    The content inside the body of the closeable-row.
+  </ng-container>
 </hal-closable-row>`;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

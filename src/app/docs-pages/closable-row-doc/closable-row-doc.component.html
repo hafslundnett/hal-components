@@ -3,9 +3,9 @@
   <h1 class="doc-title">Closeable-Row component</h1>
 
   <p class="doc-info">
-    This is the documentation for the hal-closeable-row component.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, iusto. Reiciendis accusamus rerum atque assumenda alias praesentium, ipsum facere ipsam eaque iste et quasi repellendus recusandae magnam exercitationem unde sapiente.
-
+    This is the documentation for the hal-closeable-row component. 
+    The component can be utilized in any use cases where you want a closeable or collapseble row. 
+    This can either hide or show information or functionality from the user with a click.
   </p>
 
   <hal-doc-import-line>
@@ -13,38 +13,17 @@
   </hal-doc-import-line>
 
   <h2 class="doc-subtitle">Examples</h2>
-
-<hal-closable-row
-  [rowTitle]="'Closeable-Row Example'"
-  [rowTitleIcon]="'fa-expand'"
-  [noPadding]="false"
-  [startExpanded]="false"
->
-<div class="hdd-card">
-  <div class="hdd-card_header">
-    <div class="hdd-card_header_text">
-      <div class="hdd-card_title">A card inside a row</div>
-      <div class="hdd-card_subtitle">This is just an example</div>
-    </div>
-  </div>
-  <div class="hdd-card_content">
-    <p>Depending on what you need, you can put whatever you feel like in here.</p>
-  </div>
-</div>
-</hal-closable-row>
-<br>
-<br>
-<hal-closable-row 
-[rowTitle]="'Closeable-Row Example without icon'"
-[noPadding]="true"
-[startExpanded]="false">
-I have no Icon
-</hal-closable-row>
+  <hal-closable-row [noPadding]="true" [startExpanded]="false">
+    <ng-container ngProjectAs="RowHeader">
+      Closeable-Row Header Example
+    </ng-container>
+    <ng-container ngProjectAs="RowBody">
+      The content inside the body of the closeable-row.
+    </ng-container>
+  </hal-closable-row>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
-
   <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="closeableRowInputs"></hal-doc-api-table>
- 
 
 </div>
 

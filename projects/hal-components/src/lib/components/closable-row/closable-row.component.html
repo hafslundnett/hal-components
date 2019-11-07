@@ -2,14 +2,11 @@
   <mat-expansion-panel [expanded]="startExpanded" (afterCollapse)="toggle()" (opened)="toggle()">
     <mat-expansion-panel-header>
       <mat-panel-title>
-          <i *ngIf="rowTitleIcon" class="icon-closable-title fal {{rowTitleIcon}}" (click)="iconClicked($event)"> </i>
-          <span [ngClass]="{'closeable-row-header-icon':rowTitleIcon}">
-            {{rowTitle}}
-          </span>
+        <ng-content select="RowHeader"></ng-content>
       </mat-panel-title>
       <mat-panel-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <ng-content></ng-content>
+    <ng-content select="RowBody"></ng-content>
   </mat-expansion-panel>
 </mat-accordion>

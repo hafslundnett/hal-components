@@ -8,9 +8,6 @@ import { Component, OnInit, ViewEncapsulation, Input, ViewChild, ElementRef, Eve
 })
 export class ClosableRowComponent implements OnInit, AfterViewInit {
 
-  @Input() rowTitle = '';
-  @Input() rowTitleIcon = '';
-  @Output() rowTitleIconClicked = new EventEmitter();
   @Input() noPadding = false;
   @Input() startExpanded = true;
   @Output() newOpenState = new EventEmitter<boolean>();
@@ -42,10 +39,4 @@ export class ClosableRowComponent implements OnInit, AfterViewInit {
     this.showContent = !this.showContent;
     this.newOpenState.emit(this.showContent);
   }
-
-  iconClicked(event: MouseEvent) {
-    event.stopPropagation();
-    this.rowTitleIconClicked.emit();
-  }
-
 }
