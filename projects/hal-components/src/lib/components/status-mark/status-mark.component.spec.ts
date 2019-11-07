@@ -46,4 +46,33 @@ describe('StatusMarkComponent', () => {
       expect(fixture.debugElement.queryAll(By.css('.x-icon')).length).toBe(1);
     });
   });
+
+  describe('setting status to false', () => {
+    beforeEach(() => {
+      component.status = false;
+      fixture.detectChanges();
+    });
+    it('should display a i element with class x-icon, and default mark showBlankWhenFalse should be false', () => {
+      expect(fixture.debugElement.queryAll(By.css('.x-icon')).length).toBe(1);
+    });
+    describe('setting showBlankWhenFalse to true', () => {
+      beforeEach(() => {
+        component.showBlankWhenFalse = true;
+        fixture.detectChanges();
+      });
+      it('does not show x mark', () => {
+        expect(fixture.debugElement.queryAll(By.css('.x-icon')).length).toBe(0);
+      });
+    });
+    describe('setting showBlankWhenFalse to false', () => {
+      beforeEach(() => {
+        component.showBlankWhenFalse = false;
+        fixture.detectChanges();
+      });
+      it('shows x mark', () => {
+        expect(fixture.debugElement.queryAll(By.css('.x-icon')).length).toBe(1);
+      });
+    });
+  });
+
 });
