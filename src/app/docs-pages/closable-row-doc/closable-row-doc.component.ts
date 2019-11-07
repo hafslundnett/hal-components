@@ -9,8 +9,10 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class ClosableRowDocComponent {
 
   closeableRowInputs: ApiTableRow[] = [
-    { apiInput: '[noPadding]', description: 'Optional input to add padding to the collapsebale body of the row' },
-    { apiInput: '[startExpanded]', description: 'Optional input to iniate the row expanded or not' }
+    // tslint:disable-next-line:max-line-length
+    { apiInput: '[noPadding]', description: 'Optional input to remove the padding of the collapsible body. Default behaviour with no input is to set the body with padding' },
+    // tslint:disable-next-line:max-line-length
+    { apiInput: '[startExpanded]', description: 'Optional input to initiate the row as expanded or not.Default behaviour with no input is to initiate the row as expanded' }
   ];
 
   htmlCode = `<hal-closable-row [noPadding]="true" [startExpanded]="false">

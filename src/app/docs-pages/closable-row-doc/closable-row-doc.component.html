@@ -3,8 +3,8 @@
   <h1 class="doc-title">Closeable-Row component</h1>
 
   <p class="doc-info">
-    This is the documentation for the hal-closeable-row component. 
-    The component can be utilized in any use cases where you want a closeable or collapseble row. 
+    This is the documentation for the hal-closeable-row component.
+    The component can be utilized in any use cases where you want a closeable or collapseble row.
     This can either hide or show information or functionality from the user with a click.
   </p>
 
@@ -13,9 +13,33 @@
   </hal-doc-import-line>
 
   <h2 class="doc-subtitle">Examples</h2>
-  <hal-closable-row [noPadding]="true" [startExpanded]="false">
+  <hal-closable-row>
     <ng-container ngProjectAs="RowHeader">
-      Closeable-Row Header Example
+      Closeable-Row Header | No inputs
+    </ng-container>
+    <ng-container ngProjectAs="RowBody">
+      The content inside the body of the closeable-row.
+    </ng-container>
+  </hal-closable-row>
+
+  <br>
+  <br>
+
+  <hal-closable-row [noPadding]="true">
+    <ng-container ngProjectAs="RowHeader">
+      Closeable-Row Header | No padding on the row body
+    </ng-container>
+    <ng-container ngProjectAs="RowBody">
+      The content inside the body of the closeable-row.
+    </ng-container>
+  </hal-closable-row>
+
+  <br>
+  <br>
+
+  <hal-closable-row [startExpanded]="false">
+    <ng-container ngProjectAs="RowHeader">
+      Closeable-Row Header | Start as expanded set to false
     </ng-container>
     <ng-container ngProjectAs="RowBody">
       The content inside the body of the closeable-row.
