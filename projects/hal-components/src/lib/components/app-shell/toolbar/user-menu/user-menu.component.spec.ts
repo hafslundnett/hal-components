@@ -56,7 +56,7 @@ describe('UserMenuComponent', () => {
 
     it('should return null if user is null', () => {
       // Arrange
-      component.user = null;
+      component.user = { email: '', name: '', thumbnail: undefined};
 
       // Act
       const result = component.thumbnailUrl;
@@ -70,7 +70,7 @@ describe('UserMenuComponent', () => {
       component.user = {
         name: '',
         email: '',
-        thumbnail: null
+        thumbnail: undefined
       };
 
       // Act

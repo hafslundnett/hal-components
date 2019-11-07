@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuElement } from 'hal-components/public-api';
-import { User } from 'projects/hal-components/src/public-api';
+import { MenuElement } from 'hal-components';
+import { User } from 'hal-components';
 
 @Component({
   selector: 'hal-shell',
@@ -12,10 +12,10 @@ export class ShellComponent implements OnInit {
   menuItems: MenuElement[] = [
     { url: 'welcome', svgName: 'overview.svg', title: 'Front page', groupTitle: 'HAL' },
     { url: 'hdd', svgName: 'analysis.svg', title: 'HDD' },
-    // { url: '', svgName: 'meterSearch.svg', title: 'Målepunktsøk' },
   ];
   user: User = { email: 'jan.greger@gmail.com', name: 'Jan Greger Hemb', thumbnail: undefined};
-  settingsPagePath = 'settings-page'; // TODO add!
+  settingsPagePath = 'settings-page';
+  signOutPagePath = 'log-out';
 
   constructor() { }
 
