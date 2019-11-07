@@ -7,6 +7,7 @@
     "node-sass": "^4.12.0",
     "@angular/cdk": "~8.2.3",
     "@angular/material": "^8.2.3",
-    "@hafslundnett/hdd-style": "1.0.0-cdnfix.0"
+    "@hafslundnett/hdd-style": "1.0.0-cdnfix.0",
+    "typescript": "^3.5.3"
   }
 }

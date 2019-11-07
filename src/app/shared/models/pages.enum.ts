@@ -4,7 +4,8 @@ export enum Pages {
   SvgDoc = 'svg-doc',
   PopupGlobalDoc = 'popup-global-doc',
   PopupConnectedDoc = 'popup-connected-doc',
-  BroadcastHandler = 'broadcast-handler',
+  BroadcastHandlerDoc = 'broadcast-handler-doc',
   DividerDoc = 'divider-doc',
   ResizerDoc = 'resizer-doc',
+  AppShellDoc = 'app-shell-doc',
 }

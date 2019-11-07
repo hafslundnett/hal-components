@@ -10,6 +10,7 @@ import { PopupConnectedDocComponent } from './docs-pages/popup-connected-doc/pop
 import { BroadcastHandlerDocComponent } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.component';
 import { DividerDocComponent } from './docs-pages/divider-doc/divider-doc.component';
 import { ResizerDocComponent } from './docs-pages/resizer-doc/resizer-doc.component';
+import { AppShellDocComponent } from './docs-pages/app-shell-doc/app-shell-doc.component';
 
 
 const routes: Routes = [
@@ -44,7 +45,7 @@ const routes: Routes = [
         component: PopupConnectedDocComponent
       },
       {
-        path: Pages.BroadcastHandler,
+        path: Pages.BroadcastHandlerDoc,
         component: BroadcastHandlerDocComponent
       },
       {
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
        path: Pages.ResizerDoc,
         component: ResizerDocComponent
+      },
+      {
+       path: Pages.AppShellDoc,
+        component: AppShellDocComponent
       },
     ]
   }
