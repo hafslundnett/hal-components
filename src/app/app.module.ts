@@ -14,6 +14,7 @@ import { PopupConnectedDocModule } from './docs-pages/popup-connected-doc/popup-
 import { BroadcastHandlerDocModule } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.module';
 import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
 import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-doc.module';
+import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 
 @NgModule({
    imports: [
@@ -29,6 +30,7 @@ import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-
       BroadcastHandlerDocModule,
       DividerDocModule,
       BoolToTextDocModule,
+      ResizerDocModule
    ],
    declarations: [
       AppComponent,

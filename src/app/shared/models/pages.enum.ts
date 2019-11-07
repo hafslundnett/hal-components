@@ -7,4 +7,5 @@ export enum Pages {
   BroadcastHandler = 'broadcast-handler',
   DividerDoc = 'divider-doc',
   BoolToTextDoc = 'bool-to-text-doc',
+  ResizerDoc = 'resizer-doc',
 }

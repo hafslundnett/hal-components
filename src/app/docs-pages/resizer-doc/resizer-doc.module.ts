@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SvgDocComponent } from './svg-doc.component';
-import { SvgElementModule } from 'hal-components';
+import { ResizerDocComponent } from './resizer-doc.component';
+import { ResizerModule } from 'hal-components';
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';
@@ -10,13 +10,13 @@ import { DocApiTableModule } from 'src/app/shared/doc-api-table/doc-api-table.mo
 @NgModule({
   imports: [
     CommonModule,
+    ResizerModule,
     DocImportLineModule,
-    SvgElementModule,
     CodeHighlighterModule,
     DocListModule,
     DocApiTableModule
   ],
-  declarations: [SvgDocComponent],
-  exports: [SvgDocComponent]
+  declarations: [ResizerDocComponent],
+  exports: [ResizerDocComponent]
 })
-export class SvgDocModule { }
+export class ResizerDocModule { }
