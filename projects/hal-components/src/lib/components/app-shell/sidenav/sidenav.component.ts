@@ -15,12 +15,6 @@ export class SidenavComponent implements OnInit {
   iconWidth = '32px';
   iconHeight = '26px';
 
-  // menuItems: MenuElementNew[] = [
-  //   { url: Pages.dashboard, svgName: 'overview.svg', title: 'Saksliste', groupTitle: 'Drops' },
-  //   { url: Pages.meteringpointSearch, svgName: 'meterSearch.svg', title: 'Målepunktsøk' },
-  //   { url: Pages.analysis, svgName: 'analysis.svg', title: 'Kart og analyse', divider: true }
-  // ];
-
   ngOnInit() {
   }
 }
