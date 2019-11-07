@@ -11,6 +11,7 @@ import { BroadcastHandlerDocComponent } from './docs-pages/broadcast-handler-doc
 import { DividerDocComponent } from './docs-pages/divider-doc/divider-doc.component';
 import { BoolToTextDocComponent } from './docs-pages/bool-to-text-doc/bool-to-text-doc.component';
 import { ResizerDocComponent } from './docs-pages/resizer-doc/resizer-doc.component';
+import { StatusMarkDocComponent } from './docs-pages/status-mark-doc/status-mark-doc.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,10 @@ const routes: Routes = [
       {
         path: Pages.ResizerDoc,
         component: ResizerDocComponent
+      },
+      {
+        path: Pages.StatusMarkDoc,
+        component: StatusMarkDocComponent
       },
     ]
   }

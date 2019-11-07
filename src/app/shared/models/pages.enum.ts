@@ -8,4 +8,5 @@ export enum Pages {
   DividerDoc = 'divider-doc',
   BoolToTextDoc = 'bool-to-text-doc',
   ResizerDoc = 'resizer-doc',
+  StatusMarkDoc = 'status-mark-doc',
 }
