@@ -13,6 +13,7 @@ import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global
 import { PopupConnectedDocModule } from './docs-pages/popup-connected-doc/popup-connected-doc.module';
 import { BroadcastHandlerDocModule } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.module';
 import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
+import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 
 @NgModule({
    imports: [
@@ -27,6 +28,7 @@ import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
       PopupConnectedDocModule,
       BroadcastHandlerDocModule,
       DividerDocModule,
+      ResizerDocModule
    ],
    declarations: [
       AppComponent,

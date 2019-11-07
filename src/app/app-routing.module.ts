@@ -9,6 +9,7 @@ import { PopupGlobalDocComponent } from './docs-pages/popup-global-doc/popup-glo
 import { PopupConnectedDocComponent } from './docs-pages/popup-connected-doc/popup-connected-doc.component';
 import { BroadcastHandlerDocComponent } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.component';
 import { DividerDocComponent } from './docs-pages/divider-doc/divider-doc.component';
+import { ResizerDocComponent } from './docs-pages/resizer-doc/resizer-doc.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path: Pages.DividerDoc,
         component: DividerDocComponent
+      },
+      {
+       path: Pages.ResizerDoc,
+        component: ResizerDocComponent
       },
     ]
   }
