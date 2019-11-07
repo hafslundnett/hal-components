@@ -22,3 +22,5 @@ export * from './lib/pipes/bool-to-text/bool-to-text.module';
 
 export * from './lib/components/resizer/resizer.module';
 
+export * from './lib/components/status-mark/status-mark.module';
+

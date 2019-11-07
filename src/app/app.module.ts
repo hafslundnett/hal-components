@@ -16,6 +16,8 @@ import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
 import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-doc.module';
 import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
+import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
+
 
 @NgModule({
    imports: [
@@ -32,7 +34,8 @@ import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.modu
       DividerDocModule,
       AppShellDocModule,
       BoolToTextDocModule,
-      ResizerDocModule
+      ResizerDocModule,
+      StatusMarkDocModule,
    ],
    declarations: [
       AppComponent,

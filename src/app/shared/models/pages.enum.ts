@@ -9,4 +9,5 @@ export enum Pages {
   BoolToTextDoc = 'bool-to-text-doc',
   ResizerDoc = 'resizer-doc',
   AppShellDoc = 'app-shell-doc',
+  StatusMarkDoc = 'status-mark-doc',
 }

@@ -9,10 +9,10 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class AppShellDocComponent implements OnInit {
 
   api: ApiTableRow[] = [
-    { apiInput: 'menuItems', description: 'List of the menu elements with url, svg file name, title and potentially groupTitle' },
-    { apiInput: 'user', description: 'The current active user' },
-    { apiInput: 'settingsPagePath', description: 'URL to settings page in your application' },
-    { apiInput: 'signOutPagePath', description: 'URL to sign out page in your application. That page should auto sign out the user' },
+    { apiInput: '[menuItems]', description: 'List of the menu elements with url, svg file name, title and potentially groupTitle' },
+    { apiInput: '[user]', description: 'The current active user' },
+    { apiInput: '[settingsPagePath]', description: 'URL to settings page in your application' },
+    { apiInput: '[signOutPagePath]', description: 'URL to sign out page in your application. That page should auto sign out the user' },
     { apiInput: 'ngProjectAs="pageTitle"', description: 'The current page title' },
     { apiInput: 'ngProjectAs="pageContent"', description: 'The page content. Either a router-outlet or a component' },
   ];

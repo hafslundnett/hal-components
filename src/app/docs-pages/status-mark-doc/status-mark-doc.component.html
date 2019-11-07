@@ -1,0 +1,43 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Status Mark Component</h1>
+
+  <p class="doc-info">
+    The status mark component can be used for illustrating the status of something. 
+    The componet displays a check-mark when the status is set to true or a cross when the status is set to false.
+    The status is set to true by default.
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} StatusMarkModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <div class="doc-info flex-row">
+    <button class="hdd-button example-btn" (click)="status = !status">Change to {{ !status }}</button>
+
+    <div class="flex-column">
+      <span class="hdd-tooltip">
+        <hal-status-mark [status]="status"></hal-status-mark>
+        <span class="hdd-tooltip_content">
+          Status mark {{ status }}
+        </span>
+      </span>
+
+      <span class="hdd-tooltip">
+        <hal-status-mark [status]="status" [showBlankWhenFalse]="true"></hal-status-mark>
+        <span class="hdd-tooltip_content">
+          Status mark {{ status }}
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>
