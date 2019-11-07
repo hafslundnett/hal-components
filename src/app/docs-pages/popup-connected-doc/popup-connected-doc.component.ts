@@ -16,7 +16,8 @@ export class PopupConnectedDocComponent implements OnInit {
     { apiInput: '[origin]', description: 'Input for setting origin for what element the popup should connect to.' },
     {
       apiInput: '[small]',
-      description: 'Input for setting the popups size to small. If true the close button will be removed to allow for more space.'
+      description:
+        'Input for setting the popups size to small. If true the close button and padding will be removed to allow for more space.'
     },
     {
       apiInput: '[relativePositionY]',

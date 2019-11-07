@@ -65,11 +65,23 @@
       Component to divide UI elements
     </ng-container>
   </hal-doc-card>
-  
-    <hal-doc-card [docUrl]="pages.ResizerDoc">
-      <ng-container ngProjectAs="cardIcon">
-        <i class="fal fa-expand-arrows-alt"></i>
-      </ng-container>
+
+  <hal-doc-card [docUrl]="pages.BoolToTextDoc">
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-adjust"></i>
+    </ng-container>
+    <ng-container ngProjectAs="cardTitle">
+      Bool To Text Pipe
+    </ng-container>
+    <ng-container ngProjectAs="cardSubtitle">
+      Bool To Text Pipe transformes a boolean to text.
+    </ng-container>
+  </hal-doc-card>
+
+  <hal-doc-card [docUrl]="pages.ResizerDoc">
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal fa-expand-arrows-alt"></i>
+    </ng-container>
     <ng-container ngProjectAs="cardTitle">
       Resizer
     </ng-container>
