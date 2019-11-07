@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StatusMarkComponent } from './status-mark.component';
 import { By } from '@angular/platform-browser';
 
-fdescribe('StatusMarkComponent', () => {
+describe('StatusMarkComponent', () => {
   let fixture: ComponentFixture<StatusMarkComponent>;
   let component: StatusMarkComponent;
 
