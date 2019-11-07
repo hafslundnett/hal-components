@@ -9,6 +9,7 @@ import { PopupGlobalDocComponent } from './docs-pages/popup-global-doc/popup-glo
 import { PopupConnectedDocComponent } from './docs-pages/popup-connected-doc/popup-connected-doc.component';
 import { BroadcastHandlerDocComponent } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.component';
 import { DividerDocComponent } from './docs-pages/divider-doc/divider-doc.component';
+import { ClosableRowDocComponent } from './docs-pages/closable-row-doc/closable-row-doc.component';
 import { BoolToTextDocComponent } from './docs-pages/bool-to-text-doc/bool-to-text-doc.component';
 import { ResizerDocComponent } from './docs-pages/resizer-doc/resizer-doc.component';
 import { AppShellDocComponent } from './docs-pages/app-shell-doc/app-shell-doc.component';
@@ -53,6 +54,10 @@ const routes: Routes = [
       {
         path: Pages.DividerDoc,
         component: DividerDocComponent
+      },
+      {
+        path: Pages.ClosableRowDoc,
+        component: ClosableRowDocComponent
       },
       {
         path: Pages.BoolToTextDoc,
