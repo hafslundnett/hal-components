@@ -16,6 +16,7 @@ import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
 import { ClosableRowDocModule } from './docs-pages/closable-row-doc/closable-row-doc.module';
 import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-doc.module';
 import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
+import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
 
 
@@ -32,6 +33,7 @@ import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-do
       PopupConnectedDocModule,
       BroadcastHandlerDocModule,
       DividerDocModule,
+      AppShellDocModule,
       ClosableRowDocModule,
       BoolToTextDocModule,
       ResizerDocModule,
