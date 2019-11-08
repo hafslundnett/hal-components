@@ -32,7 +32,7 @@ describe('ToolbarComponent', () => {
   });
 
   it('should render a user menu element', () => {
-    expect(getElement('mdm-user-menu')).not.toBeNull();
+    expect(getElement('hal-user-menu')).not.toBeNull();
   });
 
   function getElement(selector: string) {
