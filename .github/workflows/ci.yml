@@ -18,13 +18,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
+    - uses: Borales/actions-yarn@v2.0.2
     - name: Run yarn Install
-      uses: Borales/actions-yarn@v2.0.2
       with:
         cmd: install # will run `yarn install` command
     
-    - name: Run Lint, Test and Build
     - uses: borales/actions-yarn@v2.0.2
+    - name: Run Lint, Test and Build
       with:
         cmd: ci # will run `yarn test` command:  
   
