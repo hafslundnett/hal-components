@@ -17,12 +17,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        
-    - uses: Borales/actions-yarn@v2.0.2
+       
+    - name: Install
+      uses: ianwalter/puppeteer@v2.0.0
       with:
-        cmd: install # will run `yarn install` command
+        args: yarn
     
-    - uses: borales/actions-yarn@v2.0.2
-      with:
-        cmd: ci # will run `yarn test` command:  
+    - name: Test
+        uses: ianwalter/puppeteer@v2.0.0
+        with:
+          args: yarn ci
   
