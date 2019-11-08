@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { PopupConnectedComponent } from './popup-connected.component';
-import { OverlayModule, CdkOverlayOrigin } from '@angular/cdk/overlay';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
