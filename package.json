@@ -10,7 +10,11 @@
     "build-hal": "ng build hal-components",
     "watch-hal": "ng build hal-components --watch",
     "test-hal": "ng test hal-components",
-    "commit": "git cz"
+    "commit": "git cz",
+    "lint-ci": "ng lint",
+    "test-ci": "npm run test -- --browsers=CiChrome --watch=false",
+    "build-ci": "ng build && ng build hal-components",
+    "ci": "npm run lint-ci && npm run test-ci && npm run build-ci"
   },
   "private": true,
   "dependencies": {

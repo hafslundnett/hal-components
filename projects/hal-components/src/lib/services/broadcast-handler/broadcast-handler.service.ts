@@ -91,7 +91,6 @@ export class BroadcastHandlerService {
     this.activeChannels = [];
   }
 
-
   private getMySenderId(asMaster: boolean) {
     return asMaster ? 'master-' + this.mySenderId : 'slave-' + this.mySenderId;
   }

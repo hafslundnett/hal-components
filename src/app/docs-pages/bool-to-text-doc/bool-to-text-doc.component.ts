@@ -17,7 +17,6 @@ export class BoolToTextDocComponent implements OnInit {
   to <b>{{ booleanValue | bool }}</b>
 </p>`;
 
-
   constructor() { }
 
   ngOnInit() {

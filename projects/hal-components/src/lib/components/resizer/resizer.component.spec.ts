@@ -36,7 +36,7 @@ describe('ResizerComponent (for vertical)', () => {
     beforeEach(() => {
       component.isResizing = false;
       component.startResize(new MouseEvent('mousedown', {
-        clientX: clientX
+        clientX
       }));
     });
 

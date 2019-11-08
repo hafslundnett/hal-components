@@ -50,5 +50,4 @@ export class AppListComponent implements OnInit {
     e.cancelBubble = true;
   }
 
-
 }
