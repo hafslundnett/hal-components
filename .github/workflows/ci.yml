@@ -24,7 +24,7 @@ jobs:
         args: yarn
     
     - name: Test
-        uses: ianwalter/puppeteer@v2.0.0
-        with:
-          args: yarn ci
+      uses: ianwalter/puppeteer@v2.0.0
+      with:
+        args: yarn ci
   
