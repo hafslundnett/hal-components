@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 
-
 @Component({
   selector: 'hal-svg-doc',
   templateUrl: './svg-doc.component.html',

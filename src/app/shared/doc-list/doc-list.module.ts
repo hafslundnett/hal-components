@@ -4,7 +4,6 @@ import { DocListComponent } from './doc-list.component';
 import { DocCardModule } from '../doc-card/doc-card.module';
 import { DividerModule } from 'hal-components';
 
-
 @NgModule({
   imports: [
     CommonModule,

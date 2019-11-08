@@ -6,7 +6,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { AppListComponent } from './app-list/app-list.component';
 
-
 @NgModule({
   imports: [
     CommonModule,

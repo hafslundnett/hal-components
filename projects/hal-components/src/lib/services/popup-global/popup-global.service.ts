@@ -12,7 +12,7 @@ export class PopupGlobalService {
   setupOverlay(maxWidth = '50%'): OverlayRef {
     return this.overlay.create({
       hasBackdrop: true,
-      maxWidth: maxWidth,
+      maxWidth,
       scrollStrategy: this.overlay.scrollStrategies.noop(),
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically()
     });
