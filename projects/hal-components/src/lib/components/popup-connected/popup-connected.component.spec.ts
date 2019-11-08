@@ -9,17 +9,19 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
   template: `
     <button cdkOverlayOrigin #trigger="cdkOverlayOrigin">Open popup</button>
-    <hal-popup-connected isOpen="true" [origin]="trigger" (close)="isOpen = false">
+    <hal-popup-connected [small]="false" [isOpen]="true" [origin]="trigger" (popupClose)="isOpen = false">
       <p name="popup-content">I'm the content</p>
     </hal-popup-connected>
   `
 })
 class TestComponent {
   isOpen = true;
+  small = false;
+  relativePositionY = 'below';
 }
 
 describe('PopupConnectedComponent', () => {
-  let component: TestComponent;
+  let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
   beforeEach(async(() => {
@@ -32,7 +34,7 @@ describe('PopupConnectedComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);
-    component = fixture.componentInstance;
+    testComponent = fixture.componentInstance;
     fixture.detectChanges();
   });
 
@@ -53,7 +55,7 @@ describe('PopupConnectedComponent', () => {
     });
 
     it('a close event should be emitted', () => {
-      expect(component.isOpen).toBe(false);
+      expect(testComponent.isOpen).toBe(false);
     });
   });
 

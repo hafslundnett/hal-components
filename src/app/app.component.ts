@@ -5,7 +5,6 @@ interface Page {
   url: string;
 }
 
-
 @Component({
   selector: 'hal-root',
   templateUrl: './app.component.html',

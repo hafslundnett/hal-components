@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DocCardComponent implements OnInit {
 
-  @Input() docUrl =  "";
+  @Input() docUrl =  '';
 
   constructor() { }
 

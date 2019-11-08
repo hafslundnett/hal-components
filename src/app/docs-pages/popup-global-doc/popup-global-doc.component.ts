@@ -38,7 +38,6 @@ export class PopupGlobalDocComponent implements OnInit {
   ngOnInit() {
   }
 
-
   openPopupGlobal() {
     const overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
     const compInstance = this.popupGlobalService.openOverlay(overlayRef, PopupGlobalExampleComponent);
