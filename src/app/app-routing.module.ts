@@ -15,7 +15,6 @@ import { ResizerDocComponent } from './docs-pages/resizer-doc/resizer-doc.compon
 import { AppShellDocComponent } from './docs-pages/app-shell-doc/app-shell-doc.component';
 import { StatusMarkDocComponent } from './docs-pages/status-mark-doc/status-mark-doc.component';
 
-
 const routes: Routes = [
   {
     path: '',

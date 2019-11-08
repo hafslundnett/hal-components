@@ -27,6 +27,14 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    customLaunchers: {
+      CiChrome: {
+        autoWatch: false,
+        singleRun: true,
+        base: 'ChromeHeadless',
+        flags: ['--disable-translate', '--disable-extensions', '--no-sandbox']
+      }
+    }
   });
 };

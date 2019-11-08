@@ -7,7 +7,6 @@ import { DocApiTableModule } from 'src/app/shared/doc-api-table/doc-api-table.mo
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { BoolToTextModule } from 'hal-components';
 
-
 @NgModule({
   imports: [
     CommonModule,
