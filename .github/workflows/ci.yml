@@ -19,12 +19,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         
     - uses: Borales/actions-yarn@v2.0.2
-    - name: Run yarn Install
       with:
         cmd: install # will run `yarn install` command
     
     - uses: borales/actions-yarn@v2.0.2
-    - name: Run Lint, Test and Build
       with:
         cmd: ci # will run `yarn test` command:  
   
