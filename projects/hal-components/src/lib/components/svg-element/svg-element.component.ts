@@ -38,8 +38,8 @@ export class SvgElementComponent implements OnInit, OnChanges {
   }
 
   private getCssText() {
-    return '--svg-width: ' + this.width 
-    + '; --svg-height: ' + this.height 
+    return '--svg-width: ' + this.width
+    + '; --svg-height: ' + this.height
       + '; --svg-color-stroke: ' + this.colorStroke
       + '; --svg-color-fill: ' + this.colorFill;
   }
