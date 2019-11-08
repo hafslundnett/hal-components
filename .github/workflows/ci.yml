@@ -1,0 +1,30 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+    name: Run test, lint and build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Run yarn Install
+      uses: Borales/actions-yarn@v2.0.2
+      with:
+        cmd: install # will run `yarn install` command
+    
+    - name: Run Lint, Test and Build
+    - uses: borales/actions-yarn@v2.0.2
+      with:
+        cmd: ci # will run `yarn test` command:  
+  
