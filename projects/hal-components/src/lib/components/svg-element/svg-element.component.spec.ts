@@ -9,8 +9,6 @@ const height = '45';
 const colorStroke = 'red';
 const colorFill = 'blue';
 
-
-
 describe('SvgElementComponent', () => {
   let component: SvgElementComponent;
   let fixture: ComponentFixture<SvgElementComponent>;
