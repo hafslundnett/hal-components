@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ResizerDocComponent } from './resizer-doc.component';
-import { ResizerModule } from 'hal-components';
+import { ResizerModule } from '@hafslundnett/hal-components';
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';

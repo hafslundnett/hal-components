@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SvgDocComponent } from './svg-doc.component';
-import { SvgElementModule } from 'hal-components';
+import { SvgElementModule } from '@hafslundnett/hal-components';
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';

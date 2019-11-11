@@ -6,7 +6,7 @@ import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { PopupConnectedModule } from 'hal-components';
+import { PopupConnectedModule } from '@hafslundnett/hal-components';
 import { PopupConnectedExampleComponent } from './popup-connected-example/popup-connected-example.component';
 
 @NgModule({

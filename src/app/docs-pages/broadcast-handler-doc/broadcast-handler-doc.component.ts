@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
-import { BroadcastHandlerService, ChannelAction, ChannelPacket } from 'hal-components';
+import { BroadcastHandlerService, ChannelAction, ChannelPacket } from '@hafslundnett/hal-components';
 
 @Component({
   selector: 'hal-broadcast-handler-doc',
