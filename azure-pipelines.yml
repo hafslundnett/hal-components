@@ -1,0 +1,58 @@
+# Azure Pipelines configuration
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines
+
+trigger:
+- trunk
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  containerregistry: 'containerregistryprod.azurecr.io'
+  imageName: '$(containerregistry)/hal-components:$(Build.BuildNumber)'
+
+steps:
+# Install dependencies, lint, test and build Angular project
+- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
+  displayName: 'Install dependencies'
+
+- task: Npm@1
+  displayName: 'Test, lint and build (for CI) project'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run ci'
+
+# Build Docker containers
+- task: Docker@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/trunk')
+  displayName: 'Build image HAL-Components'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: HafslundNettRegistry
+    dockerFile: Dockerfile
+    imageName: '$(imageName)'
+
+- bash: 'sed -i "s/:imagetag/:$(Build.BuildNumber)/" *.yaml'
+  displayName: 'Replace imagetag with build number in k8s deployments'
+  workingDirectory: CI
+
+# Push Docker containers and publish artifacts
+# Should only be done on builds from trunk-branch
+
+- task: Docker@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/trunk')
+  displayName: 'Push image HAL-Components'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: HafslundNettRegistry
+    command: 'Push an image'
+    imageName: '$(imageName)'
+
+- task: PublishBuildArtifacts@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/trunk')
+  displayName: 'Publish kubernetes configuration artifacts'
+  inputs:
+    PathtoPublish: CI
+    ArtifactName: CI

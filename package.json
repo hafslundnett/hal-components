@@ -13,8 +13,8 @@
     "commit": "git cz",
     "lint-ci": "ng lint",
     "test-ci": "npm run test -- --browsers=CiChrome --watch=false",
-    "build-ci": "ng build hal-components && ng build",
-    "ci": "npm run lint-ci && npm run build-ci && npm run test-ci"
+    "build-prod": "ng build hal-components --prod && ng build --prod",
+    "ci": "npm run lint-ci && npm run build-prod && npm run test-ci"
   },
   "private": true,
   "dependencies": {
