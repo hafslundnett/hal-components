@@ -13,7 +13,7 @@
     "commit": "git cz",
     "lint-ci": "ng lint",
     "test-ci": "npm run test -- --browsers=CiChrome --watch=false",
-    "build-prod": "ng build hal-components --prod && ng build --prod",
+    "build-prod": "ng build hal-components && ng build --prod",
     "ci": "npm run lint-ci && npm run build-prod && npm run test-ci"
   },
   "private": true,
