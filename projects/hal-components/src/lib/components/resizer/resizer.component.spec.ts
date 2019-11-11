@@ -1,37 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResizerComponent } from './resizer.component';
-import { Component } from '@angular/core';
-import { By } from '@angular/platform-browser';
 
-@Component({
-  template: `
-  <div #testComp>
-    You can resize me Vertically!
-  </div>
-
-  <hal-resizer
-  [minHeight]="100"
-  [maxHeigth]="400"
-  [resizableElement]="testComp"
-  [resizeDirection]="'vertical'"
-  ></hal-resizer>
-	`
-})
-class TestComponent {
-  something = 'another ting';
-}
-describe('ResizerComponent (for horizontal)', () => {
+describe('ResizerComponent (for horizontal resizing)', () => {
   let component: ResizerComponent;
-  let testComponent: TestComponent;
   let fixture: ComponentFixture<ResizerComponent>;
-  let testFixture: ComponentFixture<TestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ResizerComponent, TestComponent ]
+      declarations: [ResizerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -81,39 +60,26 @@ describe('ResizerComponent (for horizontal)', () => {
     });
   });
 
-/* Create element to be attached by the resizer 
-  attach resizer
-  start resizing
-  check difference between before the resizing and after
-*/
-
-
-  describe('When resizing has occured on an element', () => {
-    const initialCursorPosition = 500;
-    const elementWidth = getSize('div');
-    const newXPos = 900;
-    // tslint:disable-next-line:one-variable-per-declaration
+  describe('When horizontal resizing has occured on an element', () => {
+    const initialCursorPosition = 100;
+    const elementWidth = 100;
+    const newXPos = 500;
 
     beforeEach(() => {
-      testFixture = TestBed.createComponent(TestComponent);
-      testComponent = testFixture.componentInstance;
-      component = fixture.debugElement.query(By.css('hal-resizer-vertical')).componentInstance;
-      component.isResizing = true;
-      component.elementWidth = elementWidth;
+      const testHtmlElement = document.createElement('div');
+      testHtmlElement.style.width = '100px';
+      component.resizableElement = testHtmlElement;
       component.initialCursorPosition = initialCursorPosition;
-      component.startResize(new MouseEvent('mousemove', {
+      component.elementWidth = elementWidth;
+      component.isResizing = true;
+      component.onResize(new MouseEvent('mousemove', {
         clientX: newXPos
       }));
-      component.onMouseUp();
     });
 
     it('a new width should be set on the resizable element', () => {
-      expect(component.resizableElement.scrollWidth).toBe(900);
+      expect(component.resizableElement.style.width).toBe('500px');
     });
-
-    function getSize(selector: string) {
-      return fixture.debugElement.nativeElement.querySelector(selector).scrollWidth;
-    }
   });
 
   function getElement(selector: string) {
@@ -121,84 +87,89 @@ describe('ResizerComponent (for horizontal)', () => {
   }
 });
 
-// describe('ResizerComponent (vertical)', () => {
-//   let component: ResizerComponent;
-//   let fixture: ComponentFixture<ResizerComponent>;
+// ------------- Tests for vertical resizing ------------------------
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ResizerComponent]
-//     })
-//       .compileComponents();
-//   }));
+describe('ResizerComponent (for vertical resizing)', () => {
+  let component: ResizerComponent;
+  let fixture: ComponentFixture<ResizerComponent>;
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(ResizerComponent);
-//     component = fixture.componentInstance;
-//     component.resizeDirection = 'vertical';
-//     component.resizableElement = document.createElement('div');
-//     fixture.detectChanges();
-//   });
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ResizerComponent]
+    })
+      .compileComponents();
+  }));
 
-//   it('should have an resizer element', () => {
-//     expect(getElement('.resizer-vertical')).not.toBeNull();
-//   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ResizerComponent);
+    component = fixture.componentInstance;
+    component.resizeDirection = 'vertical';
+    component.resizableElement = document.createElement('div');
+    fixture.detectChanges();
+  });
 
-//   it('should have an line element', () => {
-//     const container: HTMLDivElement = getElement('.resizer-vertical');
-//     expect(container.querySelector('.line')).not.toBeNull();
-//   });
+  it('should have an resizer element', () => {
+    expect(getElement('.resizer-vertical')).not.toBeNull();
+  });
 
-//   describe('When resizer is pressed', () => {
-//     const clientX = 1234;
+  it('should have an line element', () => {
+    const container: HTMLDivElement = getElement('.resizer-vertical');
+    expect(container.querySelector('.line')).not.toBeNull();
+  });
 
-//     beforeEach(() => {
-//       component.isResizing = false;
-//       component.startResize(new MouseEvent('mousedown', {
-//         clientX
-//       }));
-//     });
+  describe('When resizer is pressed', () => {
+    const clientY = 1234;
 
-//     it('the resizing flag should be set', () => {
-//       expect(component.isResizing).toBe(true);
-//     });
+    beforeEach(() => {
+      component.isResizing = false;
+      component.startResize(new MouseEvent('mousedown', {
+        clientY
+      }));
+    });
 
-//     xit('the mouse X position should be stored', () => {
-//       expect(component.initialCursorPosition).toBe(clientX);
-//     });
-//   });
+    it('the resizing flag should be set', () => {
+      expect(component.isResizing).toBe(true);
+    });
 
-//   describe('When the mouse is released', () => {
-//     beforeEach(() => {
-//       component.isResizing = true;
-//       component.onMouseUp();
-//     });
+    it('the mouse Y position should be stored', () => {
+      expect(component.initialCursorPosition).toBe(clientY);
+    });
+  });
 
-//     it('the resizing flag should be set', () => {
-//       expect(component.isResizing).toBe(false);
-//     });
-//   });
+  describe('When the mouse is released', () => {
+    beforeEach(() => {
+      component.isResizing = true;
+      component.onMouseUp();
+    });
 
-//   describe('When resizing has occured', () => {
-//     const initialCursorPosition = 1000;
-//     const newXPos = 1200;
-//     const elementWidth = 500;
+    it('the resizing flag should be set', () => {
+      expect(component.isResizing).toBe(false);
+    });
+  });
 
-//     beforeEach(() => {
-//       component.isResizing = true;
-//       component.elementWidth = elementWidth;
-//       component.initialCursorPosition = initialCursorPosition;
-//       component.onResize(new MouseEvent('mousemove', {
-//         clientX: newXPos
-//       }));
-//     });
+  describe('When vertical resizing has occured on an element', () => {
+    const initialCursorPosition = 300;
+    const elementHeight = 300;
+    const newYPos = 500;
 
-//     xit('a new width should be set on the resizable element', () => {
-//       expect(component.resizableElement.style.width).toBe('700px');
-//     });
-//   });
+    beforeEach(() => {
+      const testHtmlElement = document.createElement('div');
+      testHtmlElement.style.height = '100px';
+      component.resizableElement = testHtmlElement;
+      component.initialCursorPosition = initialCursorPosition;
+      component.elementHeight = elementHeight;
+      component.isResizing = true;
+      component.onResize(new MouseEvent('mousemove', {
+        clientY: newYPos
+      }));
+    });
 
-//   function getElement(selector: string) {
-//     return fixture.debugElement.nativeElement.querySelector(selector);
-//   }
-// });
+    it('a new width should be set on the resizable element', () => {
+      expect(component.resizableElement.style.height).toBe('500px');
+    });
+  });
+
+  function getElement(selector: string) {
+    return fixture.debugElement.nativeElement.querySelector(selector);
+  }
+});
