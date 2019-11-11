@@ -17,27 +17,27 @@ export class AppListComponent implements OnInit {
     {
       name: 'Orbit',
       icon: 'fa-fighter-jet',
-      url: 'https://orbit.test-hafslundnett.io'
+      url: 'https://orbit.hafslundnett.io'
     },
     {
       name: 'Drops',
       icon: 'fa-plane',
-      url: 'https://mdm.test-hafslundnett.io/dashboard?status=0'
+      url: 'https://mdm.hafslundnett.io/dashboard?status=0'
     },
     {
       name: 'Mdm',
       icon: 'fa-plane',
-      url: 'https://mdm.test-hafslundnett.io/dashboard?status=0'
+      url: 'https://mdm.hafslundnett.io/dashboard?status=0'
     },
     {
       name: 'ADLS',
       icon: 'fa-plane',
-      url: 'https://adls.test-hafslundnett.io/'
+      url: 'https://adls.hafslundnett.io/'
     },
     {
       name: 'Jordfeil',
       icon: 'fa-plane',
-      url: 'https://adls.test-hafslundnett.io/'
+      url: 'https://jordfeil.hafslundnett.io/'
     },
   ];
 

@@ -8,9 +8,9 @@ describe('DividerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DividerComponent ]
+      declarations: [DividerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,23 +19,29 @@ describe('DividerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should render a hr element', () => {
+  it('should render a hr element and have the class of \'divider\'', () => {
     const hr: HTMLElement = getElement('hr');
     expect(hr).not.toBeNull();
-    expect(hr.classList.toString()).toBe('divider');
+    expect(hr).toHaveClass('divider');
   });
 
-  describe('When the light flag is enabled', () => {
+  describe('When to add or remove the ligth directive, the class \'light\' should be toggled', () => {
     let hrElement: HTMLElement;
 
     beforeEach(() => {
       hrElement = getElement('hr');
-      component.light = true;
-      fixture.detectChanges();
     });
 
-    it('a light css class should be added to the element', () => {
+    it('With a ligth directive on the component, the light class should be added', () => {
+      component.light = true;
+      fixture.detectChanges();
       expect(hrElement.classList.toString()).toContain('light');
+    });
+
+    it('Without a ligth directive on the component, the light class should not be added', () => {
+      component.light = false;
+      fixture.detectChanges();
+      expect(hrElement).not.toHaveClass('ligth');
     });
   });
 
