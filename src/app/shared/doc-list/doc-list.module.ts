@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DocListComponent } from './doc-list.component';
 import { DocCardModule } from '../doc-card/doc-card.module';
 import { DividerModule } from 'hal-components';
+import { DocSublistComponent } from './doc-sublist/doc-sublist.component';
 
 @NgModule({
   imports: [
@@ -10,7 +11,7 @@ import { DividerModule } from 'hal-components';
     DocCardModule,
     DividerModule
   ],
-  declarations: [DocListComponent],
+  declarations: [DocListComponent, DocSublistComponent],
   exports: [DocListComponent]
 })
 export class DocListModule { }

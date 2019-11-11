@@ -1,0 +1,13 @@
+<ng-container *ngFor="let doc of elements">
+  <hal-doc-card [docUrl]="doc.docUrl">
+    <ng-container ngProjectAs="cardIcon">
+      <i class="fal {{doc.cardIcon}}"></i>
+    </ng-container>
+    <ng-container ngProjectAs="cardTitle">
+      {{doc.cardTitle}}
+    </ng-container>
+    <ng-container ngProjectAs="cardSubtitle">
+      {{doc.cardSubtitle}}
+    </ng-container>
+  </hal-doc-card>
+</ng-container>

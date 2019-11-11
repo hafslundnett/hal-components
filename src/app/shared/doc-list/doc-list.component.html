@@ -3,126 +3,21 @@
 </div>
 
 <h2 class="card-list-title">All components</h2>
-
 <div class="card-list-container">
-  <hal-doc-card [docUrl]="pages.SvgDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-images"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Svg Component
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      For displaying SVG files
-    </ng-container>
+  <hal-doc-sublist [elements]="components"></hal-doc-sublist>
+</div>
 
-  </hal-doc-card>
+<h2 class="card-list-title">All services</h2>
+<div class="card-list-container">
+  <hal-doc-sublist [elements]="services"></hal-doc-sublist>
+</div>
 
-  <hal-doc-card [docUrl]="pages.PopupGlobalDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-comment-alt"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Popup Global Service
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      For displaying a standard popup
-    </ng-container>
-  </hal-doc-card>
+<h2 class="card-list-title">All pipes</h2>
+<div class="card-list-container">
+  <hal-doc-sublist [elements]="pipes"></hal-doc-sublist>
+</div>
 
-  <hal-doc-card [docUrl]="pages.PopupConnectedDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-comment-alt"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Popup Connected Component
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      For displaying a connected popup
-    </ng-container>
-  </hal-doc-card>
-
-  <hal-doc-card [docUrl]="pages.BroadcastHandler">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-bullhorn"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Broadcast Handler
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      For sending messages between browser tabs
-    </ng-container>
-  </hal-doc-card>
-
-  <hal-doc-card [docUrl]="pages.DividerDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-columns"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Divider Component
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      Component to divide UI elements
-    </ng-container>
-  </hal-doc-card>
-
-  <hal-doc-card [docUrl]="pages.ClosableRowDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-expand"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Closeable Row
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      An expandable row
-    </ng-container>
-  </hal-doc-card>
-  
-  <hal-doc-card [docUrl]="pages.BoolToTextDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-adjust"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Bool To Text Pipe
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      Bool To Text Pipe transformes a boolean to text
-    </ng-container>
-  </hal-doc-card>
-
-  <hal-doc-card [docUrl]="pages.ResizerDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-expand-arrows-alt"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Resizer
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      For displaying a standard popup
-    </ng-container>
-  </hal-doc-card>
-
-  <hal-doc-card [docUrl]="pages.AppShellDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-desktop"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      App Shell
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      App shell for projects
-    </ng-container>
-  </hal-doc-card>
-
-  <hal-doc-card [docUrl]="pages.StatusMarkDoc">
-    <ng-container ngProjectAs="cardIcon">
-      <i class="fal fa-check"></i>
-    </ng-container>
-    <ng-container ngProjectAs="cardTitle">
-      Status Mark
-    </ng-container>
-    <ng-container ngProjectAs="cardSubtitle">
-      The status mark illustartes the state of something
-    </ng-container>
-  </hal-doc-card>
+<h2 class="card-list-title">All directives</h2>
+<div class="card-list-container">
+  <hal-doc-sublist [elements]="directives"></hal-doc-sublist>
 </div>
