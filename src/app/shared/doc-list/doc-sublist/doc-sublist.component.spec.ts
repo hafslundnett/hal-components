@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { DocSublistComponent } from './doc-sublist.component';
+import { DocCardComponent } from '../../doc-card/doc-card.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DocSublistComponent', () => {
   let component: DocSublistComponent;
@@ -11,7 +13,8 @@ describe('DocSublistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocSublistComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ DocSublistComponent, DocCardComponent ]
     })
     .compileComponents();
   }));
