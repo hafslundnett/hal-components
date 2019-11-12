@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 
 @Component({
   selector: 'hal-closeable-row-doc',
-  templateUrl: './closable-row-doc.component.html',
-  styleUrls: ['./closable-row-doc.component.scss']
+  templateUrl: './closeable-row-doc.component.html',
+  styleUrls: ['./closeable-row-doc.component.scss']
 })
 export class CloseableRowDocComponent {
 

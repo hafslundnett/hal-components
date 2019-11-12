@@ -6,7 +6,7 @@ import { CloseableRowComponent } from './closeable-row.component';
 
 @Component({
   template: `
-  <hal-closeable-row [noPadding]="true" [startExpanded]="false">
+  <hal-closeable-row [noPadding]="false" [startExpanded]="true">
     <ng-container ngProjectAs="RowHeader">
       I'm in the Header!
     </ng-container>
@@ -54,7 +54,7 @@ fdescribe('CloseableRowComponent Content placement', () => {
   });
 });
 
-fdescribe('CloseableRowComponent', () => {
+xdescribe('CloseableRowComponent', () => {
   let component: CloseableRowComponent;
   let fixture: ComponentFixture<CloseableRowComponent>;
 
@@ -106,7 +106,7 @@ fdescribe('CloseableRowComponent', () => {
 
     beforeEach(() => {
       component.startExpanded = true;
-      component.noPadding = false;
+      component.noPadding = true;
     });
 
     it('should have a show content true when startExpanded is true(initial state)', () => {
@@ -118,6 +118,12 @@ fdescribe('CloseableRowComponent', () => {
       component.startExpanded = false;
       fixture.detectChanges();
       expect(component.showContent).toBe(false);
+    });
+
+    it('should have no padding in boddy when nopadding is true', () => {
+      fixture.detectChanges();
+      const RowBody = fixture.debugElement.children; 
+      console.log(RowBody);
     });
 
     it('should toggle between open and close state', () => {
