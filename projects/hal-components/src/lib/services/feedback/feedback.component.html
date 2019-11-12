@@ -1,0 +1,12 @@
+<div [@feedbackAnimation]="animationState" (@feedbackAnimation.done)="animationDone()">
+  <div class="feedback-container" [ngClass]="'is-' + extras?.severity">
+    <div [ngSwitch]="extras?.severity">
+      <i class="fal fa-check icon" *ngSwitchCase="'success'"></i>
+      <i class="fal fa-info-circle icon" *ngSwitchDefault></i>
+    </div>
+    <p class="feedback-container_message" [innerHTML]="message"></p>
+    <button class="close-button" (click)="animateClose()" *ngIf="extras?.closable">
+      <i class="fal fa-times"></i>
+    </button>
+  </div>
+</div>

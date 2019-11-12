@@ -1,0 +1,39 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Feedback service
+  </h1>
+
+  <p class="doc-info">
+    This is the documentation for Feedback service. 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet facere, debitis reprehenderit incidunt enim. Amet, qui recusandae fugit saepe totam pariatur adipisci aliquam cupiditate, excepturi aut asperiores nihil quam!
+  </p>
+  <p class="doc-info">
+    <b>
+      Typical use: When displaying feedback messages to users.
+      Usually sucess, failure, danger or warning.
+    </b>
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} FeedbackModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} FeedbackService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Example</h2>
+  <div class="doc-info example-flex">
+      <button class="hdd-button" (click)="displaySuccess()">Success message!</button>
+      <button class="hdd-button" (click)="displayInfo()">Info message!</button>
+      <button class="hdd-button" (click)="displayError()">Error message!</button>
+  </div>
+  <p class="doc-info example-text">
+    Pssst! The messages appear down on the right corner ;)
+  </p>
+
+  <hal-code-highlighter [isTS]="true" [code]="isTS"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Methods'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+</div>
+
+<hal-doc-list></hal-doc-list>

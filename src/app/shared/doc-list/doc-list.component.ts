@@ -69,6 +69,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-bullhorn',
       docUrl: Pages.BroadcastHandlerDoc
     },
+    {
+      cardTitle: 'Feedback Service',
+      cardSubtitle: 'For displaying a feedback message',
+      cardIcon: 'fa-comment-alt',
+      docUrl: Pages.FeedbackDoc
+    },
   ];
 
   pipes: DocListItem[] = [

@@ -11,4 +11,5 @@ export enum Pages {
   ResizerDoc = 'resizer-doc',
   AppShellDoc = 'app-shell-doc',
   StatusMarkDoc = 'status-mark-doc',
+  FeedbackDoc = 'feedback-doc',
 }
