@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 
 import { CloseableRowComponent } from './closeable-row.component';
-import { concatMap } from 'rxjs/operators';
 
 @Component({
   template: `
@@ -73,10 +72,6 @@ describe('CloseableRowComponent', () => {
 
   describe('should generate a component and underlying material tags', () => {
 
-    beforeEach(() => {
-      fixture.detectChanges();
-    });
-
     it('should create a closeable-row element', () => {
       expect(component).toBeTruthy();
     });
@@ -100,6 +95,7 @@ describe('CloseableRowComponent', () => {
       const container = getElementTag('mat-panel-title');
       expect(container).toContain('MAT-PANEL-TITLE');
     });
+
   });
 
   describe('should recieve information from inputs', () => {
@@ -134,15 +130,12 @@ describe('CloseableRowComponent', () => {
       fixture.detectChanges();
       expect(component.showContent).toBe(true);
     });
-
   });
 
   function getElementStyle(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector).style.cssText;
   }
-
   function getElementTag(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector).tagName;
   }
-
 });
