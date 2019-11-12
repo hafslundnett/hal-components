@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'hal-hdd-style-doc',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HddStyleDocComponent implements OnInit {
 
-  constructor() { }
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
+  }
+
+  iframeLoaded() {
+    requestAnimationFrame(() => {
+      this.changeDetectorRef.detectChanges();
+    });
   }
 
 }
