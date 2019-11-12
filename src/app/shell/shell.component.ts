@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuElement } from 'hal-components';
-import { User } from 'hal-components';
+import { MenuElement } from '@hafslundnett/hal-components';
+import { User } from '@hafslundnett/hal-components';
 
 @Component({
   selector: 'hal-shell',
