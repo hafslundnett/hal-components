@@ -15,9 +15,11 @@ variables:
 steps:
 # Install dependencies, lint, test and build Angular project
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/trunk')
   displayName: 'Install dependencies'
 
 - task: Npm@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/trunk')
   displayName: 'Test, lint and build (for CI) project'
   inputs:
     command: custom
