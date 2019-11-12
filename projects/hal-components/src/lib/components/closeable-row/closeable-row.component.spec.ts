@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 
 import { CloseableRowComponent } from './closeable-row.component';
+import { concatMap } from 'rxjs/operators';
 
 @Component({
   template: `
@@ -21,12 +22,12 @@ class TestComponent {
   startExpanded = true;
 }
 
-fdescribe('CloseableRowComponent Content placement', () => {
+xdescribe('CloseableRowComponent Content placement', () => {
   let fixture: ComponentFixture<TestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CloseableRowComponent, TestComponent],
+      declarations: [TestComponent, CloseableRowComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
@@ -34,7 +35,6 @@ fdescribe('CloseableRowComponent Content placement', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);
-
     fixture.detectChanges();
   });
 
@@ -54,7 +54,7 @@ fdescribe('CloseableRowComponent Content placement', () => {
   });
 });
 
-xdescribe('CloseableRowComponent', () => {
+fdescribe('CloseableRowComponent', () => {
   let component: CloseableRowComponent;
   let fixture: ComponentFixture<CloseableRowComponent>;
 
@@ -105,7 +105,6 @@ xdescribe('CloseableRowComponent', () => {
   describe('should recieve information from inputs', () => {
 
     beforeEach(() => {
-      component.startExpanded = true;
       component.noPadding = true;
     });
 
@@ -114,16 +113,15 @@ xdescribe('CloseableRowComponent', () => {
       expect(component.showContent).toBe(true);
     });
 
-    it('should have a false make showcontent to false when startexpanded is false', () => {
+    it('should have a showcontent false, when startexpanded is false', () => {
       component.startExpanded = false;
-      fixture.detectChanges();
       expect(component.showContent).toBe(false);
     });
 
     it('should have no padding in boddy when nopadding is true', () => {
       fixture.detectChanges();
-      const RowBody = fixture.debugElement.children; 
-      console.log(RowBody);
+      const RowBody: HTMLElement = getElementStyle('mat-accordion');
+      expect(RowBody).toContain('--body-padding: 0px 0px;');
     });
 
     it('should toggle between open and close state', () => {
@@ -139,7 +137,12 @@ xdescribe('CloseableRowComponent', () => {
 
   });
 
+  function getElementStyle(selector: string) {
+    return fixture.debugElement.nativeElement.querySelector(selector).style.cssText;
+  }
+
   function getElementTag(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector).tagName;
   }
+
 });
