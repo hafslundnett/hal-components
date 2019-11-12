@@ -22,7 +22,7 @@ class TestComponent {
   startExpanded = true;
 }
 
-xdescribe('CloseableRowComponent Content placement', () => {
+describe('CloseableRowComponent Content placement', () => {
   let fixture: ComponentFixture<TestComponent>;
 
   beforeEach(async(() => {
@@ -54,7 +54,7 @@ xdescribe('CloseableRowComponent Content placement', () => {
   });
 });
 
-fdescribe('CloseableRowComponent', () => {
+describe('CloseableRowComponent', () => {
   let component: CloseableRowComponent;
   let fixture: ComponentFixture<CloseableRowComponent>;
 
