@@ -13,7 +13,7 @@ import { PopupGlobalDocModule } from './docs-pages/popup-global-doc/popup-global
 import { PopupConnectedDocModule } from './docs-pages/popup-connected-doc/popup-connected-doc.module';
 import { BroadcastHandlerDocModule } from './docs-pages/broadcast-handler-doc/broadcast-handler-doc.module';
 import { DividerDocModule } from './docs-pages/divider-doc/divider-doc.module';
-import { CloseablerowdocModule } from './docs-pages/closable-row-doc/closable-row-doc.module';
+import { CloseablerowdocModule } from './docs-pages/closeable-row-doc/closeable-row-doc.module';
 import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-doc.module';
 import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
