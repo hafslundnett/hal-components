@@ -9,6 +9,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     OverlayModule
   ],
   declarations: [ FeedbackComponent ],
+  entryComponents: [ FeedbackComponent ],
   exports: [FeedbackComponent]
 })
 export class FeedbackModule { }
