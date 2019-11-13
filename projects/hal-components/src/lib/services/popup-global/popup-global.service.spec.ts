@@ -43,7 +43,7 @@ describe('Service: PopupGlobal', () => {
   }));
 
   // EntryComponents støttes ikke i angular 8, må vente til angular 9
-  xdescribe('Attach component to OverlayRef', () => {
+  /* xdescribe('Attach component to OverlayRef', () => {
     beforeEach(() => {
       popupGlobalService.openOverlay(overlayRef, testComponent);
       fixture.detectChanges();
@@ -52,9 +52,9 @@ describe('Service: PopupGlobal', () => {
     it('hasAttached should be true', () => {
       expect(overlayRef.hasAttached()).toBe(true);
     });
-  });
+  }); */
 
-  xdescribe('Detach component to OverlayRef', () => {
+  /* xdescribe('Detach component to OverlayRef', () => {
     beforeEach(() => {
       popupGlobalService.openOverlay(overlayRef, testComponent);
       popupGlobalService.detach(overlayRef);
@@ -64,6 +64,6 @@ describe('Service: PopupGlobal', () => {
     it('hasAttached should be false', () => {
       expect(overlayRef.hasAttached()).toBe(false);
     });
-  });
+  }); */
 
 });
