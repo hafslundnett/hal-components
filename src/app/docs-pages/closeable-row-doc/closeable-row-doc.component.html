@@ -9,42 +9,42 @@
   </p>
 
   <hal-doc-import-line>
-    <code><pre>import {{ '{' }} ClosableRowModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    <code><pre>import {{ '{' }} CloseableRowModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
 
   <h2 class="doc-subtitle">Examples</h2>
-  <hal-closable-row>
+  <hal-closeable-row>
     <ng-container ngProjectAs="RowHeader">
       Closeable-Row Header | No inputs
     </ng-container>
     <ng-container ngProjectAs="RowBody">
       The content inside the body of the closeable-row.
     </ng-container>
-  </hal-closable-row>
+  </hal-closeable-row>
 
   <br>
   <br>
 
-  <hal-closable-row [noPadding]="true">
+  <hal-closeable-row [noPadding]="true">
     <ng-container ngProjectAs="RowHeader">
       Closeable-Row Header | No padding on the row body
     </ng-container>
     <ng-container ngProjectAs="RowBody">
       The content inside the body of the closeable-row.
     </ng-container>
-  </hal-closable-row>
+  </hal-closeable-row>
 
   <br>
   <br>
 
-  <hal-closable-row [startExpanded]="false">
+  <hal-closeable-row [startExpanded]="false">
     <ng-container ngProjectAs="RowHeader">
       Closeable-Row Header | Start as expanded set to false
     </ng-container>
     <ng-container ngProjectAs="RowBody">
       The content inside the body of the closeable-row.
     </ng-container>
-  </hal-closable-row>
+  </hal-closeable-row>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
   <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="closeableRowInputs"></hal-doc-api-table>
