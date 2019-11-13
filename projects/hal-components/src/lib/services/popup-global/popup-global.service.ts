@@ -1,4 +1,4 @@
-import { Injectable, Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
 
@@ -17,7 +17,7 @@ export class PopupGlobalService {
   }
 
   /** Remember to handle on destroy for popup and call detach */
-  openOverlay(overlayRef: OverlayRef, overlayComponent) {
+  openOverlay<PopupCompType>(overlayRef: OverlayRef, overlayComponent: ComponentType<PopupCompType>): PopupCompType {
     if (overlayRef.hasAttached()) {
       overlayRef.detach();
     }
