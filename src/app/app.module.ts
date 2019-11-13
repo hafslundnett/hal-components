@@ -18,6 +18,7 @@ import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-
 import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
+import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-doc.module';
 
 @NgModule({
    imports: [
@@ -37,6 +38,7 @@ import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-do
       BoolToTextDocModule,
       ResizerDocModule,
       StatusMarkDocModule,
+      DateFormatDocModule
    ],
    declarations: [
       AppComponent,

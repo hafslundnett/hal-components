@@ -83,6 +83,15 @@ export class DocListComponent implements OnInit {
   directives: DocListItem[] = [
   ];
 
+  constants: DocListItem[] = [
+    {
+      cardTitle: 'Date Formats',
+      cardSubtitle: 'Date Format Constants',
+      cardIcon: 'fa-adjust',
+      docUrl: Pages.DateFormatDoc
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
