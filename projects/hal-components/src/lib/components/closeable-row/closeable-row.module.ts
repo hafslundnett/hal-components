@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { ClosableRowComponent } from './closable-row.component';
+import { CloseableRowComponent } from './closeable-row.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MatExpansionModule
   ],
-  declarations: [ClosableRowComponent],
-  exports: [ClosableRowComponent]
+  declarations: [CloseableRowComponent],
+  exports: [CloseableRowComponent]
 
 })
-export class ClosableRowModule { }
+export class CloseableRowModule { }

@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation, Input, ViewChild, ElementRef, EventEmitter, Output, AfterViewInit } from '@angular/core';
 
 @Component({
-  selector: 'hal-closable-row',
-  templateUrl: './closable-row.component.html',
-  styleUrls: ['./closable-row.component.scss'],
+  selector: 'hal-closeable-row',
+  templateUrl: './closeable-row.component.html',
+  styleUrls: ['./closeable-row.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ClosableRowComponent implements OnInit, AfterViewInit {
+export class CloseableRowComponent implements OnInit, AfterViewInit {
 
   @Input() noPadding = false;
   @Input() startExpanded = true;

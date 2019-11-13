@@ -34,7 +34,7 @@ export class DocListComponent implements OnInit {
       cardTitle: 'Closeable Row',
       cardSubtitle: 'An expandable row',
       cardIcon: 'fa-expand',
-      docUrl: Pages.ClosableRowDoc
+      docUrl: Pages.Closeablerowdoc
     },
     {
       cardTitle: 'Resizer',
