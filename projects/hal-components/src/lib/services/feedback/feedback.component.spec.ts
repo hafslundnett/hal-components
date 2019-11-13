@@ -38,7 +38,8 @@ describe('FeedbackComponent', () => {
   describe('When the closable flag is enabled', () => {
     beforeEach(() => {
       component.extras = {
-        closable: true
+        closable: true,
+        duration: 10
       };
       fixture.detectChanges();
     });
@@ -65,7 +66,8 @@ describe('FeedbackComponent', () => {
   describe('When the closable flag is disabled', () => {
     beforeEach(() => {
       component.extras = {
-        closable: false
+        closable: false,
+        duration: 10
       };
       fixture.detectChanges();
     });
@@ -79,7 +81,8 @@ describe('FeedbackComponent', () => {
   describe('When the severity is error', () => {
     beforeEach(() => {
       component.extras = {
-        severity: 'error'
+        severity: 'error',
+        duration: 10
       };
       fixture.detectChanges();
     });
@@ -93,7 +96,8 @@ describe('FeedbackComponent', () => {
   describe('When the severity is info', () => {
     beforeEach(() => {
       component.extras = {
-        severity: 'info'
+        severity: 'primary',
+        duration: 10
       };
       fixture.detectChanges();
     });
@@ -107,7 +111,8 @@ describe('FeedbackComponent', () => {
   describe('When the severity is success', () => {
     beforeEach(() => {
       component.extras = {
-        severity: 'success'
+        severity: 'success',
+        duration: 10
       };
       fixture.detectChanges();
     });

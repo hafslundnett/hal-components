@@ -4,31 +4,34 @@
   </h1>
 
   <p class="doc-info">
-    This is the documentation for Feedback service. 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet facere, debitis reprehenderit incidunt enim. Amet, qui recusandae fugit saepe totam pariatur adipisci aliquam cupiditate, excepturi aut asperiores nihil quam!
+    This is the documentation for Feedback service. To use the service, call the "showMessage" method and include the arguments 
+    for message, severity, closeable and duration of the feedback message. The feedback messages appear by default in the bottom right corner of th UI. 
   </p>
   <p class="doc-info">
     <b>
-      Typical use: When displaying feedback messages to users.
-      Usually sucess, failure, danger or warning.
+      Typical use: When displaying some kind of information after an action. 
+      The feedback messages are categorises in four main topics; success, information, warnings and error messages.
     </b>
   </p>
-
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} FeedbackModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} FeedbackService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
+  <p class="doc-info example-text">
+    Inject and import the FeedbackService service in the component that utilizes the service
+  </p>
 
   <h2 class="doc-subtitle">Example</h2>
   <div class="doc-info example-flex">
       <button class="hdd-button" (click)="displaySuccess()">Success message!</button>
       <button class="hdd-button" (click)="displayInfo()">Info message!</button>
       <button class="hdd-button" (click)="displayError()">Error message!</button>
+      <button class="hdd-button" (click)="displayWarning()">Warning message!</button>
   </div>
   <p class="doc-info example-text">
-    Pssst! The messages appear down on the right corner ;)
+    Pssst! The messages appear on the bottom right corner ;)
   </p>
 
   <hal-code-highlighter [isTS]="true" [code]="isTS"></hal-code-highlighter>

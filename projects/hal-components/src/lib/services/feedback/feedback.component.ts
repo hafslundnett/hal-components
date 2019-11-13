@@ -21,7 +21,8 @@ import { FeedbackExtras } from './feedback-extras';
         'visible',
         style({
           height: '*',
-          opacity: 1
+          opacity: 1,
+          margin: '25px'
         })
       ),
       transition('visible <=> void', animate(`600ms cubic-bezier(0.6, 0, 0.1, 1)`))

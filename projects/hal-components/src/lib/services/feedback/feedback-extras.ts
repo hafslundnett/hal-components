@@ -1,5 +1,5 @@
 export interface FeedbackExtras {
-  severity?: 'success' | 'error' | 'info';
+  severity?: 'success' | 'error' | 'primary' | 'warn' ;
   closable?: boolean;
   duration: number;
 }
