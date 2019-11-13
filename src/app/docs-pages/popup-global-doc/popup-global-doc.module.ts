@@ -5,7 +5,7 @@ import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-l
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';
 import { PopupGlobalExampleComponent } from './popup-global-example/popup-global-example.component';
-import { PopupGlobalService } from 'hal-components';
+import { PopupGlobalService } from '@hafslundnett/hal-components';
 import { DocApiTableModule } from 'src/app/shared/doc-api-table/doc-api-table.module';
 
 @NgModule({

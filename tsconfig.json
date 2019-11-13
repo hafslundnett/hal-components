@@ -21,10 +21,10 @@
       "dom"
     ],
     "paths": {
-      "hal-components": [
+      "@hafslundnett/hal-components": [
         "dist/hal-components"
       ],
-      "hal-components/*": [
+      "@hafslundnett/hal-components/*": [
         "dist/hal-components/*"
       ]
     }
