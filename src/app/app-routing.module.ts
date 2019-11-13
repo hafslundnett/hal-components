@@ -14,6 +14,7 @@ import { BoolToTextDocComponent } from './docs-pages/bool-to-text-doc/bool-to-te
 import { ResizerDocComponent } from './docs-pages/resizer-doc/resizer-doc.component';
 import { AppShellDocComponent } from './docs-pages/app-shell-doc/app-shell-doc.component';
 import { StatusMarkDocComponent } from './docs-pages/status-mark-doc/status-mark-doc.component';
+import { TableViewerDefaultDocComponent } from './docs-pages/table-viewer-default-doc/table-viewer-default-doc.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
       {
         path: Pages.StatusMarkDoc,
         component: StatusMarkDocComponent
+      },
+      {
+        path: Pages.TableViewerDefaultDoc,
+        component: TableViewerDefaultDocComponent
       },
     ]
   }

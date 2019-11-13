@@ -1,0 +1,61 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Table viewer default
+  </h1>
+
+  <p class="doc-info">
+    For displaying dynamic data in a dynamic table. Default version
+
+    The goal for this table system is that everyting should be defined in typescript and make it easier to customise on the fly.
+  </p>
+
+  <p class="doc-info">
+    It has two parts. A base that you can use to create your own, or a default version that just plug and play. TODO URL to create
+  </p>
+
+  <p class="doc-info">
+    For pagination, TODO!
+  </p>
+
+
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} TableViewerDefaultModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} TableEngine {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+
+  <h2 class="doc-subtitle">Example</h2>
+  <div class="doc-info ">
+    <div class="example-flex">
+      <button type="button" (click)="setAll()" class="hdd-button">
+        <span>Show all</span>
+      </button>
+      <button type="button" (click)="setOnlyName()" class="hdd-button">
+        <span>Show only name</span>
+      </button>
+      <button type="button" (click)="setRandomOrder()" class="hdd-button">
+        <span>Show random order</span>
+      </button>
+    </div>
+    <hal-table-viewer-default 
+      [tableData]="tableData"
+      [tableConfig]="tableConfig" 
+      [tableConfigStatic]="tableConfigStatic"
+      [sliceSize]="sliceSize" 
+      [filteredTableConfig]="filteredTableConfig"
+    ></hal-table-viewer-default>
+  </div>
+
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  <hal-code-highlighter [isTS]="true" [code]="tsCodeTable"></hal-code-highlighter>
+  <hal-code-highlighter [isTS]="true" [code]="tsCodeTableConfig"></hal-code-highlighter>
+
+  <!-- <hal-doc-api-table [apiTableHeader]="'Inputs/Outputs'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+
+  <hal-doc-api-table [apiTableHeader]="'Directives'" [apiTableRows]="directiveRows"></hal-doc-api-table> -->
+</div>
+
+<hal-doc-list></hal-doc-list>

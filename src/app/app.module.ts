@@ -18,6 +18,7 @@ import { BoolToTextDocModule } from './docs-pages/bool-to-text-doc/bool-to-text-
 import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
+import { TableViewerDefaultDocModule } from './docs-pages/table-viewer-default-doc/table-viewer-default-doc.module';
 
 @NgModule({
    imports: [
@@ -37,6 +38,7 @@ import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-do
       BoolToTextDocModule,
       ResizerDocModule,
       StatusMarkDocModule,
+      TableViewerDefaultDocModule
    ],
    declarations: [
       AppComponent,
