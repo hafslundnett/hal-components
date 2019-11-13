@@ -2,6 +2,7 @@
   <div class="feedback-container" [ngClass]="'is-' + extras?.severity">
     <div [ngSwitch]="extras?.severity">
       <i class="fal fa-check feedback-container_icon" *ngSwitchCase="'success'"></i>
+      <i class="fal fa-times-circle feedback-container_icon" *ngSwitchCase="'error'"></i>
       <i class="fal fa-info-circle feedback-container_icon" *ngSwitchDefault></i>
     </div>
     <p class="feedback-container_message" [innerHTML]="message"></p>

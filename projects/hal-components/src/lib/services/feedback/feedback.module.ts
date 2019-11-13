@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeedbackComponent } from './feedback.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { FeedbackComponent } from './feedback.component';
 
 @NgModule({
   imports: [
