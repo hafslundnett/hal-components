@@ -1,11 +1,19 @@
-<table mat-table [dataSource]="dataSource" class="hdd-table is-striped" #defaultTable>
+<table mat-table [dataSource]="dataSource" matSort class="hdd-table is-striped" #defaultTable>
   <!-- Main columns loop -->
   <ng-container *ngFor="let currentColumn of dynamicColumns; trackBy: tableColumnsTrackBy">
     <ng-container matColumnDef="{{currentColumn.columnName}}">
       <!-- header -->
-      <th mat-header-cell *matHeaderCellDef class="{{currentColumn.extraCssClasses}}">
-        {{ currentColumn.headerName }}
-      </th>
+
+      <ng-container *ngIf="currentColumn.columnName | isColumnSortable:tableConfig">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="{{currentColumn.extraCssClasses}}">
+          {{ currentColumn.headerName }} 
+        </th>
+      </ng-container>
+      <ng-container *ngIf="!(currentColumn.columnName | isColumnSortable:tableConfig)">
+        <th mat-header-cell *matHeaderCellDef class="{{currentColumn.extraCssClasses}}">
+          {{ currentColumn.headerName }}
+        </th>
+      </ng-container>
 
 
       <!-- body/cell -->

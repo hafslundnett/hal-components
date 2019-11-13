@@ -52,6 +52,7 @@ export abstract class TableEngine<ConfigDataType> {
     return (this.toLimitedDecimals(value * 100, precision)) + '%';
   }
 
+  /** sortable is default true */
   protected addColumn(
     columnName: string,
     headerName: string,
@@ -129,7 +130,9 @@ export abstract class TableEngine<ConfigDataType> {
   }
 
   public isColumnSortable(columnName: string): boolean {
-    return this.tableColumns.some((column) => column.columnName === columnName && column.sortable);
+    return this.tableColumns.some((column) => {
+      return column.columnName === columnName && column.sortable === true;
+    });
   }
 
 }

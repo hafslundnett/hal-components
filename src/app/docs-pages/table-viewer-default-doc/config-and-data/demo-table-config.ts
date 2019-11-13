@@ -10,6 +10,7 @@ export class DemoTableConfig extends TableEngine<DemoData> {
       headerName: 'Names',
       headerFullName: 'Name of person',
       extraCssClasses: '',
+      sortable: false,
       displayDataFunc: (data: DemoData) => data.name,
     },
     {
@@ -17,6 +18,7 @@ export class DemoTableConfig extends TableEngine<DemoData> {
       headerName: 'Age',
       headerFullName: 'Age of person',
       extraCssClasses: '',
+      sortable: true,
       displayDataFunc: (data: DemoData) => data.age,
     },
     {
@@ -24,7 +26,7 @@ export class DemoTableConfig extends TableEngine<DemoData> {
       headerName: 'Role',
       headerFullName: 'Role of person',
       extraCssClasses: '',
-      displayDataFunc: (data: DemoData) => data.age,
+      displayDataFunc: (data: DemoData) => data.role,
     },
 
   ];

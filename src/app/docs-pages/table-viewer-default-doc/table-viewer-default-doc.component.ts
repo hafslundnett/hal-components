@@ -3,6 +3,7 @@ import { TableEngine, DetailsTabColumn } from '@hafslundnett/hal-components';
 import { TableDemoData } from './config-and-data/demo-data-table.mock';
 import { DemoData } from './config-and-data/demo-data-table.interface';
 import { DemoTableConfig } from './config-and-data/demo-table-config';
+import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 
 @Component({
   selector: 'hal-table-viewer-default-doc',
@@ -64,13 +65,21 @@ setAll() {
   this.filteredTableConfig = this.tableConfig;
 }
   `;
-  htmlCode = `<hal-table-viewer-default 
+  htmlCode = `<hal-table-viewer-default
   [tableData]="tableData"
-  [tableConfig]="tableConfig" 
+  [tableConfig]="tableConfig"
   [tableConfigStatic]="tableConfigStatic"
-  [sliceSize]="sliceSize" 
+  [sliceSize]="sliceSize"
   [filteredTableConfig]="filteredTableConfig"
 ></hal-table-viewer-default>`;
+
+  apiTableRowsDefaultViewer: ApiTableRow[] = [
+    { apiInput: '[filteredTableConfig]', description: 'The subset of element to show, and in witch order' },
+    { apiInput: '[tableData]', description: 'The data to display in the table' },
+    { apiInput: '[sliceSize]', description: 'TODO' },
+    { apiInput: '[tableConfig]', description: 'The config for the table' },
+    { apiInput: '[tableConfigStatic]', description: 'The static version of the config for the table' },
+  ];
 
   tableData: DemoData[] = TableDemoData;
   tableConfig = new DemoTableConfig();
@@ -86,7 +95,7 @@ setAll() {
 
   setOnlyName() {
     const newFilteredConfig = new DemoTableConfig();
-    const newColumns: DetailsTabColumn<any>[] = newFilteredConfig.tableColumns
+    const newColumns: DetailsTabColumn<DemoData>[] = newFilteredConfig.tableColumns
       .filter(current => current.columnName === 'names');
     newFilteredConfig.tableColumns = [...newColumns];
     this.filteredTableConfig = newFilteredConfig;
@@ -94,7 +103,7 @@ setAll() {
 
   setRandomOrder() {
     const newFilteredConfig = new DemoTableConfig();
-    const newColumns: DetailsTabColumn<any>[] = this.shuffle(newFilteredConfig.tableColumns);
+    const newColumns: DetailsTabColumn<DemoData>[] = this.shuffle(newFilteredConfig.tableColumns);
     newFilteredConfig.tableColumns = [...newColumns];
     this.filteredTableConfig = newFilteredConfig;
   }

@@ -20,7 +20,6 @@ export class TableViewerBase implements OnInit, AfterViewInit, OnChanges, OnDest
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @Input() tableData: any[] = []; // TableDataType
   @Input() sliceSize = 0;
-  @Input() originalMeteringPointIds: string[] = [];
 
   @Input() tableConfig: any; // : ConfigDataTypes;
   @Input() tableConfigStatic: any; // : ConfigDataTypesStatic;
