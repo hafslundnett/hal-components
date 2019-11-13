@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FeedbackComponent } from './feedback.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-fdescribe('FeedbackComponent', () => {
+describe('FeedbackComponent', () => {
   let component: FeedbackComponent;
   let fixture: ComponentFixture<FeedbackComponent>;
 
@@ -141,6 +141,7 @@ fdescribe('FeedbackComponent', () => {
       expect(iconElement2).not.toBeNull();
     });
   });
+
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
   }
