@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DateConstants } from '@hafslundnett/hal-components';
-import { formatDate, registerLocaleData } from '@angular/common';
-import localeNorwegian from '@angular/common/locales/nb';
-import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'hal-date-format-doc',
@@ -11,35 +9,33 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 })
 export class DateFormatDocComponent implements OnInit {
 
-  dateFormat: ApiTableRow[] = [
-    { apiInput: 'dateFormat', description: '{{ example1 }}' },
-  ];
-
   today = new Date();
-  example1 = '';
-  example2 = '';
-  example3 = '';
-  example4 = '';
-  example5 = '';
-  example6 = '';
-  example7 = '';
-  example8 = '';
-  example9 = '';
-  example10 = '';
-  example11 = '';
+  showDate = formatDate(this.today, DateConstants.dateFormat, 'en-US');
+
+  dateConstantTable = [
+    { constant: 'dateFormat', format: 'yyyy-MM-dd', result: formatDate(this.today, DateConstants.dateFormat, 'en-US')},
+    { constant: 'dateDotFormat', format: 'yyyy.MM.dd', result: formatDate(this.today, DateConstants.dateDotFormat, 'en-US')},
+    { constant: 'dateShortFormat', format: 'yyyyMMdd', result: formatDate(this.today, DateConstants.dateShortFormat, 'en-US')},
+    { constant: 'csvDateFormat', format: 'yyyy-MM-dd', result: formatDate(this.today, DateConstants.csvDateFormat, 'en-US')},
+    { constant: 'ddmmyyhhmm', format: 'dd-MM-yyyy, HH:mm', result: formatDate(this.today, DateConstants.ddmmyyhhmm, 'en-US')},
+    { constant: 'dotddmmyyhhmm', format: 'dd.MM.yyyy HH:mm', result: formatDate(this.today, DateConstants.dotddmmyyhhmm, 'en-US')},
+    { constant: 'dashddmmyy', format: 'dd-MM-yyyy', result: formatDate(this.today, DateConstants.dashddmmyy, 'en-US')},
+    { constant: 'dotddmmyy', format: 'dd.MM.yyyy', result: formatDate(this.today, DateConstants.dotddmmyy, 'en-US')},
+    { constant: 'hhmm', format: 'HH:mm', result: formatDate(this.today, DateConstants.hhmm, 'en-US')},
+    { constant: 'ddmm', format: 'dd.MM', result: formatDate(this.today, DateConstants.ddmm, 'en-US')},
+    { constant: 'ddDashMM', format: 'dd/MM', result: formatDate(this.today, DateConstants.ddDashMM, 'en-US')}
+  ];
+  tsCode = `today = new Date();
+DisplayDateFormat = formatDate(this.today, DateConstants.dateFormat, 'en-US');
+DisplayCsvDateFormat = formatDate(this.today, DateConstants.csvDateFormat, 'en-US');
+Displayhhmm = formatDate(this.today, DateConstants.hhmm, 'en-US');
+
+  `;
+
+  htmlCode = `{{ today | date: DisplayDateFormat }}
+{{ today | date: DisplayCsvDateFormat }}
+{{ today | date: Displayhhmm }}`;
 
   ngOnInit() {
-    registerLocaleData(localeNorwegian);
-    this.example1 = formatDate(this.today, DateConstants.dateFormat, 'nb-NO');
-    this.example2 = formatDate(this.today, DateConstants.dateDotFormat, 'nb-NO');
-    this.example3 = formatDate(this.today, DateConstants.dateShortFormat, 'nb-NO');
-    this.example4 = formatDate(this.today, DateConstants.csvDateFormat, 'nb-NO');
-    this.example5 = formatDate(this.today, DateConstants.ddmmyyhhmm, 'nb-NO');
-    this.example6 = formatDate(this.today, DateConstants.dotddmmyyhhmm, 'nb-NO');
-    this.example7 = formatDate(this.today, DateConstants.dashddmmyy, 'nb-NO');
-    this.example8 = formatDate(this.today, DateConstants.dotddmmyy, 'nb-NO');
-    this.example9 = formatDate(this.today, DateConstants.hhmm, 'nb-NO');
-    this.example10 = formatDate(this.today, DateConstants.ddmm, 'nb-NO');
-    this.example11 = formatDate(this.today, DateConstants.ddDashMM, 'nb-NO');
   }
 }

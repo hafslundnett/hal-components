@@ -1,26 +1,42 @@
 <div class="doc-page-container">
 
-  <h1 class="doc-title">Date Formats</h1>
+  <h1 class="doc-title">Date Constants</h1>
 
   <p class="doc-info">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam quos dolor quaerat possimus, porro illum animi nobis! Architecto tempora tenetur vel, omnis praesentium accusamus deserunt consequuntur doloribus. Reprehenderit, adipisci. Error.
+    The Date Constants are a selection of date formats to display date objects. 
+    Use Angular Date Pipe, and its method 'formatDate' to store the date to be displayed.
+    In the 'formatDate' method, pass the DateConstant as the format. 
+    More information on the DatePipe can be found here: 
+    <a href="https://angular.io/api/common/DatePipe" class="hdd-link" target="blank">DatePipe</a>
   </p>
 
   <hal-doc-import-line>
-    <code><pre>import {{ '{' }} DividerModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    <code><pre>import {{ '{' }} DateConstants {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
 
-  <h2 class="doc-subtitle">Examples</h2>
+  <h2 class="doc-subtitle">Available Formats</h2>
   <div class="example-container">
 
-      <hal-doc-api-table [apiTableHeader]="'Date Constants'" [apiTableRows]="dateFormat"></hal-doc-api-table>
-
-
-    <p class="example-text"> dateFormat = {{ example1 }} </p>
-    <p class="example-text">The line below is the example of the divider component </p>
+    <table class="hdd-table has-shadow is-striped">
+      <thead>
+        <tr class="hdd-table_header">
+          <th>Date Constants </th>
+          <th>Format</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of dateConstantTable">
+          <th>{{ row.constant }}</th>
+          <td>{{ row.format}}</td>
+          <td>{{ row.result}}</td>
+        </tr>
+      </tbody>
+    </table>
 
   </div>
-
+ 
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
 
 </div>

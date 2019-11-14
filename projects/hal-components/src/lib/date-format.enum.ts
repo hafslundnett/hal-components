@@ -4,7 +4,7 @@ export enum DateConstants {
     dateShortFormat = 'yyyyMMdd',
     csvDateFormat = 'yyyy-MM-dd',
     ddmmyyhhmm = 'dd-MM-yyyy, HH:mm',
-    dotddmmyyhhmm = 'dd.MM.yyyy HH:mm, GG',
+    dotddmmyyhhmm = 'dd.MM.yyyy HH:mm',
     dashddmmyy = 'dd-MM-yyyy',
     dotddmmyy = 'dd.MM.yyyy',
     hhmm = 'HH:mm',
