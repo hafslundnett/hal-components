@@ -1,13 +1,11 @@
-import { Injectable, ComponentRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
 
 @Injectable()
 export class PopupGlobalService {
 
-  constructor(private overlay: Overlay) {
-
-  }
+  constructor(private overlay: Overlay) { }
 
   setupOverlay(maxWidth = '50%'): OverlayRef {
     return this.overlay.create({
