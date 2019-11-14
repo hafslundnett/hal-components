@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DateConstants } from '@hafslundnett/hal-components';
-import { formatDate } from '@angular/common';
+import { formatDate, registerLocaleData } from '@angular/common';
+
+interface DateConstantDescription {
+  constant: string;
+  format: string;
+  result: string;
+}
 
 @Component({
   selector: 'hal-date-format-doc',
@@ -12,18 +18,8 @@ export class DateFormatDocComponent implements OnInit {
   today = new Date();
   showDate = formatDate(this.today, DateConstants.dateFormat, 'en-US');
 
-  dateConstantTable = [
-    { constant: 'dateFormat', format: 'yyyy-MM-dd', result: formatDate(this.today, DateConstants.dateFormat, 'en-US')},
-    { constant: 'dateDotFormat', format: 'yyyy.MM.dd', result: formatDate(this.today, DateConstants.dateDotFormat, 'en-US')},
-    { constant: 'dateShortFormat', format: 'yyyyMMdd', result: formatDate(this.today, DateConstants.dateShortFormat, 'en-US')},
-    { constant: 'csvDateFormat', format: 'yyyy-MM-dd', result: formatDate(this.today, DateConstants.csvDateFormat, 'en-US')},
-    { constant: 'ddmmyyhhmm', format: 'dd-MM-yyyy, HH:mm', result: formatDate(this.today, DateConstants.ddmmyyhhmm, 'en-US')},
-    { constant: 'dotddmmyyhhmm', format: 'dd.MM.yyyy HH:mm', result: formatDate(this.today, DateConstants.dotddmmyyhhmm, 'en-US')},
-    { constant: 'dashddmmyy', format: 'dd-MM-yyyy', result: formatDate(this.today, DateConstants.dashddmmyy, 'en-US')},
-    { constant: 'dotddmmyy', format: 'dd.MM.yyyy', result: formatDate(this.today, DateConstants.dotddmmyy, 'en-US')},
-    { constant: 'hhmm', format: 'HH:mm', result: formatDate(this.today, DateConstants.hhmm, 'en-US')},
-    { constant: 'ddmm', format: 'dd.MM', result: formatDate(this.today, DateConstants.ddmm, 'en-US')},
-    { constant: 'ddDashMM', format: 'dd/MM', result: formatDate(this.today, DateConstants.ddDashMM, 'en-US')}
+  dateConstantTable: DateConstantDescription[] = [
+
   ];
   tsCode = `today = new Date();
 DisplayDateFormat = formatDate(this.today, DateConstants.dateFormat, 'en-US');
@@ -37,5 +33,15 @@ Displayhhmm = formatDate(this.today, DateConstants.hhmm, 'en-US');
 {{ today | date: Displayhhmm }}`;
 
   ngOnInit() {
+    for ( const currentDate in DateConstants ) {
+      if (DateConstants.hasOwnProperty(currentDate)) {
+      console.log(currentDate, DateConstants[currentDate]);
+      this.dateConstantTable.push({
+        constant: currentDate,
+        format: DateConstants[currentDate],
+        result: formatDate(this.today, DateConstants[currentDate], 'nb')
+      });
+      }
+    }
   }
 }

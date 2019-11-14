@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,10 @@ import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
 import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-doc.module';
+import { registerLocaleData } from '@angular/common';
+import localeNb from '@angular/common/locales/nb';
+
+registerLocaleData(localeNb);
 
 @NgModule({
    imports: [
@@ -44,9 +48,11 @@ import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-do
       AppComponent,
       HddStyleDocComponent,
    ],
-   providers: [],
+   providers: [
+      { provide: LOCALE_ID, useValue: 'nb' }
+   ],
    bootstrap: [
-      AppComponent
+      AppComponent,
    ]
 })
 export class AppModule { }
