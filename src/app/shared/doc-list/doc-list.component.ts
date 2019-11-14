@@ -86,9 +86,15 @@ export class DocListComponent implements OnInit {
   constants: DocListItem[] = [
     {
       cardTitle: 'Date Formats',
-      cardSubtitle: 'Date Format Constants',
+      cardSubtitle: 'For displaying date objects',
       cardIcon: 'fa-adjust',
       docUrl: Pages.DateFormatDoc
+    },
+    {
+      cardTitle: 'Animations',
+      cardSubtitle: 'Implement animations on components',
+      cardIcon: 'fa-adjust',
+      docUrl: Pages.AnimationsDoc
     }
   ];
 

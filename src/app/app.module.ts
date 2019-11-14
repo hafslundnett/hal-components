@@ -19,6 +19,7 @@ import { ResizerDocModule } from './docs-pages/resizer-doc/resizer-doc.module';
 import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.module';
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
 import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-doc.module';
+import { AnimationsDocModule } from './docs-pages/animations-doc/animations-doc.module';
 
 @NgModule({
    imports: [
@@ -38,7 +39,8 @@ import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-do
       BoolToTextDocModule,
       ResizerDocModule,
       StatusMarkDocModule,
-      DateFormatDocModule
+      DateFormatDocModule,
+      AnimationsDocModule
    ],
    declarations: [
       AppComponent,
