@@ -87,7 +87,7 @@ export class DocListComponent implements OnInit {
     {
       cardTitle: 'Date Formats',
       cardSubtitle: 'Date Format Constants',
-      cardIcon: 'fa-adjust',
+      cardIcon: 'fa-clock',
       docUrl: Pages.DateFormatDoc
     }
   ];
