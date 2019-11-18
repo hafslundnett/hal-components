@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DateConstants } from '@hafslundnett/hal-components';
 import { formatDate } from '@angular/common';
+import { format } from 'date-fns';
 
 interface DateConstantDescription {
   constant: string;
