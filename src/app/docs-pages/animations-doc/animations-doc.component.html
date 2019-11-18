@@ -47,52 +47,55 @@
       </button>
     </div>
   </div>
-  <div class="example-container">
-    <div class="example-list">
-      <ul [@listAnimation]="exampleList.length">
-        <li *ngFor="let item of exampleList"> {{ item }}</li>
-      </ul>
-    </div>
-    <div class="examplebuttons">
-      <button class="hdd-button" (click)="addItem()">
-        Add Item
-      </button>
-      <button class="hdd-button" (click)="removeItem()">
-        Remove Item
-      </button>
-    </div>
-  </div>
-
-  <div class="example-container">
-    <h2>Curtains down</h2>
-    <div class="curtain-area">
-      <div class="curtain-rod">
-        <div *ngIf="isCurtain" [@curtainDown]="isCurtain ? '*' : 'void'" class="scaleBox">
-
-          <div class="hdd-card">
-            <div class="hdd-card_header">
-              <div class="hdd-card_header_text">
-                <div class="hdd-card_title">Im a Card</div>
-              </div>
-            </div>
-            <div class="hdd-card_content">
-              <p>Usually I consist of some usefull content.</p>
-            </div>
-          </div>
-
-        </div>
+  <div class="small-containers">
+    <div class="example-container small">
+      <h2>@listAnimation</h2>
+      <div class="example-list">
+        <ul [@listAnimation]="exampleList.length">
+          <li *ngFor="let item of exampleList"> {{ item }}</li>
+        </ul>
+      </div>
+      <div class="examplebuttons">
+        <button class="hdd-button" (click)="addItem()">
+          Add Item
+        </button>
+        <button class="hdd-button" (click)="removeItem()">
+          Remove Item
+        </button>
       </div>
     </div>
-    <div class="examplebuttons">
-      <button class="hdd-button" (click)="toggleCurtains()">
-        Curtains down
-      </button>
+  
+    <div class="example-container small">
+      <h2>@curtainDown</h2>
+      <div class="curtain-area">
+        <div class="curtain-rod">
+          <div *ngIf="isCurtain" [@curtainDown]="isCurtain ? '*' : 'void'" class="scaleBox">
+  
+            <div class="hdd-card">
+              <div class="hdd-card_header">
+                <div class="hdd-card_header_text">
+                  <div class="hdd-card_title">Im a Card</div>
+                </div>
+              </div>
+              <div class="hdd-card_content">
+                <p>Usually I consist of some usefull content.</p>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <div class="examplebuttons">
+        <button class="hdd-button" (click)="toggleCurtains()">
+          Curtains down
+        </button>
+      </div>
     </div>
   </div>
 
 
   <div class="example-container">
-    <h2>Height Down</h2>
+    <h2>@heightDown</h2>
     <div class="curtain-area">
       <div class="hdd-card height-card" *ngIf="isHeight" @heightDown>
         <div class="hdd-card_header">
@@ -110,14 +113,9 @@
         Height Down
       </button>
     </div>
-
   </div>
 
-
-
-
-
-  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  <hal-code-highlighter [isHTML]="" [code]=""></hal-code-highlighter>
 
 </div>
 
