@@ -11,5 +11,6 @@ export enum Pages {
   ResizerDoc = 'resizer-doc',
   AppShellDoc = 'app-shell-doc',
   StatusMarkDoc = 'status-mark-doc',
-  DateFormatDoc = 'date-format-doc'
+  DateFormatDoc = 'date-format-doc',
+  FeedbackDoc = 'feedback-doc',
 }

@@ -23,6 +23,7 @@ import { registerLocaleData } from '@angular/common';
 import localeNb from '@angular/common/locales/nb';
 
 registerLocaleData(localeNb);
+import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module';
 
 @NgModule({
    imports: [
@@ -42,7 +43,8 @@ registerLocaleData(localeNb);
       BoolToTextDocModule,
       ResizerDocModule,
       StatusMarkDocModule,
-      DateFormatDocModule
+      DateFormatDocModule,
+      FeedbackDocModule,
    ],
    declarations: [
       AppComponent,
