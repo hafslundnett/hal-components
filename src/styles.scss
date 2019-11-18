@@ -15,9 +15,13 @@ body {
   overflow-y: scroll;
 }
 
-:root {
-  --default-margin: 20px;
-}
+  :root {
+    --default-margin: 20px;
+  }
+
+  :root {
+    --default-margin2: 20px;
+  }
 
 @include mat-core();
 $primary-color: mat-palette($hdd-material_primary);

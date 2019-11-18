@@ -81,6 +81,17 @@ setAll() {
     { apiInput: '[tableConfigStatic]', description: 'The static version of the config for the table' },
   ];
 
+  detailsTabColumnProps: ApiTableRow[] = [
+    { apiInput: 'columnName', description: 'Name of column for angular without spaces (use camelCase)' },
+    { apiInput: 'headerName', description: 'Name of column for the user ' },
+    { apiInput: 'headerFullName', description: 'Name of column for the user with extra info' },
+    { apiInput: 'extraCssClasses', description: 'CSS class to be added to column' },
+    { apiInput: 'displayDataFunc', description: 'A function that returns the data you want to display' },
+    { apiInput: 'dateFormat?', description: 'The format of the date. Only displays as date if provided' },
+    { apiInput: 'sortable?', description: 'If column should have sorting. Default is true' },
+    { apiInput: 'dynamicCssClasses?', description: 'A function returning a css class. Use extraCssClasses if just static class' },
+  ];
+
   tableData: DemoData[] = TableDemoData;
   tableConfig = new DemoTableConfig();
   tableConfigStatic = DemoTableConfig;

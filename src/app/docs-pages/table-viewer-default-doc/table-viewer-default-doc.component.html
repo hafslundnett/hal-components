@@ -4,20 +4,18 @@
   </h1>
 
   <p class="doc-info">
-    For displaying dynamic data in a dynamic table. Default version
-
-    The goal for this table system is that everyting should be defined in typescript and make it easier to customise on the fly.
+    This is a table for displaying dynamic and highly configurable data. 
+    The goal for this table system is that everything should be defined in typescript and make it easier to customise on the fly.
+    It consists of three core elements: The html element, a config file describing the table and the actuall data.
   </p>
 
   <p class="doc-info">
-    It has two parts. A base that you can use to create your own, or a default version that just plug and play. TODO URL to create
+    This is the default version, but you can extend the engine directly to create an even more custom table if you want to. This is not yest documented
   </p>
 
   <p class="doc-info">
-    For pagination, TODO!
+    For pagination, use the paginator (TODO), and add a sliceSize for desired page size
   </p>
-
-
 
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} TableViewerDefaultModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
@@ -51,11 +49,23 @@
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
   <hal-code-highlighter [isTS]="true" [code]="tsCodeTable"></hal-code-highlighter>
-  <hal-code-highlighter [isTS]="true" [code]="tsCodeTableConfig"></hal-code-highlighter>
-
+  
   <hal-doc-api-table [apiTableHeader]="'Inputs/Outputs'" [apiTableRows]="apiTableRowsDefaultViewer"></hal-doc-api-table>
 
-  TODO API table config
+  <h1 class="doc-title">Table Config</h1>
+
+  <div class="doc-info ">
+    The table uses config files that define how the table content should display. The core of the config is the columnConfiguration and it has one object pr column.
+    Below is a overview of its properties
+  </div>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} TableEngine, DetailsTabColumn {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <hal-code-highlighter [isTS]="true" [code]="tsCodeTableConfig"></hal-code-highlighter>
+  <hal-doc-api-table [apiTableHeader]="'DetailsTabColumn properties'" [apiTableRows]="detailsTabColumnProps"></hal-doc-api-table>
+
   <!--  -->
   <!-- <hal-doc-api-table [apiTableHeader]="'Directives'" [apiTableRows]="directiveRows"></hal-doc-api-table> -->
 </div>
