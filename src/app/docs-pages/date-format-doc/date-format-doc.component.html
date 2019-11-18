@@ -12,7 +12,7 @@
   <p class="doc-info">
     <b>Necessary imports:</b>
     To be able to use date formats with a norwegian language, you need to import packages for unicode identifiers.
-    In the root app.module of your project, import the following packages:
+    In the root app.module of your project, import the following packages, and add the localID to the providers list:
   </p>
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} registerLocaleData {{ '}' }} from '@angular/common';</pre></code>
@@ -20,10 +20,11 @@
   <hal-doc-import-line>
     <code><pre>import localeNb from '@angular/common/locales/nb';</pre></code>
   </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>providers: [ {{ '{' }} provide: LOCALE_ID, useValue: 'nb' {{ '}' }} ],;</pre></code>
+  </hal-doc-import-line>
 
   <p class="doc-info">
-    Then in the root app.module providers, insert the object: {{ '{' }} provide: LOCALE_ID, useValue: 'nb' {{ '}' }}
-    <br>
     When the necessary imports are implemented, import DateConstants as shown below in the component who needs the date
     format.
   </p>
