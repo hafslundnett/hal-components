@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DateConstants } from '@hafslundnett/hal-components';
-import { formatDate } from '@angular/common';
 import { format } from 'date-fns';
 
 interface DateConstantDescription {
@@ -16,17 +15,19 @@ interface DateConstantDescription {
 })
 export class DateFormatDocComponent implements OnInit {
 
+  public readonly dateConstants = DateConstants;
+
   today = new Date();
   dateConstantTable: DateConstantDescription[] = [];
 
-  tsCode = `today = new Date();
-DisplayDateFormat = formatDate(this.today, DateConstants.dateFormat, 'nb');
-DisplayCsvDateFormat = formatDate(this.today, DateConstants.csvDateFormat, 'nb');
-Displayhhmm = formatDate(this.today, DateConstants.hhmm, 'nb');`;
+  formatTsCode = 'format(new Date(), DateConstants.dateFormat);';
 
-  htmlCode = `{{ today | date: DisplayDateFormat }}
-{{ today | date: DisplayCsvDateFormat }}
-{{ today | date: Displayhhmm }}`;
+  tsCode = `public readonly dateConstants = DateConstants;
+  today = new Date();`;
+
+  htmlCode = `{{ today | date: dateConstants.csvDateFormat }}
+{{ today | date: dateConstants.dotddmmyyhhmm }}
+{{ today | date: dateConstants.ddDashMM }}`;
 
   ngOnInit() {
     for ( const currentDate in DateConstants ) {
@@ -34,7 +35,7 @@ Displayhhmm = formatDate(this.today, DateConstants.hhmm, 'nb');`;
       this.dateConstantTable.push({
         constant: currentDate,
         format: DateConstants[currentDate],
-        result: formatDate(this.today, DateConstants[currentDate], 'nb')
+        result: format(this.today, DateConstants[currentDate])
       });
       }
     }
