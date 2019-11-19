@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DetailsTabColumn, TableEngine } from '../../table-engine/table-engine';
+import { TableEngine } from '../../table-engine/table-engine';
+import { DetailsTabColumn } from '../../table-engine/details-tab-column.interface';
 
 @Pipe({
   name: 'displayConfig'

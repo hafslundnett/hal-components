@@ -1,31 +1,11 @@
-type DisplayDataFunc<ConfigDataType> = (data: ConfigDataType) => string | Date | Array<any> | boolean | number;
-
-// TODO own file
-export interface SortableSetting {
-  columnName: string;
-  sortable: boolean;
-}
-
-// TODO own file
-export interface DetailsTabColumn<ConfigDataType> {
-  columnName: string;
-  headerName: string;
-  headerFullName: string;
-  extraCssClasses: string;
-  displayDataFunc: DisplayDataFunc<ConfigDataType>;
-  dateFormat?: string | null;
-  sortable?: boolean;
-  specialDisplayType?: any; // TODO
-  dynamicCssClasses?: DisplayDataFunc<ConfigDataType> | undefined;
-}
+import { DetailsTabColumn } from './details-tab-column.interface';
+import { DisplayDataFunc } from './display-data-func.type';
 
 export abstract class TableEngine<ConfigDataType> {
 
-  // public static columnConfiguration: DetailsTabColumn<any>[]; // TODO fix
-
   public tableColumns: DetailsTabColumn<ConfigDataType>[] = [];
 
-  public name: string; // TODO consider enum?
+  public name: string;
   public label: string;
   public extraTableCss: string;
 
@@ -61,7 +41,7 @@ export abstract class TableEngine<ConfigDataType> {
     displayDataFunc: DisplayDataFunc<ConfigDataType>,
     dateFormat?: string | null,
     sortable: boolean = true, // defaults to true
-    specialDisplayType: any = null, // TODO
+    specialDisplayType: any = null, // TODO someday
     dynamicCssClasses?: DisplayDataFunc<ConfigDataType>,
   ): void {
     this.tableColumns.push({
@@ -97,32 +77,6 @@ export abstract class TableEngine<ConfigDataType> {
       columns.push(column.columnName);
     });
     return columns;
-  }
-
-  // TODO fix or remove
-  public updateColumnName(dailySlaDate: string, estimatedDate: string, index: string) {
-    const column = this.getTableColumn(index);
-    if (!column) {
-      return;
-    }
-
-    setTimeout(() => {
-      if (dailySlaDate) {
-        if (this.getTableColumn(dailySlaDate)) {
-          return;
-        }
-        column.columnName = dailySlaDate;
-        column.headerFullName = dailySlaDate;
-        column.headerName = dailySlaDate;
-      } else {
-        if (this.getTableColumn(estimatedDate)) {
-          return;
-        }
-        column.columnName = estimatedDate;
-        column.headerFullName = estimatedDate;
-        column.headerName = estimatedDate;
-      }
-    }, 0);
   }
 
   public getTableColumn(columnName: string): DetailsTabColumn<ConfigDataType> | undefined {

@@ -1,7 +1,7 @@
-@import '~@hafslundnett/hdd-style/main';
+@import "~@hafslundnett/hdd-style/main";
 
-@import '~@hafslundnett/hdd-style/variables/main';
-@import '~@angular/material/theming';
+@import "~@hafslundnett/hdd-style/variables/main";
+@import "~@angular/material/theming";
 
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/themes/prism-okaidia";
@@ -15,13 +15,9 @@ body {
   overflow-y: scroll;
 }
 
-  :root {
-    --default-margin: 20px;
-  }
-
-  :root {
-    --default-margin2: 20px;
-  }
+:root {
+  --default-margin: 20px;
+}
 
 @include mat-core();
 $primary-color: mat-palette($hdd-material_primary);
@@ -29,7 +25,11 @@ $accent-color: mat-palette($hdd-material_accent);
 $warn-color: mat-palette($hdd-material_warn);
 $theme: mat-light-theme($primary-color, $accent-color, $warn-color);
 
-$typography: mat-typography-config($font-family: ('"Helvetica Neue LT Std", Arial, sans-serif'));
+$typography: mat-typography-config(
+  $font-family: (
+    '"Helvetica Neue LT Std", Arial, sans-serif'
+  )
+);
 
 @include angular-material-theme($theme);
 @include angular-material-typography($typography);
@@ -50,7 +50,7 @@ $typography: mat-typography-config($font-family: ('"Helvetica Neue LT Std", Aria
 
 .doc-info {
   margin-bottom: calc(var(--default-margin) * (1.61));
-  line-height: 1.63rem; 
+  line-height: 1.63rem;
 }
 
 .doc-subtitle {

@@ -12,7 +12,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
-import { DetailsTabColumn } from './table-engine';
+import { DetailsTabColumn } from './details-tab-column.interface';
 
 // TableDataType was AnalysisTableData in drops
 export class TableViewerBase implements OnInit, AfterViewInit, OnChanges, OnDestroy {
@@ -36,14 +36,13 @@ export class TableViewerBase implements OnInit, AfterViewInit, OnChanges, OnDest
   private subscriptions = new Subscription();
 
   constructor(
-    // protected tableSettingsService: TableSettingsService,
   ) {
   }
 
   ngOnInit() {
     this.setupDynamicColumns();
 
-    this.dataSource.paginator = this.paginator; // <-- takes 100 ms!
+    this.dataSource.paginator = this.paginator; // <-- can take take 100 ms+!
     if (this.paginator) {
       this.paginator.pageSize = this.sliceSize;
     }

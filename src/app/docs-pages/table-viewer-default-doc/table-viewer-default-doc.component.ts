@@ -96,7 +96,7 @@ setAll() {
   tableConfig = new DemoTableConfig();
   tableConfigStatic = DemoTableConfig;
   sliceSize = 10000;
-  filteredTableConfig: TableEngine<DemoData>; // AnalysisTableData
+  filteredTableConfig: TableEngine<DemoData>;
 
   constructor() { }
 
