@@ -25,9 +25,10 @@
 
   <h2 class="doc-subtitle">Examples</h2>
   <div class="example-container">
-    <h2>@scaleUp & @scaleDown </h2>
+    <h2 class="exampleTitle">Animation: @scaleUp & @scaleDown </h2>
+    <p class="subtitle">- Initate components with @scaleUp, or hide with @scaleDown</p>
 
-    <div class="scaleboxes">
+    <div class="examples-area">
 
       <div class="animationBoxes" @scaleUp *ngIf="isUpbox">
         I'm animated with @scaleUp
@@ -38,7 +39,7 @@
       </div>
     </div>
 
-    <div class="examplebuttons">
+    <div class="examplebuttons small">
       <button class="hdd-button" (click)="toggleUpBox()">
         ScaleUp animation
       </button>
@@ -49,13 +50,15 @@
   </div>
   <div class="small-containers">
     <div class="example-container small">
-      <h2>@listAnimation</h2>
-      <div class="example-list">
+      <h2 class="exampleTitle">Animation: @listAnimation </h2>
+      <p class="subtitle">- Iniate list and list elements with animation</p>
+      <div class="examples-area small-area">
         <ul [@listAnimation]="exampleList.length">
           <li *ngFor="let item of exampleList"> {{ item }}</li>
         </ul>
       </div>
-      <div class="examplebuttons">
+
+      <div class="examplebuttons small">
         <button class="hdd-button" (click)="addItem()">
           Add Item
         </button>
@@ -64,24 +67,22 @@
         </button>
       </div>
     </div>
-  
+
     <div class="example-container small">
-      <h2>@curtainDown</h2>
-      <div class="curtain-area">
-        <div class="curtain-rod">
-          <div *ngIf="isCurtain" [@curtainDown]="isCurtain ? '*' : 'void'" class="scaleBox">
-  
-            <div class="hdd-card">
-              <div class="hdd-card_header">
-                <div class="hdd-card_header_text">
-                  <div class="hdd-card_title">Im a Card</div>
-                </div>
-              </div>
-              <div class="hdd-card_content">
-                <p>Usually I consist of some usefull content.</p>
+      <h2 class="exampleTitle">Animation: @curtainDown </h2>
+      <p class="subtitle">- dropdown effect on animations wich scaling</p>
+      <div class="examples-area small-area">
+        <div *ngIf="isCurtain" [@curtainDown]="isCurtain ? '*' : 'void'">
+
+          <div class="hdd-card">
+            <div class="hdd-card_header">
+              <div class="hdd-card_header_text">
+                <div class="hdd-card_title">Im a Card</div>
               </div>
             </div>
-  
+            <div class="hdd-card_content">
+              <p>Usually I consist of some usefull content.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -95,19 +96,23 @@
 
 
   <div class="example-container">
-    <h2>@heightDown</h2>
-    <div class="curtain-area">
-      <div class="hdd-card height-card" *ngIf="isHeight" @heightDown>
-        <div class="hdd-card_header">
-          <div class="hdd-card_header_text">
-            <div class="hdd-card_title">Im a Card</div>
+    <h2 class="exampleTitle">@heightDown</h2>
+    <p class="subtitle">Elements height gets animated from 0 to full size</p>
+    <div class="examples-area card-area">
+       <div> <!--Wrap it so it doesnt expand over the enture area  -->
+        <div class="hdd-card" *ngIf="isHeight" @heightDown>
+          <div class="hdd-card_header">
+            <div class="hdd-card_header_text">
+              <div class="hdd-card_title">Im a Card</div>
+            </div>
           </div>
-        </div>
-        <div class="hdd-card_content">
-          <p>Usually I consist of some usefull content.</p>
+          <div class="hdd-card_content">
+            <p>Usually I consist of some usefull content.</p>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="examplebuttons">
       <button class="hdd-button" (click)="toggleHeight()">
         Height Down

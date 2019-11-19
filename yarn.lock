@@ -902,10 +902,10 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
-"@hafslundnett/hdd-style@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@hafslundnett/hdd-style/-/hdd-style-2.0.0.tgz#aca6d98926e2da13fdc54db69a93b7945156924c"
-  integrity sha512-2FDEV8zBZ6kht1KwYv+B4BAdaTBGMuq/MFdVswUuTlliOSvCs8dN3r85Moi+P3OAEL8I1WesqIZK4ZdZLPaVcQ==
+"@hafslundnett/hdd-style@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@hafslundnett/hdd-style/-/hdd-style-2.1.0.tgz#cf09938bbabe112f716a15baa561fb4e04e92161"
+  integrity sha512-fi3mruappAblMt9UGZbIKdHnpfudDG6u+ts0WR0UflG7Sv68KcraKvS73ErsCOv9NIehAzrYa3NsIFHz25bpiQ==
 
 "@ngtools/webpack@8.3.17":
   version "8.3.17"

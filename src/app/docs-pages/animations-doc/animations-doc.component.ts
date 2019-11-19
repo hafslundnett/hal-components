@@ -13,30 +13,27 @@ export class AnimationsDocComponent {
   isDownbox = true;
   isCurtain = false;
   isHeight = false;
-  exampleList: string[] = ['Item' , 'Item' , 'Item'];
+  exampleList: string[] = ['List Item', 'List Item', 'List Item'];
 
   constructor() { }
 
   toggleUpBox() {
     this.isUpbox = !this.isUpbox;
   }
-
   toggleDownBox() {
     this.isDownbox = !this.isDownbox;
   }
   toggleCurtains() {
-
     this.isCurtain = !this.isCurtain;
   }
   addItem() {
     if (this.exampleList.length < 10) {
-      this.exampleList.push('Item');
+      this.exampleList.push('List Item');
     }
   }
   removeItem() {
     this.exampleList.pop();
   }
-
   toggleHeight() {
     this.isHeight = !this.isHeight;
   }
