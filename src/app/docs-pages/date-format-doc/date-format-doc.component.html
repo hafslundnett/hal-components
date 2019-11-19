@@ -58,9 +58,8 @@
 
   <h2 class="doc-subtitle">Examples</h2>
   <div class="example-container">
-    <p>Todays date in csvDateFormat: {{ today | date: dateConstants.csvDateFormat }}</p>
-    <p>Todays date in dotddmmyyhhmm: {{ today | date: dateConstants.dotddmmyyhhmm }}</p>
-    <p>Todays date in ddDashMM: {{ today | date: dateConstants.ddDashMM }}</p>
+    <p>Todays date in dateFormat: {{ today | date: dateConstants.dateFormat }}</p>
+    <p>Todays date in timeFormat: {{ today | date: dateConstants.timeFormat }}</p>
   </div>
 
   <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>

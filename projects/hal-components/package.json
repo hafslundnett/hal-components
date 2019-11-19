@@ -1,13 +1,13 @@
 {
   "name": "@hafslundnett/hal-components",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^8.1.3",
     "@angular/core": "^8.1.3",
     "node-sass": "^4.12.0",
     "@angular/cdk": "~8.2.3",
     "@angular/material": "^8.2.3",
-    "@hafslundnett/hdd-style": "^2.0.0",
+    "@hafslundnett/hdd-style": "^2.1.0",
     "typescript": "~3.5.3"
   }
 }
