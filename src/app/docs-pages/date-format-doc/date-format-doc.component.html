@@ -13,37 +13,44 @@
   </hal-doc-import-line>
 
   <h2 class="doc-subtitle">Available Formats</h2>
-  
-    <table class="hdd-table has-shadow is-striped">
-      <thead>
-        <tr class="hdd-table_header">
-          <th>Date Constants </th>
-          <th>Format</th>
-          <th>Result</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of dateConstantTable">
-          <th>{{ row.constant }}</th>
-          <td>{{ row.format }}</td>
-          <td>{{ row.result }}</td>
-        </tr>
-      </tbody>
-    </table>
+
+  <table class="hdd-table has-shadow is-striped">
+    <thead>
+      <tr class="hdd-table_header">
+        <th>Date Constants </th>
+        <th>Format</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dateConstantTable">
+        <th>{{ row.constant }}</th>
+        <td>{{ row.format }}</td>
+        <td>{{ row.result }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hal-divider class="divider-margin"></hal-divider>
+
+  <h1 class="doc-subtitle">In Typescript</h1>
 
   <p class="doc-info formatting">
-    To format date objects with the appropriate date constant/format add the 'date-fns' package to your project and use the
-    'format' method. Click here for more info on the : <a class="hdd-link" href="https://date-fns.org/" target="blank">date-fns package</a>
+    To format date objects with the appropriate date constant/format add the 'date-fns' package to your project and use
+    the 'format' method. Click here for more info on the : <a class="hdd-link" href="https://date-fns.org/" target="blank">date-fns package</a>
   </p>
 
   <hal-code-highlighter [isTS]="true" [code]="formatTsCode"></hal-code-highlighter>
+
+  <hal-divider class="divider-margin"></hal-divider>
 
   <h1 class="doc-subtitle">In Html/Angular</h1>
 
   <p class="doc-info">
     <b>Necessary imports:</b>
     After importing the DateConstants, to enable to use date formats with a norwegian language, you need to import
-    packages for unicode identifiers. In the root app.module of your project, import the following packages, and add the localID to the providers list:
+    packages for unicode identifiers. In the root app.module of your project, import the following packages, and add the
+    localID to the providers list:
   </p>
 
   <hal-doc-import-line>

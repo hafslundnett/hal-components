@@ -8,3 +8,8 @@
     padding: 15px;
     box-shadow: 0 2px 7px rgba(0, 0, 0, .2);
 }
+
+.divider-margin {
+    margin-top: calc(var(--default-margin) * 1.61);
+    margin-bottom: calc(var(--default-margin) * 1.61);
+}
