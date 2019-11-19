@@ -23,21 +23,19 @@ export class DateFormatDocComponent implements OnInit {
   formatTsCode = 'format(new Date(), DateConstants.dateFormat);';
 
   tsCode = `public readonly dateConstants = DateConstants;
-  today = new Date();`;
+today = new Date();`;
 
   htmlCode = `{{ today | date: dateConstants.csvDateFormat }}
 {{ today | date: dateConstants.dotddmmyyhhmm }}
 {{ today | date: dateConstants.ddDashMM }}`;
 
   ngOnInit() {
-    for ( const currentDate in DateConstants ) {
-      if (DateConstants.hasOwnProperty(currentDate)) {
+    Object.entries(DateConstants).forEach(([dateName, dateFormat]) => {
       this.dateConstantTable.push({
-        constant: currentDate,
-        format: DateConstants[currentDate],
-        result: format(this.today, DateConstants[currentDate])
+        constant: dateName,
+        format: dateFormat,
+        result: format(this.today, dateFormat)
       });
-      }
-    }
+    });
   }
 }
