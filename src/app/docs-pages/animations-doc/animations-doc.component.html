@@ -1,10 +1,14 @@
 <div class="doc-page-container">
 
   <h1 class="doc-title">Animations</h1>
-
   <p class="doc-info">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolor excepturi repudiandae, tempora enim eos libero!
-    Blanditiis ipsam fugit animi fuga rerum numquam sit hic, saepe facere dolores modi maiores.
+    This is the documentation for Animation constants. These are standard animation directives to be used
+    directly on elements for initation,
+    displaying list, or to create drop down effects.
+  </p>
+  <p class="doc-info">
+    To enable the use of the animations import them in the component where they are used. You could also import several
+    animations in the same import line if you intend to use multiple animaitons.
   </p>
 
   <hal-doc-import-line>
@@ -14,31 +18,28 @@
     <code><pre>import {{ '{' }} scaleDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
   <hal-doc-import-line>
+    <code><pre>import {{ '{' }} listAnimation {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
     <code><pre>import {{ '{' }} curtainDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} heightDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
-  <hal-doc-import-line>
-    <code><pre>import {{ '{' }} listAnimation {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
-  </hal-doc-import-line>
 
   <h2 class="doc-subtitle">Examples</h2>
+
   <div class="example-container">
     <h2 class="exampleTitle">Animation: @scaleUp & @scaleDown </h2>
     <p class="subtitle">- Initate components with @scaleUp, or hide with @scaleDown</p>
-
     <div class="examples-area">
-
       <div class="animationBoxes" @scaleUp *ngIf="isUpbox">
         I'm animated with @scaleUp
       </div>
-
       <div class="animationBoxes" @scaleDown *ngIf="isDownbox">
         Im animated with @scaleDown
       </div>
     </div>
-
     <div class="examplebuttons small">
       <button class="hdd-button" (click)="toggleUpBox()">
         ScaleUp animation
@@ -48,7 +49,9 @@
       </button>
     </div>
   </div>
+
   <div class="small-containers">
+
     <div class="example-container small">
       <h2 class="exampleTitle">Animation: @listAnimation </h2>
       <p class="subtitle">- Iniate list and list elements with animation</p>
@@ -57,7 +60,6 @@
           <li *ngFor="let item of exampleList"> {{ item }}</li>
         </ul>
       </div>
-
       <div class="examplebuttons small">
         <button class="hdd-button" (click)="addItem()">
           Add Item
@@ -72,9 +74,8 @@
       <h2 class="exampleTitle">Animation: @curtainDown </h2>
       <p class="subtitle">- dropdown effect on animations wich scaling</p>
       <div class="examples-area small-area">
-        <div *ngIf="isCurtain" [@curtainDown]="isCurtain ? '*' : 'void'">
-
-          <div class="hdd-card">
+        <div>
+          <div class="hdd-card" *ngIf="isCurtain" @curtainDown>
             <div class="hdd-card_header">
               <div class="hdd-card_header_text">
                 <div class="hdd-card_title">Im a Card</div>
@@ -94,12 +95,12 @@
     </div>
   </div>
 
-
   <div class="example-container">
     <h2 class="exampleTitle">@heightDown</h2>
     <p class="subtitle">Elements height gets animated from 0 to full size</p>
     <div class="examples-area card-area">
-       <div> <!--Wrap it so it doesnt expand over the enture area  -->
+      <div>
+        <!--Wrap it so it doesnt expand over the enture area  -->
         <div class="hdd-card" *ngIf="isHeight" @heightDown>
           <div class="hdd-card_header">
             <div class="hdd-card_header_text">
@@ -112,7 +113,6 @@
         </div>
       </div>
     </div>
-
     <div class="examplebuttons">
       <button class="hdd-button" (click)="toggleHeight()">
         Height Down
@@ -120,7 +120,11 @@
     </div>
   </div>
 
-  <hal-code-highlighter [isHTML]="" [code]=""></hal-code-highlighter>
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Animations'" [apiTableRows]="AnimationsTable"></hal-doc-api-table>
+
+
 
 </div>
 

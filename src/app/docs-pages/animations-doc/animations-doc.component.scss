@@ -1,79 +1,74 @@
+.animationBoxes {
+  height: 150px;
+  width: 150px;
+  border: 2px solid black;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px;
+}
+
 .examples-area {
-    display: flex;
-    justify-content: center;
-    height: 200px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 190px;
+  width: 100%;
 
-    &.small-area {
-        height: 185px;
-    }
-
-    &.card-area {
-        height: 130px;
-    }
+  &.small-area {
+    height: 185px;
+  }
+  &.card-area {
+    height: 130px;
+  }
 }
 
 .examplebuttons {
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
-    margin: auto;
-
-    .small {
-        width: 100%;
-    }
-}
-.animationBoxes {
-    height: 150px;
-    width: 150px;
-    border: 2px solid black;
-    display: inline-flex;
-    align-items: center;
-    text-align: center;
-    margin: 25px;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
 }
 
 .example-container {
-    border-radius: 5px;
-    background: white;
-    box-shadow: 0 2px 7px rgba(0, 0, 0, .2);
-    width: inherit;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+  width: inherit;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
 
-    &.small {
-        width: 48.5%;
-        height: 300px;
-        margin-bottom: 5px;
+  &.small {
+    width: 48.5%;
+    height: 280px;
+    margin-bottom: 5px;
 
-        .examplebuttons {
-        @extend .examplebuttons;
-        width: 100%; 
-        margin-top:10px;
-}
+    .examplebuttons {
+      @extend .examplebuttons;
+      width: 100%;
+      margin-top: 10px;
     }
-}
-
-.small-containers {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    height: fit-content;
-
+  }
 }
 
 .hdd-card {
-    background: var(--hdd-blue-light3);
+  background: var(--hdd-blue-light3);
+}
+
+.small-containers {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
 }
 
 .exampleTitle {
-display: block;    
-margin: 10px;
-padding-top: 5px;
+  display: block;
+  margin-left: 10px;
+  padding-top: 5px;
 }
 .subtitle {
-    margin-left: 10px;
-    display: block;
-    font-size: 14px;
-    margin-bottom: 10px;
+  margin-left: 10px;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
