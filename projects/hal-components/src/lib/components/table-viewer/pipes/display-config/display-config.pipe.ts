@@ -1,6 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { TableEngine } from '../../table-engine/table-engine';
 import { DetailsTabColumn } from '../../table-engine/details-tab-column.interface';
+import { DisplayDataReturnType } from '../../table-engine/display-data-func.type';
 
 @Pipe({
   name: 'displayConfig'
@@ -11,7 +12,7 @@ export class DisplayConfigPipe implements PipeTransform {
     currentColumn: DetailsTabColumn<any>, // AnalysisTableData
     rowData: any, // AnalysisTableData
     currentConfig: TableEngine<any>, // AnalysisTableData
-  ): any { // TODO fix type
+  ): DisplayDataReturnType {
     const current = currentConfig.getTableColumn(currentColumn.columnName);
     if (!current) {
       return '';

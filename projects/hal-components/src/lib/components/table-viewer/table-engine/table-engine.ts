@@ -33,30 +33,6 @@ export abstract class TableEngine<ConfigDataType> {
   }
 
   /** sortable is default true */
-  protected addColumn(
-    columnName: string,
-    headerName: string,
-    headerFullName: string,
-    extraCssClasses: string,
-    displayDataFunc: DisplayDataFunc<ConfigDataType>,
-    dateFormat?: string | null,
-    sortable: boolean = true, // defaults to true
-    specialDisplayType: any = null, // TODO someday
-    dynamicCssClasses?: DisplayDataFunc<ConfigDataType>,
-  ): void {
-    this.tableColumns.push({
-      columnName,
-      headerName,
-      headerFullName,
-      extraCssClasses,
-      displayDataFunc,
-      dateFormat,
-      sortable,
-      specialDisplayType,
-      dynamicCssClasses
-    });
-  }
-
   protected addTabColumn(column: DetailsTabColumn<ConfigDataType>): void {
     this.tableColumns.push({
       columnName: column.columnName,

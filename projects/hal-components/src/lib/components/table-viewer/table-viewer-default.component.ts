@@ -8,12 +8,11 @@ import {
 } from '@angular/core';
 import { TableViewerBase } from './table-engine/table-viewer.base';
 
-// view encapsulation is off, be careful!
 @Component({
   selector: 'hal-table-viewer-default',
   templateUrl: './table-viewer-default.component.html',
   styleUrls: ['./table-viewer-default.component.scss'],
-  // encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None, // view encapsulation is off, be careful!
 })
 export class TableViewerDefaultComponent extends TableViewerBase {
 

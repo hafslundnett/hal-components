@@ -12,11 +12,8 @@ import { IsColumnSortablePipe } from './pipes/is-column-sortable/is-column-sorta
 export class TestTableConfig extends TableEngine<any> {
   static columnConfiguration: DetailsTabColumn<any>[] = [
     {
-      columnName: 'names',
-      headerName: 'Names',
-      headerFullName: 'Name of person',
-      extraCssClasses: '',
-      sortable: false,
+      columnName: 'name',
+      headerName: 'Name',
       displayDataFunc: (data: any) => data.name,
     },
   ];
@@ -30,16 +27,16 @@ export class TestTableConfig extends TableEngine<any> {
 @Component({
   template: `
     <hal-table-viewer-default
-      [tableConfig]="veeConfig"
-      [tableConfigStatic]="veeConfigStatic"
+      [tableConfig]="config"
+      [tableConfigStatic]="configStatic"
       [sliceSize]="10"
       [filteredTableConfig]="filteredTableConfig"
     ></hal-table-viewer-default>
 	`
 })
 class TestComponent {
-  veeConfig = new TestTableConfig();
-  veeConfigStatic = TestTableConfig;
+  config = new TestTableConfig();
+  configStatic = TestTableConfig;
   filteredTableConfig = new TestTableConfig();
 }
 
