@@ -69,6 +69,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-bullhorn',
       docUrl: Pages.BroadcastHandlerDoc
     },
+    {
+      cardTitle: 'Feedback Service',
+      cardSubtitle: 'For displaying a feedback message',
+      cardIcon: 'fa-comment-alt',
+      docUrl: Pages.FeedbackDoc
+    },
   ];
 
   pipes: DocListItem[] = [
@@ -86,8 +92,8 @@ export class DocListComponent implements OnInit {
   constants: DocListItem[] = [
     {
       cardTitle: 'Date Formats',
-      cardSubtitle: 'For displaying date objects',
-      cardIcon: 'fa-adjust',
+      cardSubtitle: 'Date Format Constants',
+      cardIcon: 'fa-clock',
       docUrl: Pages.DateFormatDoc
     },
     {

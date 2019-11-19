@@ -13,4 +13,5 @@ export enum Pages {
   StatusMarkDoc = 'status-mark-doc',
   DateFormatDoc = 'date-format-doc',
   AnimationsDoc = 'animations-doc',
+  FeedbackDoc = 'feedback-doc',
 }

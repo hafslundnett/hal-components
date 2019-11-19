@@ -28,3 +28,6 @@ export * from './lib/components/status-mark/status-mark.module';
 export * from './lib/date-format.enum';
 
 export * from './lib/animations';
+
+export * from './lib/services/feedback/feedback.module';
+export * from './lib/services/feedback/feedback.service';
