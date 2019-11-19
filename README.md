@@ -6,9 +6,17 @@
 3. (in new terminal): `ng serve`
 4. Open http://localhost:4200/
 
-## Deploy new version 
-TODO
 
+
+## Publish to NPM
+
+- Build with `yarn build-hal`
+- Naviagte into dist/hal-components/
+- run `npm publish`
+
+
+
+## Notes
 ng new hal-playground --directory=./ --routing --style=scss --prefix=hal
 ng generate library hal-components
 
@@ -18,26 +26,9 @@ components file prefix: "none"
 
 
 
-
-## TODO doc
-svg-element
-
-
-## TODO extract
-broadcast channel
-table system. witch? drops or mdm or both?
-mdm-paginator
-
-
 ## Versioning
 
 This project will be maintained under the Semantic Versioning guidelines as much as possible. Releases will be numbered
 with the following format:
 
 `<major>.<minor>.<patch>`
-
-## Publish to NPM
-
-- Build with `ng build ng-components`
-- Naviagte into dist/ng-components/
-- run `npm publish`
