@@ -34,7 +34,7 @@ export class DocListComponent implements OnInit {
       cardTitle: 'Closeable Row',
       cardSubtitle: 'An expandable row',
       cardIcon: 'fa-expand',
-      docUrl: Pages.ClosableRowDoc
+      docUrl: Pages.Closeablerowdoc
     },
     {
       cardTitle: 'Resizer',
@@ -75,6 +75,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-bullhorn',
       docUrl: Pages.BroadcastHandlerDoc
     },
+    {
+      cardTitle: 'Feedback Service',
+      cardSubtitle: 'For displaying a feedback message',
+      cardIcon: 'fa-comment-alt',
+      docUrl: Pages.FeedbackDoc
+    },
   ];
 
   pipes: DocListItem[] = [
@@ -87,6 +93,15 @@ export class DocListComponent implements OnInit {
   ];
 
   directives: DocListItem[] = [
+  ];
+
+  constants: DocListItem[] = [
+    {
+      cardTitle: 'Date Formats',
+      cardSubtitle: 'Date Format Constants',
+      cardIcon: 'fa-clock',
+      docUrl: Pages.DateFormatDoc
+    }
   ];
 
   constructor() { }

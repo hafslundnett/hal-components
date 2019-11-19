@@ -6,10 +6,12 @@ export enum Pages {
   PopupConnectedDoc = 'popup-connected-doc',
   BroadcastHandlerDoc = 'broadcast-handler-doc',
   DividerDoc = 'divider-doc',
-  ClosableRowDoc = 'closeable-row-doc',
+  Closeablerowdoc = 'closeable-row-doc',
   BoolToTextDoc = 'bool-to-text-doc',
   ResizerDoc = 'resizer-doc',
   AppShellDoc = 'app-shell-doc',
   StatusMarkDoc = 'status-mark-doc',
   TableViewerDefaultDoc = 'table-viewer-default-doc',
+  DateFormatDoc = 'date-format-doc',
+  FeedbackDoc = 'feedback-doc',
 }
