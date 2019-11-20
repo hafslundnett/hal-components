@@ -10,3 +10,7 @@
   margin: auto;
   margin-bottom: calc(var(--default-margin) * (1.61));
 }
+
+.npm-badge {
+  margin-right: calc(var(--default-margin) / 2);
+}
