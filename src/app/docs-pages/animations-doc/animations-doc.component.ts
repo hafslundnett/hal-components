@@ -28,6 +28,15 @@ export class AnimationsDocComponent {
     { apiInput: '@heightDown', description: 'Creates a dropdown effect on elements but without scaling, only based on height property of animated element' },
   ];
 
+  tsCode = `// Add the imported animations to the @Components animations array
+@Component({
+  selector: 'hal-animations-doc',
+  templateUrl: './animations-doc.component.html',
+  styleUrls: ['./animations-doc.component.scss'],
+  animations: [ scaleUp, scaleDown, curtainDown, heightDown, listAnimation ]
+})
+  `;
+
   htmlCode = `<!-- @scaleUp animation -->
 <div class="animationBoxes" @scaleUp *ngIf="isUpbox">
   I'm animated with @scaleUp
