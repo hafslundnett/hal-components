@@ -99,7 +99,7 @@ export class DocListComponent implements OnInit {
     {
       cardTitle: 'Animations',
       cardSubtitle: 'Implement animations on components',
-      cardIcon: 'fa-adjust',
+      cardIcon: 'fa-random',
       docUrl: Pages.AnimationsDoc
     }
   ];
