@@ -25,6 +25,11 @@ export * from './lib/components/resizer/resizer.module';
 
 export * from './lib/components/status-mark/status-mark.module';
 
+export * from './lib/components/table-viewer/table-engine/table-engine';
+export * from './lib/components/table-viewer/table-engine/table-viewer.base';
+export * from './lib/components/table-viewer/table-engine/details-tab-column.interface';
+export * from './lib/components/table-viewer/table-viewer-default.module';
+
 export * from './lib/date-format.enum';
 
 export * from './lib/services/feedback/feedback.module';

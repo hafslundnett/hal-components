@@ -1,0 +1,44 @@
+<table mat-table [dataSource]="dataSource" matSort class="hdd-table is-striped" #defaultTable>
+  <!-- Main columns loop -->
+  <ng-container *ngFor="let currentColumn of dynamicColumns; trackBy: tableColumnsTrackBy">
+    <ng-container matColumnDef="{{currentColumn.columnName}}">
+      <!-- header -->
+
+      <ng-container *ngIf="currentColumn.columnName | isColumnSortable:tableConfig">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="{{currentColumn.extraCssClasses}}">
+          {{ currentColumn.headerName }} 
+        </th>
+      </ng-container>
+      <ng-container *ngIf="!(currentColumn.columnName | isColumnSortable:tableConfig)">
+        <th mat-header-cell *matHeaderCellDef class="{{currentColumn.extraCssClasses}}">
+          {{ currentColumn.headerName }}
+        </th>
+      </ng-container>
+
+
+      <!-- body/cell -->
+      <td mat-cell *matCellDef="let rowData" class="{{currentColumn.extraCssClasses}} {{currentColumn | displayConfigFindCss:rowData:tableConfig}}">
+
+        <!-- SUPER SLOW -->
+        <!-- <mdm-config-body-view [bodyColumn]="currentColumn" [bodyData]="rowData" [bodyConfig]="tableConfig"></mdm-config-body-view> -->
+
+        <!-- Optimised for speed, only supports date and value -->
+        <ng-container *ngIf="currentColumn.dateFormat">
+          {{currentColumn | displayConfig:rowData:tableConfig | date:currentColumn.dateFormat}}
+        </ng-container>
+        <ng-container *ngIf="!currentColumn.dateFormat">
+          {{currentColumn | displayConfig:rowData:tableConfig}}
+        </ng-container>
+      </td>
+    </ng-container>
+  </ng-container>
+  <!-- End main loop -->
+
+  <!-- header and row definitions -->
+  <tr mat-header-row *matHeaderRowDef="columnsDefinitions" class="hdd-table_header"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsDefinitions"></tr>
+  <!-- End header and row definitions -->
+</table>
+
+<!-- TODO hal paginator -->
+<!-- <mat-paginator class="mdm-paginator"></mat-paginator> -->
