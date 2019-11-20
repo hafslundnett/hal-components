@@ -1,13 +1,12 @@
 export enum DateConstants {
-    dateFormat = 'yyyy-MM-dd',
-    dateDotFormat = 'yyyy.MM.dd',
-    dateShortFormat = 'yyyyMMdd',
+
+    dateFormat = 'dd.MM.yyyy',
+    dateFormatFull = 'dd.MM.yyyy HH:mm',
+    dateFormatShort = 'dd/MM',
+
+    timeFormat = 'HH:mm',
+    timeFormatFull = 'HH:mm:ss',
+
+    dateTimeFormat = 'dd.MM.yyyy HH:mm:ss',
     csvDateFormat = 'yyyy-MM-dd',
-    ddmmyyhhmm = 'dd-MM-yyyy, HH:mm',
-    dotddmmyyhhmm = 'dd.MM.yyyy HH:mm',
-    dashddmmyy = 'dd-MM-yyyy',
-    dotddmmyy = 'dd.MM.yyyy',
-    hhmm = 'HH:mm',
-    ddmm = 'dd.MM',
-    ddDashMM = 'dd/MM',
 }
