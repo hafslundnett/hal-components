@@ -10,8 +10,8 @@ import { scaleUp, scaleDown, curtainDown, heightDown, listAnimation } from '@haf
 })
 export class AnimationsDocComponent {
 
-  isUpbox = true;
-  isDownbox = true;
+  isUpbox = false;
+  isDownbox = false;
   isCurtain = false;
   isHeight = false;
   exampleList: string[] = ['List Item', 'List Item', 'List Item'];

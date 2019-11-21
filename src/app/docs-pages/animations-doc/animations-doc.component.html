@@ -29,35 +29,52 @@
 
   <h2 class="doc-subtitle">Examples</h2>
 
-  <hal-animations-example>
-    <ng-container ngProjectAs="AnimationTitle">
-      Animation: @scaleUp & @scaleDown
-    </ng-container>
-    <ng-container ngProjectAs="AnimationSubTitle">
-      Initate components with @scaleUp, or hide with @scaleDown
-    </ng-container>
-    <ng-container ngProjectAs="AnimationExamples">
-      <div class="scaleboxes-area">
-        <div class="animation-boxes" @scaleUp *ngIf="isUpbox">
-          I'm animated with @scaleUp
-        </div>
-        <div class="animation-boxes" @scaleDown *ngIf="isDownbox">
-          Im animated with @scaleDown
-        </div>
-      </div>
-    </ng-container>
-    <ng-container ngProjectAs="AnimationButtons">
-      <button class="hdd-button" (click)="toggleUpBox()">
-        ScaleUp animation
-      </button>
-      <button class="hdd-button" (click)="toggleDownBox()">
-        ScaleDown animation
-      </button>
-    </ng-container>
-  </hal-animations-example>
-
   <div class="small-container">
-    <hal-animations-example>
+    <hal-animations-example class="small-box-left">
+      <ng-container ngProjectAs="AnimationTitle">
+        Animation: @scaleUp
+      </ng-container>
+      <ng-container ngProjectAs="AnimationSubTitle">
+        Initate components with @scaleUp
+      </ng-container>
+      <ng-container ngProjectAs="AnimationExamples">
+        <div class="scaleboxes-area">
+          <div class="animation-boxes" @scaleUp *ngIf="isUpbox">
+            I'm animated with @scaleUp
+          </div>
+        </div>
+      </ng-container>
+      <ng-container ngProjectAs="AnimationButtons">
+        <button class="hdd-button" (click)="toggleUpBox()">
+          ScaleUp animation
+        </button>
+      </ng-container>
+    </hal-animations-example>
+
+    <hal-animations-example class="small-box-right">
+      <ng-container ngProjectAs="AnimationTitle">
+        Animation: @scaleDown
+      </ng-container>
+      <ng-container ngProjectAs="AnimationSubTitle">
+        Initate components with @scaleDown
+      </ng-container>
+      <ng-container ngProjectAs="AnimationExamples">
+        <div class="scaleboxes-area">
+          <div class="animation-boxes" @scaleDown *ngIf="isDownbox">
+            I'm animated with @scaleDown
+          </div>
+        </div>
+      </ng-container>
+      <ng-container ngProjectAs="AnimationButtons">
+        <button class="hdd-button" (click)="toggleDownBox()">
+          ScaleDown animation
+        </button>
+      </ng-container>
+    </hal-animations-example>
+  </div>
+  
+  <div class="small-container">
+    <hal-animations-example class="small-box-left">
       <ng-container ngProjectAs="AnimationTitle">
         Animation: @listAnimation
       </ng-container>
@@ -79,7 +96,7 @@
       </ng-container>
     </hal-animations-example>
 
-    <hal-animations-example>
+    <hal-animations-example class="small-box-right">
       <ng-container ngProjectAs="AnimationTitle">
         Animation: @curtainDown
       </ng-container>
