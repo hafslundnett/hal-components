@@ -81,6 +81,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-comment-alt',
       docUrl: Pages.FeedbackDoc
     },
+    {
+      cardTitle: 'Keyboard Shortcuts',
+      cardSubtitle: 'For displaying dynamic data in a table',
+      cardIcon: 'fa-keyboard',
+      docUrl: Pages.KeyboardShortcutsDoc
+    },
   ];
 
   pipes: DocListItem[] = [

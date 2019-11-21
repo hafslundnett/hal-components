@@ -1,0 +1,63 @@
+@import '~@hafslundnett/hdd-style/variables/main';
+
+.keyshortcuts-container {
+	display: flex;
+	flex-direction: column;
+	.title {
+		font-weight: 600;
+		text-align: center;
+		font-size: 2rem;
+		letter-spacing: 0;
+		padding: 10px;
+	}
+	.key-shortcut-line {
+		margin-bottom: 5px;
+		.combo {
+			font-weight: bold;
+		}
+	}
+}
+
+.filter-popup-body {
+  background: var(--hdd-white);
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.animation-wrapper {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+  transform-origin: right top;
+  width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+  border-radius: 2px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--hdd-blue);
+
+  &:hover, &:focus {
+    outline: none;
+    color: var(--hdd-blue-light1);
+  }
+
+  i {
+    color: var(--hdd-black);
+  }
+}
+
+h2 {
+  font-weight: 600;
+  
+}
+
+.top-bar{
+  margin-bottom: 25px;
+}

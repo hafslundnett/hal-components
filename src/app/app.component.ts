@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 interface Page {
   name: string;
   url: string;
@@ -11,6 +10,7 @@ interface Page {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   pages: Page[] = [
     { name: '01 HDD-style', url: 'hdd' },
     { name: '02 Shell', url: 'shell' },

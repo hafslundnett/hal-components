@@ -1,0 +1,14 @@
+<div class="animation-wrapper" role="dialog">
+  <div class="filter-popup-body" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <div class="top-bar">
+      <h2 class="title">Aktive tastatursnarveier</h2>
+      <button class="close-button" (click)="onClose()">
+        Lukk
+        <i class="fal fa-times"></i>
+      </button>
+    </div>
+    <div class="key-shortcut-line" *ngFor="let keyShortcut of keyShortcuts">
+      <span class="combo">{{keyShortcut.keyCombo}}</span>: {{keyShortcut.description}}
+    </div>
+  </div>
+</div>

@@ -17,6 +17,7 @@ import { StatusMarkDocComponent } from './docs-pages/status-mark-doc/status-mark
 import { TableViewerDefaultDocComponent } from './docs-pages/table-viewer-default-doc/table-viewer-default-doc.component';
 import { DateFormatDocComponent } from './docs-pages/date-format-doc/date-format-doc.component';
 import { FeedbackDocComponent } from './docs-pages/feedback-doc/feedback-doc.component';
+import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.component';
 
 const routes: Routes = [
   {
@@ -88,6 +89,10 @@ const routes: Routes = [
       {
         path: Pages.FeedbackDoc,
         component: FeedbackDocComponent
+      },
+      {
+        path: Pages.KeyboardShortcutsDoc,
+        component: KeyboardShortcutsDocComponent
       },
     ]
   }

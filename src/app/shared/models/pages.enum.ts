@@ -14,4 +14,5 @@ export enum Pages {
   TableViewerDefaultDoc = 'table-viewer-default-doc',
   DateFormatDoc = 'date-format-doc',
   FeedbackDoc = 'feedback-doc',
+  KeyboardShortcutsDoc = 'feedback-shortcuts-doc',
 }

@@ -25,6 +25,7 @@ import localeNb from '@angular/common/locales/nb';
 
 registerLocaleData(localeNb);
 import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module';
+import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
 
 @NgModule({
    imports: [
@@ -47,6 +48,7 @@ import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module
       TableViewerDefaultDocModule,
       DateFormatDocModule,
       FeedbackDocModule,
+      KeyboardShortcutsDocModule
    ],
    declarations: [
       AppComponent,

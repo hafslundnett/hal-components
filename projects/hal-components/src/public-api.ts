@@ -34,3 +34,8 @@ export * from './lib/date-format.enum';
 
 export * from './lib/services/feedback/feedback.module';
 export * from './lib/services/feedback/feedback.service';
+
+export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts.service';
+export * from './lib/services/keyboard-shortcuts/key-name.enum';
+export * from './lib/services/keyboard-shortcuts/key-in-use.interface';
+export * from './lib/components/keyboard-shortcuts-popup/keyboard-shortcuts-popup.module';
