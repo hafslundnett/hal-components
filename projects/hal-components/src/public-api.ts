@@ -34,3 +34,5 @@ export * from './lib/date-format.enum';
 
 export * from './lib/services/feedback/feedback.module';
 export * from './lib/services/feedback/feedback.service';
+
+export * from './lib/components/loading-spinner/loading-spinner.module';

@@ -25,6 +25,7 @@ import localeNb from '@angular/common/locales/nb';
 
 registerLocaleData(localeNb);
 import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module';
+import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loading-spinner-doc.module';
 
 @NgModule({
    imports: [
@@ -47,6 +48,7 @@ import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module
       TableViewerDefaultDocModule,
       DateFormatDocModule,
       FeedbackDocModule,
+      LoadingSpinnerDocModule
    ],
    declarations: [
       AppComponent,
