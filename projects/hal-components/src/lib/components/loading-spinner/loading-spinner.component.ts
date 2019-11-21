@@ -8,16 +8,8 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 })
 export class LoadingSpinnerComponent implements OnInit {
 
-  @Input() color = '';
-
   constructor() { }
 
   ngOnInit() {
-    this.loadingSpinnerContainer.nativeElement.style.cssText = this.getCssText();
   }
-
-  private getCssText() {
-    return this.color;
-  }
-
 }
