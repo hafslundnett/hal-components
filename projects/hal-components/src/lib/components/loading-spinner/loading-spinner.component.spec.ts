@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoadingSpinnerComponent } from './loading-spinner.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-fdescribe('Loading-Spinner', () => {
+describe('Loading-Spinner', () => {
     let component: LoadingSpinnerComponent;
     let fixture: ComponentFixture<LoadingSpinnerComponent>;
 
