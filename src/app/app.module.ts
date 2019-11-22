@@ -20,12 +20,12 @@ import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.modu
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
 import { TableViewerDefaultDocModule } from './docs-pages/table-viewer-default-doc/table-viewer-default-doc.module';
 import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-doc.module';
-import { registerLocaleData } from '@angular/common';
-import localeNb from '@angular/common/locales/nb';
-
-registerLocaleData(localeNb);
 import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module';
+import { AnimationsDocModule } from './docs-pages/animations-doc/animations-doc.module';
+import { registerLocaleData } from '@angular/common';
 import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loading-spinner-doc.module';
+import localeNb from '@angular/common/locales/nb';
+registerLocaleData(localeNb);
 
 @NgModule({
    imports: [
@@ -47,6 +47,7 @@ import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loadin
       StatusMarkDocModule,
       TableViewerDefaultDocModule,
       DateFormatDocModule,
+      AnimationsDocModule,
       FeedbackDocModule,
       LoadingSpinnerDocModule
    ],

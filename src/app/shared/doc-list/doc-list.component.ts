@@ -107,6 +107,12 @@ export class DocListComponent implements OnInit {
       cardSubtitle: 'Date Format Constants',
       cardIcon: 'fa-clock',
       docUrl: Pages.DateFormatDoc
+    },
+    {
+      cardTitle: 'Animations',
+      cardSubtitle: 'Implement animations on components',
+      cardIcon: 'fa-random',
+      docUrl: Pages.AnimationsDoc
     }
   ];
 

@@ -1,0 +1,168 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Animations</h1>
+  <p class="doc-info">
+    This is the documentation for Animation constants. These are standard animation directives to be used
+    directly on elements for initiation,
+    displaying list, or to create drop down effects.
+  </p>
+
+
+  <p class="doc-info">
+    To enable the use of the animations import them in the component where they are used. You could also import several
+    animations in the same import line if you intend to use multiple animaitons.
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} scaleUp {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} scaleDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} listAnimation {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} curtainDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} heightDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <div class="small-container">
+    <hal-animations-example class="small-box-left">
+      <ng-container ngProjectAs="AnimationTitle">
+        Animation: @scaleUp
+      </ng-container>
+      <ng-container ngProjectAs="AnimationSubTitle">
+        Initate components with @scaleUp
+      </ng-container>
+      <ng-container ngProjectAs="AnimationExamples">
+        <div class="scaleboxes-area">
+          <div class="animation-boxes" @scaleUp *ngIf="isUpbox">
+            I'm animated with @scaleUp
+          </div>
+        </div>
+      </ng-container>
+      <ng-container ngProjectAs="AnimationButtons">
+        <button class="hdd-button" (click)="toggleUpBox()">
+          ScaleUp animation
+        </button>
+      </ng-container>
+    </hal-animations-example>
+
+    <hal-animations-example class="small-box-right">
+      <ng-container ngProjectAs="AnimationTitle">
+        Animation: @scaleDown
+      </ng-container>
+      <ng-container ngProjectAs="AnimationSubTitle">
+        Initate components with @scaleDown
+      </ng-container>
+      <ng-container ngProjectAs="AnimationExamples">
+        <div class="scaleboxes-area">
+          <div class="animation-boxes" @scaleDown *ngIf="isDownbox">
+            I'm animated with @scaleDown
+          </div>
+        </div>
+      </ng-container>
+      <ng-container ngProjectAs="AnimationButtons">
+        <button class="hdd-button" (click)="toggleDownBox()">
+          ScaleDown animation
+        </button>
+      </ng-container>
+    </hal-animations-example>
+  </div>
+  
+  <div class="small-container">
+    <hal-animations-example class="small-box-left">
+      <ng-container ngProjectAs="AnimationTitle">
+        Animation: @listAnimation
+      </ng-container>
+      <ng-container ngProjectAs="AnimationSubTitle">
+        Iniate list and list elements with animation
+      </ng-container>
+      <ng-container ngProjectAs="AnimationExamples">
+        <ul [@listAnimation]="exampleList.length" class="listStyle">
+          <li *ngFor="let item of exampleList"> {{ item }}</li>
+        </ul>
+      </ng-container>
+      <ng-container ngProjectAs="AnimationButtons">
+        <button class="hdd-button animation" (click)="addItem()">
+          Add Item   
+        </button>
+        <button class="hdd-button animation" (click)="removeItem()">
+          Remove Item
+        </button>
+      </ng-container>
+    </hal-animations-example>
+
+    <hal-animations-example class="small-box-right">
+      <ng-container ngProjectAs="AnimationTitle">
+        Animation: @curtainDown
+      </ng-container>
+      <ng-container ngProjectAs="AnimationSubTitle">
+        Elements height from 0 to full size with scaling
+      </ng-container>
+      <ng-container ngProjectAs="AnimationExamples">
+        <div style="height: 150px;">
+          <div class="hdd-card" *ngIf="isCurtain" @curtainDown style="margin-top: 30px;">
+            <div class="hdd-card_header">
+              <div class="hdd-card_header_text">
+                <div class="hdd-card_title">Im a Card</div>
+              </div>
+            </div>
+            <div class="hdd-card_content">
+              <p>This card is animated with @curtainDown.</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container ngProjectAs="AnimationButtons">
+        <button class="hdd-button" (click)="toggleCurtains()">
+          Curtains down
+        </button>
+      </ng-container>
+    </hal-animations-example>
+  </div>
+
+  <hal-animations-example>
+    <ng-container ngProjectAs="AnimationTitle">
+      Animation: @heightDown
+    </ng-container>
+    <ng-container ngProjectAs="AnimationSubTitle">
+      Elements height get animated from 0 height to full height
+    </ng-container>
+    <ng-container ngProjectAs="AnimationExamples">
+      <div style="height: 90px;">
+        <div class="hdd-card" *ngIf="isHeight" @heightDown>
+          <div class="hdd-card_header">
+            <div class="hdd-card_header_text">
+              <div class="hdd-card_title">Im a Card</div>
+            </div>
+          </div>
+          <div class="hdd-card_content">
+            <p>This card is animated with @heightDown.</p>
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+    <ng-container ngProjectAs="AnimationButtons">
+      <button class="hdd-button" (click)="toggleHeight()">
+        Height Down
+      </button>
+    </ng-container>
+  </hal-animations-example>
+
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Animations'" [apiTableRows]="AnimationsTable"></hal-doc-api-table>
+
+
+
+</div>
+
+<hal-doc-list></hal-doc-list>
