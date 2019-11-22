@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { KeyboardShortcutsService } from '@hafslundnett/hal-components';
-import { KeyName } from '@hafslundnett/hal-components';
+import { Component } from '@angular/core';
+
 interface Page {
   name: string;
   url: string;
@@ -10,11 +8,9 @@ interface Page {
 @Component({
   selector: 'hal-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [ KeyboardShortcutsService ]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
+export class AppComponent {
   pages: Page[] = [
     { name: '01 HDD-style', url: 'hdd' },
     { name: '02 Shell', url: 'shell' },
@@ -22,32 +18,4 @@ export class AppComponent implements OnInit {
     { name: '04 Inputs', url: 'inputs' },
     { name: '05 Komponenter', url: 'components' }
   ];
-
-  private subscriptions: Subscription = new Subscription();
-
-  constructor(private keyboardShortcutsService: KeyboardShortcutsService) { }
-
-  ngOnInit() {
-  }
-
-  setupKeyboardShortcuts() {
-    this.subscriptions.add(
-      this.keyboardShortcutsService.getKeyEventsForKey(
-        KeyName.Q,
-        'Send a greeting',
-        false,
-        false,
-        true
-      ).subscribe({
-        next: () => {
-          this.greet();
-        }
-      })
-    );
-  }
-
-  greet() {
-    console.log('hei');
-  }
-
 }
