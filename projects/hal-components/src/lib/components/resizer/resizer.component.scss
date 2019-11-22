@@ -14,14 +14,14 @@ $border-size: 1px;
     height: 50%;
     width: 1px;
     border: $border-size solid;
-    border-color: color('grey');
+    border-color: var(--hdd-grey);
     box-shadow: $shadow-light;
     transition: border-color .2s linear, box-shadow .2s linear;
   }
 
   &:hover {
     .line {
-      border-color: color('grey-dark');
+      border-color: var(--hdd-grey-dark);
       box-shadow: $shadow-medium;
     }
   }
@@ -41,14 +41,14 @@ $border-size: 1px;
     height: 1px;
     border-top: $border-size solid;
     border-bottom: $border-size solid;
-    border-color: color('grey');
+    border-color: var(--hdd-grey);
     box-shadow: $shadow-light;
     transition: border-color .2s linear, box-shadow .2s linear;
   }
 
   &:hover {
     .line {
-      border-color: color('grey-dark');
+      border-color: var(--hdd-grey-dark);
       box-shadow: $shadow-medium;
     }
   }

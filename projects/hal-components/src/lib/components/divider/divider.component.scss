@@ -1,10 +1,14 @@
 @import '~@hafslundnett/hdd-style/variables/colors';
 
+:host {
+  display: block;
+}
+
 .divider {
   border: none;
-  border-top: 1px solid color('grey');
+  border-top: 1px solid var(--hdd-grey);
 
   &.light {
-    border-top-color: color('grey-light');
+    border-top-color: var(--hdd-grey-light);
   }
 }

@@ -11,7 +11,9 @@ export enum Pages {
   ResizerDoc = 'resizer-doc',
   AppShellDoc = 'app-shell-doc',
   StatusMarkDoc = 'status-mark-doc',
+  TableViewerDefaultDoc = 'table-viewer-default-doc',
   DateFormatDoc = 'date-format-doc',
   AnimationsDoc = 'animations-doc',
   FeedbackDoc = 'feedback-doc',
+  LoadingSpinnerDoc = 'loading-spinner-doc',
 }

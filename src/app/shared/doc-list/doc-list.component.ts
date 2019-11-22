@@ -54,6 +54,18 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-check',
       docUrl: Pages.StatusMarkDoc
     },
+    {
+      cardTitle: 'Table Viewer default',
+      cardSubtitle: 'For displaying dynamic data in a table',
+      cardIcon: 'fa-table',
+      docUrl: Pages.TableViewerDefaultDoc
+    },
+    {
+      cardTitle: 'Loading Spinner',
+      cardSubtitle: 'For displaying loading spinner',
+      cardIcon: 'fa-spinner',
+      docUrl: Pages.LoadingSpinnerDoc
+    },
   ];
 
   services: DocListItem[] = [

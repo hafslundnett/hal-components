@@ -25,9 +25,8 @@ export class DateFormatDocComponent implements OnInit {
   tsCode = `public readonly dateConstants = DateConstants;
 today = new Date();`;
 
-  htmlCode = `{{ today | date: dateConstants.csvDateFormat }}
-{{ today | date: dateConstants.dotddmmyyhhmm }}
-{{ today | date: dateConstants.ddDashMM }}`;
+  htmlCode = ` {{ today | date: dateConstants.dateFormat }}
+{{ today | date: dateConstants.timeFormat }}`;
 
   ngOnInit() {
     Object.entries(DateConstants).forEach(([dateName, dateFormat]) => {
