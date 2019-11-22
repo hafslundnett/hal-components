@@ -11,6 +11,17 @@
 .hdd-card {
   background: var(--hdd-blue-light3);
 }
+.hdd-button {
+  &.animation {
+    min-width: 150px;
+  }
+}
+
+.listStyle {
+  height: 150px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
 
 .small-container {
   margin: 10px 0;

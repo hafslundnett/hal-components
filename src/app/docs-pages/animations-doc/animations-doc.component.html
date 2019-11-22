@@ -3,9 +3,11 @@
   <h1 class="doc-title">Animations</h1>
   <p class="doc-info">
     This is the documentation for Animation constants. These are standard animation directives to be used
-    directly on elements for initation,
+    directly on elements for initiation,
     displaying list, or to create drop down effects.
   </p>
+
+
   <p class="doc-info">
     To enable the use of the animations import them in the component where they are used. You could also import several
     animations in the same import line if you intend to use multiple animaitons.
@@ -82,15 +84,15 @@
         Iniate list and list elements with animation
       </ng-container>
       <ng-container ngProjectAs="AnimationExamples">
-        <ul [@listAnimation]="exampleList.length" style="height: 150px;">
+        <ul [@listAnimation]="exampleList.length" class="listStyle">
           <li *ngFor="let item of exampleList"> {{ item }}</li>
         </ul>
       </ng-container>
       <ng-container ngProjectAs="AnimationButtons">
-        <button class="hdd-button" (click)="addItem()">
-          Add Item
+        <button class="hdd-button animation" (click)="addItem()">
+          Add Item   
         </button>
-        <button class="hdd-button" (click)="removeItem()">
+        <button class="hdd-button animation" (click)="removeItem()">
           Remove Item
         </button>
       </ng-container>
