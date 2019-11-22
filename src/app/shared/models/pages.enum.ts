@@ -13,6 +13,8 @@ export enum Pages {
   StatusMarkDoc = 'status-mark-doc',
   TableViewerDefaultDoc = 'table-viewer-default-doc',
   DateFormatDoc = 'date-format-doc',
+  AnimationsDoc = 'animations-doc',
   FeedbackDoc = 'feedback-doc',
   KeyboardShortcutsDoc = 'feedback-shortcuts-doc',
+  LoadingSpinnerDoc = 'loading-spinner-doc',
 }

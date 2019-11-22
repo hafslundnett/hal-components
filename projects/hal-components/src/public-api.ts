@@ -32,6 +32,8 @@ export * from './lib/components/table-viewer/table-viewer-default.module';
 
 export * from './lib/date-format.enum';
 
+export * from './lib/animations';
+
 export * from './lib/services/feedback/feedback.module';
 export * from './lib/services/feedback/feedback.service';
 
@@ -39,3 +41,5 @@ export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts.service';
 export * from './lib/services/keyboard-shortcuts/key-name.enum';
 export * from './lib/services/keyboard-shortcuts/key-in-use.interface';
 export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts-popup.module';
+
+export * from './lib/components/loading-spinner/loading-spinner.module';

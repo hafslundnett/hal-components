@@ -16,8 +16,10 @@ import { AppShellDocComponent } from './docs-pages/app-shell-doc/app-shell-doc.c
 import { StatusMarkDocComponent } from './docs-pages/status-mark-doc/status-mark-doc.component';
 import { TableViewerDefaultDocComponent } from './docs-pages/table-viewer-default-doc/table-viewer-default-doc.component';
 import { DateFormatDocComponent } from './docs-pages/date-format-doc/date-format-doc.component';
+import { AnimationsDocComponent } from './docs-pages/animations-doc/animations-doc.component';
 import { FeedbackDocComponent } from './docs-pages/feedback-doc/feedback-doc.component';
 import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.component';
+import { LoadingSpinnerDocComponent } from './docs-pages/loading-spinner-doc/loading-spinner-doc.component';
 
 const routes: Routes = [
   {
@@ -87,12 +89,20 @@ const routes: Routes = [
         component: DateFormatDocComponent
       },
       {
+        path: Pages.AnimationsDoc,
+        component: AnimationsDocComponent
+      },
+      {
         path: Pages.FeedbackDoc,
         component: FeedbackDocComponent
       },
       {
         path: Pages.KeyboardShortcutsDoc,
         component: KeyboardShortcutsDocComponent
+      },
+      {
+        path: Pages.LoadingSpinnerDoc,
+        component: LoadingSpinnerDocComponent
       },
     ]
   }

@@ -20,13 +20,15 @@ import { AppShellDocModule } from './docs-pages/app-shell-doc/app-shell-doc.modu
 import { StatusMarkDocModule } from './docs-pages/status-mark-doc/status-mark-doc.module';
 import { TableViewerDefaultDocModule } from './docs-pages/table-viewer-default-doc/table-viewer-default-doc.module';
 import { DateFormatDocModule } from './docs-pages/date-format-doc/date-format-doc.module';
-import { registerLocaleData } from '@angular/common';
-import localeNb from '@angular/common/locales/nb';
-
-registerLocaleData(localeNb);
 import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module';
+import { AnimationsDocModule } from './docs-pages/animations-doc/animations-doc.module';
+import { registerLocaleData } from '@angular/common';
+import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loading-spinner-doc.module';
+import localeNb from '@angular/common/locales/nb';
+registerLocaleData(localeNb);
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
 import { KeyboardShortcutsPopupModule, KeyboardShortcutsService } from '@hafslundnett/hal-components';
+
 @NgModule({
    imports: [
       BrowserModule,
@@ -47,9 +49,11 @@ import { KeyboardShortcutsPopupModule, KeyboardShortcutsService } from '@hafslun
       StatusMarkDocModule,
       TableViewerDefaultDocModule,
       DateFormatDocModule,
+      AnimationsDocModule,
       FeedbackDocModule,
       KeyboardShortcutsDocModule,
-      KeyboardShortcutsPopupModule
+      KeyboardShortcutsPopupModule,
+      LoadingSpinnerDocModule,
    ],
    declarations: [
       AppComponent,

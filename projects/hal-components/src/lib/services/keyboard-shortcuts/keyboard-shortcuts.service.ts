@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { from, fromEvent, Subject, Subscription, Observable } from 'rxjs';
+import { fromEvent, Subject, Observable } from 'rxjs';
 import { filter, finalize, map } from 'rxjs/operators';
 import { KeyName } from './key-name.enum';
 import { KeyInUse } from './key-in-use.interface';

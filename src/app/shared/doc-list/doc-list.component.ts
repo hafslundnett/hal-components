@@ -60,6 +60,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-table',
       docUrl: Pages.TableViewerDefaultDoc
     },
+    {
+      cardTitle: 'Loading Spinner',
+      cardSubtitle: 'For displaying loading spinner',
+      cardIcon: 'fa-spinner',
+      docUrl: Pages.LoadingSpinnerDoc
+    },
   ];
 
   services: DocListItem[] = [
@@ -107,6 +113,12 @@ export class DocListComponent implements OnInit {
       cardSubtitle: 'Date Format Constants',
       cardIcon: 'fa-clock',
       docUrl: Pages.DateFormatDoc
+    },
+    {
+      cardTitle: 'Animations',
+      cardSubtitle: 'Implement animations on components',
+      cardIcon: 'fa-random',
+      docUrl: Pages.AnimationsDoc
     }
   ];
 
