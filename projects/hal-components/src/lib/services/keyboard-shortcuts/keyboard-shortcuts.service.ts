@@ -22,7 +22,7 @@ interface KeyboardKey {
 export class KeyboardShortcutsService {
 
   openKeyboardShortcutsOverview = new Subject<KeyInUse[]>();
-  overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
+  private overlayRef;
 
   // key is this.getMapKey()
   private keysInUse = new Map<string, KeyInUse>();
@@ -120,12 +120,13 @@ export class KeyboardShortcutsService {
 
   private openKeyboardShortcuts(keyInUse: KeyInUse[])  {
     // if already open, close it
-    if (this.overlayRef.hasAttached()) {
+    if (this.overlayRef) {
       this.popupGlobalService.detach(this.overlayRef);
+      this.overlayRef = null;
+      return;
     }
-    const compInstance = this.popupGlobalService.openOverlay(this.overlayRef, KeyboardShortcutsPopupComponent, {
-      data: keyInUse
-    });
+    this.overlayRef = this.popupGlobalService.setupOverlay();
+    const compInstance = this.popupGlobalService.openOverlay(this.overlayRef, KeyboardShortcutsPopupComponent, keyInUse);
     this.overlayRef.backdropClick().subscribe(next => {
       this.popupGlobalService.detach(this.overlayRef);
     });

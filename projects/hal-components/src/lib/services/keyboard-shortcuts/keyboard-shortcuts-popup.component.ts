@@ -3,6 +3,7 @@ import { KeyInUse } from './key-in-use.interface';
 import { KeyName } from './key-name.enum';
 import { Subscription, Subject } from 'rxjs';
 import { POPUP_GLOBAL_DATA, PopupGlobalService } from '../popup-global/popup-global.service';
+import { curtainDown } from '../../animations';
 
 interface KeyShortcutElement {
   keyCombo: string;
@@ -13,7 +14,8 @@ interface KeyShortcutElement {
   selector: 'hal-keyboard-shortcuts-popup',
   templateUrl: './keyboard-shortcuts-popup.component.html',
   styleUrls: ['./keyboard-shortcuts-popup.component.scss'],
-  providers: [PopupGlobalService]
+  providers: [PopupGlobalService],
+  animations: [curtainDown]
 })
 export class KeyboardShortcutsPopupComponent implements OnInit, OnDestroy {
 
@@ -31,7 +33,6 @@ export class KeyboardShortcutsPopupComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    console.log(this.keyCombos);
     this.keyCombos.forEach(current => {
       this.keyShortcuts.push({
         keyCombo: this.getKeyComboString(current),

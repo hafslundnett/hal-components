@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { KeyboardShortcutsPopupComponent } from './keyboard-shortcuts-popup.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PopupGlobalService } from '../popup-global/popup-global.service';
-
 @NgModule({
   imports: [
     CommonModule,
