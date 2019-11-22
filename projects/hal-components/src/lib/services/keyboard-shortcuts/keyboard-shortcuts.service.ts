@@ -41,7 +41,6 @@ export class KeyboardShortcutsService {
     }
 
     fromEvent(document, 'keydown')
-    .pipe(tap(() => {console.log('hei');}))
     .subscribe({
       next: (event: KeyboardEvent) => {
         this.newKeyEvent(event);
