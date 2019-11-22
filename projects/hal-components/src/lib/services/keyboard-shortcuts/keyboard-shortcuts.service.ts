@@ -4,7 +4,6 @@ import { filter, finalize, map } from 'rxjs/operators';
 import { KeyName } from './key-name.enum';
 import { KeyInUse } from './key-in-use.interface';
 import { PopupGlobalService } from '../popup-global/popup-global.service';
-import { OverlayRef } from '@angular/cdk/overlay';
 
 import { KeyboardShortcutsPopupComponent } from './keyboard-shortcuts-popup.component';
 import { KeyboardShortcutsPopupModule } from './keyboard-shortcuts-popup.module';
