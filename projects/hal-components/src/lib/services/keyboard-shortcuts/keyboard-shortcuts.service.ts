@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { fromEvent, Subject, Observable } from 'rxjs';
-import { filter, finalize, map } from 'rxjs/operators';
+import { filter, finalize, map, tap } from 'rxjs/operators';
 import { KeyName } from './key-name.enum';
 import { KeyInUse } from './key-in-use.interface';
 import { PopupGlobalService } from '../popup-global/popup-global.service';
@@ -27,10 +27,22 @@ export class KeyboardShortcutsService {
   private keysInUse = new Map<string, KeyInUse>();
   private keyEvents = new Subject<KeyboardKey>();
 
+  private enabled = false;
+
   constructor(
     private popupGlobalService: PopupGlobalService,
-  ) {
-    fromEvent(document, 'keydown').subscribe({
+  ) {}
+
+  /** Should be called on application startup */
+  enableKeyboardShortcuts() {
+    if (this.enabled) {
+      console.warn('KeyboardShortcutsService already enabled!');
+      return;
+    }
+
+    fromEvent(document, 'keydown')
+    .pipe(tap(() => {console.log('hei');}))
+    .subscribe({
       next: (event: KeyboardEvent) => {
         this.newKeyEvent(event);
       }
@@ -41,6 +53,7 @@ export class KeyboardShortcutsService {
     this.openKeyboardShortcutsOverview.subscribe({
       next: (keyInUse: KeyInUse[]) => this.openKeyboardShortcuts(keyInUse)
     });
+    this.enabled = true;
   }
 
   getKeyEventsForKey(
@@ -128,9 +141,11 @@ export class KeyboardShortcutsService {
     const compInstance = this.popupGlobalService.openOverlay(this.overlayRef, KeyboardShortcutsPopupComponent, keyInUse);
     this.overlayRef.backdropClick().subscribe(next => {
       this.popupGlobalService.detach(this.overlayRef);
+      this.overlayRef = null;
     });
     compInstance.onDestroy$.subscribe(() => {
       this.popupGlobalService.detach(this.overlayRef);
+      this.overlayRef = null;
     });
   }
 

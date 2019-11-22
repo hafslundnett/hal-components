@@ -27,7 +27,6 @@ import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loadin
 import localeNb from '@angular/common/locales/nb';
 registerLocaleData(localeNb);
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
-import { KeyboardShortcutsPopupModule, KeyboardShortcutsService } from '@hafslundnett/hal-components';
 
 @NgModule({
    imports: [
@@ -52,7 +51,6 @@ import { KeyboardShortcutsPopupModule, KeyboardShortcutsService } from '@hafslun
       AnimationsDocModule,
       FeedbackDocModule,
       KeyboardShortcutsDocModule,
-      KeyboardShortcutsPopupModule,
       LoadingSpinnerDocModule,
    ],
    declarations: [
@@ -61,7 +59,6 @@ import { KeyboardShortcutsPopupModule, KeyboardShortcutsService } from '@hafslun
    ],
    providers: [
       { provide: LOCALE_ID, useValue: 'nb' },
-      KeyboardShortcutsService,
    ],
    bootstrap: [
       AppComponent,

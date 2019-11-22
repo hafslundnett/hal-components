@@ -15,6 +15,8 @@ export class KeyboardShortcutsDocComponent implements OnInit, OnDestroy {
   constructor(private keyboardShortcutsService: KeyboardShortcutsService) { }
 
   ngOnInit() {
+    this.keyboardShortcutsService.enableKeyboardShortcuts();
+
     this.subscriptions.add(
       this.keyboardShortcutsService.getKeyEventsForKey(
         KeyName.A,
