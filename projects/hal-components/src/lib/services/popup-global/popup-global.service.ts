@@ -1,11 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input, InjectionToken, Injector } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
-import { ComponentPortal, ComponentType } from '@angular/cdk/portal';
+import { ComponentPortal, ComponentType, Portal, PortalInjector } from '@angular/cdk/portal';
 
-@Injectable()
+/** Injection token that can be used to access the data that was passed in to a dialog. */
+export const POPUP_GLOBAL_DATA = new InjectionToken<{}>('PopupGlobalData');
+
+@Injectable({
+  providedIn: 'root'
+})
 export class PopupGlobalService {
 
-  constructor(private overlay: Overlay) { }
+  constructor(
+    private overlay: Overlay,
+    private injector: Injector
+  ) { }
 
   setupOverlay(maxWidth = '50%'): OverlayRef {
     return this.overlay.create({
@@ -17,17 +25,23 @@ export class PopupGlobalService {
   }
 
   /** Remember to handle on destroy for popup and call detach */
-  openOverlay<PopupCompType>(overlayRef: OverlayRef, overlayComponent: ComponentType<PopupCompType>): PopupCompType {
+  openOverlay<PopupCompType>(overlayRef: OverlayRef, overlayComponent: ComponentType<PopupCompType>, data?: any): PopupCompType {
     if (overlayRef.hasAttached()) {
       overlayRef.detach();
     }
-    const portal = new ComponentPortal(overlayComponent);
+    const portal = new ComponentPortal(overlayComponent, null, this.createInjector({data}));
     const componentRef = overlayRef.attach(portal);
     return componentRef.instance;
   }
 
   detach(overlayRef: OverlayRef): void {
     overlayRef.detach();
+  }
+
+  createInjector(dataToPass): PortalInjector {
+    const injectorTokens = new WeakMap();
+    injectorTokens.set(POPUP_GLOBAL_DATA, dataToPass);
+    return new PortalInjector(this.injector, injectorTokens);
   }
 
 }

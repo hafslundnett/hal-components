@@ -26,7 +26,7 @@ import localeNb from '@angular/common/locales/nb';
 registerLocaleData(localeNb);
 import { FeedbackDocModule } from './docs-pages/feedback-doc/feedback-doc.module';
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
-
+import { KeyboardShortcutsPopupModule, KeyboardShortcutsService } from '@hafslundnett/hal-components';
 @NgModule({
    imports: [
       BrowserModule,
@@ -48,17 +48,19 @@ import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/
       TableViewerDefaultDocModule,
       DateFormatDocModule,
       FeedbackDocModule,
-      KeyboardShortcutsDocModule
+      KeyboardShortcutsDocModule,
+      KeyboardShortcutsPopupModule
    ],
    declarations: [
       AppComponent,
       HddStyleDocComponent,
    ],
    providers: [
-      { provide: LOCALE_ID, useValue: 'nb' }
+      { provide: LOCALE_ID, useValue: 'nb' },
+      KeyboardShortcutsService,
    ],
    bootstrap: [
       AppComponent,
-   ]
+   ],
 })
 export class AppModule { }

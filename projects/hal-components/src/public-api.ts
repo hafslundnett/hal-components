@@ -38,4 +38,4 @@ export * from './lib/services/feedback/feedback.service';
 export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts.service';
 export * from './lib/services/keyboard-shortcuts/key-name.enum';
 export * from './lib/services/keyboard-shortcuts/key-in-use.interface';
-export * from './lib/components/keyboard-shortcuts-popup/keyboard-shortcuts-popup.module';
+export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts-popup.module';

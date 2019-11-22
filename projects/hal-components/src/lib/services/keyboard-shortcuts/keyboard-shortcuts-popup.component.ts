@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
-import { KeyInUse } from '../../services/keyboard-shortcuts/key-in-use.interface';
-import { KeyName } from '../../services/keyboard-shortcuts/key-name.enum';
+import { KeyInUse } from './key-in-use.interface';
+import { KeyName } from './key-name.enum';
 import { Subscription, Subject } from 'rxjs';
+import { POPUP_GLOBAL_DATA, PopupGlobalService } from '../popup-global/popup-global.service';
 
 interface KeyShortcutElement {
   keyCombo: string;
@@ -12,7 +12,8 @@ interface KeyShortcutElement {
 @Component({
   selector: 'hal-keyboard-shortcuts-popup',
   templateUrl: './keyboard-shortcuts-popup.component.html',
-  styleUrls: ['./keyboard-shortcuts-popup.component.scss']
+  styleUrls: ['./keyboard-shortcuts-popup.component.scss'],
+  providers: [PopupGlobalService]
 })
 export class KeyboardShortcutsPopupComponent implements OnInit, OnDestroy {
 
@@ -24,12 +25,13 @@ export class KeyboardShortcutsPopupComponent implements OnInit, OnDestroy {
   keyShortcuts: KeyShortcutElement[] = [];
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: KeyInUse[],
+    @Inject(POPUP_GLOBAL_DATA) public data: KeyInUse[],
   ) {
     this.keyCombos = this.data;
   }
 
   ngOnInit() {
+    console.log(this.keyCombos);
     this.keyCombos.forEach(current => {
       this.keyShortcuts.push({
         keyCombo: this.getKeyComboString(current),

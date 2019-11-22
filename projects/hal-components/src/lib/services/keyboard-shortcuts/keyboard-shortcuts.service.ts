@@ -6,8 +6,8 @@ import { KeyInUse } from './key-in-use.interface';
 import { PopupGlobalService } from '../popup-global/popup-global.service';
 import { OverlayRef } from '@angular/cdk/overlay';
 
-import { KeyboardShortcutsPopupComponent } from '../../components/keyboard-shortcuts-popup/keyboard-shortcuts-popup.component';
-import { KeyboardShortcutsPopupModule } from '../../components/keyboard-shortcuts-popup/keyboard-shortcuts-popup.module';
+import { KeyboardShortcutsPopupComponent } from './keyboard-shortcuts-popup.component';
+import { KeyboardShortcutsPopupModule } from './keyboard-shortcuts-popup.module';
 
 interface KeyboardKey {
   keyName: string;
@@ -123,7 +123,9 @@ export class KeyboardShortcutsService {
     if (this.overlayRef.hasAttached()) {
       this.popupGlobalService.detach(this.overlayRef);
     }
-    const compInstance = this.popupGlobalService.openOverlay(this.overlayRef, KeyboardShortcutsPopupComponent);
+    const compInstance = this.popupGlobalService.openOverlay(this.overlayRef, KeyboardShortcutsPopupComponent, {
+      data: keyInUse
+    });
     this.overlayRef.backdropClick().subscribe(next => {
       this.popupGlobalService.detach(this.overlayRef);
     });
