@@ -1,9 +1,7 @@
-import { Injectable, InjectionToken, Injector } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType, PortalInjector } from '@angular/cdk/portal';
-
-/** Injection token that can be used to access the data that was passed in to a dialog. */
-export const POPUP_GLOBAL_DATA = new InjectionToken<{}>('PopupGlobalData');
+import { POPUP_GLOBAL_DATA } from './popup-global-data.token';
 
 @Injectable({
   providedIn: 'root'

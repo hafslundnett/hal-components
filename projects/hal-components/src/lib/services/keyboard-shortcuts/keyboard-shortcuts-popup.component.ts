@@ -2,8 +2,9 @@ import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { KeyInUse } from './key-in-use.interface';
 import { KeyName } from './key-name.enum';
 import { Subscription, Subject } from 'rxjs';
-import { POPUP_GLOBAL_DATA, PopupGlobalService } from '../popup-global/popup-global.service';
+import { PopupGlobalService } from '../popup-global/popup-global.service';
 import { curtainDown } from '../../animations';
+import { POPUP_GLOBAL_DATA } from '../popup-global/popup-global-data.token';
 
 interface KeyShortcutElement {
   keyCombo: string;

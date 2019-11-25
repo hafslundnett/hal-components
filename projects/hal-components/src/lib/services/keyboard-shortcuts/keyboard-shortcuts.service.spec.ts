@@ -16,5 +16,16 @@ describe('Service: KeyboardShortcuts', () => {
 
   it('should ...', inject([KeyboardShortcutsService], (service: KeyboardShortcutsService) => {
     expect(service).toBeTruthy();
+    expect((service as any).enabled).toBeFalsy();
+    service.enableKeyboardShortcuts();
+    expect((service as any).enabled).toBeTruthy();
   }));
+
 });
+
+// function newDocumentKeyEvent(key: string) {
+//   const event: Event = new KeyboardEvent('keydown', {
+//     key
+//   });
+//   document.dispatchEvent(event);
+// }

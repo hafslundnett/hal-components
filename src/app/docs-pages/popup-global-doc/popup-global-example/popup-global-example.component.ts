@@ -6,7 +6,7 @@ import { curtainDown, POPUP_GLOBAL_DATA } from '@hafslundnett/hal-components';
   selector: 'hal-popup-global-example',
   templateUrl: './popup-global-example.component.html',
   styleUrls: ['./popup-global-example.component.scss'],
-  animations: [curtainDown]
+  animations: [curtainDown],
 })
 export class PopupGlobalExampleComponent implements OnInit, OnDestroy {
 
