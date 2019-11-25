@@ -1,14 +1,15 @@
-<div class="animation-wrapper" @curtainDown role="dialog">
-  <div class="filter-popup-body" cdkTrapFocus cdkTrapFocusAutoCapture>
-    <div class="top-bar">
-      <h2 class="title">Aktive tastatursnarveier</h2>
-      <button class="close-button" (click)="onClose()">
-        Lukk
-        <i class="fal fa-times"></i>
-      </button>
+<div @curtainDown role="dialog">
+  <div class="hdd-card" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <div class="hdd-card_header">
+      <div class="hdd-card_header_text">
+        <div class="hdd-card_title is-center">Aktive tastatursnarveier</div>
+      </div>
+      <button class="hdd-card_header_action" (click)="onClose()">
+          <i class="fal fa-times"></i>
+        </button>
     </div>
-    <div class="key-shortcut-line" *ngFor="let keyShortcut of keyShortcuts">
-      <span class="combo">{{keyShortcut.keyCombo}}</span>: {{keyShortcut.description}}
+    <div class="hdd-card_content" *ngFor="let keyShortcut of keyShortcuts">
+      <b>{{keyShortcut.keyCombo}}</b>: {{keyShortcut.description}}
     </div>
   </div>
 </div>
