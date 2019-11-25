@@ -31,7 +31,7 @@ export class KeyboardShortcutsDocComponent implements OnInit, OnDestroy {
 
   this.subscriptions.add(
     this.keyboardShortcutsService.getKeyEventsForKey(
-      KeyName.A,
+      KeyName.B,
       'Send a greeting to the console log!',
       true,
       false,
@@ -51,10 +51,10 @@ export class KeyboardShortcutsDocComponent implements OnInit, OnDestroy {
 
     this.subscriptions.add(
       this.keyboardShortcutsService.getKeyEventsForKey(
-        KeyName.One,
+        KeyName.B,
         'Send a greeting to the console log!',
-        false,
         true,
+        false,
         false
       ).subscribe({
         next: () => {
