@@ -15,6 +15,6 @@ export enum Pages {
   DateFormatDoc = 'date-format-doc',
   AnimationsDoc = 'animations-doc',
   FeedbackDoc = 'feedback-doc',
-  KeyboardShortcutsDoc = 'feedback-shortcuts-doc',
+  KeyboardShortcutsDoc = 'keyboard-shortcuts-doc',
   LoadingSpinnerDoc = 'loading-spinner-doc',
 }

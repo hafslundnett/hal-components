@@ -2,14 +2,16 @@
   <div class="hdd-card" cdkTrapFocus cdkTrapFocusAutoCapture>
     <div class="hdd-card_header">
       <div class="hdd-card_header_text">
-        <div class="hdd-card_title is-center">Aktive tastatursnarveier</div>
+        <div class="hdd-card_title">Aktive tastatursnarveier</div>
       </div>
       <button class="hdd-card_header_action" (click)="onClose()">
           <i class="fal fa-times"></i>
         </button>
     </div>
-    <div class="hdd-card_content" *ngFor="let keyShortcut of keyShortcuts">
-      <b>{{keyShortcut.keyCombo}}</b>: {{keyShortcut.description}}
+    <div class="hdd-card_content">
+      <div class="shortcut-element" *ngFor="let keyShortcut of keyShortcuts">
+        <b>{{keyShortcut.keyCombo}}</b>: {{keyShortcut.description}}
+      </div>
     </div>
   </div>
 </div>
