@@ -20,9 +20,9 @@ export class KeyboardShortcutsDocComponent implements OnInit, OnDestroy {
       description: 'Enables the keyboard-shortcuts. Should be called on application startup'
     },
     {
-      apiInput: 'getKeyEventsForKey(keyName, description, requireCtrl, requireShift, requireAlt)',
+      apiInput: 'getKeyEventsForKey(keyName, description, requireCtrl, requireShift, requireAlt): Observable',
       // tslint:disable-next-line:max-line-length
-      description: 'Adds new keyboard-shortcut for the component its called in. The three last values past are booleans for possible keys to press to enable the shortcut-event'
+      description: 'Adds new keyboard-shortcut for the component its called in. The three last values past are booleans for possible keys to press to enable the shortcut-event. Returns an observable that should be subscribed.'
     }
   ];
 
