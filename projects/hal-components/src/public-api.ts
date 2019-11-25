@@ -11,6 +11,7 @@ export * from './lib/components/svg-element/svg-element.module';
 export * from './lib/services/svg/svg.service';
 
 export * from './lib/services/popup-global/popup-global.service';
+export * from './lib/services/popup-global/popup-global-data.token';
 export * from './lib/components/popup-connected/popup-connected.module';
 
 export * from './lib/services/broadcast-handler/broadcast-handler.service';
@@ -36,5 +37,10 @@ export * from './lib/animations';
 
 export * from './lib/services/feedback/feedback.module';
 export * from './lib/services/feedback/feedback.service';
+
+export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts.service';
+export * from './lib/services/keyboard-shortcuts/key-name.enum';
+export * from './lib/services/keyboard-shortcuts/key-in-use.interface';
+export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts-popup.module';
 
 export * from './lib/components/loading-spinner/loading-spinner.module';

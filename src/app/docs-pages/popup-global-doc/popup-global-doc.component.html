@@ -26,9 +26,29 @@
     </button>
   </div>
 
+  <hal-divider class="divider-margin"></hal-divider>
+  <h1 class="doc-subtitle">Component opening popup</h1>
   <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
 
+  <hal-divider class="divider-margin"></hal-divider>
+  <h1 class="doc-subtitle">Popup component</h1>
+  <p class="doc-info">
+    <b>Necessary imports:</b> 
+    To be able to receive data from the component opening the popup, the InjectionToken POPUP_GLOBAL_DATA must be important. 
+    To use the animation for this popup the specific animation must also be imported.
+  </p>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} POPUP_GLOBAL_DATA {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} curtainDown {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-code-highlighter [isTS]="true" [code]="tsCodeExample"></hal-code-highlighter>
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  <hal-divider class="divider-margin"></hal-divider>
+
   <hal-doc-api-table [apiTableHeader]="'Methods'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+
 </div>
 
 <hal-doc-list></hal-doc-list>

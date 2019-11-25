@@ -14,24 +14,55 @@ export class PopupGlobalDocComponent implements OnInit {
   public apiTableRows: ApiTableRow[] = [
     {apiInput: 'setupOverlay(maxWidth)', description: 'Sets the max-width of the popup.'},
     {
-      apiInput: 'openOverlay(overlayRef, overlayComponent)',
-      description: 'Opens the overlay(popup) by passing the OverlayRef and the overlayComponent to display.'},
+      apiInput: 'openOverlay(overlayRef, overlayComponent, data?)',
+      // tslint:disable-next-line:max-line-length
+      description: 'Opens the overlay(popup) by passing the OverlayRef and the overlayComponent to display. Extra data can be passed optionally, a injector will be made that should be injected in the receiving component.'},
     {apiInput: 'detach(overlayRef)', description: 'Detaches the overlay by passing the OverlayRef.'}
   ];
 
   tsCode = `openPopupGlobal() {
-    const overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
-    const compInstance = this.popupGlobalService.openOverlay(
-      overlayRef,
-      PopupGlobalExampleComponent
-    );
-    overlayRef.backdropClick().subscribe(next => {
-      this.popupGlobalService.detach(overlayRef);
-    });
-    compInstance.onDestroy$.subscribe(() => {
-      this.popupGlobalService.detach(overlayRef);
-    });
-  }`;
+  const extraData = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+  const overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
+  const compInstance = this.popupGlobalService.openOverlay(overlayRef, PopupGlobalExampleComponent, extraData);
+  overlayRef.backdropClick().subscribe(next => {
+    this.popupGlobalService.detach(overlayRef);
+  });
+  compInstance.onDestroy$.subscribe(() => {
+    this.popupGlobalService.detach(overlayRef);
+  });
+}`;
+
+  tsCodeExample = `private onDestroy = new Subject();
+onDestroy$ = this.onDestroy.asObservable();
+
+private subscriptions: Subscription = new Subscription();
+
+constructor(
+  @Inject(POPUP_GLOBAL_DATA) public extraData: string,
+) {}
+
+ngOnDestroy() {
+  this.subscriptions.unsubscribe();
+}
+
+onClose() {
+  this.onDestroy.next();
+}`;
+
+  htmlCode = `<div class="animation-wrapper" @curtainDown role="dialog">
+  <div class="filter-popup-body" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <div class="top-bar">
+      <h2>Popup works!</h2>
+      <button class="close-button" (click)="onClose()">
+        Lukk
+        <i class="fal fa-times"></i>
+      </button>
+    </div>
+    <div class="doc-info">
+      {{ extraData }}
+    </div>
+  </div>
+</div>`;
 
   constructor(private popupGlobalService: PopupGlobalService) { }
 
@@ -39,8 +70,9 @@ export class PopupGlobalDocComponent implements OnInit {
   }
 
   openPopupGlobal() {
+    const extraData = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
     const overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
-    const compInstance = this.popupGlobalService.openOverlay(overlayRef, PopupGlobalExampleComponent);
+    const compInstance = this.popupGlobalService.openOverlay(overlayRef, PopupGlobalExampleComponent, extraData);
     overlayRef.backdropClick().subscribe(next => {
       this.popupGlobalService.detach(overlayRef);
     });
