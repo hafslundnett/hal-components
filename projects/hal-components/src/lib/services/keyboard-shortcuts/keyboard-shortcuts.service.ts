@@ -44,7 +44,6 @@ export class KeyboardShortcutsService {
     .subscribe({
       next: (event: KeyboardEvent) => {
         this.newKeyEvent(event);
-        console.log(event);
       }
     });
 
@@ -66,7 +65,6 @@ export class KeyboardShortcutsService {
     const mapKey = this.getMapKey(keyName, requireCtrl, requireShift, requireAlt);
     const keyEvents = this.keyEvents.pipe(
       filter(current => {
-        console.log(current.shiftDown, requireShift, current.keyName , keyName);
         return current.keyName === keyName
           && current.ctrlDown === requireCtrl
           && current.shiftDown === requireShift
