@@ -35,6 +35,8 @@ export class PopupGlobalService {
     overlayRef.detach();
   }
 
+  // tslint:disable-next-line:max-line-length
+  /** Creating injector to pass data to the overlayComponent. This injector is passed with the portal and accessed through InjectionToken (POPUP_GLOBAL_DATA). */
   createInjector(dataToPass): PortalInjector {
     const injectorTokens = new WeakMap();
     injectorTokens.set(POPUP_GLOBAL_DATA, dataToPass);
