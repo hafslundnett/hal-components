@@ -48,7 +48,7 @@ export class KeyboardShortcutsPopupComponent implements OnInit, OnDestroy {
       extraKeys += 'ctrl' + separator;
     }
     if (key.shiftDown) {
-      extraKeys += 'shift + separator';
+      extraKeys += 'shift' + separator;
     }
     if (key.altDown) {
       extraKeys += 'alt' + separator;

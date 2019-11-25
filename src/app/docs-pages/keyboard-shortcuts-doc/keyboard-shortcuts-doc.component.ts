@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { KeyboardShortcutsService } from '@hafslundnett/hal-components';
 import { KeyName } from '@hafslundnett/hal-components';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
+import { KeyInUse } from 'projects/hal-components/src/public-api';
 
 @Component({
   selector: 'hal-keyboard-shortcuts-doc',
@@ -50,10 +51,10 @@ export class KeyboardShortcutsDocComponent implements OnInit, OnDestroy {
 
     this.subscriptions.add(
       this.keyboardShortcutsService.getKeyEventsForKey(
-        KeyName.A,
+        KeyName.One,
         'Send a greeting to the console log!',
-        true,
         false,
+        true,
         false
       ).subscribe({
         next: () => {
