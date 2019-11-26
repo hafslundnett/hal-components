@@ -1,0 +1,37 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Keyboard Shortcuts Service</h1>
+
+  <p class="doc-info">
+    The service lets you enable keyboard-shortcuts all over in the application. 
+    Enabling the service in your app-component makes the shortcuts available everywhere. 
+    You therefore only have to enable the service once!
+  </p>
+  <p class="doc-info">
+    To open the overview of shortcuts press ctrl and space. 
+    This an automatically generated overview of all active key combos on the current page.
+    In each component it is therefore possible to add new shortcuts with the method getKeyEventsForKey(), that only exists in that component.
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} KeyboardShortcutsService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} KeyName {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <div class="example-container">
+    <p>Press <b>ctrl-space</b> to see the overview of shortcuts in this component. This shortcut works everywhere.</p>
+    <p>Press <b>ctrl-b</b> to see the shortcut added in this component, open console log to see result.</p>
+  </div>
+
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Methods'" [apiTableRows]="apiTableRows"></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>

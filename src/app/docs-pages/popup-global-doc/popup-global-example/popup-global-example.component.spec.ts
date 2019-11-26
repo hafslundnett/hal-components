@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { PopupGlobalExampleComponent } from './popup-global-example.component';
+import { POPUP_GLOBAL_DATA } from '@hafslundnett/hal-components';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('PopupGlobalExampleComponent', () => {
   let component: PopupGlobalExampleComponent;
@@ -11,7 +11,11 @@ describe('PopupGlobalExampleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PopupGlobalExampleComponent ]
+      declarations: [ PopupGlobalExampleComponent ],
+      imports: [ NoopAnimationsModule ],
+      providers: [
+        { provide: POPUP_GLOBAL_DATA , useValue: {}}
+      ]
     })
     .compileComponents();
   }));

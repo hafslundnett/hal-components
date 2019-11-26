@@ -1,10 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
+import { curtainDown, POPUP_GLOBAL_DATA } from '@hafslundnett/hal-components';
 
 @Component({
   selector: 'hal-popup-global-example',
   templateUrl: './popup-global-example.component.html',
-  styleUrls: ['./popup-global-example.component.scss']
+  styleUrls: ['./popup-global-example.component.scss'],
+  animations: [curtainDown],
 })
 export class PopupGlobalExampleComponent implements OnInit, OnDestroy {
 
@@ -13,7 +15,9 @@ export class PopupGlobalExampleComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription = new Subscription();
 
-  constructor() { }
+  constructor(
+    @Inject(POPUP_GLOBAL_DATA) public extraData: string,
+  ) {}
 
   ngOnInit() {
   }
