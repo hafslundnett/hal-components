@@ -25,8 +25,11 @@
           [height]="iconHeight"
           [svgFilePath]="'assets/sideMenu/active/' + menuItem.svgName"
         ></hal-svg-element>
-        <span class="menu-label"> {{menuItem.title }}</span>
+        <span class="menu-label">{{menuItem.title }}</span>
       </a>
+        <div *ngIf="!isOpen">
+          <span class="menu-short-title"> {{ menuItem.shortTitle }} </span>
+        </div>
       <mat-divider class="nav-divider" *ngIf="menuItem.divider"></mat-divider>
     </ng-container>
   </mat-nav-list>

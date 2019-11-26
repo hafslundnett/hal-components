@@ -93,6 +93,25 @@ mat-nav-list.menu-list {
   }
 }
 
+    .menu-short-title {
+      position: absolute;
+      left: 20%;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 9px;
+      line-height: 19px;
+      /* or 211% */
+
+      text-align: center;
+      letter-spacing: 0.3px;
+      font-variant: small-caps;
+
+      /* Grey-medium */
+
+      color: #8F9599;
+    }
+
 .footer {
   margin-top: auto;
   width: 100%;

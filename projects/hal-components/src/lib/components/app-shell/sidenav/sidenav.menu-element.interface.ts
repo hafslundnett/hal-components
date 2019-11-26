@@ -4,4 +4,5 @@ export interface MenuElement {
     title: string;
     divider?: boolean;
     groupTitle?: string;
+    shortTitle?: string;
 }
