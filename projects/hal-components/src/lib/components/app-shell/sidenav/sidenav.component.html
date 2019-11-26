@@ -28,7 +28,11 @@
         <span class="menu-label">{{menuItem.title }}</span>
       </a>
         <div *ngIf="!isOpen">
-          <span class="menu-short-title"> {{ menuItem.shortTitle }} </span>
+          <span 
+          class="menu-short-title" 
+          > 
+          {{ menuItem.shortTitle }} 
+        </span>
         </div>
       <mat-divider class="nav-divider" *ngIf="menuItem.divider"></mat-divider>
     </ng-container>

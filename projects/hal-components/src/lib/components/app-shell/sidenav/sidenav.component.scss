@@ -49,6 +49,19 @@ $animation: 360ms cubic-bezier(0.6, 0, 0, 1);
   }
 }
 
+.menu-short-title {
+  position: absolute;
+  width: 100%;
+  margin-top: -1rem;
+  font-weight: normal;
+  font-size: 9px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  font-variant: small-caps;
+  color: var(--hdd-grey-medium);
+}
+
 mat-nav-list.menu-list {
   padding-top: 0;
   width: 100%;
@@ -81,6 +94,7 @@ mat-nav-list.menu-list {
     &.active {
       .default-svg {
         display: none;
+
       }
 
       background-color: $selected-background-color;
@@ -92,25 +106,6 @@ mat-nav-list.menu-list {
     }
   }
 }
-
-    .menu-short-title {
-      position: absolute;
-      left: 20%;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 9px;
-      line-height: 19px;
-      /* or 211% */
-
-      text-align: center;
-      letter-spacing: 0.3px;
-      font-variant: small-caps;
-
-      /* Grey-medium */
-
-      color: #8F9599;
-    }
 
 .footer {
   margin-top: auto;
