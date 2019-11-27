@@ -40,7 +40,7 @@ describe('SidenavComponent', () => {
 
   describe('gets a list of menu items', () => {
     beforeEach(() => {
-      testComponent.menuItems = [{ url: 'hdd', svgName: 'analysis.svg', title: 'HDD' }];
+      testComponent.menuItems = [{ url: 'hdd', svgName: 'analysis.svg', title: 'HDD', iconTitle: 'Hdd' }];
       fixture.detectChanges();
     });
     it('should display all menu items', () => {
@@ -62,6 +62,11 @@ describe('SidenavComponent', () => {
   it('should show a image within the hafslund logo link', () => {
     const menuElements: HTMLAnchorElement[] = getElements('.logo');
     expect(menuElements.length).toBe(1);
+  });
+
+  it('should show a small title under the icons in the sidenav', () => {
+    const menuElements: HTMLAnchorElement[] = getElements('.menu-icon-title');
+    expect(menuElements.length).toBeTruthy();
   });
 
   function getElement(selector: string) {
