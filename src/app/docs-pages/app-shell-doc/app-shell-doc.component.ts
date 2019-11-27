@@ -9,7 +9,8 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class AppShellDocComponent implements OnInit {
 
   api: ApiTableRow[] = [
-    { apiInput: '[menuItems]', description: 'List of the menu elements with url, svg file name, title and potentially groupTitle' },
+    // tslint:disable-next-line:max-line-length
+    { apiInput: '[menuItems]', description: 'List of the menu elements with url, svg file name, title, iconTitle and potentially groupTitle' },
     { apiInput: '[user]', description: 'The current active user' },
     { apiInput: '[settingsPagePath]', description: 'URL to settings page in your application' },
     { apiInput: '[signOutPagePath]', description: 'URL to sign out page in your application. That page should auto sign out the user' },
@@ -31,8 +32,8 @@ export class AppShellDocComponent implements OnInit {
 </hal-app-shell>`;
 
   tsCode = `menuItems: MenuElement[] = [
-  { url: 'welcome', svgName: 'overview.svg', title: 'Home', groupTitle: 'HAL' },
-  { url: 'hdd', svgName: 'analysis.svg', title: 'HDD' },
+  { url: 'welcome', svgName: 'overview.svg', title: 'Home', groupTitle: 'HAL', iconTitle: 'HOME' },
+  { url: 'hdd', svgName: 'analysis.svg', title: 'HDD', iconTitle: 'HDD' },
 ];
 user: User = {
   email: 'jan.greger@gmail.com',

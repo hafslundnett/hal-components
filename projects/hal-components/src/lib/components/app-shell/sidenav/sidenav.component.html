@@ -27,8 +27,8 @@
         ></hal-svg-element>
         <span class="menu-label">{{menuItem.title }}</span>
         <div *ngIf="!isOpen">
-          <span class="menu-short-title" > 
-            {{ menuItem.shortTitle }} 
+          <span class="menu-icon-title" > 
+            {{ menuItem.iconTitle }} 
           </span>
         </div>
       </a>
@@ -37,7 +37,7 @@
   </mat-nav-list>
   <div class="footer" (click)="isOpen = !isOpen">
     <div class="toggle-box" [ngClass]="{'flipped': isOpen}">
-      <button type="button" class="hdd-button-icon is-transparent toggle-button">
+      <button type="button" class="hdd-button-icon is-transparent">
         <i class="fal fa-arrow-right"></i>
       </button>
     </div>
