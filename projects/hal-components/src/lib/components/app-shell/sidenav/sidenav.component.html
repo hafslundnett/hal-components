@@ -26,11 +26,11 @@
           [svgFilePath]="'assets/sideMenu/active/' + menuItem.svgName"
         ></hal-svg-element>
         <span class="menu-label">{{menuItem.title }}</span>
-        <div *ngIf="!isOpen">
+        <ng-container *ngIf="!isOpen">
           <span class="menu-icon-title" > 
             {{ menuItem.iconTitle }} 
           </span>
-        </div>
+        </ng-container>
       </a>
       <mat-divider class="nav-divider" *ngIf="menuItem.divider"></mat-divider>
     </ng-container>
