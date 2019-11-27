@@ -1,0 +1,64 @@
+@function grad($ang: 1turn) {
+  @return linear-gradient($ang, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 41%, rgba(0, 212, 255, 1) 100%);
+}
+@function grad2($ang: 1turn) {
+  @return linear-gradient($ang, rgba(14, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 78%, rgba(255, 0, 0, 1) 100%);
+}
+
+
+.container {
+	--size: 50px;
+
+  height: 100%;
+  background: grad(var(--ang, 0turn));
+  animation: rot 0.5s linear infinite;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  .container-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    border-radius: calc(var(--size) / 2);
+
+    background: grad2(var(--ang-inner, 0turn));
+    animation: rot-inner 0.5s linear infinite;
+
+    .loading {
+      transform: rotate(0deg);
+      animation: rot-loading 0.9s linear infinite;
+      font-size: 20px;
+
+      width: calc(var(--size) / 4);
+      height: calc(var(--size) / 4);
+      border-radius: calc(var(--size) / 4);
+    }
+  }
+}
+
+@keyframes rot {
+  to {
+    --ang: 1turn;
+  }
+}
+
+@keyframes rot-inner {
+  to {
+    --ang-inner: -1turn;
+  }
+}
+
+@keyframes rot-loading {
+  to {
+    transform: rotate(-360deg);
+  }
+}
