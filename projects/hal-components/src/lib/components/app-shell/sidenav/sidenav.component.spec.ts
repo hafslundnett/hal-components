@@ -64,11 +64,6 @@ describe('SidenavComponent', () => {
     expect(menuElements.length).toBe(1);
   });
 
-  it('should show a small title under the icons in the sidenav', () => {
-    const menuElements: HTMLAnchorElement[] = getElements('.menu-icon-title');
-    expect(menuElements.length).toBeTruthy();
-  });
-
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
   }
