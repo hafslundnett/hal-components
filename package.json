@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "build-hal": "ng build hal-components",
+    "build-hal-s": "ng build hal-components && yarn build-hal-schematics",
+    "build-hal-schematics": "cd projects/hal-components && yarn build",
     "watch-hal": "ng build hal-components --watch",
     "test-hal": "ng test hal-components",
     "commit": "git cz",
@@ -28,13 +30,13 @@
     "@angular/platform-browser": "^8.1.0",
     "@angular/platform-browser-dynamic": "^8.1.0",
     "@angular/router": "^8.1.0",
+    "@hafslundnett/hdd-style": "^2.1.0",
     "date-fns": "^2.8.0",
     "hammerjs": "^2.0.8",
     "prismjs": "^1.17.1",
     "rxjs": "~6.5.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1",
-    "@hafslundnett/hdd-style": "^2.1.0"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.17",
