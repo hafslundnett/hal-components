@@ -85,7 +85,8 @@ mat-nav-list.menu-list {
       letter-spacing: 0.3px;
       font-variant: small-caps;
       text-transform: uppercase;
-      color: var(--hdd-grey-medium);
+      color: var(--hdd-grey-dark);
+      user-select: none;
     }
 
     &:not(.active) {

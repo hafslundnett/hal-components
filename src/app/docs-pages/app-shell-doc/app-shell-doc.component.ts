@@ -32,8 +32,19 @@ export class AppShellDocComponent implements OnInit {
 </hal-app-shell>`;
 
   tsCode = `menuItems: MenuElement[] = [
-  { url: 'welcome', svgName: 'overview.svg', title: 'Home', groupTitle: 'HAL', iconTitle: 'HOME' },
-  { url: 'hdd', svgName: 'analysis.svg', title: 'HDD', iconTitle: 'HDD' },
+  {
+    url: 'welcome',
+    svgName: 'overview.svg',
+    title: 'Home',
+    groupTitle: 'HAL',
+    iconTitle: 'HOME'
+  },
+  {
+    url: 'hdd',
+    svgName: 'analysis.svg',
+    title: 'HDD',
+    iconTitle: 'HDD'
+  },
 ];
 user: User = {
   email: 'jan.greger@gmail.com',
