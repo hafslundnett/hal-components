@@ -16,7 +16,8 @@
     "lint-ci": "ng lint",
     "test-ci": "npm run test -- --browsers=CiChrome --watch=false",
     "build-prod": "ng build hal-components && ng build --prod",
-    "ci": "npm run lint-ci && npm run build-prod && npm run test-ci"
+    "ci": "npm run lint-ci && npm run build-prod && npm run test-ci",
+    "cypress": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +50,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "commitizen": "^4.0.3",
+    "cypress": "^3.7.0",
     "cz-conventional-changelog": "^3.0.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
