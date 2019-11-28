@@ -40,7 +40,7 @@ describe('SidenavComponent', () => {
 
   describe('gets a list of menu items', () => {
     beforeEach(() => {
-      testComponent.menuItems = [{ url: 'hdd', svgName: 'analysis.svg', title: 'HDD' }];
+      testComponent.menuItems = [{ url: 'hdd', svgName: 'analysis.svg', title: 'HDD', iconTitle: 'Hdd' }];
       fixture.detectChanges();
     });
     it('should display all menu items', () => {

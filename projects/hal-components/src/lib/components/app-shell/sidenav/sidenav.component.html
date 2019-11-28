@@ -25,14 +25,19 @@
           [height]="iconHeight"
           [svgFilePath]="'assets/sideMenu/active/' + menuItem.svgName"
         ></hal-svg-element>
-        <span class="menu-label"> {{menuItem.title }}</span>
+        <span class="menu-label">{{menuItem.title }}</span>
+        <ng-container *ngIf="!isOpen">
+          <span class="menu-icon-title" > 
+            {{ menuItem.iconTitle }} 
+          </span>
+        </ng-container>
       </a>
       <mat-divider class="nav-divider" *ngIf="menuItem.divider"></mat-divider>
     </ng-container>
   </mat-nav-list>
   <div class="footer" (click)="isOpen = !isOpen">
     <div class="toggle-box" [ngClass]="{'flipped': isOpen}">
-      <button type="button" class="hdd-button-icon is-transparent toggle-button">
+      <button type="button" class="hdd-button-icon is-transparent">
         <i class="fal fa-arrow-right"></i>
       </button>
     </div>
