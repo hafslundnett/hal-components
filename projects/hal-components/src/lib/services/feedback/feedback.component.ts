@@ -22,7 +22,7 @@ import { FeedbackExtras } from './feedback-extras';
         style({
           height: '*',
           opacity: 1,
-          margin: '75px'
+          margin: '25px'
         })
       ),
       transition('visible <=> void', animate(`600ms cubic-bezier(0.6, 0, 0.1, 1)`))
