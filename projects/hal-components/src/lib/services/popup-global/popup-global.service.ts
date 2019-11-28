@@ -2,6 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, ComponentType, PortalInjector } from '@angular/cdk/portal';
 import { POPUP_GLOBAL_DATA } from './popup-global-data.token';
+import { pipe, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,7 @@ export class PopupGlobalService {
 
   detach(overlayRef: OverlayRef): void {
     overlayRef.detach();
+    document.body.style.overflowY = 'scroll';
   }
 
   // tslint:disable-next-line:max-line-length
