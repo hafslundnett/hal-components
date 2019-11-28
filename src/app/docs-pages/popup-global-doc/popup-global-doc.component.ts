@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OverlayRef } from '@angular/cdk/overlay';
+import { OverlayRef, OverlayConfig, Overlay } from '@angular/cdk/overlay';
 import { PopupGlobalService } from '@hafslundnett/hal-components';
 import { PopupGlobalExampleComponent } from './popup-global-example/popup-global-example.component';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
@@ -70,31 +70,15 @@ onClose() {
   }
 
   openPopupGlobal() {
-    const scrollTop = document.documentElement.scrollTop;
-    this.disableScroll(scrollTop);
     const extraData = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
     const overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
     const compInstance = this.popupGlobalService.openOverlay(overlayRef, PopupGlobalExampleComponent, extraData);
     overlayRef.backdropClick().subscribe(next => {
       this.popupGlobalService.detach(overlayRef);
-      this.resetScroll(scrollTop);
     });
     compInstance.onDestroy$.subscribe(() => {
       this.popupGlobalService.detach(overlayRef);
-      this.resetScroll(scrollTop);
     });
-  }
-
-  // Disable scroll on background
-  disableScroll(scrollTop: number) {
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollTop}px`;
-  }
-
-  resetScroll(scrollTop: number) {
-    document.body.style.position = '';
-    document.body.style.top = `-${scrollTop}px`;
-    window.scrollTo(0, scrollTop);
   }
 
 }

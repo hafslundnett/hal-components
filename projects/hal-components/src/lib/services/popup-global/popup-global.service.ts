@@ -17,13 +17,16 @@ export class PopupGlobalService {
     return this.overlay.create({
       hasBackdrop: true,
       maxWidth,
-      scrollStrategy: this.overlay.scrollStrategies.noop(),
+      scrollStrategy: this.overlay.scrollStrategies.block(),
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically()
     });
   }
 
   /** Remember to handle on destroy for popup and call detach */
   openOverlay<PopupCompType>(overlayRef: OverlayRef, overlayComponent: ComponentType<PopupCompType>, data?: any) {
+    // To make scrollStrategies.block() work as expected (https://github.com/angular/components/issues/15051)
+    document.body.style.overflowY = 'visible';
+
     const portal = new ComponentPortal(overlayComponent, null, this.createInjector(data));
     const componentRef = overlayRef.attach(portal);
     return componentRef.instance;
