@@ -1,4 +1,4 @@
-<div [@feedbackAnimation]="animationState" (@feedbackAnimation.done)="animationDone()" style="margin: var(--hdd-spacing-4);">
+<div [@feedbackAnimation]="animationState" (@feedbackAnimation.done)="animationDone()">
   <div class="feedback-container" [ngClass]="'is-' + extras?.severity">
     <div [ngSwitch]="extras?.severity">
       <i class="fal fa-check feedback-container_icon" *ngSwitchCase="'success'"></i>
