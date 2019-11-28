@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OverlayRef, OverlayConfig, Overlay } from '@angular/cdk/overlay';
+import { OverlayRef } from '@angular/cdk/overlay';
 import { PopupGlobalService } from '@hafslundnett/hal-components';
 import { PopupGlobalExampleComponent } from './popup-global-example/popup-global-example.component';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
