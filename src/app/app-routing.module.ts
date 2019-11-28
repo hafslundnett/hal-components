@@ -20,6 +20,7 @@ import { AnimationsDocComponent } from './docs-pages/animations-doc/animations-d
 import { FeedbackDocComponent } from './docs-pages/feedback-doc/feedback-doc.component';
 import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.component';
 import { LoadingSpinnerDocComponent } from './docs-pages/loading-spinner-doc/loading-spinner-doc.component';
+import { SelectorDocComponent } from './docs-pages/selector-doc/selector-doc.component';
 
 const routes: Routes = [
   {
@@ -103,6 +104,10 @@ const routes: Routes = [
       {
         path: Pages.LoadingSpinnerDoc,
         component: LoadingSpinnerDocComponent
+      },
+      {
+        path: Pages.SelectorDoc,
+        component: SelectorDocComponent
       },
     ]
   }
