@@ -8,8 +8,6 @@ import { strings, normalize, experimental } from '@angular-devkit/core';
 
 import { Schema as DocsPageSchema } from './schema';
 
-// TODO ask component or service doc
-
 enum Types {
   component = 'component',
   service = 'service',
@@ -20,6 +18,7 @@ enum Types {
 
 export function docsPage(options: DocsPageSchema): Rule {
   return (tree: Tree) => {
+
     const workspaceConfig = tree.read('/angular.json');
     if (!workspaceConfig) {
       throw new SchematicsException('Could not find Angular workspace configuration');

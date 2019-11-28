@@ -38,6 +38,7 @@
     }
   },
   "required": [
-    "name"
+    "name",
+    "type"
   ]
 }
