@@ -21,7 +21,7 @@ export class FeedbackService {
     this.overlayRef = this.overlay.create({
       hasBackdrop: false,
       scrollStrategy: this.overlay.scrollStrategies.noop(),
-      positionStrategy: this.overlay.position().global().right().bottom(),
+      positionStrategy: this.overlay.position().global().right().top(),
       panelClass: 'overlay-container'
     });
   }
