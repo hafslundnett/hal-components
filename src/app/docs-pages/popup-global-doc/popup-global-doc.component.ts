@@ -70,14 +70,26 @@ onClose() {
   }
 
   openPopupGlobal() {
+    // Disable scroll on background
+    const scrollY = document.documentElement.scrollTop;
+    console.log(scrollY);
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+
     const extraData = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
     const overlayRef: OverlayRef = this.popupGlobalService.setupOverlay('50%');
     const compInstance = this.popupGlobalService.openOverlay(overlayRef, PopupGlobalExampleComponent, extraData);
     overlayRef.backdropClick().subscribe(next => {
       this.popupGlobalService.detach(overlayRef);
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollY);
     });
     compInstance.onDestroy$.subscribe(() => {
       this.popupGlobalService.detach(overlayRef);
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollY);
     });
   }
 
