@@ -14,7 +14,7 @@
 ## Publish to NPM
 
 - Build with `yarn build-hal`
-- `yarn build-hal-schematics `
+- Build schematics `yarn build-hal-schematics `
 - Naviagte into dist/hal-components/
 - run `npm publish`
 

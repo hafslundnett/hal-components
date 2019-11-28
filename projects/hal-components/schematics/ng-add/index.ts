@@ -89,6 +89,7 @@ function addHdd(tree: Tree) {
     if (!json.dependencies[pkg]) {
       json.dependencies[pkg] = version;
       json.dependencies = sortObjectByKeys(json.dependencies);
+      console.log('Adding HDD!');
     }
 
     tree.overwrite('package.json', JSON.stringify(json, null, 2));
@@ -122,14 +123,10 @@ function updateStyles(tree: Tree, project: any) {
     return;
   }
 
-  // const stylesToAddTest = '\n' +
-  //     `html, body { height: 100%; }\n` +
-  //     `body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }\n`;
-
   const htmlContent = buffer.toString();
 
   if (htmlContent.includes(stylesToAdd)) {
-    console.log('inludes!');
+    console.log('Styles already included!');
     return;
   }
 

@@ -8,7 +8,7 @@
       "description": "Should we setup the styles.scss file with HDD and HAL?",
       "type": "boolean",
       "default": true,
-      "x-prompt": "Should we setup the styles file?"
+      "x-prompt": "Setup the styles.scss file with HDD and HAL?"
     }
   },
   "required": [  ]
