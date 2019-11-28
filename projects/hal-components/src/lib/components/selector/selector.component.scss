@@ -1,0 +1,36 @@
+@import "~@hafslundnett/hdd-style/variables/main";
+
+.hdd-form_select {
+  // Variable containing '&' to jump to current parent inside a child class.
+  $this: &;
+
+  display: flex;
+  position: relative;
+  align-items: center;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: var(--hdd-white);
+  border: 1px solid var(--hdd-grey-border);
+  border-radius: 4px;
+  width: 10.4375rem;
+
+  mat-select {
+    $this: &;
+
+    flex-grow: 1;
+    padding: $form-select-padding;
+    border: 0;
+    background: none;
+
+    // Disabling browser spesif selector and pointer style
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    &::-ms-expand {
+      display: none;
+    }
+
+  }
+}
