@@ -1,5 +1,5 @@
-describe('My First Test', function () {
-    it('Visits the Pop-Global doc page', function () {
+describe('Popup Connected Test', function () {
+    it('Visits the Connected Popup doc page', function () {
         cy.visit('http://localhost:4200/popup-connected-doc')
 
         cy.contains('Open connected popup').click()

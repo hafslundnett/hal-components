@@ -1,4 +1,4 @@
-describe('My First Test', function () {
+describe('Global Popup Test', function () {
     it('Visits the Pop-Global doc page', function () {
         cy.visit('http://localhost:4200/popup-global-doc')
 
