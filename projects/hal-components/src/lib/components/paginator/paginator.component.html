@@ -1,0 +1,46 @@
+<div class="paginator">
+  <div class="dropdown">
+    <span>Viser</span>
+    <hdd-form-field class="slim-select">
+      <mat-select hddSelect [value]="selectedPageSizeSelect" (valueChange)="setPageSize($event)">
+        <mat-option *ngFor="let pageSize of availablePageSizes" [value]="pageSize">{{pageSize}}</mat-option>
+        <mat-option *ngIf="allowSelectAlle" [value]="100000">Alle</mat-option>
+      </mat-select>
+    </hdd-form-field>
+    <span>av {{length}} {{unit}}</span>
+  </div>
+  <div class="page-navigation" *ngIf="showPaging && pages.length && pages.length > 1">
+    <button hddButtonIcon name="previous-button" class="arrow-button" [ngClass]="{'hidden': selectedPageIndex === 0}" (click)="setPage(selectedPageIndex - 1)">
+      <i class="fal fa-arrow-left"></i>
+    </button>
+
+    <ng-container *ngIf="pages.length < 7; else complexPaging">
+      <button *ngFor="let page of pages" (click)="setPage(page)" [ngClass]="{'is-selected': page === selectedPageIndex}">{{page + 1}}</button>
+    </ng-container>
+    <ng-template #complexPaging>
+      <ng-container *ngIf="selectedPageIndex > 1; else multipleFrom">
+        <button (click)="setPage(0)" [ngClass]="{'is-selected': 0 === selectedPageIndex}">1</button>
+      </ng-container>
+      <ng-template #multipleFrom>
+        <button *ngFor="let page of pages | slice:0:3" (click)="setPage(page)" [ngClass]="{'is-selected': page === selectedPageIndex}">{{page + 1}}</button>
+      </ng-template>
+
+      <ng-container *ngIf="selectedPageIndex > 1 && selectedPageIndex < pages.length - 2">
+        <i class="fal fa-ellipsis-h dots" *ngIf="selectedPageIndex > 2"></i>
+        <button *ngFor="let page of pages | slice:selectedPageIndex - 1:selectedPageIndex + 2" (click)="setPage(page)" [ngClass]="{'is-selected': page === selectedPageIndex}">{{page + 1}}</button>
+      </ng-container>
+      <i class="fal fa-ellipsis-h dots"></i>
+
+      <ng-container *ngIf="selectedPageIndex < pages.length - 2; else multipleTo">
+        <button (click)="setPage(pages.length - 1)" [ngClass]="{'is-selected': pages.length - 1 === selectedPageIndex}">{{pages.length}}</button>
+      </ng-container>
+      <ng-template #multipleTo>
+        <button *ngFor="let page of pages | slice:pages.length-3:pages.length" (click)="setPage(page)" [ngClass]="{'is-selected': page === selectedPageIndex}">{{page + 1}}</button>
+      </ng-template>
+    </ng-template>
+
+    <button hddButtonIcon name="next-button" class="arrow-button" [ngClass]="{'hidden': selectedPageIndex === pages.length - 1}" (click)="setPage(selectedPageIndex + 1)">
+      <i class="fal fa-arrow-right"></i>
+    </button>
+  </div>
+</div>

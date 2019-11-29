@@ -1,0 +1,69 @@
+@import '~@hafslundnett/hdd-style/variables/colors';
+
+$page-size: 30px;
+$arrow-button-gap: 6px;
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .dropdown {
+    flex: none;
+    margin-right: 10px;
+
+    hdd-form-field {
+      display: inline-block;
+      width: 70px;
+      margin: 0 10px;
+    }
+  }
+
+  .page-navigation {
+    flex: none;
+
+    .dots {
+      color: color('blue');
+      margin: 0 10px;
+    }
+
+    .arrow-button {
+      &.hidden {
+        visibility: hidden;
+      }
+    }
+
+    button[hddButtonIcon]:first-child {
+      margin-right: $arrow-button-gap;
+    }
+
+    button:not([hddButtonIcon]) {
+      width: $page-size;
+      height: $page-size;
+      border-radius: 4px;
+      background: transparent;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      margin: none;
+      padding: none;
+      cursor: pointer;
+
+      &.is-selected {
+        color: color('white');
+        background-color: color('blue');
+        cursor: default;
+      }
+
+      &:not(.is-selected):hover {
+        background-color: rgba(color('grey'), .1);
+      }
+    }
+
+    button[hddButtonIcon]:last-child {
+      margin-left: $arrow-button-gap;
+    }
+  }
+}
