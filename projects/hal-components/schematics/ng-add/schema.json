@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsDocsPage",
+  "title": "My Doc Page Schema",
+  "type": "object",
+  "properties": {
+    "addStyles": {
+      "description": "Should we setup the styles.scss file with HDD and HAL?",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Setup the styles.scss file with HDD and HAL?"
+    }
+  },
+  "required": [  ]
+}

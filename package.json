@@ -16,7 +16,8 @@
     "lint-ci": "ng lint",
     "test-ci": "npm run test -- --browsers=CiChrome --watch=false",
     "build-prod": "ng build hal-components && ng build --prod",
-    "ci": "npm run lint-ci && npm run build-prod && npm run test-ci"
+    "ci": "npm run lint-ci && npm run build-prod && npm run test-ci",
+    "test-install-schema": "npm link dist/hal-components && ng add @hafslundnett/hal-components"
   },
   "private": true,
   "dependencies": {
