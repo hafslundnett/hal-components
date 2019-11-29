@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
+
+@Component({
+  selector: 'hal-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss']
+})
+export class <%= classify(name) %>Component implements OnInit {
+
+  apiTableData: ApiTableRow[] = [
+    { apiInput: 'TODO', description: 'TODO' },
+  ];
+
+  htmlCode = `<todo></todo>`;
+  tsCode = `// TODO`;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

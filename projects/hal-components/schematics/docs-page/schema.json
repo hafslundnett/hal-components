@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsDocsPage",
+  "title": "My Doc Page Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the new doc page.",
+      "x-prompt": "Doc page name (without doc)",
+      "type": "string",
+      "minLength": 3
+    },
+    "type": {
+      "description": "Type of element to document.",
+      "type": "string",
+      "default": "component",
+      "enum": [
+        "component",
+        "service",
+        "directive",
+        "pipe",
+        "constant"
+      ],
+      "x-prompt": "Which type of element are you documenting?"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the service.",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}
