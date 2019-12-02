@@ -20,6 +20,7 @@ import { AnimationsDocComponent } from './docs-pages/animations-doc/animations-d
 import { FeedbackDocComponent } from './docs-pages/feedback-doc/feedback-doc.component';
 import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.component';
 import { LoadingSpinnerDocComponent } from './docs-pages/loading-spinner-doc/loading-spinner-doc.component';
+import { GettingStartedComponent } from './getting-started/getting-started.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
         path: Pages.Welcome,
         component: WelcomeComponent,
         pathMatch: 'full'
+      },
+      {
+        path: Pages.GettingStarted,
+        component: GettingStartedComponent,
       },
       {
         path: Pages.Hdd,

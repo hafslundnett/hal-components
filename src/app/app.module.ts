@@ -27,6 +27,7 @@ import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loadin
 import localeNb from '@angular/common/locales/nb';
 registerLocaleData(localeNb);
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
+import { GettingStartedComponent } from './getting-started/getting-started.component';
 
 @NgModule({
    imports: [
@@ -56,6 +57,7 @@ import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/
    declarations: [
       AppComponent,
       HddStyleDocComponent,
+      GettingStartedComponent
    ],
    providers: [
       { provide: LOCALE_ID, useValue: 'nb' },

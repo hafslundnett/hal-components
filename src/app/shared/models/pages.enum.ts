@@ -2,6 +2,7 @@ export enum Pages {
   Welcome = 'welcome',
   Hdd = 'hdd',
   SvgDoc = 'svg-doc',
+  GettingStarted = 'getting-started',
   PopupGlobalDoc = 'popup-global-doc',
   PopupConnectedDoc = 'popup-connected-doc',
   BroadcastHandlerDoc = 'broadcast-handler-doc',

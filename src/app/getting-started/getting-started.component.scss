@@ -1,0 +1,16 @@
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: var(--default-margin);
+  margin-bottom: var(--default-margin);
+}
+
+.info {
+  width: 700px;
+  margin: auto;
+  margin-bottom: calc(var(--default-margin) * (1.61));
+}
+
+.npm-badge {
+  margin-right: calc(var(--default-margin) / 2);
+}
