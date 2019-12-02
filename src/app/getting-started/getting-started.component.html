@@ -2,29 +2,38 @@
   <h1 class="doc-title">Getting started with HAL</h1>
 
   <p class="doc-info">
-    This guide explains how to setup your Angular project to begin using HAL-Components. It includes information on
-    installing HAL, and optionally displaying a sample HAL component in your application to
-    verify your setup.
+    This guide explains how to setup your Angular project to begin using HAL-Components.
   </p>
 
-  <h2 class="doc-subtitle">Installing HAL</h2>
-  <h3>Automatic install : NG ADD: </h3>
+  <h2 class="doc-subtitle">Automatic Installation HAL</h2>
   <hal-code-highlighter [isSHELL]="true" [code]="isSHELL"></hal-code-highlighter>
 
   <p class="doc-info">
     To add HAl simply open your terminal inside your project folder and copy the command from the
-    terminal example(ng add @hafslundnett/hal-components), and run the command.
+    terminal example, and run the command.
     It will add HDD & HAL, and ask if you want to add the required styling in your styles.scss
   </p>
 
-  <h3>Manual install : Npm & Yarn: </h3>
+  <h2 class="doc-subtitle">Manual Installation HAL</h2>
   <p class="doc-info">
     HAL is available as a NPM package here:
     <a class="hdd-link"
       href="https://www.npmjs.com/package/@hafslundnett/hal-components">npmjs.com/package/@hafslundnett/hal-components</a>
     <br>
-    Just install with yarn and start using it!
+    Install with yarn or npm like:
   </p>
+  <ul style="margin-top: -25px; margin-left: 15px;">
+    <li>Yarn: <span class="terminal-line">yarn add @hafslundnett/hal-components</span></li>
+    <li>Npm: <span class="terminal-line">npm install @hafslundnett/hal-components</span></li>
+  </ul>
+
+  <p class="doc-info" style="margin-top: 15px;">
+    If you choose to manually install HAL you also need add the following to your projects main styles.scss file:
+  </p>
+
+  <hal-code-highlighter [isSCSS]="true" [code]="isScss"></hal-code-highlighter>
+
+  <hal-divider style="margin: 25px 0px;"></hal-divider>
 
   <p class="doc-info">
     The github repo can be found here: <a class="hdd-link"

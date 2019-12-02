@@ -8,8 +8,31 @@ import { Component, OnInit } from '@angular/core';
 export class GettingStartedComponent implements OnInit {
 
   isSHELL = `ng add @hafslundnett/hal-components`;
-  isNPM = `npm install @hafslundnett/hal-components`;
-  isYARN = `yarn add @hafslundnett/hal-components`;
+  isScss = `@import "~@hafslundnett/hdd-style/main";
+@import "~@hafslundnett/hdd-style/variables/main";
+@import "~@angular/material/theming";
+
+html,
+body {
+  height: 100 %;
+}
+body {
+  overflow - y: scroll;
+}
+@include mat - core();
+$primary - color: mat - palette($hdd - material_primary);
+$accent - color: mat - palette($hdd - material_accent);
+$warn - color: mat - palette($hdd - material_warn);
+$theme: mat - light - theme($primary - color, $accent - color, $warn - color);
+$typography: mat - typography - config(
+  $font - family: (
+  $font - family // Font-family from HDD-style
+)
+);
+@include angular - material - theme($theme);
+@include angular - material - typography($typography);
+
+`;
 
   constructor() { }
 
