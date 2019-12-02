@@ -11,6 +11,7 @@ export class CodeHighlighterComponent implements OnInit, AfterViewChecked {
   @Input() isTS = false;
   @Input() isHTML = false;
   @Input() isSCSS = false;
+  @Input() isSHELL = false;
 
   @Input() code = '';
 

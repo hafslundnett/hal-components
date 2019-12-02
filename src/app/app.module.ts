@@ -27,8 +27,8 @@ import { LoadingSpinnerDocModule } from './docs-pages/loading-spinner-doc/loadin
 import localeNb from '@angular/common/locales/nb';
 registerLocaleData(localeNb);
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
-import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.module';
+import { GettingStartedModule } from './getting-started/getting-started.module';
 
 @NgModule({
    imports: [
@@ -38,6 +38,7 @@ import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.mod
       HttpClientModule,
       ShellModule,
       WelcomeModule,
+      GettingStartedModule,
       SvgDocModule,
       PopupGlobalDocModule,
       PopupConnectedDocModule,
@@ -59,7 +60,6 @@ import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.mod
    declarations: [
       AppComponent,
       HddStyleDocComponent,
-      GettingStartedComponent
    ],
    providers: [
       { provide: LOCALE_ID, useValue: 'nb' },

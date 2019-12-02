@@ -1,7 +1,9 @@
 <h2 class="doc-subtitle" *ngIf="isTS">Code TypeScript</h2>
 <h2 class="doc-subtitle" *ngIf="isHTML">Code Html</h2>
 <h2 class="doc-subtitle" *ngIf="isSCSS">Code Scss</h2>
+<h2 class="doc-subtitle" *ngIf="isBash">Code Bash</h2>
 
 <pre *ngIf="isTS" class="language-typescript"><code>{{code}}</code></pre>
 <pre *ngIf="isHTML" class="language-html"><code>{{code}}</code></pre>
 <pre *ngIf="isSCSS" class="language-scss"><code>{{code}}</code></pre>
+<pre *ngIf="isSHELL" class="language-shell"><code>{{code}}</code></pre>
