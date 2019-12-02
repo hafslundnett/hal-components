@@ -5,18 +5,18 @@ describe('Popup Connected Test', () => {
 
     it('should open a popup under button on click(), and dissapear on clicking elsewhere or on close', ()  => {
         cy.contains('Open connected popup').click();
-        cy.get('.connected-popup-body').should('be.visible');
+        cy.contains('Popup works!').should('be.visible');
         cy.get('.close-button').click();
-        cy.get('.connected-popup-body').should('not.be.visible');
+        cy.contains('Popup works!').should('not.be.visible');
         cy.contains('Open connected popup').click();
         cy.get('body').click(100, 100);
-        cy.get('.connected-popup-body').should('not.be.visible');
+        cy.contains('Popup works!').should('not.be.visible');
     });
 
     it('should open a popup on top of the button on click, and dissappear on clicking elsewhere in window', ()  => {
         cy.contains('Open popup on top').click();
-        cy.get('.connected-popup-body').should('be.visible');
+        cy.contains('Popup works!').should('be.visible');
         cy.get('body').click(100, 100);
-        cy.get('.connected-popup-body').should('not.be.visible');
+        cy.contains('Popup works!').should('not.be.visible');
     });
 });

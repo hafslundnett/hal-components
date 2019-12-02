@@ -18,5 +18,12 @@ describe('Table-Viewer Test', () => {
         cy.get('button').contains('Age').should('exist');
         cy.get('button').contains('Role').should('exist');
     });
-    // Have not test for random yet
+
+    // Random test just for cheking that all columns are present in DOM.
+    it('should display three colums on clicking "Random order"', () => {
+        cy.get('button').contains('Show random order').click();
+        cy.get('table > thead > tr > th').contains('Name of person').should('exist');
+        cy.get('button').contains('Age').should('exist');
+        cy.get('button').contains('Role').should('exist');
+    });
 });

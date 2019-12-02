@@ -5,9 +5,9 @@ describe('Bool To Text Pipe Test', () => {
 
     it('should have a value of false that changes to true on clicking on button, and vice versa', () => {
         cy.get('p').contains('Boolean value false is tranformed to Nei.');
-        cy.get('.hdd-button').click();
+        cy.contains('Change to').click();
         cy.get('p').contains('Boolean value true is tranformed to Ja.');
-        cy.get('.hdd-button').click();
+        cy.contains('Change to').click();
         cy.get('p').contains('Boolean value false is tranformed to Nei.');
     });
 });

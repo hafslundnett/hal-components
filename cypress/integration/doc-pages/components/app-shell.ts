@@ -9,12 +9,12 @@ describe('App-Shell Test', () => {
     });
 
     it('should navigate to hdd section when clicking on hdd logo in sidenav', () => {
-        cy.get('.sidenav').contains('HDD').should('have.attr', 'href', '/hdd').click();
+        cy.get('hal-shell').contains('HDD').should('have.attr', 'href', '/hdd').click();
         cy.url().should('eq', 'http://localhost:4200/hdd');
     });
 
     it('should navigate to hal section when clicking on hal logo in sidenav', () => {
-        cy.get('.sidenav').contains('home').should('have.attr', 'href', '/welcome').click();
+        cy.get('hal-shell').contains('home').should('have.attr', 'href', '/welcome').click();
         cy.url().should('eq', 'http://localhost:4200/welcome');
     });
 
