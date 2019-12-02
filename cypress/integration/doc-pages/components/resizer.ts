@@ -16,7 +16,6 @@ describe('Resizer Test', () => {
 
     it('Resizes horizontally on click and drag', () => {
 
-        cy.get('div .resize-box-horizontal');
         cy.get('.resizer-horizontal')
             .trigger('mousedown')
             .trigger('mousemove', 'right')
