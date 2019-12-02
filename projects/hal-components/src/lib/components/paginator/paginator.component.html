@@ -1,12 +1,10 @@
 <div class="paginator">
   <div class="dropdown">
     <span>Viser</span>
-    <hdd-form-field class="slim-select">
-      <mat-select hddSelect [value]="selectedPageSizeSelect" (valueChange)="setPageSize($event)">
-        <mat-option *ngFor="let pageSize of availablePageSizes" [value]="pageSize">{{pageSize}}</mat-option>
-        <mat-option *ngIf="allowSelectAlle" [value]="100000">Alle</mat-option>
-      </mat-select>
-    </hdd-form-field>
+    <mat-select hddSelect [value]="selectedPageSizeSelect" (valueChange)="setPageSize($event)">
+      <mat-option *ngFor="let pageSize of availablePageSizes" [value]="pageSize">{{pageSize}}</mat-option>
+      <mat-option *ngIf="allowSelectAlle" [value]="100000">Alle</mat-option>
+    </mat-select>
     <span>av {{length}} {{unit}}</span>
   </div>
   <div class="page-navigation" *ngIf="showPaging && pages.length && pages.length > 1">

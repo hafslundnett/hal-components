@@ -44,3 +44,6 @@ export * from './lib/services/keyboard-shortcuts/key-in-use.interface';
 export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts-popup.module';
 
 export * from './lib/components/loading-spinner/loading-spinner.module';
+
+export * from './lib/components/paginator/paginator.module';
+export * from './lib/components/paginator/pagination';
