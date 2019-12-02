@@ -1,0 +1,22 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">HAL Schematic</h1>
+
+  <p class="doc-info">
+    Angular schematics allows us to generate HAL specific components and elements for your projects. It also allows for auto installing and updating of HAL.
+  </p>
+
+  <p class="doc-info">
+    Add HAL to your angular project with <span class="terminal-line">ng add @hafslundnett/hal-components</span>.
+    It will add HDD & HAL, and ask if you want to add the required styling in your styles.scss
+  </p>
+
+  <p class="doc-info">
+    All commands ask for any information it needs like name and type. This is done so you don't have to remember the arguments
+  </p>
+
+  <hal-doc-api-table [apiTableHeader]="'Generate commands'" [apiTableRows]="schematicList"></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>
