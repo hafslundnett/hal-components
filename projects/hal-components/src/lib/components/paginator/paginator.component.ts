@@ -12,7 +12,7 @@ import { DEFAULT_PAGE_SIZE } from './consts';
 })
 export class PaginatorComponent implements OnChanges {
   @Input() unit = 'elementer';
-  @Input() allowSelectAlle = false;
+  @Input() allowSelectAll = false;
   @Input() selectedPageIndex = 0;
   @Input() length = 0;
   @Input() pageSizeOptions = [10, 20, 50];
@@ -60,6 +60,10 @@ export class PaginatorComponent implements OnChanges {
       pageIndex: 0,
       pageSize
     });
+
+    console.log('length: ' + this.length);
+    console.log('selected: ' + this.selectedPageSizeSelect);
+    console.log('sizes: ' + this.availablePageSizes);
   }
 
   private initPaginator(): void {
@@ -86,6 +90,7 @@ export class PaginatorComponent implements OnChanges {
       for (let i = 0; i < Math.ceil(this.length / this.selectedPageSize); i++) {
         this.pages.push(i);
       }
+      console.log(this.pages);
     }
   }
 }

@@ -10,13 +10,15 @@ $arrow-button-gap: 6px;
   flex-wrap: wrap;
 
   .dropdown {
-    flex: none;
+    display: flex;
+    flex-direction: row;
     margin-right: 10px;
+    align-items: center;
 
-    hdd-form-field {
+    .hdd-form_field {
       display: inline-block;
       width: 70px;
-      margin: 0 10px;
+      margin: 0 8px;
     }
   }
 
