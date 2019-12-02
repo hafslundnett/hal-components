@@ -66,6 +66,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-spinner',
       docUrl: Pages.LoadingSpinnerDoc
     },
+    {
+      cardTitle: 'Paginator',
+      cardSubtitle: 'Paginator for tables',
+      cardIcon: 'fa-sort-numeric-up',
+      docUrl: Pages.PaginatorDoc
+    },
   ];
 
   services: DocListItem[] = [
@@ -89,7 +95,7 @@ export class DocListComponent implements OnInit {
     },
     {
       cardTitle: 'Keyboard Shortcuts',
-      cardSubtitle: 'For displaying dynamic data in a table',
+      cardSubtitle: 'Keyboard  service',
       cardIcon: 'fa-keyboard',
       docUrl: Pages.KeyboardShortcutsDoc
     },
