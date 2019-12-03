@@ -15,26 +15,27 @@
   <h2 class="doc-subtitle">Examples</h2>
   <table class="hdd-table has-shadow">
     <tr class="hdd-table_header">
-      <th>Buttons</th>
+      <th>Actions</th>
+      <th>Description</th>
       <th>Status mark.</th>
     </tr>
     <tr>
       <td><button class="hdd-button example-btn" (click)="status = !status">Change to {{ !status }}</button></td>
+      <td>Default behaviour, changes from check mark to an x-icon</td>
       <td><hal-status-mark [status]="status"></hal-status-mark>
       <span class="hdd-tooltip_content">
         Status mark {{ status }}
       </span></td>
     </tr>
     <tr>
-      <td><button class="hdd-button example-btn" (click)="status = !status">Change to {{ !status }}</button></td>
-      <td><hal-status-mark [status]="status"></hal-status-mark>
+      <td><button class="hdd-button example-btn" (click)="statusBlank = !statusBlank">Change to {{ !statusBlank }}</button></td>
+      <td>WIth [showBlankWhenFalse]="true", hides the check mark</td>
+      <td ><hal-status-mark [status]="statusBlank" [showBlankWhenFalse]="true"></hal-status-mark>
       <span class="hdd-tooltip_content">
         Status mark {{ status }}
       </span></td>
     </tr>
   </table>
-
-
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
 
