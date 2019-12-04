@@ -122,6 +122,15 @@ export class DocListComponent implements OnInit {
     }
   ];
 
+  others: DocListItem[] = [
+    {
+      cardTitle: 'Schematic',
+      cardSubtitle: 'Adding and generating',
+      cardIcon: 'fa-cogs',
+      docUrl: Pages.Schematic
+    },
+  ];
+
   constructor() { }
 
   ngOnInit() {
