@@ -1,0 +1,9 @@
+.example-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .example {
+        width: 300px;
+    }
+}

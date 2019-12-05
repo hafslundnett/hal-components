@@ -16,8 +16,14 @@
     </hal-doc-import-line>
   
     <h2 class="doc-subtitle">Examples</h2>
-  
-    <hal-selector></hal-selector>
+    <div class="example-container">
+      <div class="example">
+        <hal-selector [selectData]="selectData" [label]="'Label for data'" [placeholder]="'Placeholder'"></hal-selector>
+      </div>
+      <div class="example">
+        <hal-selector [selectData]="selectData" [label]="'Label for data'" [placeholder]="'Placeholder'"></hal-selector>
+      </div>
+    </div>
   
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
   

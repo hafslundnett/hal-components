@@ -8,6 +8,8 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 })
 export class SelectorDocComponent implements OnInit {
 
+  selectData: string[] = ['wind', 'water'];
+
   selectorTable: ApiTableRow[] = [
     { apiInput: 'TODO', description: 'More TODO' },
   ];

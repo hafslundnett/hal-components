@@ -1,9 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
-export interface PowerSource {
-  value: string;
-  viewValue: string;
-}
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'hal-selector',
@@ -14,11 +9,9 @@ export interface PowerSource {
 
 export class SelectorComponent implements OnInit {
 
-  energySources: PowerSource[] = [
-    { value: 'Water', viewValue: 'Hydroelectricity' },
-    { value: 'Wind', viewValue: 'Windmills' },
-    { value: 'Solar', viewValue: 'Solar' }
-  ];
+  @Input() selectData: string[];
+  @Input() label: string;
+  @Input() placeholder: string;
 
   constructor() { }
 
