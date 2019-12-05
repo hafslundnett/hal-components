@@ -2,15 +2,19 @@
 @import "~@hafslundnett/hdd-style/variables/main";
 
 .select-container {
-
   .mat-select {
     width: 90%; // Find better solution! Mat-select adds 10% width, makes it overflow when taking 100% width 
 
     background: var(--hdd-white);
-    border: 1px solid var(--hdd-primary);
+    border: 1px solid var(--hdd-grey);
     border-radius: $form-select-border-radius;
     padding: $form-select-padding;
     font-size: 16px;
+
+    &:active,
+    &:focus {
+      border: 1px solid var(--hdd-primary);
+    }
 
     // Adding font-awesome arrow
     &-arrow-wrapper::before {
@@ -29,14 +33,40 @@
     &-arrow {
       border: none;
     }
+  }
+}
 
-    &-panel {
-      border: 1px solid var(--hdd-primary);
-      border-radius: 0px 0px $form-select-border-radius $form-select-border-radius !important;
-    
-      .mat-option.mat-selected:not(.mat-option-multiple) {
-        background: var(--hdd-primary);
-        color: var(--hdd-white);
+.mat-select-panel {
+  border: 1px solid var(--hdd-primary);
+  border-radius: 0px 0px $form-select-border-radius $form-select-border-radius !important;
+  
+  .mat-option {
+    &:hover,
+    &:active,
+    &:focus {
+      background: var(--hdd-primary);
+      color: var(--hdd-white);
+    }
+
+    .selected-icon {
+      padding-right: 6px;
+      visibility: hidden;
+    }
+
+    // When selected
+    &.mat-selected {
+      background: var(--hdd-white) !important;
+      color: var(--hdd-black) !important;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: var(--hdd-primary) !important;
+        color: var(--hdd-white) !important;
+      }
+
+      .selected-icon {
+        visibility: visible;
       }
     }
   }

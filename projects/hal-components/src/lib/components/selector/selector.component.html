@@ -13,6 +13,9 @@
   <div class="select-container">
     <mat-select placeholder="{{placeholder}}">
       <mat-option *ngFor="let data of selectData" [value]="data">
+        <span class="selected-icon">
+          <i class="fal fa-check"></i>
+        </span> 
         {{ data }}
       </mat-option>
     </mat-select>
