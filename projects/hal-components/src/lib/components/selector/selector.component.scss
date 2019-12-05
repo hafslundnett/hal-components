@@ -6,6 +6,7 @@
     width: 90%; // Find better solution! Mat-select adds 10% width, makes it overflow when taking 100% width 
 
     background: var(--hdd-white);
+    color: var(--hdd-black);
     border: 1px solid var(--hdd-grey);
     border-radius: $form-select-border-radius;
     padding: $form-select-padding;
@@ -53,16 +54,21 @@
       visibility: hidden;
     }
 
+    &.mat-active:not(:hover) {
+      background: var(--hdd-white);
+      color: var(--hdd-black);
+    }
+
     // When selected
     &.mat-selected {
-      background: var(--hdd-white) !important;
-      color: var(--hdd-black) !important;
+      background: var(--hdd-white);
+      color: var(--hdd-black);
 
       &:hover,
       &:active,
       &:focus {
-        background: var(--hdd-primary) !important;
-        color: var(--hdd-white) !important;
+        background: var(--hdd-primary);
+        color: var(--hdd-white);
       }
 
       .selected-icon {
