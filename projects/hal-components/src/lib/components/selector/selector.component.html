@@ -1,0 +1,8 @@
+<div class="hdd-form_field">
+    <mat-label>Energy sources</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let energy of energySources" [value]="energy.value">
+        {{ energy.viewValue }}
+      </mat-option>
+    </mat-select>
+</div>

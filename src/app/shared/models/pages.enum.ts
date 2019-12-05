@@ -17,5 +17,6 @@ export enum Pages {
   FeedbackDoc = 'feedback-doc',
   KeyboardShortcutsDoc = 'keyboard-shortcuts-doc',
   LoadingSpinnerDoc = 'loading-spinner-doc',
-  Schematic = 'schematic'
+  Schematic = 'schematic',
+  SelectorDoc = 'selector-doc',
 }

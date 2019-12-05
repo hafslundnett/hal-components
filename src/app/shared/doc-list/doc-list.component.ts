@@ -66,6 +66,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-spinner',
       docUrl: Pages.LoadingSpinnerDoc
     },
+    {
+      cardTitle: 'Selector / Dropdown',
+      cardSubtitle: 'Selector / Dropdown component',
+      cardIcon: 'fa-check-square',
+      docUrl: Pages.SelectorDoc
+    },
   ];
 
   services: DocListItem[] = [
