@@ -5,6 +5,18 @@
 
 This is the repository for <a href="https://hal-components.hafslundnett.io/welcome">Hafslund Angular Libary(HAL)</a>
 
+## Documentation
+
+The showoff website include all documentation off components with related examples.
+Can be visited at : 
+- https://hal-components.hafslundnett.io/welcome
+
+Or you can locally generate/start the site by running:
+
+* yarn
+* yarn start (port 4201) / ng serve (port 4200)
+
+
 ## Getting started
 1. `yarn`
 2. `yarn watch-hal`
@@ -32,7 +44,6 @@ ng generate library hal-components
 library name: hal-components
 lib prefix: hal
 components file prefix: "none"
-
 
 
 ## Versioning
