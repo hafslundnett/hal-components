@@ -13,9 +13,9 @@ $form-select-padding: 0.7rem 0.9rem;
     padding: $form-select-padding;
     font-size: 16px;
 
-    &:active,
-    &:focus {
-      border: 1px solid var(--hdd-primary);
+    &-disabled, &-disabled .mat-select-trigger {
+      cursor: not-allowed;
+      color: var(--hdd-grey);
     }
 
     // Adding font-awesome arrow
@@ -57,6 +57,10 @@ $form-select-padding: 0.7rem 0.9rem;
     &.mat-active:not(:hover) {
       background: var(--hdd-white);
       color: var(--hdd-black);
+    }
+
+    &:required {
+
     }
 
     // When selected

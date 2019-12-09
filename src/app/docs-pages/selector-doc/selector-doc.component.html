@@ -24,7 +24,8 @@
         <hal-selector 
           [selectData]="selectData" 
           [(selected)]="selectedEx1"
-          [label]="'Label for data'" 
+          [label]="selectedLabel" 
+          [disabled]="true"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
@@ -34,8 +35,9 @@
         <hal-selector 
           [selectData]="selectData" 
           [(selected)]="selectedEx2"
-          [label]="'Label for data'" 
+          [label]="selectedLabel" 
           [placeholder]="'Placeholder'"
+          [required]="true"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>

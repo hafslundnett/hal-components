@@ -5,6 +5,8 @@
       placeholder="{{placeholder ? placeholder : label}}" 
       [(value)]="selected" 
       (selectionChange)="onSelectedChange()"
+      [disabled]="disabled"
+      [required]="required"
     >
       <mat-option *ngFor="let data of selectData" [value]="data.value">
         <span class="selected-icon">

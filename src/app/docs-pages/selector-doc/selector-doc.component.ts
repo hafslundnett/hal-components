@@ -19,9 +19,10 @@ export class SelectorDocComponent implements OnInit {
     {value: 'Alt7', viewValue: 'Alternative 7'},
   ];
   dataNumber = 2;
-  selectedEx1 = 'Alt2';
+  selectedEx1 = 'Alt1';
   selectedEx2 = undefined;
   selectedChange: string;
+  selectedLabel = 'Label for data';
 
   selectorTable: ApiTableRow[] = [
     { apiInput: '[selectData]', description: 'Input for the data displayed in the select dropdown.' },
