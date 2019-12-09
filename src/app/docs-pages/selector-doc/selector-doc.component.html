@@ -40,10 +40,6 @@
       </div>
       <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
     </div>
-    <div class="example-info">
-      <h2 style="margin-bottom: 8px;">Add more data to select:</h2>
-      <button class="hdd-button" (click)="addSelectData()">Add data</button>
-    </div>
 
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
     <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>

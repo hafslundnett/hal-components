@@ -12,6 +12,11 @@ export class SelectorDocComponent implements OnInit {
   selectData: SelectData[] = [
     {value: 'Alt1', viewValue: 'Alternative 1'},
     {value: 'Alt2', viewValue: 'Alternative 2'},
+    {value: 'Alt3', viewValue: 'Alternative 3'},
+    {value: 'Alt4', viewValue: 'Alternative 4'},
+    {value: 'Alt5', viewValue: 'Alternative 5'},
+    {value: 'Alt6', viewValue: 'Alternative 6'},
+    {value: 'Alt7', viewValue: 'Alternative 7'},
   ];
   dataNumber = 2;
   selectedEx1 = 'Alt2';
@@ -53,6 +58,11 @@ export class SelectorDocComponent implements OnInit {
   tsCode = `selectData: SelectData[] = [
   {value: 'Alt1', viewValue: 'Alternative 1'},
   {value: 'Alt2', viewValue: 'Alternative 2'},
+  {value: 'Alt3', viewValue: 'Alternative 3'},
+  {value: 'Alt4', viewValue: 'Alternative 4'},
+  {value: 'Alt5', viewValue: 'Alternative 5'},
+  {value: 'Alt6', viewValue: 'Alternative 6'},
+  {value: 'Alt7', viewValue: 'Alternative 7'},
 ];
 dataNumber = 2;
 selectedEx1 = 'Alt2';
@@ -62,12 +72,5 @@ selectedChange: string;`;
   constructor() { }
 
   ngOnInit() { }
-
-  addSelectData() {
-    this.dataNumber += 1;
-    const dataNumberString = (this.dataNumber).toLocaleString();
-    const newData = {value: ('Alt' + dataNumberString), viewValue: 'Alternative ' + dataNumberString};
-    this.selectData.push(newData);
-  }
 
 }
