@@ -9,7 +9,7 @@ This is the repository for <a href="https://hal-components.hafslundnett.io/welco
 
 The showoff website include all documentation off components with related examples.
 Can be visited at : 
-- https://hal-components.hafslundnett.io/welcome
+- https://hal-components.hafslundnett.io
 
 Or you can locally generate/start the site by running:
 
