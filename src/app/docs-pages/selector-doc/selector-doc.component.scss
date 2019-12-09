@@ -13,3 +13,8 @@
 .example-info {
     margin-bottom: 16px;
 }
+
+.divider-margin {
+    margin-top: calc(var(--default-margin) * 1.61);
+    margin-bottom: calc(var(--default-margin) * 1.61);
+}

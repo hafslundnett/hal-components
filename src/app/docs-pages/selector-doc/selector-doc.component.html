@@ -4,15 +4,17 @@
     <h1 class="doc-title">Selector / Dropdown component</h1>
   
     <p class="doc-info">
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-     Asperiores adipisci sit commodi eligendi. 
-     At esse omnis quae mollitia, sequi illum placeat sint aliquid nisi 
-     aperiam molestiae nesciunt eligendi ducimus impedit.
-  
+      The select / dropdown component should be used if the user needs a list of predefined choices. 
+      The placeholder of the input field is by default the same as the label. 
+      If a different placeholder is wanted, it is possible with an input. No placeholder should consist of information the label is missing, as the placeholder is only visible before selecting. 
+      To be able to use the SelectData interface import it from hal-components. The interface is on the format value: string, viewValue: string.
     </p>
   
     <hal-doc-import-line>
       <code><pre>import {{ '{' }} Selector {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    </hal-doc-import-line>
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} SelectData {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
     </hal-doc-import-line>
   
     <h2 class="doc-subtitle">Examples</h2>
@@ -20,12 +22,22 @@
       <div class="example">
         <hal-selector 
           [selectData]="selectData" 
-          [(selected)]="selected"
+          [(selected)]="selectedEx1"
+          [label]="'Label for data'" 
+        ></hal-selector>
+      </div>
+      <h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
+    </div>
+    <div class="example-container">
+      <div class="example">
+        <hal-selector 
+          [selectData]="selectData" 
+          [(selected)]="selectedEx2"
           [label]="'Label for data'" 
           [placeholder]="'Placeholder'"
         ></hal-selector>
       </div>
-      <h2 *ngIf="selected">Selected data: <b>{{ selected }}</b></h2>
+      <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
     </div>
     <div class="example-info">
       <h2 style="margin-bottom: 8px;">Add more data to select:</h2>
@@ -33,7 +45,7 @@
     </div>
 
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
-  
+    <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
     <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="selectorTable"></hal-doc-api-table>
   
   
