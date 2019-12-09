@@ -18,13 +18,20 @@
     <h2 class="doc-subtitle">Examples</h2>
     <div class="example-container">
       <div class="example">
-        <hal-selector [selectData]="selectData" [label]="'Label for data'" [placeholder]="'Placeholder'"></hal-selector>
+        <hal-selector 
+          [selectData]="selectData" 
+          [(selected)]="selected"
+          [label]="'Label for data'" 
+          [placeholder]="'Placeholder'"
+        ></hal-selector>
       </div>
-      <div class="example">
-        <hal-selector [selectData]="selectData" [label]="'Label for data'" [placeholder]="'Placeholder'"></hal-selector>
-      </div>
+      <h2 *ngIf="selected">Selected data: <b>{{ selected }}</b></h2>
     </div>
-  
+    <div class="example-info">
+      <h2 style="margin-bottom: 8px;">Add more data to select:</h2>
+      <button class="hdd-button" (click)="addSelectData()">Add data</button>
+    </div>
+
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
   
     <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="selectorTable"></hal-doc-api-table>

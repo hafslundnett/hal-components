@@ -1,22 +1,16 @@
-<!-- <mat-form-field>
-  <mat-label class="selector-label">{{ label }}</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let data of selectData" [value]="data">
-      {{ data }}
-    </mat-option>
-  </mat-select>
-  <i class="fal fa-angle-down"></i>
-</mat-form-field> -->
-
 <div class="hdd-form_field">
   <mat-label class="hdd-form_field_label">{{ label }}</mat-label>
   <div class="select-container">
-    <mat-select placeholder="{{placeholder}}">
-      <mat-option *ngFor="let data of selectData" [value]="data">
+    <mat-select 
+      placeholder="{{placeholder ? placeholder : label}}" 
+      [(value)]="selected" 
+      (selectionChange)="onSelectedChange()"
+    >
+      <mat-option *ngFor="let data of selectData" [value]="data.value">
         <span class="selected-icon">
           <i class="fal fa-check"></i>
         </span> 
-        {{ data }}
+        {{ data.viewValue }}
       </mat-option>
     </mat-select>
   </div>

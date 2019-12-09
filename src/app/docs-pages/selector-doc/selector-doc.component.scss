@@ -1,9 +1,15 @@
 .example-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
+    align-items: center;
 
     .example {
         width: 300px;
+        margin-right: 50px;
     }
+}
+
+.example-info {
+    margin-bottom: 16px;
 }

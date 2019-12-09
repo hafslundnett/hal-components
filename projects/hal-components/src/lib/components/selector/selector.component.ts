@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { SelectData } from './select-data.interface';
 
 @Component({
   selector: 'hal-selector',
@@ -9,13 +10,19 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 export class SelectorComponent implements OnInit {
 
-  @Input() selectData: string[];
+  @Input() selectData: SelectData[];
+  @Input() selected: string;
   @Input() label: string;
   @Input() placeholder: string;
+  @Output() selectedChange = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelectedChange() {
+    this.selectedChange.emit(this.selected);
   }
 
 }

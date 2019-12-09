@@ -1,5 +1,6 @@
-  
-@import "~@hafslundnett/hdd-style/variables/main";
+// Definere variables direkte
+$form-select-border-radius: 4px;
+$form-select-padding: 0.7rem 0.9rem;
 
 .select-container {
   .mat-select {
@@ -19,12 +20,9 @@
 
     // Adding font-awesome arrow
     &-arrow-wrapper::before {
-      // Icon properties
-      @extend .fal;
-
       font-family: "Font Awesome 5 Pro";
-      font-weight: 600;
-      font-size: 16px;
+      font-weight: 700;
+      font-size: 17px;
       content: "\f107";
       display: inline-block;
       vertical-align: middle;
@@ -37,9 +35,11 @@
   }
 }
 
+
 .mat-select-panel {
   border: 1px solid var(--hdd-primary);
-  border-radius: 0px 0px $form-select-border-radius $form-select-border-radius !important;
+  border-radius: $form-select-border-radius !important;
+  min-width: calc(100% + 29px);
   
   .mat-option {
     &:hover,
