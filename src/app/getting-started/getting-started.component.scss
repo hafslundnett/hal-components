@@ -1,23 +1,7 @@
-.title {
-  text-align: center;
-  font-size: 40px;
-  margin-top: var(--default-margin);
-  margin-bottom: var(--default-margin);
+.list-item {
+  margin-bottom: 15px;
 }
 
-.info {
-  width: 700px;
-  margin: auto;
-  margin-bottom: calc(var(--default-margin) * (1.61));
-}
-
-.npm-badge {
-  margin-right: calc(var(--default-margin) / 2);
-}
-
-.terminal-line {
-	background: rgba(0,0,0,.06);
-	padding: 4px;
-	border-radius: 5px;
-	font-weight: 500;
+.divider-line {
+  margin: 25px 0px;
 }
