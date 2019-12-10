@@ -11,12 +11,6 @@ The showoff website include all documentation off components with related exampl
 Can be visited at : 
 - https://hal-components.hafslundnett.io
 
-Or you can locally generate/start the site by running:
-
-* yarn
-* yarn start (port 4201) / ng serve (port 4200)
-
-
 ## Getting started
 1. `yarn`
 2. `yarn watch-hal`
