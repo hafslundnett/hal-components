@@ -54,6 +54,16 @@ $form-select-padding: 0.7rem 0.9rem;
       visibility: hidden;
     }
 
+    &-disabled {
+      cursor: not-allowed;
+      color: var(--hdd-grey);
+      
+      &:hover {
+        color: var(--hdd-grey);
+        background: var(--hdd-white) !important;
+      }
+    }
+
     &.mat-active:not(:hover) {
       background: var(--hdd-white);
       color: var(--hdd-black);

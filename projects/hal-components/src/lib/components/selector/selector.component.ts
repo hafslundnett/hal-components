@@ -15,6 +15,7 @@ export class SelectorComponent implements OnInit {
   @Input() label: string;
   @Input() placeholder: string;
   @Input() disabled = false;
+  @Input() choiceDisabled: string;
   @Output() selectedChange = new EventEmitter();
 
   constructor() { }
@@ -24,6 +25,10 @@ export class SelectorComponent implements OnInit {
 
   onSelectedChange() {
     this.selectedChange.emit(this.selected);
+  }
+
+  isChoiceDisabled(value: string) {
+    return this.choiceDisabled === value;
   }
 
 }

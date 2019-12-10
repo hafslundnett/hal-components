@@ -21,6 +21,7 @@ export class SelectorDocComponent implements OnInit {
   selectedEx1 = 'Alt1';
   selectedEx2 = undefined;
   selectedEx3 = undefined;
+  choiceDisabled = 'Alt3';
   selectedChange: string;
   selectedLabel = 'Label for data';
 

@@ -8,7 +8,11 @@
       [disabled]="disabled"
       panelClass="selector-panel"
     >
-      <mat-option *ngFor="let data of selectData" [value]="data.value">
+      <mat-option 
+        *ngFor="let data of selectData" 
+        [value]="data.value"
+        [disabled]="isChoiceDisabled(data.value)"
+      >
         <span class="selected-icon">
           <i class="fal fa-check"></i>
         </span> 
