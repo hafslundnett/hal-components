@@ -25,10 +25,10 @@ Can be visited at :
 - run `npm publish`
 
 ## Running unit test
-Run <code>ng test hal-components</code> to execute unit tests via <a href="https://karma-runner.github.io/4.0/index.html">Karma</a>
+Run <code>ng test hal-components</code> to execute unit tests via <a href='https://karma-runner.github.io/4.0/index.html'>Karma</a>
 
 ## Running end-to-end test
-Run <code>yarn run cypress</code> to execute end-to-end test via <a href="https://www.cypress.io/">Cypress</a>. Before you run the tests make sure you are serving the application via <code>ng serve</code>
+Run <code>yarn run cypress</code> to execute end-to-end test via <a href='https://www.cypress.io/'>Cypress</a>. Before you run the tests make sure you are serving the application via <code>ng serve</code>
 
 
 ## Notes
