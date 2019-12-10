@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+	<defs>
+		<style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}</style>
+	</defs>
+	<title>bendable-phone</title>
+	<circle class="a" cx="19.063" cy="18.5" r="1"/>
+	<path class="a" d="M16.562,2.5a7,7,0,0,1,7,7v11a1,1,0,0,1-1,1h-7a1,1,0,0,1-1-1V9.5a7,7,0,0,0-7-7Z"/>
+	<path class="a" d="M12.062,4.138A7,7,0,0,0,.562,9.5a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1A6.972,6.972,0,0,1,10.4,6.171"/>
+	<path class="a" d="M21.051,7.045a5.408,5.408,0,0,1,.511,2.705V14.5a1,1,0,0,1-1,1h-3a1,1,0,0,1-1-1V9.75a8.684,8.684,0,0,0-1.448-4.785"/>
+</svg>

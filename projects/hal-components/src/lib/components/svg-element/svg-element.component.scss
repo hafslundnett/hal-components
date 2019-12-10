@@ -1,25 +1,17 @@
 // ANY custom svg styling should to be added to src\component-styles\svg-icons.scss
 
 .hal-svg-element-container {
-	--svg-height: auto;
-	--svg-width: auto;
-	--svg-color-stroke: inherit;   
-	--svg-color-fill: inherit;   
-	svg {
-		width: var(--svg-width);
-		height: var(--svg-height);
-	}
+  --svg-height: auto;
+  --svg-width: auto;
 
-	&.svg-custom-color-stroke {
-		* {
-			stroke: var(--svg-color-stroke);
-		}
-	}
-	&.svg-custom-color-fill {
-		* {
-			fill:  var(--svg-color-fill);
-		}
-	}
-	
+  svg {
+    width: var(--svg-width);
+    height: var(--svg-height);
+  }
+  &.use-current-color {
+    * {
+      stroke: currentColor;
+      fill: currentColor;
+    }
+  }
 }
-

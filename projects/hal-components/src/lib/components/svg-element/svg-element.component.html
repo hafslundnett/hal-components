@@ -1,6 +1,6 @@
 <span 
     #svgContainer 
     class="hal-svg-element-container" 
-    [ngClass]="{'svg-custom-color-fill': colorFill.length > 0, 'svg-custom-color-stroke': colorStroke.length > 0}"
+    [ngClass]="{'use-current-color': !useSvgColor}"
     [innerHTML]="svgContent"
 ></span>
