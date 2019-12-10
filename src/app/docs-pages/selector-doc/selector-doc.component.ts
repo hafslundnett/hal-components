@@ -18,9 +18,9 @@ export class SelectorDocComponent implements OnInit {
     {value: 'Alt6', viewValue: 'Alternative 6'},
     {value: 'Alt7', viewValue: 'Alternative 7'},
   ];
-  dataNumber = 2;
   selectedEx1 = 'Alt1';
   selectedEx2 = undefined;
+  selectedEx3 = undefined;
   selectedChange: string;
   selectedLabel = 'Label for data';
 
@@ -31,6 +31,8 @@ export class SelectorDocComponent implements OnInit {
     { apiInput: '[label]', description: 'Input for the description on top of the input field.' },
     // tslint:disable-next-line:max-line-length
     { apiInput: '[placeholder]', description: 'Optional input for extra description in the input field. If no placeholder is given the label will be default placeholder.' },
+    { apiInput: '[disabled]', description: 'Optional input making the dropdown disabled.' },
+    { apiInput: '[required]', description: 'Optional input making it required to choose a value.' },
   ];
 
   htmlCode = `<div class="example-container">

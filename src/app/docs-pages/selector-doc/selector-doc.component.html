@@ -25,7 +25,6 @@
           [selectData]="selectData" 
           [(selected)]="selectedEx1"
           [label]="selectedLabel" 
-          [disabled]="true"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
@@ -37,10 +36,19 @@
           [(selected)]="selectedEx2"
           [label]="selectedLabel" 
           [placeholder]="'Placeholder'"
-          [required]="true"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
+    </div>
+    <div class="example-container">
+      <div class="example">
+        <hal-selector 
+          [selectData]="selectData" 
+          [(selected)]="selectedEx3"
+          [label]="selectedLabel"
+          [disabled]="true" 
+        ></hal-selector>
+      </div>
     </div>
 
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>

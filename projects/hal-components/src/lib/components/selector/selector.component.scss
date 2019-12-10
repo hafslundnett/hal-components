@@ -1,5 +1,5 @@
 // Definere variables direkte
-$form-select-border-radius: 4px;
+$form-select-border-radius: 0.25rem;
 $form-select-padding: 0.7rem 0.9rem;
 
 .select-container {
@@ -11,7 +11,7 @@ $form-select-padding: 0.7rem 0.9rem;
     border: 1px solid var(--hdd-grey);
     border-radius: $form-select-border-radius;
     padding: $form-select-padding;
-    font-size: 16px;
+    font-size: 1rem;
 
     &-disabled, &-disabled .mat-select-trigger {
       cursor: not-allowed;
@@ -22,8 +22,8 @@ $form-select-padding: 0.7rem 0.9rem;
     &-arrow-wrapper::before {
       font-family: "Font Awesome 5 Pro";
       font-weight: 700;
-      font-size: 17px;
-      content: "\f107";
+      font-size: 1rem;
+      content: "\f107"; // Arrow
       display: inline-block;
       vertical-align: middle;
     }
@@ -34,9 +34,9 @@ $form-select-padding: 0.7rem 0.9rem;
     }
   }
 }
-
-
-.mat-select-panel {
+  
+  
+.selector-panel.mat-select-panel {
   border: 1px solid var(--hdd-primary);
   border-radius: $form-select-border-radius !important;
   min-width: calc(100% + 29px);
@@ -59,10 +59,6 @@ $form-select-padding: 0.7rem 0.9rem;
       color: var(--hdd-black);
     }
 
-    &:required {
-
-    }
-
     // When selected
     &.mat-selected {
       background: var(--hdd-white);
@@ -81,3 +77,4 @@ $form-select-padding: 0.7rem 0.9rem;
     }
   }
 }
+

@@ -15,7 +15,6 @@ export class SelectorComponent implements OnInit {
   @Input() label: string;
   @Input() placeholder: string;
   @Input() disabled = false;
-  @Input() required = true;
   @Output() selectedChange = new EventEmitter();
 
   constructor() { }
