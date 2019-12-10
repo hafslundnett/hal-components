@@ -5,12 +5,6 @@
 
 This is the repository for <a href="https://hal-components.hafslundnett.io/welcome">Hafslund Angular Libary(HAL)</a>
 
-## Documentation
-
-The showoff website include all documentation off components with related examples.
-Can be visited at : 
-- https://hal-components.hafslundnett.io
-
 ## Getting started
 1. `yarn`
 2. `yarn watch-hal`
