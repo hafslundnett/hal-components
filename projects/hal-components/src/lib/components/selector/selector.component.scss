@@ -11,7 +11,11 @@ $select-border-width: 1px;
   @return $select-border-width * 2;
 }
 
-.select-container {
+.hal-selector {
+  .selector-label-disabled {
+    color: var(--hdd-grey) !important;
+  }
+
   .mat-select {
     width: calc(100% - #{get-subtract-padding()} - #{get-subtract-border()});
     background: var(--hdd-white);
@@ -30,7 +34,7 @@ $select-border-width: 1px;
     // Adding font-awesome arrow
     &-arrow-wrapper::before {
       font-family: "Font Awesome 5 Pro";
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1rem;
       content: "\f107"; // Arrow
       display: inline-block;
