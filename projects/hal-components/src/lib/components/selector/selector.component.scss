@@ -61,7 +61,7 @@ $select-border-width: 1px;
     }
 
     .selected-icon {
-      padding-right: 8px;
+      padding-right: var(--hdd-spacing-primary);
       visibility: hidden;
     }
 
