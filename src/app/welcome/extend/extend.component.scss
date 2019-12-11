@@ -1,0 +1,12 @@
+.title {
+	color: red !important;
+}
+
+::slotted(*) {
+  font-weight: bold;
+}
+
+
+* {
+	color: red;
+}
