@@ -27,7 +27,7 @@ $theme: mat-light-theme($primary-color, $accent-color, $warn-color);
 
 $typography: mat-typography-config(
   $font-family: (
-    $font-family // Font-family from HDD-style
+    var(--hdd-font-family) // Font-family from HDD-style
   )
 );
 

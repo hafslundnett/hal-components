@@ -31,7 +31,7 @@ const stylesToAdd = '\n' +
   ` \n` +
   `$typography: mat-typography-config( \n` +
   `  $font-family: ( \n` +
-  `    $font-family // Font-family from HDD-style \n` +
+  `    var(--hdd-font-family) // Font-family from HDD-style \n` +
   `  ) \n` +
   `); \n` +
   ` \n` +
