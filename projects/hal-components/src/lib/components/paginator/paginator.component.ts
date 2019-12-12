@@ -1,8 +1,9 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { Pagination } from './pagination';
 import { DEFAULT_PAGE_SIZE } from './consts';
+import { SelectData } from '../selector/select-data.interface';
 
 @Component({
   selector: 'hal-paginator',
@@ -10,13 +11,14 @@ import { DEFAULT_PAGE_SIZE } from './consts';
   styleUrls: ['./paginator.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PaginatorComponent implements OnChanges {
+export class PaginatorComponent implements OnInit, OnChanges {
   @Input() unit = 'elementer';
   @Input() allowSelectAll = false;
   @Input() selectedPageIndex = 0;
   @Input() length = 0;
-  @Input() pageSizeOptions = [10, 20, 50];
+  @Input() pageSizeOptions = [];
   @Input() selectedPageSize = DEFAULT_PAGE_SIZE;
+  @Input() displayAll = false;
 
   @Input()
   get showPaging(): boolean {
@@ -32,13 +34,25 @@ export class PaginatorComponent implements OnChanges {
 
   availablePageSizes: number[] = [];
   pages: number[] = [];
+  selectData: SelectData[] = [];
+  selectedPageSizeSelect: string;
+  selectedChange: string;
 
-  selectedPageSizeSelect;
+  ngOnInit() {
+    this.setSelectOptions();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.selectedPageSize || changes.pageSizeOptions || changes.length) {
       this.initPaginator();
     }
+  }
+
+  setSelectOptions() {
+    this.pageSizeOptions.forEach((option) => {
+      const val: SelectData = {value: option.toLocaleString(), viewValue: option.toLocaleString()};
+      this.selectData.push(val);
+    });
   }
 
   setPage(page: number) {
@@ -66,9 +80,9 @@ export class PaginatorComponent implements OnChanges {
     this.availablePageSizes = this.getAvailablePageSizes();
     this.setNumberOfPages();
     if (this.length < this.pageSizeOptions[0]) {
-      this.selectedPageSizeSelect = this.length;
+      this.selectedPageSizeSelect = this.length.toLocaleString();
     } else {
-      this.selectedPageSizeSelect = this.selectedPageSize;
+      this.selectedPageSizeSelect = this.selectedPageSize.toLocaleString();
     }
   }
 

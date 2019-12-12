@@ -19,7 +19,7 @@ export class PaginatorDocComponent implements OnInit {
     { apiInput: 'showPaging', description: 'Optional input to make the some' },
   ];
 
-  tsCode = `pageSizeOptions = [5, 10, 25, 50];
+  tsCode = `pageSizeOptions = [5, 10, 25];
 
 ngOnInit() {
   this.pagination.length = this.someList.length;

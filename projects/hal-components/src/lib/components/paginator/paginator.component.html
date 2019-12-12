@@ -1,13 +1,14 @@
 <div class="paginator">
   <div class="dropdown">
-    <span>Viser</span>
-    <div class="hdd-form_field">
-      <div class="hdd-form_select">
-        <mat-select hddSelect [value]="selectedPageSizeSelect" (valueChange)="setPageSize($event)">
-          <mat-option *ngFor="let pageSize of availablePageSizes" [value]="pageSize">{{pageSize}}</mat-option>
-          <mat-option *ngIf="allowSelectAll" [value]="100000">Alle</mat-option>
-        </mat-select>
-      </div>
+    <div>Viser</div>
+    <div>
+      <hal-selector
+        [selectData]="selectData"
+        [selected]="selectedPageSizeSelect"
+        (selectedChange)="setPageSize($event)"
+        [noLabel]="true"
+        class="paginator-selector"
+      ></hal-selector>
     </div>
     <div>av {{length}} {{unit}}</div>
   </div>

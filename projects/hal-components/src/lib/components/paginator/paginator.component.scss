@@ -1,6 +1,7 @@
 @import '~@hafslundnett/hdd-style/variables/colors';
 
 $page-size: 30px;
+$paginator-width: 71px;
 $arrow-button-gap: 6px;
 
 .paginator {
@@ -12,13 +13,12 @@ $arrow-button-gap: 6px;
   .dropdown {
     display: flex;
     flex-direction: row;
-    margin-right: 10px;
     align-items: center;
 
-    .hdd-form_field {
+    .paginator-selector {
       display: inline-block;
-      width: 70px;
-      margin: 0 8px;
+      width: $paginator-width;
+      margin: 0 var(--hdd-spacing-primary);
     }
   }
 
