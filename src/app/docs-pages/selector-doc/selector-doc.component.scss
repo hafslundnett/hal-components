@@ -1,8 +1,16 @@
 .example-container {
+<<<<<<< HEAD
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
+=======
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: var(--hdd-spacing-2) 0;
+>>>>>>> f55b93aa089e415434647acddf1724147423c97b
 
   .example {
     width: 300px;
