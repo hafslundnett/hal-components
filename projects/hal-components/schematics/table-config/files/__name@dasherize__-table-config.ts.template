@@ -1,0 +1,23 @@
+import { TableEngine, DetailsTabColumn } from '@hafslundnett/hal-components';
+
+// TODO change type from any to your table's data type
+export class <%= classify(name) %>TableConfig extends TableEngine<any> {
+  static columnConfiguration: DetailsTabColumn<any>[] = [
+    {
+      columnName: 'id',
+      headerName: 'label',
+      displayDataFunc: (data: any) => data.name,
+    },
+    {
+      columnName: 'id2',
+      headerName: 'label2',
+      displayDataFunc: (data: any) => data.name,
+    },
+  ];
+
+  constructor() {
+    super();
+    <%= classify(name) %>TableConfig.columnConfiguration
+      .forEach(column => this.addTabColumn(column));
+  }
+}
