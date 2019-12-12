@@ -33,7 +33,8 @@ export class SelectorDocComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     { apiInput: '[placeholder]', description: 'Optional input for extra description in the input field. If no placeholder is given the label will be default placeholder.' },
     { apiInput: '[disabled]', description: 'Optional input making the dropdown disabled.' },
-    { apiInput: '[required]', description: 'Optional input making it required to choose a value.' },
+    // { apiInput: '[required]', description: 'Optional input making it required to choose a value.' },
+    { apiInput: '[noLabel]', description: 'Optional input making removing the label. Should only be used with consent from designer.' },
   ];
 
   htmlCode = `<div class="example-container">
