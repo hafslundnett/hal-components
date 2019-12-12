@@ -4,6 +4,8 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { UserMenuComponent } from './user-menu.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('UserMenuComponent', () => {
   let component: UserMenuComponent;
@@ -11,14 +13,16 @@ describe('UserMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserMenuComponent ],
+      declarations: [UserMenuComponent],
       imports: [
         MatMenuModule,
-        RouterTestingModule
+        RouterTestingModule,
+        NoopAnimationsModule,
+        MatMenuModule,
       ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,6 +33,25 @@ describe('UserMenuComponent', () => {
 
   it('should be initiated with an empty user object', () => {
     expect(component.user).toBeTruthy();
+  });
+
+  describe('Clicking user menu button', () => {
+
+    let userButton: HTMLButtonElement;
+
+    beforeEach(() => {
+      userButton = getElement('.user-button');
+      console.log(userButton);
+      userButton.click();
+      fixture.detectChanges();
+    });
+
+    it('should open user menu', () => {
+      expect(getElementCss('.content-wrapper')).toBeTruthy();
+    });
+    it('should show no settings path by default', () => {
+      expect(getElementCss('.settings-button')).toBeFalsy();
+    });
   });
 
   // TODO when images are back
@@ -57,7 +80,7 @@ describe('UserMenuComponent', () => {
 
     it('should return null if user is null', () => {
       // Arrange
-      component.user = { email: '', name: '', thumbnail: undefined};
+      component.user = { email: '', name: '', thumbnail: undefined };
 
       // Act
       const result = component.thumbnailUrl;
@@ -128,5 +151,9 @@ describe('UserMenuComponent', () => {
 
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
+  }
+
+  function getElementCss(className: string) {
+    return fixture.debugElement.query(By.css(className));
   }
 });

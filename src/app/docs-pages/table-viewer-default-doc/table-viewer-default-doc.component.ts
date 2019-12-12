@@ -12,6 +12,8 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 })
 export class TableViewerDefaultDocComponent implements OnInit {
 
+  schemaConfig = 'ng generate @hafslundnett/hal-components:table-config';
+
   tsCodeTableConfig = `export class DemoTableConfig extends TableEngine<DemoData> {
   static columnConfiguration: DetailsTabColumn<DemoData>[] = [
     {
