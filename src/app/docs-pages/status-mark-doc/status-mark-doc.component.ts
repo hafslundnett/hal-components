@@ -9,6 +9,7 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class StatusMarkDocComponent implements OnInit {
 
   status = true;
+  statusBlank = true;
 
   apiTableRows: ApiTableRow[] = [
     { apiInput: '[status]', description: 'Input for setting the status as a either true or false.' },
@@ -19,24 +20,35 @@ export class StatusMarkDocComponent implements OnInit {
     },
   ];
 
-  htmlCode = `<button class="hdd-button example-btn" (click)="status = !status">Change to {{ !status }}</button>
+  htmlCode = `<button
+  class="hdd-button example-btn"
+  (click)="status = !status">
+  Change to {{ !status }}
+</button>
 
-<div class="flex-column">
-  <span class="hdd-tooltip">
-    <hal-status-mark [status]="status"></hal-status-mark>
-    <span class="hdd-tooltip_content">
-      Status mark {{ status }}
-    </span>
-  </span>
+<hal-status-mark
+  [status]="status">
+</hal-status-mark>
 
-  <span class="hdd-tooltip">
-    <hal-status-mark [status]="status" [showBlankWhenFalse]="true"></hal-status-mark>
-    <span class="hdd-tooltip_content">
-      Status mark {{ status }}
-    </span>
-  </span>
-</div>
-`;
+<span class="hdd-tooltip_content">
+  Status mark {{ status }}
+</span>
+
+<!-- With [showBlankWhenFalse] -->
+<button
+  class="hdd-button example-btn"
+  (click)="statusBlank = !statusBlank">
+  Change to {{ !statusBlank }}
+</button>
+
+<hal-status-mark
+  [status]="statusBlank"
+  [showBlankWhenFalse]="true">
+</hal-status-mark>
+
+<span class="hdd-tooltip_content">
+  Status mark {{ status }}
+</span>`;
 
   constructor() { }
 

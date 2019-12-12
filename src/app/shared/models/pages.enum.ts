@@ -18,4 +18,6 @@ export enum Pages {
   KeyboardShortcutsDoc = 'keyboard-shortcuts-doc',
   LoadingSpinnerDoc = 'loading-spinner-doc',
   PaginatorDoc = 'paginator-doc',
+  Schematic = 'schematic',
+  SelectorDoc = 'selector-doc',
 }

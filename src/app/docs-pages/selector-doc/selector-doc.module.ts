@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+import { SelectorDocComponent } from './selector-doc.component';
+import { SelectorModule, DividerModule } from '@hafslundnett/hal-components';
+import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-highlighter.module';
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';
 import { DocApiTableModule } from 'src/app/shared/doc-api-table/doc-api-table.module';
-import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SelectorModule,
+    DocImportLineModule,
     CodeHighlighterModule,
     DocListModule,
     DocApiTableModule,
-    DocImportLineModule
+    DividerModule
   ],
-  declarations: [<%= classify(name) %>Component]
+  declarations: [SelectorDocComponent],
+  exports: [SelectorDocComponent]
 })
-export class <%= classify(name) %>Module { }
+export class SelectorDocModule { }

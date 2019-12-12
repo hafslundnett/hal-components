@@ -72,6 +72,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-sort-numeric-up',
       docUrl: Pages.PaginatorDoc
     },
+    {
+      cardTitle: 'Selector / Dropdown',
+      cardSubtitle: 'Selector / Dropdown component',
+      cardIcon: 'fa-check-square',
+      docUrl: Pages.SelectorDoc
+    },
   ];
 
   services: DocListItem[] = [
@@ -126,6 +132,15 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-random',
       docUrl: Pages.AnimationsDoc
     }
+  ];
+
+  others: DocListItem[] = [
+    {
+      cardTitle: 'Schematic',
+      cardSubtitle: 'Adding and generating',
+      cardIcon: 'fa-cogs',
+      docUrl: Pages.Schematic
+    },
   ];
 
   constructor() { }

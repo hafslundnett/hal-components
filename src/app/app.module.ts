@@ -28,6 +28,8 @@ import localeNb from '@angular/common/locales/nb';
 registerLocaleData(localeNb);
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
 import { PaginatorDocModule } from './docs-pages/paginator-doc/paginator-doc.module';
+import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.module';
+import { SelectorDocModule } from './docs-pages/selector-doc/selector-doc.module';
 
 @NgModule({
    imports: [
@@ -53,7 +55,9 @@ import { PaginatorDocModule } from './docs-pages/paginator-doc/paginator-doc.mod
       FeedbackDocModule,
       KeyboardShortcutsDocModule,
       LoadingSpinnerDocModule,
-      PaginatorDocModule
+      PaginatorDocModule,
+      SchematicDocModule,
+      SelectorDocModule
    ],
    declarations: [
       AppComponent,

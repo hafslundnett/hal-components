@@ -21,6 +21,8 @@ import { FeedbackDocComponent } from './docs-pages/feedback-doc/feedback-doc.com
 import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.component';
 import { LoadingSpinnerDocComponent } from './docs-pages/loading-spinner-doc/loading-spinner-doc.component';
 import { PaginatorDocComponent } from './docs-pages/paginator-doc/paginator-doc.component';
+import { SchematicDocComponent } from './docs-pages/schematic-doc/schematic-doc.component';
+import { SelectorDocComponent } from './docs-pages/selector-doc/selector-doc.component';
 
 const routes: Routes = [
   {
@@ -108,6 +110,14 @@ const routes: Routes = [
       {
         path: Pages.PaginatorDoc,
         component: PaginatorDocComponent
+      },
+      {
+        path: Pages.Schematic,
+        component: SchematicDocComponent
+      },
+      {
+        path: Pages.SelectorDoc,
+        component: SelectorDocComponent
       },
     ]
   }

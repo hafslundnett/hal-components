@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'hal-paginator-doc',
   templateUrl: './paginator-doc.component.html',
-  styleUrls: ['./paginator-doc.component.css']
+  styleUrls: ['./paginator-doc.component.scss']
 })
 export class PaginatorDocComponent implements OnInit {
   paginatorInput: ApiTableRow[] = [

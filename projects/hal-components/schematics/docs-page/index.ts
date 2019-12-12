@@ -42,6 +42,8 @@ export function docsPage(options: DocsPageSchema): Rule {
       options.path = `${project.sourceRoot}/${projectType}`;
     }
 
+    const newPath = options.path + '/' + strings.dasherize(options.name) + '-doc';
+
     const templateSource = apply(url('./files'), [
       applyTemplates({
         classify: strings.classify, // <-- function
@@ -49,7 +51,7 @@ export function docsPage(options: DocsPageSchema): Rule {
         name: options.name + '-doc', // <-- variable
         apiTableHeaderName // <-- variable
       }),
-      move(normalize(options.path as string))
+      move(normalize(newPath))
     ]);
 
     return chain([
