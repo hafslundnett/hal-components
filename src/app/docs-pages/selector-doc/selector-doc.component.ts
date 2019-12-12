@@ -26,37 +26,45 @@ export class SelectorDocComponent implements OnInit {
   selectedLabel = 'Label for data';
 
   selectorTable: ApiTableRow[] = [
-    { apiInput: '[selectData]', description: 'Input for the data displayed in the select dropdown.' },
+    { apiInput: '[selectData]', description: 'For the data displayed in the select dropdown.' },
     // tslint:disable-next-line:max-line-length
-    { apiInput: '[(selected)]', description: 'Output and optional input for the selected value in the dropdown. If a selected value is given this will be selected by default.' },
-    { apiInput: '[label]', description: 'Input for the description on top of the input field.' },
+    { apiInput: '[(selected)]', description: 'For the selected value in the dropdown. If a selected value is given this will be selected by default.' },
+    { apiInput: '(selectedChange)', description: 'Detects changes with the selected value.' },
+    { apiInput: '[label]', description: 'For the description on top of the input field.' },
     // tslint:disable-next-line:max-line-length
     { apiInput: '[placeholder]', description: 'Optional input for extra description in the input field. If no placeholder is given the label will be default placeholder.' },
     { apiInput: '[disabled]', description: 'Optional input making the dropdown disabled.' },
-    { apiInput: '[required]', description: 'Optional input making it required to choose a value.' },
+    // { apiInput: '[required]', description: 'Optional input making it required to choose a value.' },
+    { apiInput: '[noLabel]', description: 'Optional input making removing the label. Should only be used with consent from designer.' },
   ];
 
-  htmlCode = `<div class="example-container">
+  htmlCode = `<div class="example">
   <hal-selector
     [selectData]="selectData"
     [(selected)]="selectedEx1"
-    [label]="'Label for data'"
+    [label]="selectedLabel"
+    [choiceDisabled]="choiceDisabled"
   ></hal-selector>
-  <h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
 </div>
-<div class="example-container">
+<h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
+<div class="example">
   <hal-selector
     [selectData]="selectData"
     [(selected)]="selectedEx2"
-    [label]="'Label for data'"
+    (selectedChange)="someMethod($event)"
+    [label]="selectedLabel"
     [placeholder]="'Placeholder'"
   ></hal-selector>
-  <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
 </div>
-
-<div class="example-info">
-  <h2>Add more data to select:</h2>
-  <button class="hdd-button" (click)="addSelectData()">Add data</button>
+<h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
+<div class="example">
+  <hal-selector
+    [selectData]="selectData"
+    [(selected)]="selectedEx3"
+    [label]="selectedLabel"
+    [disabled]="true"
+    [noLabel]="true"
+  ></hal-selector>
 </div>`;
 
   tsCode = `selectData: SelectData[] = [
@@ -68,13 +76,19 @@ export class SelectorDocComponent implements OnInit {
   {value: 'Alt6', viewValue: 'Alternative 6'},
   {value: 'Alt7', viewValue: 'Alternative 7'},
 ];
-dataNumber = 2;
-selectedEx1 = 'Alt2';
+selectedEx1 = 'Alt1';
 selectedEx2 = undefined;
-selectedChange: string;`;
+selectedEx3 = undefined;
+choiceDisabled = 'Alt3';
+selectedChange: string;
+selectedLabel = 'Label for data';`;
 
   constructor() { }
 
   ngOnInit() { }
+
+  someMethod(selected: string) {
+    console.log('Some method was called: ' + selected);
+  }
 
 }
