@@ -1,0 +1,59 @@
+<div class="doc-page-container">
+  <h1 class="doc-title">Getting started with HAL</h1>
+
+  <p class="doc-info">
+    This guide explains how to setup your Angular project to begin using HAL-Components.
+  </p>
+
+  <h2 class="doc-subtitle">Automatic Installation HAL</h2>
+  <hal-code-highlighter [isSHELL]="true" [code]="shellcode"></hal-code-highlighter>
+
+  <p class="doc-info">
+    To add HAl simply open your terminal inside your project root folder and copy the command from the
+    terminal example, and run the command.
+    It will add HDD & HAL, and ask if you want to add the required styling in your styles.scss
+  </p>
+
+  <h2 class="doc-subtitle">Manual Installation HAL (Not recommended)</h2>
+  <p class="doc-info">
+    HAL is available as a NPM package here:
+    <a class="hdd-link"
+      href="https://www.npmjs.com/package/@hafslundnett/hal-components">npmjs.com/package/@hafslundnett/hal-components</a>
+    <br>
+    Install with yarn or npm like:
+  </p>
+  <ul>
+    <li class="list-item">Yarn: <span class="terminal-line">yarn add @hafslundnett/hal-components</span></li>
+    <li class="list-item">Npm: <span class="terminal-line">npm install @hafslundnett/hal-components</span></li>
+  </ul>
+
+  <p class="doc-info">
+    You also need to have HDD-style installed, you can do this through yarn or npm:
+  </p>
+  <ul>
+    <li class="list-item">Yarn: <span class="terminal-line">yarn add @hafslundnett/hdd-style</span></li>
+    <li class="list-item">Npm: <span class="terminal-line">npm install @hafslundnett/hdd-style</span></li>
+  </ul>
+
+  <p>Then add the following style to your projects main styles.scss file:</p>
+
+  <hal-code-highlighter [isSCSS]="true" [code]="scssCode"></hal-code-highlighter>
+
+  <hal-divider class="divider-line"></hal-divider>
+
+  <p class="doc-info">
+    The github repo can be found here: <a class="hdd-link"
+      href="https://github.com/hafslundnett/hal-components">github.com/hafslundnett/hal-components</a>
+    <br>
+    Please submit any issues there directly.
+  </p>
+
+  <p class="doc-info">
+    <img class="npm-badge" src="https://badge.fury.io/js/%40hafslundnett%2Fhal-components.svg">
+    <img src="https://badgen.net/bundlephobia/minzip/@hafslundnett/hal-components">
+  </p>
+
+
+</div>
+
+<hal-doc-list></hal-doc-list>
