@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-menu.component.scss']
 })
 export class UserMenuComponent implements OnInit, OnDestroy {
-  @Input() user: User = { email: '', name: '', thumbnail: undefined};
-  @Input() settingsPagePath = 'settings';
-  @Input() signOutPagePath = 'logout';
+  @Input() user: User = { email: '', name: '', thumbnail: undefined };
+  @Input() settingsPagePath = '';
+  @Input() signOutPagePath = '';
 
   initials: string;
   hasFocus = false;
@@ -37,7 +37,10 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   }
 
   signOut() {
-    console.log('logout');
+    if (!this.signOutPagePath) {
+      alert('Utlogging er ikke konfigurer på denne siden. Kontakt din nermeste utvikler');
+      return;
+    }
     this.router.navigate([this.signOutPagePath]);
     // this.oidcSecurityService.logoff();
   }
