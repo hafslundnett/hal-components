@@ -16,7 +16,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   @Input() allowSelectAll = false;
   @Input() selectedPageIndex = 0;
   @Input() length = 0;
-  @Input() pageSizeOptions = [];
+  @Input() pageSizeOptions = [10, 20];
   @Input() selectedPageSize = DEFAULT_PAGE_SIZE;
   @Input() displayAll = false;
 

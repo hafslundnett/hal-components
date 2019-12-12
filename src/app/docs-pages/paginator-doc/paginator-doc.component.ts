@@ -1,7 +1,6 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 import { Pagination } from '@hafslundnett/hal-components';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'hal-paginator-doc',
@@ -52,7 +51,7 @@ updatePaginatorValues(changes): void {
     pageIndex: 0,
     length: 0
   };
-  pageSizeOptions = [5, 10, 25, 50];
+  pageSizeOptions = [5, 10, 25];
 
   constructor() { }
 
