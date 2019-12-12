@@ -72,6 +72,7 @@ setAll() {
     { apiInput: '[sliceSize]', description: 'TODO' },
     { apiInput: '[tableConfig]', description: 'The config for the table' },
     { apiInput: '[tableConfigStatic]', description: 'The static version of the config for the table' },
+    { apiInput: '[stickyHeader]', description: 'If header should be sticky' },
   ];
 
   detailsTabColumnProps: ApiTableRow[] = [
