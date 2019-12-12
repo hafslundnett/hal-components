@@ -35,6 +35,7 @@
         <hal-selector 
           [selectData]="selectData" 
           [(selected)]="selectedEx2"
+          (selectedChange)="someMethod($event)"
           [label]="selectedLabel" 
           [placeholder]="'Placeholder'"
         ></hal-selector>
