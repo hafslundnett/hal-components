@@ -22,6 +22,7 @@ import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-d
 import { LoadingSpinnerDocComponent } from './docs-pages/loading-spinner-doc/loading-spinner-doc.component';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { SchematicDocComponent } from './docs-pages/schematic-doc/schematic-doc.component';
+import { SelectorDocComponent } from './docs-pages/selector-doc/selector-doc.component';
 
 const routes: Routes = [
   {
@@ -113,6 +114,10 @@ const routes: Routes = [
       {
         path: Pages.Schematic,
         component: SchematicDocComponent
+      },
+      {
+        path: Pages.SelectorDoc,
+        component: SelectorDocComponent
       },
     ]
   }
