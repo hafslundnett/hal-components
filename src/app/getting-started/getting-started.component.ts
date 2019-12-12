@@ -14,24 +14,27 @@ export class GettingStartedComponent implements OnInit {
 
 html,
 body {
-  height: 100 %;
+  height: 100%;
 }
-body {
-  overflow - y: scroll;
-}
-@include mat - core();
-$primary - color: mat - palette($hdd - material_primary);
-$accent - color: mat - palette($hdd - material_accent);
-$warn - color: mat - palette($hdd - material_warn);
-$theme: mat - light - theme($primary - color, $accent - color, $warn - color);
-$typography: mat - typography - config(
-  $font - family: (
-  $font - family // Font-family from HDD-style
-)
-);
-@include angular - material - theme($theme);
-@include angular - material - typography($typography);
 
+body {
+  overflow-y: scroll;
+}
+
+@include mat-core();
+$primary-color: mat-palette($hdd-material_primary);
+$accent-color: mat-palette($hdd-material_accent);
+$warn-color: mat-palette($hdd-material_warn);
+$theme: mat-light-theme($primary-color, $accent-color, $warn-color);
+
+$typography: mat-typography-config(
+  $font-family: (
+    $font-family // Font-family from HDD-style
+  )
+);
+
+@include angular-material-theme($theme);
+@include angular-material-typography($typography);
 `;
 
   constructor() { }

@@ -17,7 +17,6 @@ export class SvgDocComponent implements OnInit {
   ];
 
   htmlCode = `<hal-svg-element
-  class="default-svg"
   [width]="'65px'"
   [height]="'60px'"
   [colorFill]="'red'"
