@@ -13,22 +13,10 @@ export class DocListComponent implements OnInit {
 
   components: DocListItem[] = [
     {
-      cardTitle: 'Svg Component',
-      cardSubtitle: 'For displaying SVG files',
-      cardIcon: 'fa-images',
-      docUrl: Pages.SvgDoc
-    },
-    {
-      cardTitle: 'Popup Connected Component',
-      cardSubtitle: 'For displaying a connected popup',
-      cardIcon: 'fa-comment-alt',
-      docUrl: Pages.PopupConnectedDoc
-    },
-    {
-      cardTitle: 'Divider Component',
-      cardSubtitle: 'Component to divide UI elements',
-      cardIcon: 'fa-columns',
-      docUrl: Pages.DividerDoc
+      cardTitle: 'App Shell',
+      cardSubtitle: 'App shell for projects',
+      cardIcon: 'fa-desktop',
+      docUrl: Pages.AppShellDoc
     },
     {
       cardTitle: 'Closeable Row',
@@ -37,28 +25,10 @@ export class DocListComponent implements OnInit {
       docUrl: Pages.Closeablerowdoc
     },
     {
-      cardTitle: 'Resizer',
-      cardSubtitle: 'For displaying a standard popup',
-      cardIcon: 'fa-expand-arrows-alt',
-      docUrl: Pages.ResizerDoc
-    },
-    {
-      cardTitle: 'App Shell',
-      cardSubtitle: 'App shell for projects',
-      cardIcon: 'fa-desktop',
-      docUrl: Pages.AppShellDoc
-    },
-    {
-      cardTitle: 'Status Mark',
-      cardSubtitle: 'The status mark for the state of something',
-      cardIcon: 'fa-check',
-      docUrl: Pages.StatusMarkDoc
-    },
-    {
-      cardTitle: 'Table Viewer default',
-      cardSubtitle: 'For displaying dynamic data in a table',
-      cardIcon: 'fa-table',
-      docUrl: Pages.TableViewerDefaultDoc
+      cardTitle: 'Divider Component',
+      cardSubtitle: 'Component to divide UI elements',
+      cardIcon: 'fa-columns',
+      docUrl: Pages.DividerDoc
     },
     {
       cardTitle: 'Loading Spinner',
@@ -67,20 +37,44 @@ export class DocListComponent implements OnInit {
       docUrl: Pages.LoadingSpinnerDoc
     },
     {
+      cardTitle: 'Popup Connected Component',
+      cardSubtitle: 'For displaying a connected popup',
+      cardIcon: 'fa-comment-alt',
+      docUrl: Pages.PopupConnectedDoc
+    },
+    {
+      cardTitle: 'Resizer',
+      cardSubtitle: 'For displaying a standard popup',
+      cardIcon: 'fa-expand-arrows-alt',
+      docUrl: Pages.ResizerDoc
+    },
+    {
       cardTitle: 'Selector / Dropdown',
       cardSubtitle: 'Selector / Dropdown component',
       cardIcon: 'fa-check-square',
       docUrl: Pages.SelectorDoc
     },
+    {
+      cardTitle: 'Status Mark',
+      cardSubtitle: 'The status mark for the state of something',
+      cardIcon: 'fa-check',
+      docUrl: Pages.StatusMarkDoc
+    },
+    {
+      cardTitle: 'Svg Component',
+      cardSubtitle: 'For displaying SVG files',
+      cardIcon: 'fa-images',
+      docUrl: Pages.SvgDoc
+    },
+    {
+      cardTitle: 'Table Viewer default',
+      cardSubtitle: 'For displaying dynamic data in a table',
+      cardIcon: 'fa-table',
+      docUrl: Pages.TableViewerDefaultDoc
+    },
   ];
 
   services: DocListItem[] = [
-    {
-      cardTitle: 'Popup Global Service',
-      cardSubtitle: 'For displaying a standard popup',
-      cardIcon: 'fa-comment-alt',
-      docUrl: Pages.PopupGlobalDoc
-    },
     {
       cardTitle: 'Broadcast Handler',
       cardSubtitle: 'For sending messages between browser tabs',
@@ -99,6 +93,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-keyboard',
       docUrl: Pages.KeyboardShortcutsDoc
     },
+    {
+      cardTitle: 'Popup Global Service',
+      cardSubtitle: 'For displaying a standard popup',
+      cardIcon: 'fa-comment-alt',
+      docUrl: Pages.PopupGlobalDoc
+    },
   ];
 
   pipes: DocListItem[] = [
@@ -115,16 +115,16 @@ export class DocListComponent implements OnInit {
 
   constants: DocListItem[] = [
     {
-      cardTitle: 'Date Formats',
-      cardSubtitle: 'Date Format Constants',
-      cardIcon: 'fa-clock',
-      docUrl: Pages.DateFormatDoc
-    },
-    {
       cardTitle: 'Animations',
       cardSubtitle: 'Implement animations on components',
       cardIcon: 'fa-random',
       docUrl: Pages.AnimationsDoc
+    },
+    {
+      cardTitle: 'Date Formats',
+      cardSubtitle: 'Date Format Constants',
+      cardIcon: 'fa-clock',
+      docUrl: Pages.DateFormatDoc
     }
   ];
 
