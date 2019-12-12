@@ -11,9 +11,7 @@ $select-border-width: 1px;
   @return $select-border-width * 2;
 }
 
-.hal-selector {
-  margin: 0;
-  
+.hal-selector {  
   .selector-label-disabled {
     color: var(--hdd-grey) !important;
   }
