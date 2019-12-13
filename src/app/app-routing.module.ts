@@ -20,7 +20,9 @@ import { AnimationsDocComponent } from './docs-pages/animations-doc/animations-d
 import { FeedbackDocComponent } from './docs-pages/feedback-doc/feedback-doc.component';
 import { KeyboardShortcutsDocComponent } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.component';
 import { LoadingSpinnerDocComponent } from './docs-pages/loading-spinner-doc/loading-spinner-doc.component';
+import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { SchematicDocComponent } from './docs-pages/schematic-doc/schematic-doc.component';
+import { SelectorDocComponent } from './docs-pages/selector-doc/selector-doc.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,10 @@ const routes: Routes = [
         path: Pages.Welcome,
         component: WelcomeComponent,
         pathMatch: 'full'
+      },
+      {
+        path: Pages.GettingStarted,
+        component: GettingStartedComponent,
       },
       {
         path: Pages.Hdd,
@@ -108,6 +114,10 @@ const routes: Routes = [
       {
         path: Pages.Schematic,
         component: SchematicDocComponent
+      },
+      {
+        path: Pages.SelectorDoc,
+        component: SelectorDocComponent
       },
     ]
   }

@@ -2,6 +2,7 @@ export enum Pages {
   Welcome = 'welcome',
   Hdd = 'hdd',
   SvgDoc = 'svg-doc',
+  GettingStarted = 'getting-started',
   PopupGlobalDoc = 'popup-global-doc',
   PopupConnectedDoc = 'popup-connected-doc',
   BroadcastHandlerDoc = 'broadcast-handler-doc',
@@ -17,5 +18,6 @@ export enum Pages {
   FeedbackDoc = 'feedback-doc',
   KeyboardShortcutsDoc = 'keyboard-shortcuts-doc',
   LoadingSpinnerDoc = 'loading-spinner-doc',
-  Schematic = 'schematic'
+  Schematic = 'schematic',
+  SelectorDoc = 'selector-doc',
 }

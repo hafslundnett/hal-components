@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsDocsPage",
+  "title": "My Doc Page Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the new table config",
+      "x-prompt": "Name of table config (Without config or table)",
+      "type": "string",
+      "minLength": 3
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the element.",
+      "visible": false
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

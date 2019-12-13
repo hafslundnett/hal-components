@@ -14,7 +14,8 @@
   </button>
 </div>
 <mat-menu #menu="matMenu">
-  <a class="hdd-button-icon is-transparent settings-button" [routerLink]="['', settingsPagePath]">
+  <a *ngIf="settingsPagePath" class="hdd-button-icon is-transparent settings-button"
+    [routerLink]="['', settingsPagePath]">
     <mat-icon class="fal fa-cog"></mat-icon>
   </a>
   <div class="content-wrapper" (click)="cancelMouseEventBubble($event)">

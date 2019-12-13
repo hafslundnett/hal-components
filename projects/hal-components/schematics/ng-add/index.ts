@@ -60,7 +60,9 @@ export function ngAdd(options: AddSchema): Rule {
     const projectName = projectDefault as string;
     const project = workspace.projects[projectName];
 
-    addHdd(tree);
+    addPackage(tree, '@hafslundnett/hdd-style', '^2.2.0');
+    addPackage(tree, '@angular/cdk', '^8.2.3');
+    addPackage(tree, '@angular/material', '^8.2.3'); // TODO what about install script for material?
 
     if (options.addStyles) {
       updateStyles(tree, project);
@@ -70,9 +72,7 @@ export function ngAdd(options: AddSchema): Rule {
   };
 }
 
-function addHdd(tree: Tree) {
-  const pkg = '@hafslundnett/hdd-style';
-  const version = '^2.2.0';
+function addPackage(tree: Tree, pkgName: string, version: string) {
 
   if (tree.exists('package.json')) {
     const read = tree.read('package.json');
@@ -86,8 +86,8 @@ function addHdd(tree: Tree) {
       json.dependencies = {};
     }
 
-    if (!json.dependencies[pkg]) {
-      json.dependencies[pkg] = version;
+    if (!json.dependencies[pkgName]) {
+      json.dependencies[pkgName] = version;
       json.dependencies = sortObjectByKeys(json.dependencies);
       console.log('Adding HDD!');
     }

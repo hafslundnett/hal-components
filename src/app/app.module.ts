@@ -28,6 +28,8 @@ import localeNb from '@angular/common/locales/nb';
 registerLocaleData(localeNb);
 import { KeyboardShortcutsDocModule } from './docs-pages/keyboard-shortcuts-doc/keyboard-shortcuts-doc.module';
 import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.module';
+import { GettingStartedModule } from './getting-started/getting-started.module';
+import { SelectorDocModule } from './docs-pages/selector-doc/selector-doc.module';
 
 @NgModule({
    imports: [
@@ -37,6 +39,7 @@ import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.mod
       HttpClientModule,
       ShellModule,
       WelcomeModule,
+      GettingStartedModule,
       SvgDocModule,
       PopupGlobalDocModule,
       PopupConnectedDocModule,
@@ -53,7 +56,8 @@ import { SchematicDocModule } from './docs-pages/schematic-doc/schematic-doc.mod
       FeedbackDocModule,
       KeyboardShortcutsDocModule,
       LoadingSpinnerDocModule,
-      SchematicDocModule
+      SchematicDocModule,
+      SelectorDocModule
    ],
    declarations: [
       AppComponent,

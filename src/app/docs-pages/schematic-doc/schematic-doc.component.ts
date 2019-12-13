@@ -10,6 +10,7 @@ export class SchematicDocComponent implements OnInit {
 
   schematicList: ApiTableRow[] = [
     { apiInput: 'ng generate @hafslundnett/hal-components:docs-page', description: 'Generate a new docs page' },
+    { apiInput: 'ng generate @hafslundnett/hal-components:table-config', description: 'Generate a table config for table viewer' },
   ];
 
   constructor() { }

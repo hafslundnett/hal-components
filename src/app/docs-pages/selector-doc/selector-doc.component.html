@@ -1,0 +1,64 @@
+
+<div class="doc-page-container">
+
+    <h1 class="doc-title">Selector / Dropdown component</h1>
+  
+    <p class="doc-info">
+        A dropdown should be used if the user wants to make a selection from a set of predefined choices. 
+        The recommended selection for the user should be selected as default. 
+        If the list of choices is longer than 5, then an explanatory placeholder text should be used.
+        The label should clearly describe the action, and the placeholder text should not consist of any additional information compared to the label. 
+        This as the placeholder is only visible before making a selection.
+    </p>
+  
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} Selector {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    </hal-doc-import-line>
+    <hal-doc-import-line>
+      <code><pre>import {{ '{' }} SelectData {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+    </hal-doc-import-line>
+  
+    <h2 class="doc-subtitle">Examples</h2>
+    <div class="example-container">
+      <div class="example">
+        <hal-selector 
+          [selectData]="selectData" 
+          [(selected)]="selectedEx1"
+          [label]="selectedLabel" 
+          [choiceDisabled]="choiceDisabled"
+        ></hal-selector>
+      </div>
+      <h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
+    </div>
+    <div class="example-container">
+      <div class="example">
+        <hal-selector 
+          [selectData]="selectData" 
+          [(selected)]="selectedEx2"
+          (selectedChange)="someMethod($event)"
+          [label]="selectedLabel" 
+          [placeholder]="'Placeholder'"
+        ></hal-selector>
+      </div>
+      <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
+    </div>
+    <div class="example-container">
+      <div class="example">
+        <hal-selector 
+          [selectData]="selectData" 
+          [(selected)]="selectedEx3"
+          [label]="selectedLabel"
+          [disabled]="true" 
+          [noLabel]="true"
+        ></hal-selector>
+      </div>
+    </div>
+
+    <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+    <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
+    <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="selectorTable"></hal-doc-api-table>
+  
+  
+  </div>
+  
+  <hal-doc-list></hal-doc-list>
