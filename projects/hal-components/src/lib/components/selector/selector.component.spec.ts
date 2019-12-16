@@ -63,8 +63,12 @@ fdescribe('SelectorComponent', () => {
     expect(getElementByCss('.hal-selector-label').nativeElement.textContent).toContain('LabelTest');
   });
 
-  xit('Option should be disabled if sent in as disabled', () => {
-    expect(getElementByCss('.mat-option-disabled').nativeElement.value).toEqual('Alt3');
+  it('Option should be disabled if sent in as disabled', () => {
+    const options = getAllElementsByCss('mat-option');
+    const option = options.find(option => option.nativeElement.value === 'Alt3');
+    if (option) {
+      expect(option.nativeElement.disabled).toBeTruthy();
+    }
   });
 
   describe('If select is disabled', () => {
