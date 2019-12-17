@@ -3,16 +3,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSelectModule } from '@angular/material/select';
 
 import { PaginatorComponent } from './paginator.component';
-import { Pagination } from './pagination';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SelectorComponent } from '../selector/selector.component';
-import { By } from '@angular/platform-browser';
 
 fdescribe('PaginatorComponent', () => {
   let component: PaginatorComponent;
   let fixture: ComponentFixture<PaginatorComponent>;
-  let selectComponent: SelectorComponent;
-  let selectFixture: ComponentFixture<SelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -21,7 +16,6 @@ fdescribe('PaginatorComponent', () => {
         MatSelectModule,
         NoopAnimationsModule,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
@@ -30,16 +24,24 @@ fdescribe('PaginatorComponent', () => {
     fixture = TestBed.createComponent(PaginatorComponent);
     component = fixture.componentInstance;
     component.length = 100;
+    component.pageSizeOptions = [10, 20, 30];
     (component as any).initPaginator();
     fixture.detectChanges();
-    selectFixture = TestBed.createComponent(SelectorComponent);
-    selectComponent = selectFixture.componentInstance;
-    selectComponent.selectData = [
-      { value: 'name10', viewValue: '10'},
-      { value: 'name20', viewValue: '20'}
-    ];
-    selectFixture.detectChanges();
   });
+
+  it('When paginator gets initiated selectData should have same values as pageSizeOptions', () => {
+    expect(component.selectData[0].value).toBe('10');
+    expect(component.selectData[1].value).toBe('20');
+    expect(component.selectData[2].value).toBe('30');
+  });
+
+  it('When unit gets set the displayed value should change', async(() => {
+    component.unit = 'entries';
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(getElement('[class="container-length-unit"]').innerHTML).toContain(component.unit);
+    });
+  }));
 
   describe('When there are above 10 summaries', () => {
     const length = 48;
@@ -70,32 +72,6 @@ fdescribe('PaginatorComponent', () => {
 
     it('number of rows should be the same as number of summaries', () => {
       expect(component.availablePageSizes[0]).toBe(length);
-    });
-  });
-
-  xdescribe('When a new option is selected', () => {
-    beforeEach(() => {
-      component.length = 42;
-      (component as any).initPaginator();
-      fixture.detectChanges();
-      spyOn(component.change, 'emit');
-      const selectElement: HTMLElement = selectFixture.debugElement.nativeElement.querySelector('mat-select .mat-select-trigger');
-      selectElement.click();
-      fixture.detectChanges();
-      expect(getElementByCss('.mat-select-trigger', selectFixture)).toBeTruthy();
-      const options = document.querySelectorAll('mat-option');
-      console.log(options);
-      expect(options).toBeTruthy();
-      (options.item(1) as HTMLElement).click();
-      fixture.detectChanges();
-    });
-
-    it('the number of rows are increased', () => {
-      expect(component.change.emit).toHaveBeenCalledWith({
-        length: component.length,
-        pageIndex: 0,
-        pageSize: 20
-      } as Pagination);
     });
   });
 
@@ -135,8 +111,5 @@ fdescribe('PaginatorComponent', () => {
 
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
-  }
-  function getElementByCss(className: string, fixture) {
-    return fixture.debugElement.query(By.css(className));
   }
 });

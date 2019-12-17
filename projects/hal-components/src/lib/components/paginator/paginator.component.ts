@@ -13,12 +13,10 @@ import { SelectData } from '../selector/select-data.interface';
 })
 export class PaginatorComponent implements OnInit, OnChanges {
   @Input() unit = 'elementer';
-  @Input() allowSelectAll = false;
   @Input() selectedPageIndex = 0;
   @Input() length = 0;
   @Input() pageSizeOptions = [10, 20];
   @Input() selectedPageSize = DEFAULT_PAGE_SIZE;
-  @Input() displayAll = false;
 
   @Input()
   get showPaging(): boolean {
@@ -29,8 +27,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   }
   private _showPaging = true;
 
-  // tslint:disable-next-line:no-output-native
-  @Output() change = new EventEmitter<Pagination>();
+  @Output() paginatorChange = new EventEmitter<Pagination>();
 
   availablePageSizes: number[] = [];
   pages: number[] = [];
@@ -57,7 +54,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   setPage(page: number) {
     this.selectedPageIndex = page;
-    this.change.emit({
+    this.paginatorChange.emit({
       pageSize: this.selectedPageSize,
       length: this.length,
       pageIndex: this.selectedPageIndex
@@ -69,7 +66,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
     this.setNumberOfPages();
     this.selectedPageIndex = 0;
 
-    this.change.emit({
+    this.paginatorChange.emit({
       length: this.length,
       pageIndex: 0,
       pageSize

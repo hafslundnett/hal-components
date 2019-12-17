@@ -9,7 +9,7 @@
         class="paginator-selector"
       ></hal-selector>
     </div>
-    <div>av {{length}} {{unit}}</div>
+    <div class="container-length-unit">av {{length}} {{unit}}</div>
   </div>
   <div class="page-navigation" *ngIf="showPaging && pages.length && pages.length > 1">
     <button class="hdd-button-icon arrow-button" name="previous-button" [ngClass]="{'hidden': selectedPageIndex === 0}" (click)="setPage(selectedPageIndex - 1)">
