@@ -940,10 +940,10 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@hafslundnett/hdd-style@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@hafslundnett/hdd-style/-/hdd-style-4.0.0.tgz#fc2e5df622bea5b55a3bd3049aadb16f3b8df86d"
-  integrity sha512-exwTX832bPPpaan2PX7qBpaPs8gwS85NCz9Jg7v+cGoKU4KBwpYN2jQJTTIw65By8zJUbaAczltqmGxF0V7nGw==
+"@hafslundnett/hdd-style@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@hafslundnett/hdd-style/-/hdd-style-5.0.0.tgz#22237d1af7b343d3dc0582ffe959f92f35793f0b"
+  integrity sha512-OSNNUzA7AG0Sg+AimQ2eFSwC41IBi/W6gB/AjFKs9cj1VoYumVgJe9o0EyMGHsqOyDSgOcEjduM6Z+avtkHFXg==
 
 "@ngtools/webpack@8.3.20":
   version "8.3.20"

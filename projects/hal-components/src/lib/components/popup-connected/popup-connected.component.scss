@@ -3,7 +3,7 @@
 $arrow-size: 10px;
 
 .connected-popup-body {
-  background: var(--hdd-white);
+  background: var(--hdd-color-white);
   border-radius: 4px;
 }
 
@@ -25,7 +25,7 @@ $arrow-size: 10px;
     height: 0;
     border-left: $arrow-size solid transparent;
     border-right: $arrow-size solid transparent;
-    border-bottom: $arrow-size solid var(--hdd-white);
+    border-bottom: $arrow-size solid var(--hdd-color-white);
     top: -1px;
     display: block;
     margin-left: auto;
@@ -36,7 +36,7 @@ $arrow-size: 10px;
     height: 0;
     border-left: $arrow-size solid transparent;
     border-right: $arrow-size solid transparent;
-    border-top: $arrow-size solid var(--hdd-white);
+    border-top: $arrow-size solid var(--hdd-color-white);
     top: -1px;
     display: block;
     margin-left: auto;
@@ -54,15 +54,15 @@ $arrow-size: 10px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--hdd-blue);
+  color: var(--hdd-color-blue);
 
   &:hover,
   &:focus {
     outline: none;
-    color: var(--hdd-blue-light1);
+    color: var(--hdd-color-blue-light1);
   }
 
   i {
-    color: var(--hdd-black);
+    color: var(--hdd-color-black);
   }
 }

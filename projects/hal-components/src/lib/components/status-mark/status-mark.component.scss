@@ -1,11 +1,11 @@
 @import '~@hafslundnett/hdd-style/variables/colors';
 
 .check-icon {
-  color: var(--hdd-signal-green);
+  color: var(--hdd-color-signal-green);
   font-size: 1.3rem;
 }
 
 .x-icon {
-  color: var(--hdd-signal-red);
+  color: var(--hdd-color-signal-red);
   font-size: 1.3rem;
 }
