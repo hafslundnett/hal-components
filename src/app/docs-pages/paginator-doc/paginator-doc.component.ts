@@ -9,8 +9,7 @@ import { Pagination } from '@hafslundnett/hal-components';
 })
 export class PaginatorDocComponent implements OnInit {
   paginatorInput: ApiTableRow[] = [
-    { apiInput: 'unit', description: 'Optional input to make the some' },
-    { apiInput: 'allowSelectAll', description: 'Optional input to make the some' },
+    { apiInput: 'unit', description: 'Optional input to change name of elements to select between' },
     { apiInput: 'selectedPageIndex', description: 'Optional input to make the some' },
     { apiInput: 'length', description: 'Optional input to make the some' },
     { apiInput: 'pageSizeOptions', description: 'Optional input to make the some' },

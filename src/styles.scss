@@ -70,3 +70,27 @@ $typography: mat-typography-config(
 .npm-badge {
   margin-right: calc(var(--default-margin) / 2);
 }
+
+
+.doc-info-use {
+  margin-bottom: calc(var(--default-margin) * (1.61));
+  line-height: 1.63rem;
+
+  h2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  &-icons {
+    font-size: 24px;
+    margin-right: var(--hdd-spacing-primary);
+
+    &.icon-green {
+      color: var(--hdd-signal-green);
+    }
+
+    &.icon-red {
+      color: var(--hdd-signal-red);
+    }
+  }
+}
