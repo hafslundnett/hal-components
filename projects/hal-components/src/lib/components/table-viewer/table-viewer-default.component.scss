@@ -1,2 +1,8 @@
 @import "~@hafslundnett/hdd-style/variables/colors";
 @import "./table-engine/table-viewer.base.scss";
+
+.use-sticky {
+    &.hdd-table.is-sticky-header th{
+        top: 64px; // header top height
+    }
+}
