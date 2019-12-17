@@ -9,7 +9,6 @@ import { SelectorComponent } from './selector.component';
 import { By } from '@angular/platform-browser';
 import { MatSelectModule, MatOptionModule, MatOption, MatSelect } from '@angular/material';
 
-
 fdescribe('SelectorComponent', () => {
   let component: SelectorComponent;
   let fixture: ComponentFixture<SelectorComponent>;
@@ -47,7 +46,7 @@ fdescribe('SelectorComponent', () => {
   it('Should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('Should have same amount of options as defined in selectData', () => {
     const options: MatOption[] = component.matSelect.options.toArray();
     expect(options.length).toBe(component.selectData.length);
@@ -67,7 +66,7 @@ fdescribe('SelectorComponent', () => {
 
   it('Option should be disabled if sent in as disabled', () => {
     const options: MatOption[] = component.matSelect.options.toArray();
-    const option = options.find(option => option.value === 'Alt3');
+    const option = options.find(opt => opt.value === 'Alt3');
     if (option) {
       expect(option.disabled).toBeTruthy();
     }
@@ -100,7 +99,7 @@ fdescribe('SelectorComponent', () => {
     expect(spy).not.toHaveBeenCalled();
 
     const options: MatOption[] = component.matSelect.options.toArray();
-    options[1]['_selectViaInteraction']();
+    options[1]._selectViaInteraction();
     fixture.detectChanges();
 
     expect(options[1].selected).toBe(true);
