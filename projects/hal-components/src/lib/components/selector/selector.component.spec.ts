@@ -96,18 +96,33 @@ describe('SelectorComponent', () => {
     });
   });
 
-  it('When new selected onSelectedChange should be called', () => {
-    const spy = spyOn(component, 'onSelectedChange');
-    const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
-    selectElement.click();
-    fixture.detectChanges();
+  describe('When new selected', () => {
+    let spy;
 
-    const options = document.querySelectorAll('mat-option');
-    (options.item(0) as HTMLElement).click();
-    fixture.detectChanges();
+    beforeEach(() => {
+      spy = spyOn(component, 'onSelectedChange');
+      const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
+      selectElement.click();
+      fixture.detectChanges();
+    });
 
-    expect(matSelect.value).toEqual('Alt1');
-    expect(spy).toHaveBeenCalledTimes(1);
+    it('onSelectedChange should be called and selected should change', () => {
+      const options = document.querySelectorAll('mat-option');
+      (options.item(0) as HTMLElement).click();
+      fixture.detectChanges();
+
+      expect(matSelect.value).toEqual('Alt1');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    it('onSelectedChange should be called and selected should change', () => {
+      const options = document.querySelectorAll('mat-option');
+      (options.item(1) as HTMLElement).click();
+      fixture.detectChanges();
+
+      expect(matSelect.value).toEqual('Alt2');
+      expect(spy).toHaveBeenCalledTimes(1);
+    });
   });
 
   function getElementByCss(className: string) {
