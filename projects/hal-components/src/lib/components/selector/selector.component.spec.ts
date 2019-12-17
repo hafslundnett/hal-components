@@ -12,6 +12,7 @@ import { MatSelectModule, MatOptionModule, MatOption, MatSelect } from '@angular
 describe('SelectorComponent', () => {
   let component: SelectorComponent;
   let fixture: ComponentFixture<SelectorComponent>;
+  let matSelect: MatSelect;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -40,6 +41,7 @@ describe('SelectorComponent', () => {
     component.placeholder = 'PlaceholderTest';
     component.label = 'LabelTest';
     component.choiceDisabled = 'Alt3';
+    matSelect = fixture.debugElement.query(By.css('mat-select')).context;
     fixture.detectChanges();
   });
 
@@ -48,16 +50,16 @@ describe('SelectorComponent', () => {
   });
 
   it('Should have same amount of options as defined in selectData', () => {
-    const options: MatOption[] = component.matSelect.options.toArray();
+    const options: MatOption[] = matSelect.options.toArray();
     expect(options.length).toBe(component.selectData.length);
   });
 
   it('Selected should be same as sent in value', () => {
-    expect(component.matSelect.value).toEqual('Alt2');
+    expect(matSelect.value).toEqual('Alt2');
   });
 
   it('Placeholder should be same as sent in value', () => {
-    expect(component.matSelect.placeholder).toContain('PlaceholderTest');
+    expect(matSelect.placeholder).toContain('PlaceholderTest');
   });
 
   it('Label should be same as sent in value', () => {
@@ -65,7 +67,7 @@ describe('SelectorComponent', () => {
   });
 
   it('Option should be disabled if sent in as disabled', () => {
-    const options: MatOption[] = component.matSelect.options.toArray();
+    const options: MatOption[] = matSelect.options.toArray();
     const option = options.find(opt => opt.value === 'Alt3');
     if (option) {
       expect(option.disabled).toBeTruthy();
@@ -79,7 +81,7 @@ describe('SelectorComponent', () => {
     });
 
     it('mat-select should be disabled', () => {
-      expect(component.matSelect.disabled).toEqual(true);
+      expect(matSelect.disabled).toEqual(true);
     });
   });
 
@@ -95,18 +97,23 @@ describe('SelectorComponent', () => {
   });
 
   it('When new selected onSelectedChange should be called', () => {
-    const spy = spyOn(component, 'onSelectedChange').and.callThrough();
-    expect(spy).not.toHaveBeenCalled();
-
-    const options: MatOption[] = component.matSelect.options.toArray();
-    options[1]._selectViaInteraction();
+    const spy = spyOn(component, 'onSelectedChange');
+    const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
+    selectElement.click();
     fixture.detectChanges();
 
-    expect(options[1].selected).toBe(true);
+    const options = document.querySelectorAll('mat-option');
+    (options.item(0) as HTMLElement).click();
+    fixture.detectChanges();
+
+    expect(matSelect.value).toEqual('Alt1');
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
   function getElementByCss(className: string) {
     return fixture.debugElement.query(By.css(className));
+  }
+  function getElement(selector: string) {
+    return fixture.debugElement.nativeElement.querySelector(selector);
   }
 });

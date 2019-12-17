@@ -10,9 +10,6 @@ import { MatSelect } from '@angular/material';
 })
 
 export class SelectorComponent implements OnInit {
-  // For testing purposes
-  @ViewChild(MatSelect, {static: false}) public matSelect: MatSelect;
-
   @Input() selectData: SelectData[];
   @Input() selected: string;
   @Input() label: string;
