@@ -23,7 +23,8 @@ export class SelectorDocComponent implements OnInit {
   selectedEx3 = undefined;
   choiceDisabled = 'Alt3';
   selectedChange: string;
-  selectedLabel = 'Label for data';
+  selectedLabelEx = 'Label for data';
+  selectedLabelEx2 = 'Label (no placeholder)';
 
   selectorTable: ApiTableRow[] = [
     { apiInput: '[selectData]', description: 'For the data displayed in the select dropdown.' },
