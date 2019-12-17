@@ -23,8 +23,9 @@ export class SelectorDocComponent implements OnInit {
   selectedEx3 = undefined;
   choiceDisabled = 'Alt3';
   selectedChange: string;
-  selectedLabelEx = 'Label for data';
-  selectedLabelEx2 = 'Label (no placeholder)';
+  selectedLabelEx1 = 'Label for data';
+  selectedLabelEx2 = 'Label for data';
+  selectedLabelEx3 = 'Label (no placeholder)';
 
   selectorTable: ApiTableRow[] = [
     { apiInput: '[selectData]', description: 'For the data displayed in the select dropdown.' },

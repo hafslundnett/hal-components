@@ -24,7 +24,7 @@
         <hal-selector 
           [selectData]="selectData" 
           [(selected)]="selectedEx1"
-          [label]="selectedLabel" 
+          [label]="selectedLabelEx1" 
           [choiceDisabled]="choiceDisabled"
         ></hal-selector>
       </div>
@@ -36,7 +36,7 @@
           [selectData]="selectData" 
           [(selected)]="selectedEx2"
           (selectedChange)="someMethod($event)"
-          [label]="selectedLabelEx" 
+          [label]="selectedLabelEx2" 
           [placeholder]="'Placeholder'"
         ></hal-selector>
       </div>
@@ -47,7 +47,7 @@
         <hal-selector 
           [selectData]="selectData" 
           [(selected)]="selectedEx3"
-          [label]="selectedLabelEx2"
+          [label]="selectedLabelEx3"
           [disabled]="true" 
           [noLabel]="true"
         ></hal-selector>
