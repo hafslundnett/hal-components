@@ -86,11 +86,11 @@ $typography: mat-typography-config(
     margin-right: var(--hdd-spacing-primary);
 
     &.icon-green {
-      color: var(--hdd-signal-green);
+      color: var(--hdd-color-signal-green);
     }
 
     &.icon-red {
-      color: var(--hdd-signal-red);
+      color: var(--hdd-color-signal-red);
     }
   }
 }

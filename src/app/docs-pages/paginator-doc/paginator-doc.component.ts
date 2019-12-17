@@ -50,7 +50,7 @@ updatePaginatorValues(changes): void {
     pageIndex: 0,
     length: 0
   };
-  pageSizeOptions = [5, 10, 25];
+  pageSizeOptions = [5, 10, 25, 1000];
 
   constructor() { }
 

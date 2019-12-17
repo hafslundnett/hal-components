@@ -48,7 +48,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   setSelectOptions() {
     this.pageSizeOptions.forEach((option) => {
-      const val: SelectData = {value: option.toLocaleString(), viewValue: option.toLocaleString()};
+      const val: SelectData = {value: option.toString(), viewValue: option.toString()};
       this.selectData.push(val);
     });
     const alleVal: SelectData = {value: 'Alle', viewValue: 'Alle'};
@@ -82,12 +82,12 @@ export class PaginatorComponent implements OnInit, OnChanges {
     this.availablePageSizes = this.getAvailablePageSizes();
     this.setNumberOfPages();
     if (this.length < this.pageSizeOptions[0]) {
-      this.selectedPageSizeSelect = this.length.toLocaleString();
+      this.selectedPageSizeSelect = this.length.toString();
     } else {
       if (this.selectedPageSize === 10000) {
         this.selectedPageSizeSelect = 'Alle';
       } else {
-        this.selectedPageSizeSelect = this.selectedPageSize.toLocaleString();
+        this.selectedPageSizeSelect = this.selectedPageSize.toString();
       }
     }
   }
