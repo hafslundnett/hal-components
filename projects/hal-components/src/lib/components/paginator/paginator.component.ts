@@ -13,6 +13,7 @@ import { SelectData } from '../selector/select-data.interface';
 })
 export class PaginatorComponent implements OnInit, OnChanges {
   @Input() unit = 'elementer';
+  @Input() allowAll = true;
   @Input() selectedPageIndex = 0;
   @Input() length = 0;
   @Input() pageSizeOptions = [10, 20];
@@ -50,6 +51,10 @@ export class PaginatorComponent implements OnInit, OnChanges {
       const val: SelectData = {value: option.toLocaleString(), viewValue: option.toLocaleString()};
       this.selectData.push(val);
     });
+    const alleVal: SelectData = {value: 'Alle', viewValue: 'Alle'};
+    if (this.allowAll) {
+      this.selectData.push(alleVal);
+    }
   }
 
   setPage(page: number) {
@@ -61,15 +66,15 @@ export class PaginatorComponent implements OnInit, OnChanges {
     });
   }
 
-  setPageSize(pageSize: number) {
-    this.selectedPageSize = pageSize;
+  setPageSize(pageSize: string) {
+    pageSize === 'Alle' ? this.selectedPageSize = 10000 : this.selectedPageSize = +pageSize;
     this.setNumberOfPages();
     this.selectedPageIndex = 0;
 
     this.paginatorChange.emit({
       length: this.length,
       pageIndex: 0,
-      pageSize
+      pageSize: this.selectedPageSize
     });
   }
 
@@ -79,7 +84,11 @@ export class PaginatorComponent implements OnInit, OnChanges {
     if (this.length < this.pageSizeOptions[0]) {
       this.selectedPageSizeSelect = this.length.toLocaleString();
     } else {
-      this.selectedPageSizeSelect = this.selectedPageSize.toLocaleString();
+      if (this.selectedPageSize === 10000) {
+        this.selectedPageSizeSelect = 'Alle';
+      } else {
+        this.selectedPageSizeSelect = this.selectedPageSize.toLocaleString();
+      }
     }
   }
 
