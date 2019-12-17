@@ -22,8 +22,7 @@
       [pageSizeOptions]="pageSizeOptions"
       [selectedPageSize]="pagination?.pageSize"
       [selectedPageIndex]="pagination?.pageIndex"
-      [displayAll]="true"
-      (change)="changePaginator($event)">
+      (paginatorChange)="changePaginator($event)">
     </hal-paginator>
   </div>
 

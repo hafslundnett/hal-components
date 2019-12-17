@@ -4,8 +4,9 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { PaginatorComponent } from './paginator.component';
 import { SelectorComponent } from '../selector/selector.component';
+import { By } from '@angular/platform-browser';
 
-fdescribe('PaginatorComponent', () => {
+describe('PaginatorComponent', () => {
   let component: PaginatorComponent;
   let fixture: ComponentFixture<PaginatorComponent>;
 
@@ -40,6 +41,14 @@ fdescribe('PaginatorComponent', () => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
       expect(getElement('[class="container-length-unit"]').innerHTML).toContain(component.unit);
+    });
+  }));
+
+  it('If showPaging is false the paging should be removed', async(() => {
+    component.showPaging = false;
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(getElementByCss('.page-navigation')).toBeFalsy();
     });
   }));
 
@@ -111,5 +120,9 @@ fdescribe('PaginatorComponent', () => {
 
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
+  }
+
+  function getElementByCss(className: string) {
+    return fixture.debugElement.query(By.css(className));
   }
 });
