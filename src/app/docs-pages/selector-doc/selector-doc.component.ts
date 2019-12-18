@@ -23,7 +23,9 @@ export class SelectorDocComponent implements OnInit {
   selectedEx3 = undefined;
   choiceDisabled = 'Alt3';
   selectedChange: string;
-  selectedLabel = 'Label for data';
+  selectedLabelEx1 = 'Label for data';
+  selectedLabelEx2 = 'Label for data';
+  selectedLabelEx3 = 'Label (no placeholder)';
 
   selectorTable: ApiTableRow[] = [
     { apiInput: '[selectData]', description: 'For the data displayed in the select dropdown.' },
@@ -42,7 +44,7 @@ export class SelectorDocComponent implements OnInit {
   <hal-selector
     [selectData]="selectData"
     [(selected)]="selectedEx1"
-    [label]="selectedLabel"
+    [label]="selectedLabelEx1"
     [choiceDisabled]="choiceDisabled"
   ></hal-selector>
 </div>
@@ -52,7 +54,7 @@ export class SelectorDocComponent implements OnInit {
     [selectData]="selectData"
     [(selected)]="selectedEx2"
     (selectedChange)="someMethod($event)"
-    [label]="selectedLabel"
+    [label]="selectedLabelEx2"
     [placeholder]="'Placeholder'"
   ></hal-selector>
 </div>
@@ -61,7 +63,7 @@ export class SelectorDocComponent implements OnInit {
   <hal-selector
     [selectData]="selectData"
     [(selected)]="selectedEx3"
-    [label]="selectedLabel"
+    [label]="selectedLabelEx3"
     [disabled]="true"
     [noLabel]="true"
   ></hal-selector>
@@ -81,7 +83,9 @@ selectedEx2 = undefined;
 selectedEx3 = undefined;
 choiceDisabled = 'Alt3';
 selectedChange: string;
-selectedLabel = 'Label for data';`;
+selectedLabelEx1 = 'Label for data';
+selectedLabelEx2 = 'Label for data';
+selectedLabelEx3 = 'Label (no placeholder)';`;
 
   constructor() { }
 
