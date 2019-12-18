@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 import { Pagination } from '@hafslundnett/hal-components';
 
