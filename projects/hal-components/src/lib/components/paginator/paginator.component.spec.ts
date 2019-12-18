@@ -84,6 +84,22 @@ describe('PaginatorComponent', () => {
     });
   });
 
+  describe('"Alle" should be a page size option', () => {
+    beforeEach(() => {
+      const selectElement: HTMLElement = getElement('hal-selector mat-select .mat-select-trigger');
+      selectElement.click();
+      fixture.detectChanges();
+    });
+
+    it('when selected, should have value 10000', () => {
+      const options = document.querySelectorAll('mat-option');
+      const lastElement = options.length - 1;
+      (options.item(lastElement) as HTMLElement).click();
+      fixture.detectChanges();
+      expect(component.selectedPageSize).toBe(10000);
+    });
+  });
+
   describe('When next page is selected', () => {
     beforeEach(() => {
       component.length = 42;
