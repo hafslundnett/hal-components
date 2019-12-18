@@ -1,0 +1,21 @@
+.example-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: var(--hdd-spacing-2) 0;
+
+    .example {
+        width: 300px;
+        margin-right: 50px;
+    }
+}
+
+.example-info {
+    margin-bottom: 16px;
+}
+
+.divider-margin {
+    margin-top: calc(var(--default-margin) * 1.61);
+    margin-bottom: calc(var(--default-margin) * 1.61);
+}

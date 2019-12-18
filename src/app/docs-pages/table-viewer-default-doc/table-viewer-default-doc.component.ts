@@ -12,6 +12,8 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 })
 export class TableViewerDefaultDocComponent implements OnInit {
 
+  schemaConfig = 'ng generate @hafslundnett/hal-components:table-config';
+
   tsCodeTableConfig = `export class DemoTableConfig extends TableEngine<DemoData> {
   static columnConfiguration: DetailsTabColumn<DemoData>[] = [
     {
@@ -70,6 +72,7 @@ setAll() {
     { apiInput: '[sliceSize]', description: 'TODO' },
     { apiInput: '[tableConfig]', description: 'The config for the table' },
     { apiInput: '[tableConfigStatic]', description: 'The static version of the config for the table' },
+    { apiInput: '[stickyHeader]', description: 'If header should be sticky' },
   ];
 
   detailsTabColumnProps: ApiTableRow[] = [

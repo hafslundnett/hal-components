@@ -6,9 +6,9 @@
 
 .divider {
   border: none;
-  border-top: 1px solid var(--hdd-grey);
+  border-top: 1px solid var(--hdd-color-grey);
 
   &.light {
-    border-top-color: var(--hdd-grey-light);
+    border-top-color: var(--hdd-color-grey-light);
   }
 }

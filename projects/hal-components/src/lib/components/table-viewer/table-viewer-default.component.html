@@ -1,4 +1,11 @@
-<table mat-table [dataSource]="dataSource" matSort class="hdd-table is-striped" #defaultTable>
+<table 
+  mat-table 
+  [dataSource]="dataSource" 
+  matSort 
+  class="hdd-table is-striped is-sticky-header" 
+  [ngClass]="{'use-sticky': stickyHeader}"
+  #defaultTable
+>
   <!-- Main columns loop -->
   <ng-container *ngFor="let currentColumn of dynamicColumns; trackBy: tableColumnsTrackBy">
     <ng-container matColumnDef="{{currentColumn.columnName}}">

@@ -12,12 +12,13 @@ import { TableViewerBase } from './table-engine/table-viewer.base';
   selector: 'hal-table-viewer-default',
   templateUrl: './table-viewer-default.component.html',
   styleUrls: ['./table-viewer-default.component.scss'],
-  // encapsulation: ViewEncapsulation.None, // view encapsulation is off, be careful!
+  encapsulation: ViewEncapsulation.None, // view encapsulation is off, be careful!
 })
 export class TableViewerDefaultComponent extends TableViewerBase {
 
   @ViewChild('defaultTable', { read: ElementRef, static: true }) defaultTable;
   @Input() filteredTableConfig: any; // ConfigDataTypes
+  @Input() stickyHeader = false; // ConfigDataTypes
 
   constructor(
   ) {

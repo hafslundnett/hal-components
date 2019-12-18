@@ -18,7 +18,8 @@
     "build-prod": "ng build hal-components && ng build --prod",
     "ci": "npm run lint-ci && npm run build-prod && npm run test-ci",
     "cypress": "cypress open",
-    "test-install-schema": "npm link dist/hal-components && ng add @hafslundnett/hal-components"
+    "test-install-schema": "npm run link-hal-schematic && ng add @hafslundnett/hal-components",
+    "link-hal-schematic": "npm link dist/hal-components"
   },
   "private": true,
   "dependencies": {
@@ -32,7 +33,7 @@
     "@angular/platform-browser": "^8.1.0",
     "@angular/platform-browser-dynamic": "^8.1.0",
     "@angular/router": "^8.1.0",
-    "@hafslundnett/hdd-style": "^3.0.1",
+    "@hafslundnett/hdd-style": "^5.0.0",
     "date-fns": "^2.8.0",
     "hammerjs": "^2.0.8",
     "prismjs": "^1.17.1",

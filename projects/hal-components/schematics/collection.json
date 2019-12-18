@@ -15,6 +15,11 @@
       "description": "Generate a doc page in the project.",
       "factory": "./docs-page/index#docsPage",
       "schema": "./docs-page/schema.json"
+    },
+    "table-config": {
+      "description": "Generate a table config in the project.",
+      "factory": "./table-config/index#tableConfig",
+      "schema": "./table-config/schema.json"
     }
   }
 }

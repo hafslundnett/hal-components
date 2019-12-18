@@ -1,7 +1,7 @@
 @import '~@hafslundnett/hdd-style/variables/main';
 
 .filter-popup-body {
-  background: var(--hdd-white);
+  background: var(--hdd-color-white);
   padding: 40px;
   border-radius: 4px;
 }
@@ -23,15 +23,15 @@
   cursor: pointer;
   font-size: .9rem;
   font-weight: 700;
-  color: var(--hdd-blue);
+  color: var(--hdd-color-blue);
 
   &:hover, &:focus {
     outline: none;
-    color: var(--hdd-blue-light1);
+    color: var(--hdd-color-blue-light1);
   }
 
   i {
-    color: var(--hdd-black);
+    color: var(--hdd-color-black);
   }
 }
 

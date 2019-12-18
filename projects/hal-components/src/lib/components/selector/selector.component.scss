@@ -1,0 +1,104 @@
+$form-select-padding-top-bottom: 0.7rem;
+$form-select-padding-sides: 0.9rem;
+$form-select-border-radius: 0.25rem;
+$select-border-width: 1px;
+
+@function get-subtract-padding() {
+  @return $form-select-padding-sides * 2;
+}
+
+@function get-subtract-border() {
+  @return $select-border-width * 2;
+}
+
+.hal-selector {
+  margin: 0;
+  
+  .selector-label-disabled {
+    color: var(--hdd-color-grey) !important;
+  }
+
+  .mat-select {
+    width: calc(100% - #{get-subtract-padding()} - #{get-subtract-border()});
+    background: var(--hdd-color-white);
+    color: var(--hdd-color-black);
+    border: 1px solid var(--hdd-color-grey);
+    border-radius: $form-select-border-radius;
+    padding: $form-select-padding-top-bottom $form-select-padding-sides;
+    font-size: 1rem;
+
+    &-disabled,
+    &-disabled .mat-select-trigger {
+      cursor: not-allowed;
+      color: var(--hdd-color-grey);
+    }
+
+    // Adding font-awesome arrow
+    &-arrow-wrapper::before {
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 600;
+      font-size: 1rem;
+      content: "\f107"; // Arrow
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    // Removing material-arrow
+    &-arrow {
+      border: none;
+    }
+  }
+}
+
+.selector-panel.mat-select-panel {
+  border: 1px solid var(--hdd-color-primary);
+  border-radius: $form-select-border-radius !important;
+
+  .mat-option {
+    &:hover,
+    &:active,
+    &:focus {
+      background: var(--hdd-color-primary);
+      color: var(--hdd-color-white);
+    }
+
+    .selected-icon {
+      padding-right: var(--hdd-spacing-primary);
+      visibility: hidden;
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      color: var(--hdd-color-grey);
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--hdd-color-grey);
+        background: var(--hdd-color-white) !important;
+      }
+    }
+
+    &.mat-active:not(:hover) {
+      background: var(--hdd-color-white);
+      color: var(--hdd-color-black);
+    }
+
+    // When selected
+    &.mat-selected {
+      background: var(--hdd-color-white);
+      color: var(--hdd-color-black);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: var(--hdd-color-primary);
+        color: var(--hdd-color-white);
+      }
+
+      .selected-icon {
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 @import '~@hafslundnett/hdd-style/variables/main';
 
 .header {
-    background-color: var(--hdd-grey-light);
+    background-color: var(--hdd-color-grey-light);
     padding: 24px;
   
     .title {
@@ -21,7 +21,7 @@
     }
     
     .menu-item {
-      color: var(--hdd-grey-dark);
+      color: var(--hdd-color-grey-dark);
       text-decoration: none;
       margin: 16px 0;
       font-size: 1rem;
@@ -32,12 +32,12 @@
       }
   
       &.active {
-        color: var(--hdd-blue-light1);
+        color: var(--hdd-color-blue-light1);
       }
     }
     
     .divider {
-      background-color: rgba(var(--hdd-grey), .4);
+      background-color: rgba(var(--hdd-color-grey), .4);
       height: 1px;
       width: 100%;
       display: block;
