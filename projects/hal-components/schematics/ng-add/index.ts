@@ -60,7 +60,7 @@ export function ngAdd(options: AddSchema): Rule {
     const projectName = projectDefault as string;
     const project = workspace.projects[projectName];
 
-    addPackage(tree, '@hafslundnett/hdd-style', '^2.2.0');
+    addPackage(tree, '@hafslundnett/hdd-style', '^5.0.0');
     addPackage(tree, '@angular/cdk', '^8.2.3');
     addPackage(tree, '@angular/material', '^8.2.3'); // TODO what about install script for material?
 
