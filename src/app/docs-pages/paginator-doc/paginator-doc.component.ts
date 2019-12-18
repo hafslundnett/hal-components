@@ -9,20 +9,35 @@ import { Pagination } from '@hafslundnett/hal-components';
 })
 export class PaginatorDocComponent implements OnInit {
   paginatorInput: ApiTableRow[] = [
-    { apiInput: 'unit', description: 'Optional input to change name of elements to select between' },
-    { apiInput: 'selectedPageIndex', description: 'Optional input to make the some' },
-    { apiInput: 'length', description: 'Optional input to make the some' },
-    { apiInput: 'pageSizeOptions', description: 'Optional input to make the some' },
-    { apiInput: 'selectedPageSize', description: 'Optional input to make the some' },
-    { apiInput: 'showPaging', description: 'Optional input to make the some' },
+    { apiInput: '[length]', description: 'The length of entries of your data' },
+    { apiInput: '[pageSizeOptions]', description: 'The page size options that should be available' },
+    { apiInput: '[selectedPageSize]', description: 'The page size initially selected' },
+    { apiInput: '[unit]', description: 'Optional input to change name of elements to select between' },
+    { apiInput: '[selectedPageIndex]', description: 'Optional input sets selected page on index' },
+    { apiInput: '[showPaging]', description: 'Optional input to hide or show paging. Is true by default' },
+    { apiInput: '[allowAll]', description: 'Optional input to hide or show the "Alle" page size option. Is true by default' },
+    { apiInput: '(paginatorChange)', description: 'Detects paginator changes' },
   ];
 
+  htmlCode = `<hal-paginator 
+  [length]="pagination?.length"
+  [pageSizeOptions]="pageSizeOptions"
+  [selectedPageSize]="pagination?.pageSize"
+  [selectedPageIndex]="pagination?.pageIndex"
+  [allowAll]="true"
+  (paginatorChange)="changePaginator($event)">
+</hal-paginator>`;
+
   tsCode = `pageSizeOptions = [5, 10, 25];
+
+ngOnInit() {pageSizeOptions = [2, 5, 10, 25];
+
+constructor() { }
 
 ngOnInit() {
   this.pagination.length = this.someList.length;
   this.pagination.pageIndex = 0;
-  this.pagination.pageSize = 5;
+  this.pagination.pageSize = 2;
   this.changePaginator();
 }
 
@@ -50,14 +65,14 @@ updatePaginatorValues(changes): void {
     pageIndex: 0,
     length: 0
   };
-  pageSizeOptions = [5, 10, 25, 1000];
+  pageSizeOptions = [2, 5, 10, 25];
 
   constructor() { }
 
   ngOnInit() {
     this.pagination.length = this.someList.length;
     this.pagination.pageIndex = 0;
-    this.pagination.pageSize = 5;
+    this.pagination.pageSize = 2;
     this.changePaginator();
   }
 

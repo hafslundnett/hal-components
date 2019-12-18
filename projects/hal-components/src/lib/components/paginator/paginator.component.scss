@@ -10,6 +10,9 @@ $arrow-button-gap: 6px;
   justify-content: space-between;
   flex-wrap: wrap;
 
+  line-height: 150%;
+  letter-spacing: 0.15px;
+
   .dropdown {
     display: flex;
     flex-direction: row;
@@ -26,7 +29,7 @@ $arrow-button-gap: 6px;
     flex: none;
 
     .dots {
-      color: color('blue');
+      color: var(--hdd-color-primary);
       margin: 0 10px;
     }
 
@@ -54,13 +57,13 @@ $arrow-button-gap: 6px;
       cursor: pointer;
 
       &.is-selected {
-        color: color('white');
-        background-color: color('blue');
+        color: var(--hdd-color-white);
+        background-color: var(--hdd-color-primary);
         cursor: default;
       }
 
       &:not(.is-selected):hover {
-        background-color: rgba(color('grey'), .1);
+        background-color: var(--hdd-color-grey-border);
       }
     }
 

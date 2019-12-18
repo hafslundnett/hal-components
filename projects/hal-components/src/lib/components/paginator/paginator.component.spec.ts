@@ -86,6 +86,7 @@ describe('PaginatorComponent', () => {
 
   describe('"Alle" should be a page size option', () => {
     beforeEach(() => {
+      component.allowAll = true;
       const selectElement: HTMLElement = getElement('hal-selector mat-select .mat-select-trigger');
       selectElement.click();
       fixture.detectChanges();
