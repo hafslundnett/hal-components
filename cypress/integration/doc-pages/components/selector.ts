@@ -22,9 +22,15 @@ describe('Selector Test', () => {
         cy.get('hal-selector').contains('Alternative 5').should('not.be.visible');
     });
 
+    it('should display selected data when alternative is selected', () => {
+        cy.get('hal-selector').contains('Alternative 2').click();
+        cy.get('.selector-panel').contains('Alternative 5').click();
+        cy.get('h2').contains('Alt5').should('be.visible');
+    });
+
     it('should not be able to click disabled inputfield', () => {
         cy.get('hal-selector').contains('Label (no placeholder)').click();
         cy.get('hal-selector').contains('Alternative 1').should('not.be.visible');
-        cy.get('hal-selector').contains('Alternative 5').should('not.be.visible');
+        cy.get('hal-selector').contains('Alternative 4').should('not.be.visible');
     });
 });
