@@ -1,7 +1,7 @@
 @import '~@hafslundnett/hdd-style/variables/colors';
 
 $page-size: 30px;
-$paginator-width: 80px;
+$paginator-width: 71px;
 $arrow-button-gap: 6px;
 
 .paginator {
@@ -26,7 +26,8 @@ $arrow-button-gap: 6px;
   }
 
   .page-navigation {
-    flex: none;
+    display: flex;
+    align-items: center;
 
     .dots {
       color: var(--hdd-color-primary);
@@ -58,12 +59,12 @@ $arrow-button-gap: 6px;
 
       &.is-selected {
         color: var(--hdd-color-white);
-        background-color: var(--hdd-color-primary);
-        cursor: default;
+        background-color: var(--hdd-color-blue-dark);
       }
 
       &:not(.is-selected):hover {
-        background-color: var(--hdd-color-grey-border);
+        color: var(--hdd-color-white);
+        background-color: var(--hdd-color-primary);
       }
     }
 
