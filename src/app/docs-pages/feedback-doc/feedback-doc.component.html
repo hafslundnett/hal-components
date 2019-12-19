@@ -4,15 +4,26 @@
   </h1>
 
   <p class="doc-info">
-    This is the documentation for Feedback service. To use the service, call the "showMessage" method and include the arguments 
-    for message, severity, closeable and duration of the feedback message. The feedback messages appear by default in the top right corner of th UI. 
+    Alert messages are messages with information that is important or time sensitive.
+    The goal is to inform and redirect. Should be clear, communicative, descriptive, short, contextual and have the right color.
   </p>
-  <p class="doc-info">
-    <b>
-      Typical use: When displaying some kind of information after an action. 
-      The feedback messages are categorises in four main topics; success, information, warnings and error messages.
-    </b>
-  </p>
+
+  <div class="doc-info-use">
+    <h2><i class="fal fa-check-circle doc-info-use-icons icon-green"></i> <b>When to use:</b></h2>
+    <p>
+      Alert messages are used to guide the user. 
+      For an error, inform the user what the problem is. What went wrong? Why? 
+      For an alert, give them information about the status and how this can lead to an error. What can go wrong?
+    </p>
+  </div>
+
+  <div class="doc-info-use">
+    <h2><i class="fal fa-times-circle doc-info-use-icons icon-red"></i> <b>When not to use:</b></h2>
+    <p>
+      Alert messages should not be used unnecessarily.
+    </p>
+  </div>
+
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} FeedbackModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
