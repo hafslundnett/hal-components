@@ -28,10 +28,10 @@
       </ng-template>
 
       <ng-container *ngIf="selectedPageIndex > 1 && selectedPageIndex < pages.length - 2">
-        <i class="fal fa-ellipsis-h dots" *ngIf="selectedPageIndex > 2"></i>
+        <i class="fal fa-ellipsis-h dots ellipsis-left" *ngIf="selectedPageIndex > 2"></i>
         <button *ngFor="let page of pages | slice:selectedPageIndex - 1:selectedPageIndex + 2" (click)="setPage(page)" [ngClass]="{'is-selected': page === selectedPageIndex}">{{page + 1}}</button>
       </ng-container>
-      <i class="fal fa-ellipsis-h dots"></i>
+      <i class="fal fa-ellipsis-h dots ellipsis-right"></i>
 
       <ng-container *ngIf="selectedPageIndex < pages.length - 2; else multipleTo">
         <button (click)="setPage(pages.length - 1)" [ngClass]="{'is-selected': pages.length - 1 === selectedPageIndex}">{{pages.length}}</button>
