@@ -19,7 +19,7 @@ export class PaginatorDocComponent implements OnInit {
     { apiInput: '(paginatorChange)', description: 'Detects paginator changes' },
   ];
 
-  htmlCode = `<hal-paginator 
+  htmlCode = `<hal-paginator
   [length]="pagination?.length"
   [pageSizeOptions]="pageSizeOptions"
   [selectedPageSize]="pagination?.pageSize"
