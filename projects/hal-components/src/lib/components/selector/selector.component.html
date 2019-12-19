@@ -12,6 +12,7 @@
     (selectionChange)="onSelectedChange()"
     [disabled]="disabled"
     panelClass="selector-panel"
+    [ngClass]="{'is-small': isSmall}"
   >
     <mat-option 
       *ngFor="let data of selectData" 

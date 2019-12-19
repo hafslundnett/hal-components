@@ -18,14 +18,21 @@ export class SelectorDocComponent implements OnInit {
     {value: 'Alt6', viewValue: 'Alternative 6'},
     {value: 'Alt7', viewValue: 'Alternative 7'},
   ];
+  selectSmallData: SelectData[] = [
+    {value: '10', viewValue: '10'},
+    {value: '25', viewValue: '25'},
+    {value: 'alle', viewValue: 'Alle'},
+  ];
   selectedEx1 = 'Alt1';
   selectedEx2 = undefined;
   selectedEx3 = undefined;
+  selectedEx4 = '10';
   choiceDisabled = 'Alt3';
   selectedChange: string;
   selectedLabelEx1 = 'Label for data';
   selectedLabelEx2 = 'Label for data';
   selectedLabelEx3 = 'Label (no placeholder)';
+  placeholder = 'Placeholder';
 
   selectorTable: ApiTableRow[] = [
     { apiInput: '[selectData]', description: 'For the data displayed in the select dropdown.' },
