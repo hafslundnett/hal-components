@@ -42,9 +42,10 @@ export class SelectorDocComponent implements OnInit {
     { apiInput: '[label]', description: 'For the description on top of the input field.' },
     // tslint:disable-next-line:max-line-length
     { apiInput: '[placeholder]', description: 'Optional input for extra description in the input field. If no placeholder is given the label will be default placeholder.' },
-    { apiInput: '[disabled]', description: 'Optional input making the dropdown disabled.' },
-    // { apiInput: '[required]', description: 'Optional input making it required to choose a value.' },
-    { apiInput: '[noLabel]', description: 'Optional input making removing the label. Should only be used with consent from designer.' },
+    { apiInput: '[disabled]', description: 'Optional boolean making the dropdown disabled.' },
+    { apiInput: '[choiceDisabled]', description: 'Optional input making a specific option disabled.' },
+    { apiInput: '[noLabel]', description: 'Optional boolean removing the label. Should only be used in specific cases.' },
+    { apiInput: '[isSmall]', description: 'Optional boolean making the dropdown small. Should only be used in specific cases.' },
   ];
 
   htmlCode = `<div class="example">
@@ -72,8 +73,17 @@ export class SelectorDocComponent implements OnInit {
     [(selected)]="selectedEx3"
     [label]="selectedLabelEx3"
     [disabled]="true"
+  ></hal-selector>
+</div>
+<div class="small-example">
+  <hal-selector
+    [selectData]="selectSmallData"
+    [(selected)]="selectedEx4"
+    [isSmall]="true"
     [noLabel]="true"
   ></hal-selector>
+</div>
+<h2 *ngIf="selectedEx4">Selected data: <b>{{ selectedEx4 }}</b></h2>
 </div>`;
 
   tsCode = `selectData: SelectData[] = [
@@ -85,14 +95,22 @@ export class SelectorDocComponent implements OnInit {
   {value: 'Alt6', viewValue: 'Alternative 6'},
   {value: 'Alt7', viewValue: 'Alternative 7'},
 ];
+selectSmallData: SelectData[] = [
+  {value: '10', viewValue: '10'},
+  {value: '25', viewValue: '25'},
+  {value: 'alle', viewValue: 'Alle'},
+];
+
 selectedEx1 = 'Alt1';
 selectedEx2 = undefined;
 selectedEx3 = undefined;
+selectedEx4 = '10';
 choiceDisabled = 'Alt3';
 selectedChange: string;
 selectedLabelEx1 = 'Label for data';
 selectedLabelEx2 = 'Label for data';
-selectedLabelEx3 = 'Label (no placeholder)';`;
+selectedLabelEx3 = 'Label (no placeholder)';
+placeholder = 'Placeholder';`;
 
   constructor() { }
 
