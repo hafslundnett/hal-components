@@ -49,7 +49,7 @@ describe('SelectorComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fdescribe('Should initate the component', () => {
+  describe('Should initate the component', () => {
     it('with disabled as false', () => {
       expect(matSelect.disabled).toEqual(false);
     });
