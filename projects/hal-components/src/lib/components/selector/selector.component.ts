@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { SelectData } from './select-data.interface';
+import { MatSelect } from '@angular/material';
 
 @Component({
   selector: 'hal-selector',
@@ -9,7 +10,6 @@ import { SelectData } from './select-data.interface';
 })
 
 export class SelectorComponent implements OnInit {
-
   @Input() selectData: SelectData[];
   @Input() selected: string;
   @Input() label: string;
