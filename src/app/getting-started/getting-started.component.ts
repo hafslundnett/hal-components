@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class GettingStartedComponent implements OnInit {
 
   shellcode = `ng add @hafslundnett/hal-components`;
+  angularMaterialCode = `ng add @angular/material`;
   scssCode = `@import "~@hafslundnett/hdd-style/main";
 @import "~@hafslundnett/hdd-style/variables/main";
 @import "~@angular/material/theming";
