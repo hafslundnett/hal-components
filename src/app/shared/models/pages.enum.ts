@@ -20,4 +20,5 @@ export enum Pages {
   LoadingSpinnerDoc = 'loading-spinner-doc',
   Schematic = 'schematic',
   SelectorDoc = 'selector-doc',
+  Autocomplete = 'autocomplete',
 }

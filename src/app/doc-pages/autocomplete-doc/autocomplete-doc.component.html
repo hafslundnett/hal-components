@@ -1,0 +1,32 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">AutocompleteDoc</h1>
+
+  <p class="doc-info">
+    TODO
+  </p>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} AutocompleteDocComponentModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <div class="example-container">
+
+    <div class="hdd-form_input hdd-dropdown">
+      <input [(ngModel)]="name" value="Jer" placeholder="Please write something like Greger">
+
+      <hal-autocomplete [value]="name" [options]="options"></hal-autocomplete>
+    </div>
+
+  </div>
+
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  <hal-code-highlighter [isHTML]="true" [code]="tsCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="apiTableData"></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>
