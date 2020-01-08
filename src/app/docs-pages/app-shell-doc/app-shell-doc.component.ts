@@ -14,6 +14,8 @@ export class AppShellDocComponent implements OnInit {
     { apiInput: '[user]', description: 'The current active user' },
     { apiInput: '[settingsPagePath]', description: 'URL to settings page in your application' },
     { apiInput: '[signOutPagePath]', description: 'URL to sign out page in your application. That page should auto sign out the user' },
+    // tslint:disable-next-line:max-line-length
+    { apiInput: '[appListDomainUrl]', description: 'The domain part of the URL you want the app switcher to go to, defaults to prod (hafslundnett.io)' },
     { apiInput: 'ngProjectAs="pageTitle"', description: 'The current page title' },
     { apiInput: 'ngProjectAs="pageContent"', description: 'The page content. Either a router-outlet or a component' },
   ];
