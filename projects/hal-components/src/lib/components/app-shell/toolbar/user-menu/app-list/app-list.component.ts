@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 interface App {
   name: string;
@@ -12,7 +12,7 @@ interface App {
   templateUrl: './app-list.component.html',
   styleUrls: ['./app-list.component.scss']
 })
-export class AppListComponent implements OnInit {
+export class AppListComponent implements OnInit, OnChanges {
 
   @Input() appListDomainUrl: string;
 
@@ -52,6 +52,9 @@ export class AppListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
     this.appList = this.appList.map((currentApp: App) => {
       return {
         ...currentApp,
