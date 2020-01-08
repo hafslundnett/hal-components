@@ -50,7 +50,7 @@
           [(selected)]="selectedEx2"
           (selectedChange)="someMethod($event)"
           [label]="selectedLabelEx2" 
-          [placeholder]="'Placeholder'"
+          [placeholder]="placeholder"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
@@ -62,9 +62,19 @@
           [(selected)]="selectedEx3"
           [label]="selectedLabelEx3"
           [disabled]="true" 
+        ></hal-selector>
+      </div>
+    </div>
+    <div class="example-container">
+      <div class="small-example">
+        <hal-selector 
+          [selectData]="selectSmallData" 
+          [(selected)]="selectedEx4"
+          [isSmall]="true"
           [noLabel]="true"
         ></hal-selector>
       </div>
+      <h2 *ngIf="selectedEx4">Selected data: <b>{{ selectedEx4 }}</b></h2>
     </div>
 
     <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>

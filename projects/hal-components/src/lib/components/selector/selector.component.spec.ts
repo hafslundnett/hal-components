@@ -49,6 +49,18 @@ describe('SelectorComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  describe('Should initate the component', () => {
+    it('with disabled as false', () => {
+      expect(matSelect.disabled).toEqual(false);
+    });
+    it('with isSmall as false', () => {
+      expect(getElementByCss('mat-select.is-small')).toBeFalsy();
+    });
+    it('with noLabel as false', () => {
+      expect(getElementByCss('.hal-selector-label')).toBeTruthy();
+    });
+  });
+
   it('Should have same amount of options as defined in selectData', () => {
     const options: MatOption[] = matSelect.options.toArray();
     expect(options.length).toBe(component.selectData.length);
@@ -93,6 +105,17 @@ describe('SelectorComponent', () => {
 
     it('hal-selector-label should not exist', () => {
       expect(getElementByCss('.hal-selector-label')).toBeFalsy();
+    });
+  });
+
+  describe('If isSmall is true', () => {
+    beforeEach(() => {
+      component.isSmall = true;
+      fixture.detectChanges();
+    });
+
+    it('Input should be same size as sent in', () => {
+      expect(getElementByCss('mat-select.is-small')).toBeTruthy();
     });
   });
 

@@ -44,7 +44,7 @@ export class TableViewerDefaultDocComponent implements OnInit {
 tableConfig = new DemoTableConfig();
 tableConfigStatic = DemoTableConfig;
 sliceSize = 10000;
-filteredTableConfig: TableEngine<DemoData>;
+filteredTableConfig: TableEngine<DemoData> = this.tableConfig;
 
 setOnlyName() {
   const newFilteredConfig = new DemoTableConfig();
@@ -90,12 +90,11 @@ setAll() {
   tableConfig = new DemoTableConfig();
   tableConfigStatic = DemoTableConfig;
   sliceSize = 10000;
-  filteredTableConfig: TableEngine<DemoData>;
+  filteredTableConfig: TableEngine<DemoData> = this.tableConfig;
 
   constructor() { }
 
   ngOnInit() {
-    this.filteredTableConfig = this.tableConfig;
   }
 
   setOnlyName() {

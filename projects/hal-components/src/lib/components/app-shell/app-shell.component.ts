@@ -12,6 +12,7 @@ export class AppShellComponent implements OnInit {
   @Input() user: User = { email: '', name: '', thumbnail: undefined};
   @Input() settingsPagePath = 'settings';
   @Input() signOutPagePath = 'logout';
+  @Input() appListDomainUrl = 'hafslundnett.io';
   @Input() menuItems: MenuElement[];
 
   constructor() { }

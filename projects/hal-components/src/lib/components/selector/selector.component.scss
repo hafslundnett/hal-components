@@ -1,10 +1,13 @@
-$form-select-padding-top-bottom: 0.7rem;
-$form-select-padding-sides: 0.9rem;
+$select-padding-top-bottom: 7px;
+$select-padding-left: 16px;
+$select-padding-right: 18px;
+$select-small-padding-top-bottom: 4px;
+$select-small-padding-sides: 10px;
 $form-select-border-radius: 0.25rem;
 $select-border-width: 1px;
 
 @function get-subtract-padding() {
-  @return $form-select-padding-sides * 2;
+  @return $select-padding-left + $select-padding-right;
 }
 
 @function get-subtract-border() {
@@ -24,8 +27,10 @@ $select-border-width: 1px;
     color: var(--hdd-color-black);
     border: 1px solid var(--hdd-color-grey);
     border-radius: $form-select-border-radius;
-    padding: $form-select-padding-top-bottom $form-select-padding-sides;
+    padding: $select-padding-top-bottom $select-padding-left $select-padding-top-bottom $select-padding-right;
     font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0.15px;
 
     &-disabled,
     &-disabled .mat-select-trigger {
@@ -41,11 +46,18 @@ $select-border-width: 1px;
       content: "\f107"; // Arrow
       display: inline-block;
       vertical-align: middle;
+      padding-left: 12px;
     }
 
     // Removing material-arrow
     &-arrow {
       border: none;
+    }
+
+    &.is-small {
+      padding: $select-small-padding-top-bottom $select-small-padding-sides;
+      font-size: 14px;
+      text-align: right;
     }
   }
 }

@@ -17,6 +17,7 @@ export class SelectorComponent implements OnInit {
   @Input() disabled = false;
   @Input() choiceDisabled: string;
   @Input() noLabel = false;
+  @Input() isSmall = false;
   @Output() selectedChange = new EventEmitter();
 
   constructor() { }
