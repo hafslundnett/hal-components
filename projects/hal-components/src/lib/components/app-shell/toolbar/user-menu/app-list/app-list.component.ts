@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 interface App {
   name: string;
   icon: string;
   url: string;
+  subdomain: string;
 }
 
 @Component({
@@ -11,39 +12,55 @@ interface App {
   templateUrl: './app-list.component.html',
   styleUrls: ['./app-list.component.scss']
 })
-export class AppListComponent implements OnInit {
+export class AppListComponent implements OnInit, OnChanges {
+
+  @Input() appListDomainUrl: string;
 
   appList: App[] = [
     {
       name: 'Orbit',
       icon: 'fa-fighter-jet',
-      url: 'https://orbit.hafslundnett.io'
+      url: '',
+      subdomain: 'orbit'
     },
     {
       name: 'Drops',
       icon: 'fa-plane',
-      url: 'https://mdm.hafslundnett.io/dashboard?status=0'
-    },
-    {
-      name: 'Mdm',
-      icon: 'fa-plane',
-      url: 'https://mdm.hafslundnett.io/dashboard?status=0'
+      url: '',
+      subdomain: 'mdm'
     },
     {
       name: 'ADLS',
       icon: 'fa-plane',
-      url: 'https://adls.hafslundnett.io/'
+      url: '',
+      subdomain: 'adls'
+    },
+    {
+      name: 'Smartvann',
+      icon: 'fa-plane',
+      url: '',
+      subdomain: 'smartvann'
     },
     {
       name: 'Jordfeil',
       icon: 'fa-plane',
-      url: 'https://jordfeil.hafslundnett.io/'
+      url: '',
+      subdomain: 'jordfeil'
     },
   ];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.appList = this.appList.map((currentApp: App) => {
+      return {
+        ...currentApp,
+        url: 'https://' + currentApp.subdomain + '.' + this.appListDomainUrl + '/'
+      };
+    });
   }
 
   cancelMouseEventBubble(e: MouseEvent) {
