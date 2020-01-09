@@ -46,4 +46,9 @@ export class AutocompleteDocComponent implements OnInit {
   ngOnInit() {
   }
 
+  optionSelected(selectedItem: AutocompleteItem) {
+    this.name = selectedItem.label;
+    console.log('selected!', selectedItem);
+  }
+
 }

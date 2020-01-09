@@ -15,9 +15,14 @@
   <div class="example-container">
 
     <div class="hdd-form_input hdd-dropdown">
-      <input [(ngModel)]="name" value="Jer" placeholder="Please write something like Greger">
+      <input [(ngModel)]="name" placeholder="Please write something like Greger" #inputElement>
 
-      <hal-autocomplete [value]="name" [options]="options"></hal-autocomplete>
+      <hal-autocomplete 
+        [value]="name" 
+        [options]="options" 
+        (optionSelected)="optionSelected($event)" 
+        [inputElement]="inputElement"
+      ></hal-autocomplete>
     </div>
 
   </div>
