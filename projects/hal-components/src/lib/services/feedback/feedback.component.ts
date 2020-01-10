@@ -1,5 +1,5 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input, EventEmitter, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { FeedbackExtras } from './feedback-extras';
@@ -22,7 +22,6 @@ import { FeedbackExtras } from './feedback-extras';
         style({
           height: '*',
           opacity: 1,
-          margin: 'var(--hdd-spacing-4)'
         })
       ),
       transition('visible <=> void', animate(`600ms cubic-bezier(0.6, 0, 0.1, 1)`))
@@ -34,8 +33,9 @@ export class FeedbackComponent {
   private onDestroy = new Subject();
   private durationTimeoutId: any;
 
-  message: string;
-  extras: FeedbackExtras;
+  @Input() message: string;
+  @Input() extras: FeedbackExtras;
+  @Output() destroyed = new EventEmitter<void>();
   onDestroy$ = this.onDestroy.asObservable();
   animationState: 'visible' | 'void' = 'visible';
 
@@ -52,6 +52,7 @@ export class FeedbackComponent {
     if (this.animationState === 'void') {
       this.onDestroy.next();
       this.onDestroy.complete();
+      this.destroyed.emit();
     } else if (this.animationState === 'visible') {
       if (this.extras) {
         this.dismissAfter(this.extras.duration);

@@ -1,0 +1,9 @@
+<div class="feedback-list-container"> 
+    <div *ngFor="let message of messages; trackBy: trackByFunction">
+        <hal-feedback 
+        [message]="message.message" 
+        [extras]="message.extras"
+        (destroyed)="messageDestroyed(message.id)"
+        ></hal-feedback>
+    </div>
+</div>

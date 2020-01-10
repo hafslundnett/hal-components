@@ -1,0 +1,10 @@
+.feedback-list-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--hdd-spacing-2);
+    margin-right: var(--hdd-spacing-2);
+
+    div:not(:last-child) {
+        margin-bottom: var(--hdd-spacing-1);
+    }
+}
