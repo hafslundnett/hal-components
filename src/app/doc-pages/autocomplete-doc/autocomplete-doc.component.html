@@ -1,9 +1,11 @@
 <div class="doc-page-container">
 
-  <h1 class="doc-title">AutocompleteDoc</h1>
+  <h1 class="doc-title">Autocomplete</h1>
 
   <p class="doc-info">
-    TODO
+    The Autocomplete component can be attached to input elements in order to provide easy to use autocomplete functionality with keyboard navigation (arrow up/down, enter, escape). 
+    The options are filtered automatically based on what you provide to the component. The autocomplete part is an overlay, and do not push content below.
+    The autocomplete are just suggestions and do not prevent the user from entering something not in the list of choices. Use a select if you want to limit the user to the choices.
   </p>
 
   <hal-doc-import-line>
@@ -14,21 +16,24 @@
 
   <div class="example-container">
 
-    <div class="hdd-form_input hdd-dropdown">
-      <input [(ngModel)]="name" placeholder="Please write something like Greger" #inputElement>
+    <div class="hdd-form_field">
+      <label class="hdd-form_field_label" for="title">Please enter name </label>
+      <div class="hdd-form_input hdd-dropdown">
+        <input [(ngModel)]="name" placeholder="Please write name" #inputElement>
 
-      <hal-autocomplete 
-        [value]="name" 
-        [options]="options" 
-        (optionSelected)="optionSelected($event)" 
-        [inputElement]="inputElement"
-      ></hal-autocomplete>
+        <hal-autocomplete 
+          [inputText]="name" 
+          [options]="options" 
+          [inputElement]="inputElement"
+          (optionSelected)="optionSelected($event)" 
+        ></hal-autocomplete>
+      </div>
     </div>
 
   </div>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
-  <hal-code-highlighter [isHTML]="true" [code]="tsCode"></hal-code-highlighter>
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
 
   <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="apiTableData"></hal-doc-api-table>
 

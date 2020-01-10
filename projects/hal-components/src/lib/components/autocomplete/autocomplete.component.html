@@ -1,5 +1,10 @@
-<div class="hdd-dropdown_content is-active" [ngClass]="{ 'is-active': showAutocomplete }"> 
+<div class="hdd-dropdown_content is-active" *ngIf="showAutocomplete"> 
   <!--  TODO is-active on active item -->
   <!--  TODO bold on hit, use pipe? -->
-  <div class="hdd-dropdown_content_item" *ngFor="let option of filteredOptions" (click)="optionClicked(option)">{{option.label}}</div>
+  <div 
+    class="hdd-dropdown_content_item" 
+    *ngFor="let option of filteredOptions; let i = index" 
+    (click)="optionClicked(option)"
+    [ngClass]="{ 'is-active': activeIndex === i }"
+  >{{option.label}}</div>
 </div>

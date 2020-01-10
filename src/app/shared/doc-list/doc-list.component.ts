@@ -74,7 +74,7 @@ export class DocListComponent implements OnInit {
     },
     {
       cardTitle: 'Autocomplete',
-      cardSubtitle: 'Selector / Dropdown component',
+      cardSubtitle: 'Add autocomplete to inputs',
       cardIcon: 'fa-bars',
       docUrl: Pages.Autocomplete
     },

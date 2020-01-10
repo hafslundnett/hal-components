@@ -17,7 +17,7 @@
   </div>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
-  <hal-code-highlighter [isHTML]="true" [code]="tsCode"></hal-code-highlighter>
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
 
   <hal-doc-api-table [apiTableHeader]="'<%= apiTableHeaderName %>'" [apiTableRows]="apiTableData"></hal-doc-api-table>
 
