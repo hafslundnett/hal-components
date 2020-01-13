@@ -49,6 +49,7 @@ export function docsPage(options: DocsPageSchema): Rule {
         classify: strings.classify, // <-- function
         dasherize: strings.dasherize, // <-- function
         name: options.name + '-doc', // <-- variable
+        halCompName: options.name, // <-- variable
         apiTableHeaderName // <-- variable
       }),
       move(normalize(newPath))
