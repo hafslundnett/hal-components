@@ -9,6 +9,8 @@ export const feedbackAnimation: AnimationTriggerMetadata = trigger('feedbackAnim
             opacity: 0
         })
     ),
+    transition('void => visible', animate('500ms cubic-bezier(0.16, 0.52, 0.63, 0.88)')),
+
     state(
         'visible',
         style({
@@ -17,5 +19,5 @@ export const feedbackAnimation: AnimationTriggerMetadata = trigger('feedbackAnim
             opacity: 1,
         })
     ),
-    transition('visible <=> void', animate(`600ms cubic-bezier(0.6, 0, 0.1, 1)`))
+    transition('visible => void', animate(`500ms cubic-bezier(0, 0, 0.58, 1)`))
 ]);

@@ -17,7 +17,7 @@ export class FeedbackComponent implements OnInit {
 
   @Input() message: string;
   @Input() extras: FeedbackExtras;
-  // Outputs event to service that feedback element is removed.
+  // Notifies the feedbacklist that the element i removed.
   @Output() destroyed = new EventEmitter<void>();
   onDestroy$ = this.onDestroy.asObservable();
   animationState: 'visible' | 'void' = 'visible';
@@ -37,7 +37,7 @@ export class FeedbackComponent implements OnInit {
    * The state decides whether the component should be destroyed or not
    */
 
-  animationDone() {
+  animationDone(): void {
     if (this.animationState === 'void') {
       this.onDestroy.next();
       this.onDestroy.complete();

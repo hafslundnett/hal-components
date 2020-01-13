@@ -12,7 +12,7 @@ describe('FeedbackListComponent', () => {
       declarations: [FeedbackListComponent, FeedbackComponent],
       imports: [NoopAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,9 +20,9 @@ describe('FeedbackListComponent', () => {
     component = fixture.componentInstance;
 
     component.feedbackMessageList = [
-      { message: 'Great Success', extras: { severity: 'success', duration: 2000, closable: true}, id: 1 },
-      { message: 'Oh no Dange!', extras: { severity: 'warn', duration: 2000, closable: true}, id: 2 },
-      { message: 'ok, something went wrong', extras: { severity: 'error', duration: 2000, closable: true}, id: 3 },
+      { message: 'Great Success', extras: { severity: 'success', duration: 2000, closable: true }, id: 1 },
+      { message: 'Oh no Dange!', extras: { severity: 'warn', duration: 2000, closable: true }, id: 2 },
+      { message: 'ok, something went wrong', extras: { severity: 'error', duration: 2000, closable: true }, id: 3 },
     ];
     fixture.detectChanges();
   });

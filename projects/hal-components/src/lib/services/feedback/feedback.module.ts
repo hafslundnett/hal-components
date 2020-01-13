@@ -9,7 +9,7 @@ import { FeedbackListComponent } from './feedback-list/feedback-list.component';
     CommonModule,
     OverlayModule
   ],
-  declarations: [FeedbackComponent, FeedbackListComponent ],
-  entryComponents: [FeedbackComponent, FeedbackListComponent ]
+  declarations: [FeedbackComponent, FeedbackListComponent],
+  entryComponents: [FeedbackComponent, FeedbackListComponent]
 })
 export class FeedbackModule { }

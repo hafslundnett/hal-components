@@ -22,11 +22,11 @@ export class FeedbackListComponent implements OnInit, OnDestroy {
     this.messageDestroyed$.complete();
   }
 
-  setMessage(newMessages: FeedbackElement[]) {
+  setMessage(newMessages: FeedbackElement[]): void {
     this.feedbackMessageList = newMessages;
   }
 
-  messageDestroyed(id: number) {
+  messageDestroyed(id: number): void {
     this.messageDestroyed$.next(id);
   }
 
