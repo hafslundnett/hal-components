@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { AutocompleteComponent } from './autocomplete.component';
 import { AutocompleteItem } from './autocomplete-item.interface';
 import { Component } from '@angular/core';
@@ -47,7 +47,7 @@ class TestComponent {
   }
 }
 
-fdescribe('AutocompleteComponent', () => {
+describe('AutocompleteComponent', () => {
   let component: AutocompleteComponent;
   let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
@@ -159,6 +159,18 @@ fdescribe('AutocompleteComponent', () => {
       });
     });
 
+    describe('writing Jan Greger', () => {
+      beforeEach(() => {
+        testComponent.inputText = 'Jan Greger';
+        fixture.detectChanges();
+      });
+      it('gives zero options', () => {
+        const autocompleteElements = getAllElementByCSS('.hdd-dropdown_content_item');
+        expect(autocompleteElements).toBeTruthy();
+        expect(autocompleteElements.length).toBe(0);
+      });
+    });
+
     describe('writing Hans', () => {
       beforeEach(() => {
         testComponent.inputText = 'Hans';
@@ -190,6 +202,35 @@ fdescribe('AutocompleteComponent', () => {
       });
     });
 
+    describe('removing focus ', () => {
+      beforeEach(fakeAsync (() => {
+        (component as any).onBlur();
+        tick(150);
+        fixture.detectChanges();
+      }));
+      it('will close autocomplete', () => {
+        const autocomplete = getElementByCSS('.hdd-dropdown_content');
+        expect(autocomplete).toBeFalsy();
+      });
+    });
+
+    describe('entering some text, then removing it all', () => {
+      beforeEach(() => {
+        testComponent.inputText = 'Greger';
+        fixture.detectChanges();
+        testComponent.inputText = '';
+        fixture.detectChanges();
+      });
+      it('will display autocomplete', () => {
+        const autocomplete = getElementByCSS('.hdd-dropdown_content');
+        expect(autocomplete).toBeTruthy();
+      });
+      it('will display all choices', () => {
+        const autocompleteElements = getAllElementByCSS('.hdd-dropdown_content_item');
+        expect(autocompleteElements.length).toBe(options.length);
+      });
+    });
+
   });
 
   function getElementByCSS(css: string) {
@@ -199,6 +240,8 @@ fdescribe('AutocompleteComponent', () => {
     return fixture.debugElement.queryAll(By.css(css));
   }
 });
+
+// entering text, then removing all gives all options
 
 /*
 describe('giving input focus', () => {

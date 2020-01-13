@@ -17,6 +17,7 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
 
   showAutocomplete = false;
   activeIndex = 0;
+  hasFocus = false;
 
   filteredOptions: AutocompleteItem[] = [];
 
@@ -47,14 +48,10 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    // TODO fix with angular 9 and TS 3.7
-    if (this.inputText && this.inputText.length > 0) {
-      this.showAutocomplete = true;
-    } else {
-      this.showAutocomplete = false;
-    }
-
     if (changes.inputText) {
+      if (this.hasFocus) {
+        this.showAutocomplete = true;
+      }
       this.inputTextChanged();
     }
   }
@@ -130,16 +127,14 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
     if (this.filteredOptions.length > 0) {
       this.showAutocomplete = true;
     }
+    this.hasFocus = true;
   }
 
   private onBlur() {
-    if (!this.inputText || this.inputText.length === 0) {
-      // give time for click event to fire
-      setTimeout(() => {
-        this.showAutocomplete = false;
-      }, 100);
-      this.showAutocomplete = true;
-    }
+    setTimeout(() => {
+      this.showAutocomplete = false;
+    }, 100);
+    this.hasFocus = false;
   }
 
   private getFilteredOptions(allOptions: AutocompleteItem[], currentValue: string): AutocompleteItem[] {
