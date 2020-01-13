@@ -1,11 +1,9 @@
-import { Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 
 import { FeedbackModule } from './feedback.module';
-import { FeedbackComponent } from './feedback.component';
 import { FeedbackExtras } from './feedback-extras';
-import { Subject } from 'rxjs';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { FeedbackElement } from './feedback-element.interface';
 
@@ -27,10 +25,9 @@ export class FeedbackService {
     this.overlayRef = this.overlay.create({
       hasBackdrop: false,
       scrollStrategy: this.overlay.scrollStrategies.noop(),
-      positionStrategy: this.overlay.position().global().right().top(),
+      positionStrategy: this.overlay.position().global().right().top('var(--hdd-spacing-7)'),
       panelClass: 'overlay-container'
     });
-    // TODO implement trackByID on NgFor.
   }
 
   showMessage(message: string, extras?: FeedbackExtras): void {
@@ -71,6 +68,9 @@ export class FeedbackService {
     this.messages = this.messages.filter(currentmessage => currentmessage.id !== id);
     if (this.messages.length === 0) {
       this.closeFeedbackList();
+    }
+    if (this.feedbackList) {
+      this.feedbackList.setMessage(this.messages);
     }
   }
 }

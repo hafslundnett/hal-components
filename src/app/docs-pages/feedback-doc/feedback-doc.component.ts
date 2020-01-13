@@ -93,8 +93,4 @@ displayWarning() {
         duration: 2000
       });
   }
-
-  ComponentDemo() {
-    // TODO Use it like the normal ones just with a component.
-  }
 }

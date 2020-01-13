@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { FeedbackElement } from '../feedback-element.interface';
 import { Subject } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class FeedbackListComponent implements OnInit, OnDestroy {
 
-  messages: FeedbackElement[] = [];
+  feedbackMessageList: FeedbackElement[] = [];
 
   messageDestroyed$ = new Subject<number>();
 
@@ -23,15 +23,14 @@ export class FeedbackListComponent implements OnInit, OnDestroy {
   }
 
   setMessage(newMessages: FeedbackElement[]) {
-    this.messages = newMessages;
+    this.feedbackMessageList = newMessages;
   }
 
   messageDestroyed(id: number) {
     this.messageDestroyed$.next(id);
   }
 
-  trackByFunction(message) {
-    if (!message) { return null; }
-    return message.id;
+  trackByFunction(index: number, item: any) {
+    return item.id;
   }
 }
