@@ -47,3 +47,6 @@ export * from './lib/components/loading-spinner/loading-spinner.module';
 
 export * from './lib/components/selector/selector.module';
 export * from './lib/components/selector/select-data.interface';
+
+export * from './lib/components/autocomplete/autocomplete.module';
+export * from './lib/components/autocomplete/autocomplete-item.interface';
