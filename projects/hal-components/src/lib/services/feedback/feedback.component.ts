@@ -17,7 +17,6 @@ export class FeedbackComponent implements OnInit {
 
   @Input() message: string;
   @Input() extras: FeedbackExtras;
-  // Notifies the feedbacklist that the element i removed.
   @Output() destroyed = new EventEmitter<void>();
   onDestroy$ = this.onDestroy.asObservable();
   animationState: 'visible' | 'void' = 'visible';
