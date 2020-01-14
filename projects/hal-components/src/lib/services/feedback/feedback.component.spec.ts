@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FeedbackComponent } from './feedback.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
