@@ -12,6 +12,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   @Input() user: User = { email: '', name: '', thumbnail: undefined };
   @Input() settingsPagePath = '';
   @Input() signOutPagePath = '';
+  @Input() appListDomainUrl: string;
 
   initials: string;
   hasFocus = false;

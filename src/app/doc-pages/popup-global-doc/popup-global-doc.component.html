@@ -8,13 +8,21 @@
     size of an overlay.
     The overlay will appear in the middle of the screen. To close the overlay use the detach method. <br />
   </p>
-  <p class="doc-info"> 
-    <b>
-      Typical use: Displaying some kind of information without any actions. 
-      The popup is more generic and made for use in non-specific scenarios, but can also be customized if needed. 
-    </b>
-  </p>
 
+  <div class="doc-info-use">
+    <h2><b>✅ When to use:</b></h2>
+    <p>
+      The global popup should be used when you want to display information or actions as a popup that are not directly connected to a visual element on the page.
+      The popup is more generic and made for use in non-specific scenarios, but can also be customized if needed. 
+    </p>
+  </div>
+  <div class="doc-info-use">
+    <h2><b>⛔ When not to use:</b></h2>
+    <p>
+      Dialogs should not be used for information that is not relevant to the user's goals.
+    </p>
+  </div>
+  
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} PopupGlobalService {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
   </hal-doc-import-line>
