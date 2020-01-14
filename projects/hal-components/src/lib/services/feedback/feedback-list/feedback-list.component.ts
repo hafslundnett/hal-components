@@ -22,7 +22,7 @@ export class FeedbackListComponent implements OnInit, OnDestroy {
     this.messageDestroyed$.complete();
   }
 
-  setMessage(newMessages: FeedbackElement[]): void {
+  setNewMessages(newMessages: FeedbackElement[]): void {
     this.feedbackMessageList = newMessages;
   }
 

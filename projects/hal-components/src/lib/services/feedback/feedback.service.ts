@@ -43,7 +43,7 @@ export class FeedbackService {
     if (!this.feedbackList) {
       this.feedbackList = this.openFeedbackList();
     }
-    this.feedbackList.setMessage(this.feedbackMessages);
+    this.feedbackList.setNewMessages(this.feedbackMessages);
   }
 
   openFeedbackList(): FeedbackListComponent {
@@ -69,7 +69,7 @@ export class FeedbackService {
       this.closeFeedbackList();
     }
     if (this.feedbackList) {
-      this.feedbackList.setMessage(this.feedbackMessages);
+      this.feedbackList.setNewMessages(this.feedbackMessages);
     }
   }
 }
