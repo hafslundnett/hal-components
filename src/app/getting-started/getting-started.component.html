@@ -6,7 +6,7 @@
   </p>
 
   <h2 class="doc-subtitle">Automatic Installation HAL</h2>
-  <hal-code-highlighter [isSHELL]="true" [code]="shellcode"></hal-code-highlighter>
+  <hal-code-highlighter [isSHELL]="true" [code]="shellCode"></hal-code-highlighter>
 
   <p class="doc-info">
     To add HAl simply open your terminal inside your project root folder and copy the command from the
@@ -20,28 +20,21 @@
     <a class="hdd-link"
       href="https://www.npmjs.com/package/@hafslundnett/hal-components">npmjs.com/package/@hafslundnett/hal-components</a>
     <br>
-    Install with yarn or npm like:
   </p>
-  <ul>
-    <li class="list-item">Yarn: <span class="terminal-line">yarn add @hafslundnett/hal-components</span></li>
-    <li class="list-item">Npm: <span class="terminal-line">npm install @hafslundnett/hal-components</span></li>
-  </ul>
+  
+  <hal-code-highlighter [isSHELL]="true" [code]="yarnHalCode"></hal-code-highlighter>
 
   <p class="doc-info">
     Addiontal packages that are needed for HAL work are HDD-Style, Angular Material and CDK.
-    You can install HDD-style through yarn or npm:
+    You can install HDD-style through yarn:
   </p>
-  <ul>
-    <li class="list-item">Yarn: <span class="terminal-line">yarn add @hafslundnett/hdd-style</span></li>
-    <li class="list-item">Npm: <span class="terminal-line">npm install @hafslundnett/hdd-style</span></li>
-  </ul>
+  <hal-code-highlighter [isSHELL]="true" [code]="yarnHddCode"></hal-code-highlighter>
   <p class="doc-info">
     To install Angular Material use the install schematic. This will install both Angular Material and CDK. In your
     project root folder open your termninal and run the following command:
   </p>
-  <ul>
-    <li class="list-item"><span class="terminal-line">ng add @angular/material</span></li>
-  </ul>
+    <hal-code-highlighter [isSHELL]="true" [code]="angularMaterialCode"></hal-code-highlighter>
+
   <p class="doc-info">
     You can find more information about Angular Material and it´s install schematic here:
     <a class="hdd-link" href="https://material.angular.io/guide/getting-started">Angular Material - Getting Started</a>
