@@ -6,7 +6,7 @@
   </p>
 
   <h2 class="doc-subtitle">Automatic Installation HAL</h2>
-  <hal-code-highlighter [isSHELL]="true" [code]="shellcode"></hal-code-highlighter>
+  <hal-code-highlighter [isSHELL]="true" [code]="shellCode"></hal-code-highlighter>
 
   <p class="doc-info">
     To add HAl simply open your terminal inside your project root folder and copy the command from the
@@ -20,20 +20,26 @@
     <a class="hdd-link"
       href="https://www.npmjs.com/package/@hafslundnett/hal-components">npmjs.com/package/@hafslundnett/hal-components</a>
     <br>
-    Install with yarn or npm like:
   </p>
-  <ul>
-    <li class="list-item">Yarn: <span class="terminal-line">yarn add @hafslundnett/hal-components</span></li>
-    <li class="list-item">Npm: <span class="terminal-line">npm install @hafslundnett/hal-components</span></li>
-  </ul>
+
+  <hal-code-highlighter [isSHELL]="true" [code]="yarnHalCode"></hal-code-highlighter>
 
   <p class="doc-info">
-    You also need to have HDD-style installed, you can do this through yarn or npm:
+    Addiontal packages that are needed for HAL work are HDD-Style, Angular Material and CDK.
+    You can install HDD-style through yarn:
   </p>
-  <ul>
-    <li class="list-item">Yarn: <span class="terminal-line">yarn add @hafslundnett/hdd-style</span></li>
-    <li class="list-item">Npm: <span class="terminal-line">npm install @hafslundnett/hdd-style</span></li>
-  </ul>
+  <hal-code-highlighter [isSHELL]="true" [code]="yarnHddCode"></hal-code-highlighter>
+  <p class="doc-info">
+    To install Angular Material use the install schematic. This will install both Angular Material and CDK. In your
+    project root folder open your termninal and run the following command:
+  </p>
+  <hal-code-highlighter [isSHELL]="true" [code]="angularMaterialCode"></hal-code-highlighter>
+
+  <p class="doc-info">
+    You can find more information about Angular Material and it´s install schematic here:
+    <a class="hdd-link" href="https://material.angular.io/guide/getting-started">Angular Material - Getting Started</a>
+    <br>
+  </p>
 
   <p>Then add the following style to your projects main styles.scss file:</p>
 
@@ -42,17 +48,21 @@
   <hal-divider class="divider-line"></hal-divider>
 
   <p class="doc-info">
-    The github repo can be found here: <a class="hdd-link"
-      href="https://github.com/hafslundnett/hal-components">github.com/hafslundnett/hal-components</a>
+    The github repo 🎫 can be found here: <br>
+    <a class="hdd-link" href="https://github.com/hafslundnett/hal-components">github.com/hafslundnett/hal-components</a>
     <br>
-    Please submit any issues there directly.
+    Please submit any issues 🐞 or feature 🚀 requests here: <br>
+    <a class="hdd-link"
+      href="https://github.com/hafslundnett/hal-components/issues/new/choose">github.com/hafslundnett/hal-components/issues/new/choose</a>
+    <br>
+    We use Trello 📋 for organisation of our Kanban tasks (read only): <br>
+    <a class="hdd-link" href="https://trello.com/b/OOK3qeH9/hdd-og-hal">trello.com/b/OOK3qeH9/hdd-og-hal</a>
   </p>
 
   <p class="doc-info">
     <img class="npm-badge" src="https://badge.fury.io/js/%40hafslundnett%2Fhal-components.svg">
     <img src="https://badgen.net/bundlephobia/minzip/@hafslundnett/hal-components">
   </p>
-
 
 </div>
 
