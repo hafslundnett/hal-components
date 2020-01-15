@@ -74,6 +74,11 @@ $select-border-width: 1px;
       color: var(--hdd-color-white);
     }
 
+    // Remove mat-checkboxes for multiple
+    .mat-pseudo-checkbox {
+      display: none;
+    }
+
     .selected-icon {
       padding-right: var(--hdd-spacing-primary);
       visibility: hidden;

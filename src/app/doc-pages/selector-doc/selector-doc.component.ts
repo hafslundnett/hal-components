@@ -24,7 +24,7 @@ export class SelectorDocComponent implements OnInit {
     {value: 'alle', viewValue: 'Alle'},
   ];
   selectedEx1 = 'Alt1';
-  selectedEx2 = undefined;
+  selectedEx2 = [];
   selectedEx3 = undefined;
   selectedEx4 = '10';
   choiceDisabled = 'Alt3';
@@ -46,6 +46,7 @@ export class SelectorDocComponent implements OnInit {
     { apiInput: '[choiceDisabled]', description: 'Optional input making a specific option disabled.' },
     { apiInput: '[noLabel]', description: 'Optional boolean removing the label. Should only be used in specific cases.' },
     { apiInput: '[isSmall]', description: 'Optional boolean making the dropdown small. Should only be used in specific cases.' },
+    { apiInput: '[multipleChoices]', description: 'Optional boolean making it possible to choose more than 1 option.' },
   ];
 
   htmlCode = `<div class="example">
@@ -64,9 +65,12 @@ export class SelectorDocComponent implements OnInit {
     (selectedChange)="someMethod($event)"
     [label]="selectedLabelEx2"
     [placeholder]="'Placeholder'"
+    [multipleChoices]="true"
   ></hal-selector>
 </div>
-<h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
+<h2 *ngIf="selectedEx2">Selected data: 
+  <b *ngFor="let selected of selectedEx2">{{ selected }}, </b>
+</h2>
 <div class="example">
   <hal-selector
     [selectData]="selectData"
@@ -102,7 +106,7 @@ selectSmallData: SelectData[] = [
 ];
 
 selectedEx1 = 'Alt1';
-selectedEx2 = undefined;
+selectedEx2 = [];
 selectedEx3 = undefined;
 selectedEx4 = '10';
 choiceDisabled = 'Alt3';
