@@ -42,6 +42,7 @@ describe('SelectorComponent', () => {
     component.label = 'LabelTest';
     component.choiceDisabled = 'Alt3';
     matSelect = fixture.debugElement.query(By.css('mat-select')).context;
+    component.multipleChoices = true;
     fixture.detectChanges();
   });
 
@@ -116,6 +117,24 @@ describe('SelectorComponent', () => {
 
     it('Input should be same size as sent in', () => {
       expect(getElementByCss('mat-select.is-small')).toBeTruthy();
+    });
+  });
+
+  describe('If multipleChoices is true', () => {
+    beforeEach(() => {
+      component.multipleChoices = true;
+      const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
+      selectElement.click();
+      fixture.detectChanges();
+    });
+
+    it('Should be able to select multiple', () => {
+      const options = document.querySelectorAll('mat-option');
+      (options.item(0) as HTMLElement).click();
+      (options.item(1) as HTMLElement).click();
+      fixture.detectChanges();
+
+      expect(component.selected.length).toEqual(2);
     });
   });
 

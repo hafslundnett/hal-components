@@ -10,15 +10,15 @@ import { MatSelect } from '@angular/material';
 })
 
 export class SelectorComponent implements OnInit {
+  @Input() multipleChoices = false;
   @Input() selectData: SelectData[];
-  @Input() selected: string;
+  @Input() selected: [] | string;
   @Input() label: string;
   @Input() placeholder: string;
   @Input() disabled = false;
   @Input() choiceDisabled: string;
   @Input() noLabel = false;
   @Input() isSmall = false;
-  @Input() multipleChoices = false;
   @Output() selectedChange = new EventEmitter();
 
   constructor() { }
