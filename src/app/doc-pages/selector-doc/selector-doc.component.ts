@@ -68,7 +68,8 @@ export class SelectorDocComponent implements OnInit {
     [multipleChoices]="true"
   ></hal-selector>
 </div>
-<h2 *ngIf="selectedEx2">Selected data:
+<h2 *ngIf="*ngIf="selectedEx2.length>0">
+  Selected data:
   <b *ngFor="let selected of selectedEx2">{{ selected }}, </b>
 </h2>
 <div class="example">
