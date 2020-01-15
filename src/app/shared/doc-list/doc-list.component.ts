@@ -78,6 +78,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-check-square',
       docUrl: Pages.SelectorDoc
     },
+    {
+      cardTitle: 'Autocomplete',
+      cardSubtitle: 'Add autocomplete to inputs',
+      cardIcon: 'fa-bars',
+      docUrl: Pages.Autocomplete
+    },
   ];
 
   services: DocListItem[] = [

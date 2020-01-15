@@ -4,12 +4,25 @@
     <h1 class="doc-title">Selector / Dropdown component</h1>
   
     <p class="doc-info">
+      Dropdowns are useful for organizing and showing the user a filtered selection.
+    </p>
+
+    <div class="doc-info-use">
+      <h2><b>✅ When to use:</b></h2>
+      <p>
         A dropdown should be used if the user wants to make a selection from a set of predefined choices. 
         The recommended selection for the user should be selected as default. 
         If the list of choices is longer than 5, then an explanatory placeholder text should be used.
         The label should clearly describe the action, and the placeholder text should not consist of any additional information compared to the label. 
-        This as the placeholder is only visible before making a selection.
-    </p>
+        This as the placeholder is only visible before making a selection. 
+      </p>
+    </div>
+    <div class="doc-info-use">
+      <h2><b>⛔ When not to use:</b></h2>
+      <p>
+        This dropdown should not be used when there are less than 3 alternatives or the numbers of alternatives are so large its becoming hard to find the right choice.
+      </p>
+    </div>
   
     <hal-doc-import-line>
       <code><pre>import {{ '{' }} Selector {{ '}' }} from '@hafslundnett/hal-components';</pre></code>

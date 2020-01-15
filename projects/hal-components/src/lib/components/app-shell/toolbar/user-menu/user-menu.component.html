@@ -1,6 +1,6 @@
 <div class="user-line-container">
 
-  <hal-app-list></hal-app-list>
+  <hal-app-list [appListDomainUrl]="appListDomainUrl"></hal-app-list>
 
   <span class="user-name">{{ user?.name }}</span>
   <button class="user-button" [matMenuTriggerFor]="menu" (focus)="hasFocus = true" (blur)="hasFocus = false">

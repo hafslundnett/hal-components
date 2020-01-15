@@ -21,4 +21,5 @@ export enum Pages {
   PaginatorDoc = 'paginator-doc',
   Schematic = 'schematic',
   SelectorDoc = 'selector-doc',
+  Autocomplete = 'autocomplete',
 }
