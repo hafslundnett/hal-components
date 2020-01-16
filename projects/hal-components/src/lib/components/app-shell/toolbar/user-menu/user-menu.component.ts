@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, Injector, OnDestroy, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from './user.interface';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './user-menu.component.html',
   styleUrls: ['./user-menu.component.scss']
 })
-export class UserMenuComponent implements OnInit, OnDestroy {
+export class UserMenuComponent implements OnInit, OnChanges, OnDestroy {
   @Input() user: User = { email: '', name: '', thumbnail: undefined };
   @Input() settingsPagePath = '';
   @Input() signOutPagePath = '';
@@ -16,6 +16,7 @@ export class UserMenuComponent implements OnInit, OnDestroy {
 
   initials: string;
   hasFocus = false;
+  popupIsOpen = false;
 
   // TODO
   get thumbnailUrl(): string {
@@ -33,18 +34,24 @@ export class UserMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.user) {
+      this.initials = this.getInitials(this.user);
+    }
+  }
+
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }
 
-  signOut() {
-    if (!this.signOutPagePath) {
-      alert('Utlogging er ikke konfigurer på denne siden. Kontakt din nermeste utvikler');
-      return;
-    }
-    this.router.navigate([this.signOutPagePath]);
-    // this.oidcSecurityService.logoff();
-  }
+  // signOut() {
+  //   if (!this.signOutPagePath) {
+  //     alert('Utlogging er ikke konfigurer på denne siden. Kontakt din nermeste utvikler');
+  //     return;
+  //   }
+  //   this.router.navigate([this.signOutPagePath]);
+  //   // this.oidcSecurityService.logoff();
+  // }
 
   cancelMouseEventBubble(e: MouseEvent) {
     e.cancelBubble = true;

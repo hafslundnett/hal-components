@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from './user-menu/user.interface';
 
+// TODO rename header
 @Component({
   selector: 'hal-toolbar',
   templateUrl: './toolbar.component.html',

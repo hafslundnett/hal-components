@@ -1,15 +1,14 @@
-<header>
-  <mat-toolbar class="white-toolbar">
-    <mat-toolbar-row class="flex-center">
-      <div class="flex-element"></div>
-      <p class="title flex-element"><ng-content></ng-content></p>
-      <hal-user-menu 
-        [user]="user"
-        [settingsPagePath]="settingsPagePath" 
-        [signOutPagePath]="signOutPagePath" 
-        [appListDomainUrl]="appListDomainUrl"
-        class="flex-element"
-      ></hal-user-menu>
-    </mat-toolbar-row>
-  </mat-toolbar>
+<header class="hdd-header">
+  <a class="hdd-header_logo" href="#">
+    <img class="logo" src="assets/logo.svg" alt="Hafslundnett logo">
+  </a>
+  <h1 class="hdd-header_title">Overview</h1>
+
+  <hal-user-menu 
+    class="hdd-header-user"
+    [user]="user"
+    [settingsPagePath]="settingsPagePath" 
+    [signOutPagePath]="signOutPagePath" 
+    [appListDomainUrl]="appListDomainUrl"
+  ></hal-user-menu>
 </header>

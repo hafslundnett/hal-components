@@ -1,33 +1,40 @@
-<div class="user-line-container">
+<hal-app-list [appListDomainUrl]="appListDomainUrl"></hal-app-list>
 
-  <hal-app-list [appListDomainUrl]="appListDomainUrl"></hal-app-list>
-
-  <span class="user-name">{{ user?.name }}</span>
-  <button class="user-button" [matMenuTriggerFor]="menu" (focus)="hasFocus = true" (blur)="hasFocus = false">
-    <img [src]="thumbnailUrl" *ngIf="user?.thumbnail; else defaultThumb">
-    <ng-template #defaultThumb>
-      <div class="initials-container">
-        <span class="user-initials">{{initials}}</span>
-      </div>
-    </ng-template>
-    <div class="overlay" [class.focus]="hasFocus"></div>
-  </button>
-</div>
-<mat-menu #menu="matMenu">
-  <a *ngIf="settingsPagePath" class="hdd-button-icon is-transparent settings-button"
-    [routerLink]="['', settingsPagePath]">
-    <mat-icon class="fal fa-cog"></mat-icon>
-  </a>
-  <div class="content-wrapper" (click)="cancelMouseEventBubble($event)">
-    <div class="image-container" *ngIf="user?.thumbnail; else defaultImage">
-      <img [src]="thumbnailUrl">
-    </div>
-    <ng-template #defaultImage>
-      <i class="material-icons default-picture">account_circle</i>
-    </ng-template>
-    <h4 class="mat-subheading-1">{{ user?.name ? user.name : 'Navn mangler' }}</h4>
-    <small>{{ user?.email | lowercase }}</small>
-    <div class="divider"></div>
+<button  class="user-button" (click)="popupIsOpen = !popupIsOpen" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
+  <!--  TODO when img system works -->
+  <img *ngIf="user?.thumbnail"  class="hdd-header-user_icon-image" src="http://placekitten.com/150/150" />
+  <div *ngIf="!user?.thumbnail" class="hdd-header-user_icon-no-image">
+    {{initials}}
   </div>
-  <button mat-menu-item class="sign-out-button" (click)="signOut()">Logg ut</button>
-</mat-menu>
+</button>
+
+<div class="hdd-header-user_name">
+  {{ user?.name }}
+</div>
+
+<hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" [small]="true" (popupClose)="popupIsOpen = false">
+  <div class="hdd-user-menu" cdkTrapFocus>
+
+    <!--  TODO when img system works -->
+    <img *ngIf="user?.thumbnail"  class="hdd-user-menu_image" src="http://placekitten.com/150/150" />
+
+    <div *ngIf="!user?.thumbnail"  class="hdd-user-menu_initials">
+      {{initials}}
+    </div>
+
+    <div class="hdd-user-menu_name">
+      {{ user?.name }}
+    </div>
+    <div class="hdd-user-menu_email">
+      {{ user?.email | lowercase }}
+    </div>
+    <div class="hdd-user-menu_menu-element">
+      <a class="hdd-button has-icon is-transparent" [routerLink]="['', settingsPagePath]"><i
+          class="fal fa-cog"></i>Settings</a>
+    </div>
+    <div class="hdd-user-menu_menu-element">
+      <a class="hdd-button has-icon is-transparent" [routerLink]="['', signOutPagePath]"><i
+          class="fal fa-sign-out"></i>Sign out</a>
+    </div>
+  </div>
+</hal-popup-connected>
