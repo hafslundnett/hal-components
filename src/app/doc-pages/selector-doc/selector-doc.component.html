@@ -51,9 +51,13 @@
           (selectedChange)="someMethod($event)"
           [label]="selectedLabelEx2" 
           [placeholder]="placeholder"
+          [multipleChoices]="true"
         ></hal-selector>
       </div>
-      <h2 *ngIf="selectedEx2">Selected data: <b>{{ selectedEx2 }}</b></h2>
+      <h2 *ngIf="selectedEx2.length>0">
+        Selected data: 
+        <b *ngFor="let selected of selectedEx2">{{ selected }}, </b>
+      </h2>
     </div>
     <div class="example-container">
       <div class="example">
