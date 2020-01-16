@@ -37,7 +37,7 @@ export class SelectorDocComponent implements OnInit {
   selectorTable: ApiTableRow[] = [
     { apiInput: '[selectData]', description: 'For the data displayed in the select dropdown.' },
     // tslint:disable-next-line:max-line-length
-    { apiInput: '[(selected)]', description: 'For the selected value in the dropdown. If a selected value is given this will be selected by default.' },
+    { apiInput: '[(selected)]', description: 'For the selected value in the dropdown. If a selected value is given this will be selected by default. The selected value will be an array if multipleChoices is set to true.' },
     { apiInput: '(selectedChange)', description: 'Detects changes with the selected value.' },
     { apiInput: '[label]', description: 'For the description on top of the input field.' },
     // tslint:disable-next-line:max-line-length
