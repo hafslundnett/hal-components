@@ -46,7 +46,7 @@ export class SelectorDocComponent implements OnInit {
     { apiInput: '[choiceDisabled]', description: 'Optional input making a specific option disabled.' },
     { apiInput: '[noLabel]', description: 'Optional boolean removing the label. Should only be used in specific cases.' },
     { apiInput: '[isSmall]', description: 'Optional boolean making the dropdown small. Should only be used in specific cases.' },
-    { apiInput: '[multipleChoices]', description: 'Optional boolean making it possible to choose more than 1 option.' },
+    { apiInput: '[multipleChoices]', description: 'Optional boolean making it possible to choose more than 1 option. Selected is then an array of strings.' },
   ];
 
   htmlCode = `<div class="example">
