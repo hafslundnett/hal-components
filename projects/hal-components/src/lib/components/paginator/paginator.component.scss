@@ -1,6 +1,6 @@
 @import '~@hafslundnett/hdd-style/variables/colors';
 
-$page-size: 30px;
+$page-size: 32px;
 $paginator-width: 71px;
 $arrow-button-gap: 6px;
 
@@ -39,37 +39,22 @@ $arrow-button-gap: 6px;
         visibility: hidden;
       }
     }
-
-    button[hddButtonIcon]:first-child {
-      margin-right: $arrow-button-gap;
-    }
-
-    button:not([hddButtonIcon]) {
+    
+    // Should maybe be generalized in hdd (as some kind of toggle button)
+    .hdd-button-icon.paginator-button {
       width: $page-size;
       height: $page-size;
-      border-radius: 4px;
-      background: transparent;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: none;
-      margin: none;
-      padding: none;
-      cursor: pointer;
+      font-size: 0.875rem;
+      margin: 0 4px;
 
       &.is-selected {
-        color: var(--hdd-color-white);
-        background-color: var(--hdd-color-blue-dark);
-      }
-
-      &:not(.is-selected):hover {
-        color: var(--hdd-color-white);
         background-color: var(--hdd-color-primary);
+        color: var(--hdd-color-white);
+        outline: none;
+        &:active {
+          background-color: var(--hdd-color-blue-dark);
+        }
       }
-    }
-
-    button[hddButtonIcon]:last-child {
-      margin-left: $arrow-button-gap;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges, OnInit, ElementRef } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { Pagination } from './pagination';
@@ -35,6 +35,8 @@ export class PaginatorComponent implements OnInit, OnChanges {
   selectData: SelectData[] = [];
   selectedPageSizeSelect: string;
   selectedChange: string;
+
+  constructor(private element: ElementRef) {}
 
   ngOnInit() {
     this.setSelectOptions();
