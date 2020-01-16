@@ -14,6 +14,7 @@ export class AppShellComponent implements OnInit {
   @Input() signOutPagePath = 'logout';
   @Input() appListDomainUrl = 'hafslundnett.io';
   @Input() menuItems: MenuElement[];
+  @Input() menuIconsFolder = 'sideMenu';
 
   constructor() { }
 

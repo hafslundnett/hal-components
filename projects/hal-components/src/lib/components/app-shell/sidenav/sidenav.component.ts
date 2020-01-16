@@ -9,6 +9,7 @@ import { MenuElement } from './sidenav.menu-element.interface';
 export class SidenavComponent implements OnInit {
 
   @Input() menuItems: MenuElement[];
+  @Input() menuIconsFolder: string;
 
   isOpen = false;
 

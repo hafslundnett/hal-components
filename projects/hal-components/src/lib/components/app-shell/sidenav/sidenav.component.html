@@ -17,13 +17,13 @@
           class="default-svg"
           [width]="iconWidth"
           [height]="iconHeight"
-          [svgFilePath]="'assets/sideMenu/default/' + menuItem.svgName"
+          [svgFilePath]="'assets/' + menuIconsFolder +'/default/' + menuItem.svgName"
         ></hal-svg-element>
         <hal-svg-element 
           class="active-svg"
           [width]="iconWidth"
           [height]="iconHeight"
-          [svgFilePath]="'assets/sideMenu/active/' + menuItem.svgName"
+          [svgFilePath]="'assets/' + menuIconsFolder +'/active/' + menuItem.svgName"
         ></hal-svg-element>
         <span class="menu-label">{{menuItem.title }}</span>
         <ng-container *ngIf="!isOpen">
