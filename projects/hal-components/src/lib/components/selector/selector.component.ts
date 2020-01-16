@@ -12,7 +12,7 @@ import { MatSelect } from '@angular/material';
 export class SelectorComponent implements OnInit {
   @Input() multipleChoices = false;
   @Input() selectData: SelectData[];
-  @Input() selected: [] | string;
+  @Input() selected: string | [];
   @Input() label: string;
   @Input() placeholder: string;
   @Input() disabled = false;
@@ -30,7 +30,7 @@ export class SelectorComponent implements OnInit {
     this.selectedChange.emit(this.selected);
   }
 
-  isChoiceDisabled(value: string) {
+  isChoiceDisabled(value: string | []) {
     return this.choiceDisabled === value;
   }
 

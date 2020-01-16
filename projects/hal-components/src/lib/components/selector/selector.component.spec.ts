@@ -9,7 +9,7 @@ import { SelectorComponent } from './selector.component';
 import { By } from '@angular/platform-browser';
 import { MatSelectModule, MatOptionModule, MatOption, MatSelect } from '@angular/material';
 
-describe('SelectorComponent', () => {
+fdescribe('SelectorComponent', () => {
   let component: SelectorComponent;
   let fixture: ComponentFixture<SelectorComponent>;
   let matSelect: MatSelect;
@@ -42,7 +42,6 @@ describe('SelectorComponent', () => {
     component.label = 'LabelTest';
     component.choiceDisabled = 'Alt3';
     matSelect = fixture.debugElement.query(By.css('mat-select')).context;
-    component.multipleChoices = true;
     fixture.detectChanges();
   });
 
@@ -125,6 +124,7 @@ describe('SelectorComponent', () => {
       component.multipleChoices = true;
       const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
       selectElement.click();
+      component.multipleChoices = true;
       fixture.detectChanges();
     });
 
