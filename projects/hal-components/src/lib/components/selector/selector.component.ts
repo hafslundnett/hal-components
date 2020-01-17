@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { SelectData } from './select-data.interface';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'hal-selector',
@@ -12,7 +11,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class SelectorComponent implements OnInit {
   @Input() multipleChoices = false;
   @Input() selectData: SelectData[];
-  @Input() selected: string[] | string = [];
+  @Input() selected: string[] | string;
   @Input() label: string;
   @Input() placeholder: string;
   @Input() disabled = false;

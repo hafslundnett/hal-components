@@ -47,6 +47,7 @@ export class SelectorDocComponent implements OnInit {
     { apiInput: '[noLabel]', description: 'Optional boolean removing the label. Should only be used in specific cases.' },
     { apiInput: '[isSmall]', description: 'Optional boolean making the dropdown small. Should only be used in specific cases.' },
     { apiInput: '[multipleChoices]', description: 'Optional boolean making it possible to choose more than 1 option. Selected is then an array of strings.' },
+    { apiInput: '[selectAll]', description: 'Optional boolean making it possible to choose all the options at once, when multipleChoices is true. Selected is then an array of strings.' },
   ];
 
   htmlCode = `<div class="example">
@@ -66,6 +67,7 @@ export class SelectorDocComponent implements OnInit {
     [label]="selectedLabelEx2"
     [placeholder]="'Placeholder'"
     [multipleChoices]="true"
+    [selectAll]="true"
   ></hal-selector>
 </div>
 <h2 *ngIf="*ngIf="selectedEx2.length>0">
