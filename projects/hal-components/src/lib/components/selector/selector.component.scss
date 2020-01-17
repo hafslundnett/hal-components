@@ -16,10 +16,6 @@ $select-border-width: 1px;
 
 .hal-selector {
   margin: 0;
-
-  &:hover {
-    cursor: pointer;
-  }
   
   .selector-label-disabled {
     color: var(--hdd-color-grey) !important;
