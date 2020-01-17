@@ -20,7 +20,7 @@
       [value]="data.value"
       [disabled]="isChoiceDisabled(data.value)"
     >
-      <span class="selected-icon">
+      <span *ngIf="!multipleChoices" class="selected-icon">
         <i class="fal fa-check"></i>
       </span> 
       {{ data.viewValue }}
@@ -30,9 +30,6 @@
       [value]="'Alle'"
       [disabled]="isChoiceDisabled('Alle')"
     >
-      <span class="selected-icon">
-        <i class="fal fa-check"></i>
-      </span> 
       Alle
     </mat-option>
   </mat-select>

@@ -16,6 +16,10 @@ $select-border-width: 1px;
 
 .hal-selector {
   margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
   
   .selector-label-disabled {
     color: var(--hdd-color-grey) !important;
@@ -81,14 +85,37 @@ $select-border-width: 1px;
       color: var(--hdd-color-white);
     }
 
-    // Remove mat-checkboxes for multiple
-    .mat-pseudo-checkbox {
-      display: none;
+    &:hover {
+      .mat-pseudo-checkbox {
+        border: 1px solid var(--hdd-color-white);
+        background: var(--hdd-color-primary);
+      }
     }
+
+    // Remove mat-checkboxes for multiple
+    // .mat-pseudo-checkbox {
+    //   display: none;
+    // }
 
     .selected-icon {
       padding-right: var(--hdd-spacing-primary);
       visibility: hidden;
+    }
+
+    .mat-pseudo-checkbox {
+      border-radius: 4px;
+      border: 1px solid var(--hdd-color-primary);
+      background: var(--hdd-color-white);
+      width: 18px;
+      height: 18px;
+    }
+
+    .mat-pseudo-checkbox::after {
+      color: var(--hdd-color-white);
+      height: 5px;
+      width: 10px;
+      top: 3px;
+      left: 2px;
     }
 
     &-disabled {
@@ -120,8 +147,20 @@ $select-border-width: 1px;
         color: var(--hdd-color-white);
       }
 
+      &:hover {
+        .mat-pseudo-checkbox {
+          border: 1px solid var(--hdd-color-white);
+          background: var(--hdd-color-primary);
+        }
+      }
+
       .selected-icon {
         visibility: visible;
+      }
+
+      .mat-pseudo-checkbox {
+        border-radius: 4px;
+        background: var(--hdd-color-primary);
       }
     }
   }
