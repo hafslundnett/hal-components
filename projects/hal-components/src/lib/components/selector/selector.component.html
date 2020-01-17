@@ -25,5 +25,15 @@
       </span> 
       {{ data.viewValue }}
     </mat-option>
+    <mat-option
+      *ngIf="multipleChoices && selectAll"
+      [value]="'Alle'"
+      [disabled]="isChoiceDisabled('Alle')"
+    >
+      <span class="selected-icon">
+        <i class="fal fa-check"></i>
+      </span> 
+      Alle
+    </mat-option>
   </mat-select>
 </div>
