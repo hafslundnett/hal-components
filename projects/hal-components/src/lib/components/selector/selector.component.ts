@@ -30,22 +30,30 @@ export class SelectorComponent implements OnInit {
 
   onSelectedChange() {
     if (!this.allSelected && this.selected.includes('Alle')) {
-      const fullArray: string[] = [];
-      this.selectData.forEach(data => {
-        fullArray.push(data.value);
-      });
-      fullArray.push('Alle');
-      this.selected = fullArray;
-      this.allSelected = true;
+      this.selectAllValues();
     } else if (this.allSelected && !this.selected.includes('Alle')) {
-      this.selected = [];
-      this.allSelected = false;
+      this.removeAllValues();
     }
     this.selectedChange.emit(this.selected);
   }
 
   isChoiceDisabled(value: string | string[]) {
     return this.choiceDisabled === value;
+  }
+
+  selectAllValues(): void {
+    const fullArray: string[] = [];
+    this.selectData.forEach(data => {
+      fullArray.push(data.value);
+    });
+    fullArray.push('Alle');
+    this.selected = fullArray;
+    this.allSelected = true;
+  }
+
+  removeAllValues(): void {
+    this.selected = [];
+    this.allSelected = false;
   }
 
 }
