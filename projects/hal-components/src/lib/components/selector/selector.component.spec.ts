@@ -34,15 +34,14 @@ describe('SelectorComponent', () => {
       fixture = TestBed.createComponent(SelectorComponent);
       component = fixture.componentInstance;
       component.multipleChoices = true;
-      component.selectData = [
+      component.selectOptions = [
         {value: 'Alt1', viewValue: 'Alternative 1'},
         {value: 'Alt2', viewValue: 'Alternative 2'},
-        {value: 'Alt3', viewValue: 'Alternative 3'},
+        {value: 'Alt3', viewValue: 'Alternative 3', disabled: true},
       ];
       component.selected = 'Alt2';
       component.placeholder = 'PlaceholderTest';
       component.label = 'LabelTest';
-      component.choiceDisabled = 'Alt3';
       matSelect = fixture.debugElement.query(By.css('mat-select')).context;
       fixture.detectChanges();
     });
@@ -69,7 +68,7 @@ describe('SelectorComponent', () => {
     beforeEach(() => {
       fixture = TestBed.createComponent(SelectorComponent);
       component = fixture.componentInstance;
-      component.selectData = [
+      component.selectOptions = [
         {value: 'Alt1', viewValue: 'Alternative 1'},
         {value: 'Alt2', viewValue: 'Alternative 2'},
         {value: 'Alt3', viewValue: 'Alternative 3'},
@@ -77,7 +76,6 @@ describe('SelectorComponent', () => {
       component.selected = 'Alt2';
       component.placeholder = 'PlaceholderTest';
       component.label = 'LabelTest';
-      component.choiceDisabled = 'Alt3';
       matSelect = fixture.debugElement.query(By.css('mat-select')).context;
       fixture.detectChanges();
     });
@@ -98,9 +96,9 @@ describe('SelectorComponent', () => {
       });
     });
 
-    it('Should have same amount of options as defined in selectData', () => {
+    it('Should have same amount of options as defined in selectOptions', () => {
       const options: MatOption[] = matSelect.options.toArray();
-      expect(options.length).toBe(component.selectData.length);
+      expect(options.length).toBe(component.selectOptions.length);
     });
 
     it('Selected should be same as sent in value', () => {

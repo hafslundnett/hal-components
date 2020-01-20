@@ -16,9 +16,9 @@
     [multiple]="multipleChoices"
   >
     <mat-option 
-      *ngFor="let data of selectData" 
+      *ngFor="let data of selectOptions" 
       [value]="data.value"
-      [disabled]="isChoiceDisabled(data.value)"
+      [disabled]="data.disabled"
     >
       <span *ngIf="!multipleChoices" class="selected-icon">
         <i class="fal fa-check"></i>
@@ -26,9 +26,8 @@
       {{ data.viewValue }}
     </mat-option>
     <mat-option
-      *ngIf="multipleChoices && selectAll"
+      *ngIf="multipleChoices && allowSelectAllOption"
       [value]="'Alle'"
-      [disabled]="isChoiceDisabled('Alle')"
     >
       Alle
     </mat-option>

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
-import { SelectData } from './select-data.interface';
+import { SelectOption } from './select-option.interface';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'hal-selector',
@@ -10,50 +11,76 @@ import { SelectData } from './select-data.interface';
 
 export class SelectorComponent implements OnInit {
   @Input() multipleChoices = false;
-  @Input() selectData: SelectData[];
+  @Input() selectOptions: SelectOption[];
   @Input() selected: string[] | string;
   @Input() label: string;
   @Input() placeholder: string;
   @Input() disabled = false;
-  @Input() choiceDisabled: string;
   @Input() noLabel = false;
   @Input() isSmall = false;
-  @Input() selectAll = false;
+  @Input() allowSelectAllOption = false;
   @Output() selectedChange = new EventEmitter();
 
   public allSelected = false;
 
+  private readonly allValue = 'Alle';
+
   constructor() { }
 
   ngOnInit() {
+    if (this.allowSelectAllOption && !this.multipleChoices) {
+      console.warn('Cant select all options when multiple is false.');
+      return;
+    }
   }
 
   onSelectedChange() {
-    if (!this.allSelected && this.selected.includes('Alle')) {
-      this.selectAllValues();
-    } else if (this.allSelected && !this.selected.includes('Alle')) {
-      this.removeAllValues();
+    if (!this.allSelected && this.selected.includes(this.allValue)) {
+      this.selectAllOptions();
+    } else if (this.allSelected && !this.selected.includes(this.allValue)) {
+      this.deselectAllOptions();
+    } else if (this.allSelected && this.selected.length - 1 < (this.selectOptions.length - this.numberOfDisabledOptions())) {
+      this.deselectAllOption();
+    } else if (!this.allSelected && this.selected.length === (this.selectOptions.length - this.numberOfDisabledOptions())) {
+      this.selectAllOption();
     }
     this.selectedChange.emit(this.selected);
   }
 
-  isChoiceDisabled(value: string | string[]) {
-    return this.choiceDisabled === value;
-  }
+  selectAllOptions(): void {
+    if (!Array.isArray(this.selected)) {
+      console.warn('Cant select all options when multiple is false.');
+      return;
+    }
 
-  selectAllValues(): void {
-    const fullArray: string[] = [];
-    this.selectData.forEach(data => {
-      fullArray.push(data.value);
-    });
-    fullArray.push('Alle');
-    this.selected = fullArray;
+    this.selected = this.selectOptions
+      .filter(data => !data.disabled)
+      .map(data => data.value);
+    this.selected.push(this.allValue);
     this.allSelected = true;
   }
 
-  removeAllValues(): void {
+  deselectAllOptions(): void {
     this.selected = [];
     this.allSelected = false;
+  }
+
+  deselectAllOption(): void {
+    if (Array.isArray(this.selected)) {
+      this.selected = this.selected.filter(option => option !== this.allValue);
+      this.allSelected = false;
+    }
+  }
+
+  selectAllOption(): void {
+    if (Array.isArray(this.selected)) {
+      this.selected.push(this.allValue);
+      this.allSelected = true;
+    }
+  }
+
+  numberOfDisabledOptions(): number {
+    return this.selectOptions.filter(option => option.disabled === true).length;
   }
 
 }

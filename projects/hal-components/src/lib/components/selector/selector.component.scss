@@ -82,7 +82,7 @@ $select-border-width: 1px;
     }
 
     &:hover {
-      .mat-pseudo-checkbox {
+      .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
         border: 1px solid var(--hdd-color-white);
         background: var(--hdd-color-primary);
       }
@@ -93,10 +93,17 @@ $select-border-width: 1px;
       visibility: hidden;
     }
 
-    .mat-pseudo-checkbox {
+    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
       border-radius: 4px;
       border: 1px solid var(--hdd-color-primary);
       background: var(--hdd-color-white);
+      width: 18px;
+      height: 18px;
+    }
+
+    .mat-pseudo-checkbox-disabled {
+      border-radius: 4px;
+      border: 1px solid;
       width: 18px;
       height: 18px;
     }
@@ -139,7 +146,7 @@ $select-border-width: 1px;
       }
 
       &:hover {
-        .mat-pseudo-checkbox {
+        .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
           border: 1px solid var(--hdd-color-white);
           background: var(--hdd-color-primary);
         }
