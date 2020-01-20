@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 import { Pagination } from '@hafslundnett/hal-components';
 
@@ -16,6 +16,7 @@ export class PaginatorDocComponent implements OnInit {
     { apiInput: '[selectedPageIndex]', description: 'Optional input sets selected page on index' },
     { apiInput: '[showPaging]', description: 'Optional input to hide or show paging. Is true by default' },
     { apiInput: '[allowAll]', description: 'Optional input to hide or show the "Alle" page size option. Is true by default' },
+    { apiInput: '[maxPageSize]', description: 'Optional input to set the max page size option. Is 10000 by default' },
     { apiInput: '(paginatorChange)', description: 'Detects paginator changes' },
   ];
 
@@ -57,8 +58,8 @@ updatePaginatorValues(changes): void {
   this.pagination.pageSize = changes.pageSize;
 }`;
 
-  // tslint:disable-next-line:max-line-length
-  someList: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
+  listOfNumbers: number[] = Array.from(Array(25).keys());
+  someList: string[] = this.listOfNumbers.map(String);
   slicedList: string[];
   pagination: Pagination = {
     pageSize: 0,
@@ -76,7 +77,7 @@ updatePaginatorValues(changes): void {
     this.changePaginator();
   }
 
-  changePaginator(changes?): void {
+  changePaginator(changes?: SimpleChanges): void {
     if (changes) {
       this.updatePaginatorValues(changes);
     }

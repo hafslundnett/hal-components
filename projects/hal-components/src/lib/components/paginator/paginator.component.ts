@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChan
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { Pagination } from './pagination';
-import { DEFAULT_PAGE_SIZE } from './consts';
+import { DEFAULT_PAGE_SIZE, DEFAULT_MAX_PAGE_SIZE } from './consts';
 import { SelectData } from '../selector/select-data.interface';
 
 @Component({
@@ -18,6 +18,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   @Input() length = 0;
   @Input() pageSizeOptions = [10, 20];
   @Input() selectedPageSize = DEFAULT_PAGE_SIZE;
+  @Input() maxPageSize = DEFAULT_MAX_PAGE_SIZE;
 
   @Input()
   get showPaging(): boolean {
@@ -35,6 +36,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   selectData: SelectData[] = [];
   selectedPageSizeSelect: string;
   selectedChange: string;
+  selectAllValue = 'selectAllValue';
 
   constructor(private element: ElementRef) {}
 
@@ -50,12 +52,14 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   setSelectOptions() {
     this.pageSizeOptions.forEach((option) => {
-      const val: SelectData = {value: option.toString(), viewValue: option.toString()};
-      this.selectData.push(val);
+      if (option <= this.maxPageSize && option <= this.length) {
+        const val: SelectData = {value: option.toString(), viewValue: option.toString()};
+        this.selectData.push(val);
+      }
     });
-    const alleVal: SelectData = {value: 'Alle', viewValue: 'Alle'};
     if (this.allowAll) {
-      this.selectData.push(alleVal);
+      const selectAll: SelectData = {value: this.selectAllValue, viewValue: 'Alle'};
+      this.selectData.push(selectAll);
     }
   }
 
@@ -69,7 +73,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   }
 
   setPageSize(pageSize: string) {
-    pageSize === 'Alle' ? this.selectedPageSize = 10000 : this.selectedPageSize = +pageSize;
+    pageSize === this.selectAllValue ? this.selectedPageSize = this.length : this.selectedPageSize = +pageSize;
     this.setNumberOfPages();
     this.selectedPageIndex = 0;
 
@@ -86,15 +90,15 @@ export class PaginatorComponent implements OnInit, OnChanges {
     if (this.length < this.pageSizeOptions[0]) {
       this.selectedPageSizeSelect = this.length.toString();
     } else {
-      if (this.selectedPageSize === 10000) {
-        this.selectedPageSizeSelect = 'Alle';
+      if (this.selectedPageSize === this.length) {
+        this.selectedPageSizeSelect = this.selectAllValue;
       } else {
         this.selectedPageSizeSelect = this.selectedPageSize.toString();
       }
     }
   }
 
-  private getAvailablePageSizes() {
+  private getAvailablePageSizes(): number[] {
     if (this.length > this.pageSizeOptions[0]) {
       return this.pageSizeOptions.filter(option => option <= this.length);
     } else {
