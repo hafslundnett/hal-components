@@ -92,12 +92,12 @@ describe('PaginatorComponent', () => {
       fixture.detectChanges();
     });
 
-    it('when selected, should have value 10000', () => {
+    it('when selected, should have value length of entries', () => {
       const options = document.querySelectorAll('mat-option');
       const lastElement = options.length - 1;
       (options.item(lastElement) as HTMLElement).click();
       fixture.detectChanges();
-      expect(component.selectedPageSize).toBe(10000);
+      expect(component.selectedPageSize).toBe(component.length);
     });
   });
 
