@@ -9,7 +9,10 @@ import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
 export class PopupConnectedDocComponent implements OnInit {
 
   popupIsOpen = false;
+  popupIsOpenRightAligned = false;
   popupTopIsOpen = false;
+  popupTopIsOpenRightAligned = false;
+  IsRight = true;
 
   apiTableRows: ApiTableRow[] = [
     { apiInput: '[isOpen]', description: 'Input for determening wether the popup is open or closed.' },
@@ -24,6 +27,10 @@ export class PopupConnectedDocComponent implements OnInit {
       description: 'Optional input to change the position of the popup in relation to the element its connected to. Options: above, bottom.'
     },
     {
+      apiInput: '[alignedRight]',
+      description: 'Optional input to change the alignement of the popup in relation tot the element its connected to. Options: true, false. Where false is defualt and aligns to the left.'
+    },
+    {
       apiInput: '(popupClose)',
       description:
         'Output that closes the popup if the a condition is set to true. The popup will close on default by clicking the close button.'
@@ -35,11 +42,19 @@ export class PopupConnectedDocComponent implements OnInit {
   ];
 
   // tslint:disable-next-line:max-line-length
-  htmlCode = `<button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin #popupTrigger="cdkOverlayOrigin">
-  <span>Open connected popup</span>
+  htmlCode = `<button
+  type="button"
+  (click)="popupIsOpen = !popupIsOpen"
+  class="hdd-button" cdkOverlayOrigin
+  #popupTrigger="cdkOverlayOrigin">
+<span>Open connected popup</span>
 </button>
-<hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (popupClose)="popupIsOpen = false">
-  <hal-popup-connected-example></hal-popup-connected-example>
+<hal-popup-connected
+  [isOpen]="popupIsOpen"
+  [origin]="popupTrigger"
+  (popupClose)="popupIsOpen = false"
+  [alignedRight]="IsRight">
+<hal-popup-connected-example></hal-popup-connected-example>
 </hal-popup-connected>`;
 
   constructor() { }

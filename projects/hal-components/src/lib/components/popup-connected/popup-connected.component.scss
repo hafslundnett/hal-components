@@ -29,7 +29,12 @@ $arrow-size: 10px;
     top: -1px;
     display: block;
     margin-left: auto;
-    margin-right: 26px;
+    margin-right: 11px;
+  }
+  .arrow-above-right {
+    @extend .arrow-above;
+    margin-left: 11px;
+    margin-right: auto;
   }
   .arrow-below {
     width: 0;
@@ -40,7 +45,12 @@ $arrow-size: 10px;
     top: -1px;
     display: block;
     margin-left: auto;
-    margin-right: 26px;
+    margin-right: 11px;
+  }
+  .arrow-below-right {
+    @extend .arrow-below;
+    margin-left: 11px;
+    margin-right: auto;
   }
 }
 

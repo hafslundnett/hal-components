@@ -3,8 +3,6 @@ import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay } fro
 import { popUpAnimation } from '../../animations';
 export type popupPosition = 'above' | 'below';
 
-// Is missing support for relativePositionX (horisontal). Add if needed
-
 @Component({
   selector: 'hal-popup-connected',
   templateUrl: './popup-connected.component.html',
@@ -13,43 +11,64 @@ export type popupPosition = 'above' | 'below';
 })
 export class PopupConnectedComponent implements OnInit, OnChanges {
 
-  position: ConnectionPositionPair = new ConnectionPositionPair(
-    { originX: 'end', originY: 'bottom' },
-    { overlayX: 'end', overlayY: 'top' }
-  );
-
   @Input() small = false;
   @Input() isOpen = false;
   @Input() relativePositionY: popupPosition = 'below';
   @Input() origin: CdkOverlayOrigin;
+  @Input() alignedRight = false;
 
   @Output() popupClose: EventEmitter<void> = new EventEmitter();
 
   scrollStrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
+  position: ConnectionPositionPair;
 
-  constructor(private overlay: Overlay) { }
+  constructor(private overlay: Overlay) {
+  }
 
   ngOnInit() {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.relativePositionY) {
-      this.newValueRelativePositionY();
+    this.position = this.getPosition();
+  }
+
+  getPosition() {
+    if (this.relativePositionY === 'above' && this.alignedRight === false) {
+      return this.getPositionTopLeft();
+    } else if (this.relativePositionY === 'above' && this.alignedRight === true) {
+      return this.getPositionTopRight();
+    } else if (this.relativePositionY === 'below' && this.alignedRight === false) {
+      return this.getPositionBottomLeft();
+    } else if (this.relativePositionY === 'below' && this.alignedRight === true) {
+      return this.getPositionBottomRight();
+    } else {
+      return this.getPositionBottomLeft();
     }
   }
 
-  newValueRelativePositionY() {
-    if (this.relativePositionY === 'above') {
-      this.position = new ConnectionPositionPair(
-        { originX: 'end', originY: 'top' },
-        { overlayX: 'end', overlayY: 'bottom' }
-      );
-    } else if (this.relativePositionY === 'below') {
-      this.position = new ConnectionPositionPair(
-        { originX: 'end', originY: 'bottom' },
-        { overlayX: 'end', overlayY: 'top' }
-      );
-    }
+  getPositionTopLeft() {
+    return new ConnectionPositionPair(
+      { originX: 'end', originY: 'top' },
+      { overlayX: 'end', overlayY: 'bottom' }
+    );
+  }
+  getPositionTopRight() {
+    return new ConnectionPositionPair(
+      { originX: 'start', originY: 'top' },
+      { overlayX: 'start', overlayY: 'bottom' }
+    );
+  }
+  getPositionBottomLeft() {
+    return new ConnectionPositionPair(
+      { originX: 'end', originY: 'bottom' },
+      { overlayX: 'end', overlayY: 'top' }
+    );
+  }
+  getPositionBottomRight() {
+    return new ConnectionPositionPair(
+      { originX: 'start', originY: 'bottom' },
+      { overlayX: 'start', overlayY: 'top' }
+    );
   }
 
   onClose() {
