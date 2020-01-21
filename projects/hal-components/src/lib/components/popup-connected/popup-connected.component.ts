@@ -1,6 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay } from '@angular/cdk/overlay';
-import { scaleUp } from '../../animations';
+import { popUpAnimation } from '../../animations';
 export type popupPosition = 'above' | 'below';
 
 // Is missing support for relativePositionX (horisontal). Add if needed
@@ -9,7 +9,7 @@ export type popupPosition = 'above' | 'below';
   selector: 'hal-popup-connected',
   templateUrl: './popup-connected.component.html',
   styleUrls: ['./popup-connected.component.scss'],
-  animations: [scaleUp]
+  animations: [popUpAnimation]
 })
 export class PopupConnectedComponent implements OnInit, OnChanges {
 

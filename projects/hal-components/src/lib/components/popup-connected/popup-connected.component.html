@@ -8,7 +8,7 @@
   [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
   (detach)="onClose()"
 >
-  <div class="animation-wrapper" @scaleUp role="dialog">
+  <div class="animation-wrapper" @popUpAnimation role="dialog">
     <div class="arrow-above" *ngIf="relativePositionY === 'below'"></div>
     <div 
       class="connected-popup-body" 
