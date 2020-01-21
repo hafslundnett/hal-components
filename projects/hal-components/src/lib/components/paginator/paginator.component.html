@@ -13,7 +13,7 @@
     <div class="container-length-unit">av {{length}} {{unit}}</div>
   </div>
   <div class="page-navigation" *ngIf="showPaging && pages.length && pages.length > 1">
-    <button class="hdd-button-icon is-transparent arrow-button" name="previous-button" [ngClass]="{'hidden': selectedPageIndex === 0}" (click)="setPage(selectedPageIndex - 1)">
+    <button class="hdd-button-icon arrow-button" name="previous-button" [ngClass]="{'hidden': selectedPageIndex === 0}" (click)="setPage(selectedPageIndex - 1)">
       <i class="fal fa-arrow-left"></i>
     </button>
 
@@ -42,7 +42,7 @@
       </ng-template>
     </ng-template>
 
-    <button class="hdd-button-icon is-transparent arrow-button" name="next-button" [ngClass]="{'hidden': selectedPageIndex === pages.length - 1}" (click)="setPage(selectedPageIndex + 1)">
+    <button class="hdd-button-icon arrow-button" name="next-button" [ngClass]="{'hidden': selectedPageIndex === pages.length - 1}" (click)="setPage(selectedPageIndex + 1)">
       <i class="fal fa-arrow-right"></i>
     </button>
   </div>

@@ -16,7 +16,6 @@ export class PaginatorDocComponent implements OnInit {
     { apiInput: '[selectedPageIndex]', description: 'Optional input sets selected page on index' },
     { apiInput: '[showPaging]', description: 'Optional input to hide or show paging. Is true by default' },
     { apiInput: '[allowAll]', description: 'Optional input to hide or show the "Alle" page size option. Is true by default' },
-    { apiInput: '[maxPageSize]', description: 'Optional input to set the max page size option. Is 10000 by default' },
     { apiInput: '(paginatorChange)', description: 'Detects paginator changes' },
   ];
 
@@ -29,24 +28,27 @@ export class PaginatorDocComponent implements OnInit {
   (paginatorChange)="changePaginator($event)">
 </hal-paginator>`;
 
-  tsCode = `pageSizeOptions = [5, 10, 25];
-
-ngOnInit() {pageSizeOptions = [2, 5, 10, 25];
-
-constructor() { }
+  tsCode = `listOfNumbers: number[] = Array.from(Array(5).keys());
+slicedList: number[];
+pagination: Pagination = {
+  pageSize: 0,
+  pageIndex: 0,
+  length: 0
+};
+pageSizeOptions = [2, 5, 10, 25];
 
 ngOnInit() {
-  this.pagination.length = this.someList.length;
+  this.pagination.length = this.listOfNumbers.length;
   this.pagination.pageIndex = 0;
   this.pagination.pageSize = 2;
   this.changePaginator();
 }
 
-changePaginator(changes?): void {
+changePaginator(changes?: SimpleChanges): void {
   if (changes) {
     this.updatePaginatorValues(changes);
   }
-  this.slicedList = this.someList.slice(
+  this.slicedList = this.listOfNumbers.slice(
     this.pagination.pageSize * this.pagination.pageIndex,
     this.pagination.pageSize * (this.pagination.pageIndex + 1)
   );
@@ -59,8 +61,7 @@ updatePaginatorValues(changes): void {
 }`;
 
   listOfNumbers: number[] = Array.from(Array(25).keys());
-  someList: string[] = this.listOfNumbers.map(String);
-  slicedList: string[];
+  slicedList: number[];
   pagination: Pagination = {
     pageSize: 0,
     pageIndex: 0,
@@ -71,7 +72,7 @@ updatePaginatorValues(changes): void {
   constructor() { }
 
   ngOnInit() {
-    this.pagination.length = this.someList.length;
+    this.pagination.length = this.listOfNumbers.length;
     this.pagination.pageIndex = 0;
     this.pagination.pageSize = 2;
     this.changePaginator();
@@ -81,7 +82,7 @@ updatePaginatorValues(changes): void {
     if (changes) {
       this.updatePaginatorValues(changes);
     }
-    this.slicedList = this.someList.slice(
+    this.slicedList = this.listOfNumbers.slice(
       this.pagination.pageSize * this.pagination.pageIndex,
       this.pagination.pageSize * (this.pagination.pageIndex + 1)
     );

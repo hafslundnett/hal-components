@@ -1,4 +1,4 @@
-$page-size: 32px;
+$paging-button-size: 32px;
 $paginator-width: 71px;
 $arrow-button-gap: 6px;
 
@@ -34,17 +34,26 @@ $arrow-button-gap: 6px;
 
     .arrow-button {
       &.hidden {
-        visibility: hidden;
+        display: none;
       }
     }
     
     // Should maybe be generalized in hdd (as some kind of toggle button)
-    .hdd-button-icon.paginator-button {
-      width: $page-size;
-      height: $page-size;
-      font-size: 0.875rem;
-      margin: 0 4px;
+    .arrow-button {
+      width: $paging-button-size;
+      height: $paging-button-size;
+      font-size: 1rem;
+    }
 
+    .arrow-button:first-child {
+      margin-right: 4px;
+    }
+
+    .paginator-button {
+      width: $paging-button-size;
+      height: $paging-button-size;
+      margin: 0 4px;
+      font-size: 0.875rem;
       &.is-selected {
         background-color: var(--hdd-color-primary);
         color: var(--hdd-color-white);
@@ -53,6 +62,10 @@ $arrow-button-gap: 6px;
           background-color: var(--hdd-color-blue-dark);
         }
       }
+    }
+
+    .arrow-button:last-child {
+      margin-left: 4px;
     }
   }
 }
