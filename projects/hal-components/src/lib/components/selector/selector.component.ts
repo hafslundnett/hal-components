@@ -23,7 +23,7 @@ export class SelectorComponent implements OnInit {
 
   public allSelected = false;
 
-  private readonly allValue = 'Alle';
+  readonly allValue = 'Alle';
 
   constructor() { }
 
@@ -35,14 +35,16 @@ export class SelectorComponent implements OnInit {
   }
 
   onSelectedChange() {
-    if (!this.allSelected && this.selected.includes(this.allValue)) {
-      this.selectAllOptions();
-    } else if (this.allSelected && !this.selected.includes(this.allValue)) {
-      this.deselectAllOptions();
-    } else if (this.allSelected && this.selected.length - 1 < (this.selectOptions.length - this.numberOfDisabledOptions())) {
-      this.deselectAllOption();
-    } else if (!this.allSelected && this.selected.length === (this.selectOptions.length - this.numberOfDisabledOptions())) {
-      this.selectAllOption();
+    if (this.allowSelectAllOption) {
+      if (!this.allSelected && this.selected.includes(this.allValue)) {
+        this.selectAllOptions();
+      } else if (this.allSelected && !this.selected.includes(this.allValue)) {
+        this.deselectAllOptions();
+      } else if (this.allSelected && this.selected.length - 1 < (this.selectOptions.length - this.numberOfDisabledOptions())) {
+        this.deselectAllOption();
+      } else if (!this.allSelected && this.selected.length === (this.selectOptions.length - this.numberOfDisabledOptions())) {
+        this.selectAllOption();
+      }
     }
     this.selectedChange.emit(this.selected);
   }

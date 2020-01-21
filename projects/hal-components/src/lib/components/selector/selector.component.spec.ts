@@ -9,7 +9,7 @@ import { SelectorComponent } from './selector.component';
 import { By } from '@angular/platform-browser';
 import { MatSelectModule, MatOptionModule, MatOption, MatSelect } from '@angular/material';
 
-describe('SelectorComponent', () => {
+fdescribe('SelectorComponent', () => {
   let component: SelectorComponent;
   let fixture: ComponentFixture<SelectorComponent>;
   let matSelect: MatSelect;
@@ -62,6 +62,25 @@ describe('SelectorComponent', () => {
         expect(component.selected.length).toEqual(2);
       });
     });
+
+    describe('If allowSelectAllOption is true', () => {
+      beforeEach(() => {
+        component.allowSelectAllOption = true;
+        fixture.detectChanges();
+        const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
+        selectElement.click();
+        fixture.detectChanges();
+      });
+      it('Should be able to select option "alle"', () => {
+        const options = document.querySelectorAll('mat-option');
+        (options.item(3) as HTMLElement).click();
+        fixture.detectChanges();
+
+        const options2: MatOption[] = matSelect.options.toArray();
+        expect(options2.find(opt => opt.value === 'Alle')).toBeTruthy();
+        expect(component.selected.length).toEqual(3);
+      });
+    });
   });
 
   describe('Singel select', () => {
@@ -71,7 +90,7 @@ describe('SelectorComponent', () => {
       component.selectOptions = [
         {value: 'Alt1', viewValue: 'Alternative 1'},
         {value: 'Alt2', viewValue: 'Alternative 2'},
-        {value: 'Alt3', viewValue: 'Alternative 3'},
+        {value: 'Alt3', viewValue: 'Alternative 3', disabled: true},
       ];
       component.selected = 'Alt2';
       component.placeholder = 'PlaceholderTest';
