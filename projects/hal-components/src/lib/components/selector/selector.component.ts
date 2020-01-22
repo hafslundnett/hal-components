@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { SelectOption } from './select-option.interface';
-import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'hal-selector',

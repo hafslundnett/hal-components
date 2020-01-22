@@ -9,7 +9,7 @@ import { SelectorComponent } from './selector.component';
 import { By } from '@angular/platform-browser';
 import { MatSelectModule, MatOptionModule, MatOption, MatSelect } from '@angular/material';
 
-fdescribe('SelectorComponent', () => {
+describe('SelectorComponent', () => {
   let component: SelectorComponent;
   let fixture: ComponentFixture<SelectorComponent>;
   let matSelect: MatSelect;
