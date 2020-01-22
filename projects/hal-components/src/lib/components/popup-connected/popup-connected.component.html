@@ -10,8 +10,8 @@
 >
   <div class="animation-wrapper" @popUpAnimation role="dialog">
     <div 
-      [ngClass]="!alignedRight ? 'arrow-above' : 'arrow-above-right'"
-      *ngIf="relativePositionY === 'below'"></div>
+      *ngIf="!alignTop"
+      [ngClass]="!alignRight ? 'arrow-above' : 'arrow-above-right'"></div>
     <div 
       class="connected-popup-body" 
       [ngClass]="small ? 'small-popup' : 'normal-popup'" 
@@ -25,7 +25,7 @@
       <ng-content></ng-content>
     </div>
     <div 
-      [ngClass]="!alignedRight ? 'arrow-below' : 'arrow-below-right'"
-      *ngIf="relativePositionY === 'above'"></div>
+      *ngIf="alignTop"
+      [ngClass]="!alignRight ? 'arrow-below' : 'arrow-below-right'"></div>
   </div>
 </ng-template>

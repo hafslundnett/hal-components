@@ -10,7 +10,7 @@
   </p>
   <p class="doc-info">
     PopupConnectedComponent is a popup which is connected to an origin element.
-    The default position of the popup is above the origin it is connected to.
+    The default position of the popup is below the origin it is connected to.
     To be able to connect to an origin the CdkOverlayOrigin directive should be used on the origin element.
     The popup is also animated to appear and dissapear smoothly.
   </p>
@@ -51,7 +51,7 @@
         <span>Open popup on top</span>
       </button>
       <hal-popup-connected [isOpen]="popupTopIsOpen" [small]="true" [origin]="popupTopTrigger"
-        [relativePositionY]="'above'" (popupClose)="popupTopIsOpen = false">
+        [alignTop]="isTop" (popupClose)="popupTopIsOpen = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>
     </div>
@@ -62,7 +62,7 @@
         <span>Right aligned popup on top </span>
       </button>
       <hal-popup-connected [isOpen]="popupTopIsOpenRightAligned" [small]="true" [origin]="popupTopTriggerRight"
-        [relativePositionY]="'above'" [alignedRight]="IsRight" (popupClose)="popupTopIsOpenRightAligned = false">
+        [alignTop]="isTop" [alignRight]="IsRight" (popupClose)="popupTopIsOpenRightAligned = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>
     </div>
@@ -82,7 +82,7 @@
         cdkOverlayOrigin #popupTriggerRight="cdkOverlayOrigin">
         <span>Right aligned popup below</span>
       </button>
-      <hal-popup-connected [isOpen]="popupIsOpenRightAligned" [origin]="popupTriggerRight" [alignedRight]="IsRight"
+      <hal-popup-connected [isOpen]="popupIsOpenRightAligned" [origin]="popupTriggerRight" [alignRight]="IsRight"
         (popupClose)="popupIsOpenRightAligned = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>

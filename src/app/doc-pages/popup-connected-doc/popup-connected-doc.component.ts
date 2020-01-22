@@ -12,6 +12,7 @@ export class PopupConnectedDocComponent implements OnInit {
   popupIsOpenRightAligned = false;
   popupTopIsOpen = false;
   popupTopIsOpenRightAligned = false;
+  isTop = true;
   IsRight = true;
 
   apiTableRows: ApiTableRow[] = [
@@ -23,11 +24,11 @@ export class PopupConnectedDocComponent implements OnInit {
         'Input for setting the popups size to small. If true the close button and padding will be removed to allow for more space.'
     },
     {
-      apiInput: '[relativePositionY]',
-      description: 'Optional input to change the position of the popup in relation to the element its connected to. Options: above, bottom.'
+      apiInput: '[alignTop]',
+      description: 'Optional input to change the position of the popup in relation tot the element its connected to, on top or below. Options: true, false. Where false is defualt and aligns to below.'
     },
     {
-      apiInput: '[alignedRight]',
+      apiInput: '[alignRight]',
       description: 'Optional input to change the alignement of the popup in relation tot the element its connected to. Options: true, false. Where false is defualt and aligns to the left.'
     },
     {
@@ -53,7 +54,8 @@ export class PopupConnectedDocComponent implements OnInit {
   [isOpen]="popupIsOpen"
   [origin]="popupTrigger"
   (popupClose)="popupIsOpen = false"
-  [alignedRight]="IsRight">
+  [alignTop]="isTop"
+  [alignRight]="IsRight">
 <hal-popup-connected-example></hal-popup-connected-example>
 </hal-popup-connected>`;
 

@@ -13,9 +13,9 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
 
   @Input() small = false;
   @Input() isOpen = false;
-  @Input() relativePositionY: popupPosition = 'below';
   @Input() origin: CdkOverlayOrigin;
-  @Input() alignedRight = false;
+  @Input() alignTop = false;
+  @Input() alignRight = false;
 
   @Output() popupClose: EventEmitter<void> = new EventEmitter();
 
@@ -33,13 +33,13 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   }
 
   getPosition() {
-    if (this.relativePositionY === 'above' && this.alignedRight === false) {
+    if (this.alignTop === true && this.alignRight === false) {
       return this.getPositionTopLeft();
-    } else if (this.relativePositionY === 'above' && this.alignedRight === true) {
+    } else if (this.alignTop === true && this.alignRight === true) {
       return this.getPositionTopRight();
-    } else if (this.relativePositionY === 'below' && this.alignedRight === false) {
+    } else if (this.alignTop === false && this.alignRight === false) {
       return this.getPositionBottomLeft();
-    } else if (this.relativePositionY === 'below' && this.alignedRight === true) {
+    } else if (this.alignTop === false && this.alignRight === true) {
       return this.getPositionBottomRight();
     } else {
       return this.getPositionBottomLeft();
