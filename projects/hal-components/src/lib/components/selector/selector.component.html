@@ -15,6 +15,12 @@
     [ngClass]="{'is-small': isSmall}"
     [multiple]="multipleChoices"
   >
+    <mat-option
+      *ngIf="multipleChoices && allowSelectAllOption"
+      [value]="allValue"
+    >
+      Marker alle
+    </mat-option>
     <mat-option 
       *ngFor="let data of selectOptions" 
       [value]="data.value"
@@ -24,12 +30,6 @@
         <i class="fal fa-check"></i>
       </span> 
       {{ data.viewValue }}
-    </mat-option>
-    <mat-option
-      *ngIf="multipleChoices && allowSelectAllOption"
-      [value]="'Alle'"
-    >
-      Alle
     </mat-option>
   </mat-select>
 </div>

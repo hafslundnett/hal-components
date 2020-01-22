@@ -23,27 +23,28 @@ export class SelectorComponent implements OnInit {
 
   public allSelected = false;
 
-  readonly allValue = 'Alle';
+  readonly allValue = 'alle';
 
   constructor() { }
 
   ngOnInit() {
     if (this.allowSelectAllOption && !this.multipleChoices) {
-      console.warn('Cant select all options when multiple is false.');
+      console.warn('allowSelectAllOption should only be true if multipleChoices is true.');
       return;
     }
   }
 
   onSelectedChange() {
-    if (this.allowSelectAllOption) {
-      if (!this.allSelected && this.selected.includes(this.allValue)) {
+    if (this.allowSelectAllOption && this.multipleChoices) {
+      if (!this.allSelected &&
+          (this.selected.includes(this.allValue) ||
+          this.selected.length === (this.selectOptions.length - this.numberOfDisabledOptions()))
+      ) {
         this.selectAllOptions();
       } else if (this.allSelected && !this.selected.includes(this.allValue)) {
         this.deselectAllOptions();
       } else if (this.allSelected && this.selected.length - 1 < (this.selectOptions.length - this.numberOfDisabledOptions())) {
         this.deselectAllOption();
-      } else if (!this.allSelected && this.selected.length === (this.selectOptions.length - this.numberOfDisabledOptions())) {
-        this.selectAllOption();
       }
     }
     this.selectedChange.emit(this.selected);
@@ -71,13 +72,6 @@ export class SelectorComponent implements OnInit {
     if (Array.isArray(this.selected)) {
       this.selected = this.selected.filter(option => option !== this.allValue);
       this.allSelected = false;
-    }
-  }
-
-  selectAllOption(): void {
-    if (Array.isArray(this.selected)) {
-      this.selected.push(this.allValue);
-      this.allSelected = true;
     }
   }
 
