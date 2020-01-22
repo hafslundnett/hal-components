@@ -23,7 +23,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 class TestComponent {
   isOpen = true;
   small = false;
-  relativePositionY = 'below';
+  alignTop = false;
 }
 
 describe('PopupConnectedComponent', () => {
@@ -97,7 +97,7 @@ describe('PopupConnectedComponent', () => {
 
   describe('Setting relativePositionY to above', () => {
     beforeEach(() => {
-      testComponent.relativePositionY = 'above';
+      testComponent.alignTop = true;
       fixture.detectChanges();
     });
     it('arrow-below should exist', () => {
@@ -107,7 +107,7 @@ describe('PopupConnectedComponent', () => {
 
   describe('Setting relativePositionY to below', () => {
     beforeEach(() => {
-      testComponent.relativePositionY = 'below';
+      testComponent.alignTop = false;
       fixture.detectChanges();
     });
     it('arrow-above should exist', () => {
