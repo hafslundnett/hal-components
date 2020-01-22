@@ -71,13 +71,15 @@ describe('SelectorComponent', () => {
         selectElement.click();
         fixture.detectChanges();
       });
-      it('Should be able to select option "alle"', () => {
+      it('Should be able to select option "Marker alle"', () => {
+        component.selected = [];
+        fixture.detectChanges();
         const options = document.querySelectorAll('mat-option');
-        (options.item(3) as HTMLElement).click();
+        (options.item(0) as HTMLElement).click();
         fixture.detectChanges();
 
         const options2: MatOption[] = matSelect.options.toArray();
-        expect(options2.find(opt => opt.value === 'Alle')).toBeTruthy();
+        expect(options2.find(opt => opt.value === component.allValue)).toBeTruthy();
         expect(component.selected.length).toEqual(3);
       });
     });
