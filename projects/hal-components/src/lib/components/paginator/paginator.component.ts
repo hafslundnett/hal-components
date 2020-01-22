@@ -43,7 +43,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.selectedPageSize || changes.pageSizeOptions || changes.length) {
+    if (changes.selectedPageSize || changes.pageSizeOptions || changes.length || changes.allowAll) {
       this.initPaginator();
     }
   }
@@ -107,7 +107,11 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   private getAvailablePageSizes() {
     if (this.length > this.pageSizeOptions[0]) {
-      return this.pageSizeOptions.filter(option => option < this.length);
+      if (this.allowAll) {
+        return this.pageSizeOptions.filter(option => option < this.length);
+      } else {
+        return this.pageSizeOptions.filter(option => option <= this.length);
+      }
     } else {
       return [this.length];
     }

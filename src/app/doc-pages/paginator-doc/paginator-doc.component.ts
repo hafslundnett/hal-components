@@ -24,7 +24,6 @@ export class PaginatorDocComponent implements OnInit {
   [pageSizeOptions]="pageSizeOptions"
   [selectedPageSize]="pagination?.pageSize"
   [selectedPageIndex]="pagination?.pageIndex"
-  [allowAll]="true"
   (paginatorChange)="changePaginator($event)">
 </hal-paginator>`;
 
@@ -60,14 +59,14 @@ updatePaginatorValues(changes): void {
   this.pagination.pageSize = changes.pageSize;
 }`;
 
-  listOfNumbers: number[] = Array.from(Array(25).keys());
+  listOfNumbers: number[] = Array.from(Array(5).keys());
   slicedList: number[];
   pagination: Pagination = {
     pageSize: 0,
     pageIndex: 0,
     length: 0
   };
-  pageSizeOptions = [2, 5, 10, 25];
+  pageSizeOptions = [2, 5, 25];
 
   constructor() { }
 
@@ -76,6 +75,15 @@ updatePaginatorValues(changes): void {
     this.pagination.pageIndex = 0;
     this.pagination.pageSize = 2;
     this.changePaginator();
+
+    setTimeout(() => {
+      this.listOfNumbers = Array.from(Array(25).keys());
+      this.pagination.length = this.listOfNumbers.length;
+      this.slicedList = this.listOfNumbers.slice(
+        this.pagination.pageSize * this.pagination.pageIndex,
+        this.pagination.pageSize * (this.pagination.pageIndex + 1)
+      );
+    }, 1000);
   }
 
   changePaginator(changes?: SimpleChanges): void {

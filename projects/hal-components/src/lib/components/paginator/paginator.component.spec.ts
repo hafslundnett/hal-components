@@ -5,6 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { PaginatorComponent } from './paginator.component';
 import { SelectorComponent } from '../selector/selector.component';
 import { By } from '@angular/platform-browser';
+import { SimpleChange } from '@angular/core';
 
 describe('PaginatorComponent', () => {
   let component: PaginatorComponent;
@@ -34,6 +35,26 @@ describe('PaginatorComponent', () => {
     expect(component.selectData[0].value).toBe('10');
     expect(component.selectData[1].value).toBe('20');
     expect(component.selectData[2].value).toBe('30');
+  });
+
+  describe('Page size option', () => {
+    beforeEach(() => {
+      const selectElement: HTMLElement = getElement('hal-selector mat-select .mat-select-trigger');
+      selectElement.click();
+      fixture.detectChanges();
+    });
+    it('When length changes pageSizeOptions should update', () => {
+      component.length = 100;
+      component.pageSizeOptions = [10, 20, 30, 100, 150];
+      fixture.detectChanges();
+      expect(component.availablePageSizes[3]).toBeFalsy();
+      component.length = 200;
+      component.ngOnChanges({
+        length: new SimpleChange(null, component.length, false)
+      });
+      fixture.detectChanges();
+      expect(component.availablePageSizes[4]).toBe(150);
+    });
   });
 
   it('When unit gets set the displayed value should change', async(() => {
@@ -84,20 +105,29 @@ describe('PaginatorComponent', () => {
     });
   });
 
-  describe('"Alle" should be a page size option', () => {
+  describe('Page size option', () => {
     beforeEach(() => {
-      component.allowAll = true;
       const selectElement: HTMLElement = getElement('hal-selector mat-select .mat-select-trigger');
       selectElement.click();
       fixture.detectChanges();
     });
 
-    it('when selected, should have value length of entries', () => {
+    it('should include "Alle" by default and when selected, should have value length of entries', () => {
       const options = document.querySelectorAll('mat-option');
       const lastElement = options.length - 1;
       (options.item(lastElement) as HTMLElement).click();
       fixture.detectChanges();
+      expect(component.selectData.length).toEqual(component.availablePageSizes.length + 1);
       expect(component.selectedPageSize).toBe(component.length);
+    });
+
+    it('should not display "Alle" if allowAll is false', () => {
+      component.allowAll = false;
+      component.ngOnChanges({
+        length: new SimpleChange(null, component.allowAll, false)
+      });
+      fixture.detectChanges();
+      expect(component.selectData.length).toEqual(component.availablePageSizes.length);
     });
   });
 
