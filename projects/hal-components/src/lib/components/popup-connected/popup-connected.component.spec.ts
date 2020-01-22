@@ -13,7 +13,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
       [isOpen]="isOpen"
       [small]="small"
       [origin]="trigger"
-      [relativePositionY]="relativePositionY"
+      [alignTop]="istop"
+      [alignRight]="isRight"
       (popupClose)="isOpen = false"
     >
       <p name="popup-content">I'm the content</p>
@@ -23,7 +24,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 class TestComponent {
   isOpen = true;
   small = false;
-  alignTop = false;
+  istop = false;
+  isRight = false;
 }
 
 describe('PopupConnectedComponent', () => {
@@ -95,19 +97,43 @@ describe('PopupConnectedComponent', () => {
     });
   });
 
-  describe('Setting relativePositionY to above', () => {
+  describe('Setting alignTop to true & alignRight to true', () => {
     beforeEach(() => {
-      testComponent.alignTop = true;
+      testComponent.istop = true;
+      testComponent.isRight = true;
       fixture.detectChanges();
     });
     it('arrow-below should exist', () => {
+      expect(fixture.debugElement.queryAll(By.css('.arrow-below-right')).length).toBe(1);
+    });
+  });
+
+  describe('Setting alignTop to true & alignRight to false', () => {
+    beforeEach(() => {
+      testComponent.istop = true;
+      testComponent.isRight = false;
+      fixture.detectChanges();
+    });
+    it('arrow-above should exist', () => {
       expect(fixture.debugElement.queryAll(By.css('.arrow-below')).length).toBe(1);
     });
   });
 
-  describe('Setting relativePositionY to below', () => {
+  describe('Setting alignTop to false & alignRight to true', () => {
     beforeEach(() => {
-      testComponent.alignTop = false;
+      testComponent.istop = false;
+      testComponent.isRight = true;
+      fixture.detectChanges();
+    });
+    it('arrow-above should exist', () => {
+      expect(fixture.debugElement.queryAll(By.css('.arrow-above-right')).length).toBe(1);
+    });
+  });
+
+  describe('Setting alignTop to false & alignRight to false', () => {
+    beforeEach(() => {
+      testComponent.istop = false;
+      testComponent.isRight = false;
       fixture.detectChanges();
     });
     it('arrow-above should exist', () => {
