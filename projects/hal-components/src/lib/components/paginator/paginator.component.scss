@@ -32,17 +32,17 @@ $arrow-button-gap: 6px;
       margin: 0 10px;
     }
 
-    .arrow-button {
-      &.hidden {
-        display: none;
-      }
+    .hdd-button-icon {
+      width: $paging-button-size;
+      height: $paging-button-size;
     }
     
     // Should maybe be generalized in hdd (as some kind of toggle button)
     .arrow-button {
-      width: $paging-button-size;
-      height: $paging-button-size;
       font-size: 1rem;
+      &.hidden {
+        display: none;
+      }
     }
 
     .arrow-button:first-child {
@@ -50,8 +50,6 @@ $arrow-button-gap: 6px;
     }
 
     .paginator-button {
-      width: $paging-button-size;
-      height: $paging-button-size;
       margin: 0 4px;
       font-size: 0.875rem;
       &.is-selected {
