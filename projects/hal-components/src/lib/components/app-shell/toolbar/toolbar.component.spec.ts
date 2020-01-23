@@ -24,16 +24,21 @@ describe('ToolbarComponent', () => {
   });
 
   it('should render a toolbar element', () => {
-    expect(getElement('mat-toolbar')).not.toBeNull('Should render a mat-toolbar');
-  });
-
-  it('should render a title element', () => {
-    expect(getElement('.title')).not.toBeNull();
+    expect(getElement('h1')).not.toBeNull('Should render a mat-toolbar');
   });
 
   it('should render a user menu element', () => {
     expect(getElement('hal-user-menu')).not.toBeNull();
   });
+
+  it('should show a image within the hafslund logo link', () => {
+    const menuElements: HTMLAnchorElement[] = getElements('.logo');
+    expect(menuElements.length).toBe(1);
+  });
+
+  function getElements(selector: string) {
+    return fixture.debugElement.nativeElement.querySelectorAll(selector);
+  }
 
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
