@@ -6,6 +6,8 @@
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/themes/prism-okaidia";
 
+@import "~@hafslundnett/hdd-style/utilities/breakpoints";
+
 html,
 body {
   height: 100%;
@@ -37,8 +39,11 @@ $typography: mat-typography-config(
 // shared styles
 
 .doc-page-container {
-  width: 700px;
+  width: auto;
   margin: auto;
+  @include breakpoint-up(Earth) {
+    width: 700px;
+  }
 }
 
 .doc-title {
