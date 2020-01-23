@@ -44,15 +44,6 @@ export class UserMenuComponent implements OnInit, OnChanges, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  // signOut() {
-  //   if (!this.signOutPagePath) {
-  //     alert('Utlogging er ikke konfigurer på denne siden. Kontakt din nermeste utvikler');
-  //     return;
-  //   }
-  //   this.router.navigate([this.signOutPagePath]);
-  //   // this.oidcSecurityService.logoff();
-  // }
-
   cancelMouseEventBubble(e: MouseEvent) {
     e.cancelBubble = true;
   }
