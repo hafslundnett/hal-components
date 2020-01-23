@@ -1,12 +1,12 @@
 <div class="sidenav" [ngClass]="{'open': isOpen}">
-  <a routerLink="/" class="logo">
+  <!-- <a routerLink="/" class="logo">
     <hal-svg-element 
       class="default-svg"
       [width]="'45px'"
       [height]="'40px'"
       [svgFilePath]="'assets/logo.svg'"
     ></hal-svg-element>
-  </a>
+  </a> -->
   <mat-nav-list class="menu-list">
     <ng-container *ngFor="let menuItem of menuItems">
       <div class="group-title" *ngIf="menuItem.groupTitle">
@@ -43,4 +43,4 @@
     </div>
   </div>
 </div>
-<div class="space-occupier"></div>
+<!-- <div class="space-occupier"></div> -->

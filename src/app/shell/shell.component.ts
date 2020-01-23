@@ -10,7 +10,7 @@ import { User } from '@hafslundnett/hal-components';
 export class ShellComponent implements OnInit {
 
   menuItems: MenuElement[] = [
-    { url: 'welcome', svgName: 'overview.svg', title: 'Front page', groupTitle: 'HAL', iconTitle: 'home' },
+    { url: 'Home', svgName: 'overview.svg', title: 'Front page', groupTitle: 'HAL', iconTitle: 'home' },
     { url: 'getting-started', svgName: 'analysis.svg', title: 'Getting Started', iconTitle: 'Install' },
     { url: 'hdd', svgName: 'analysis.svg', title: 'HDD', iconTitle: 'hdd' },
   ];

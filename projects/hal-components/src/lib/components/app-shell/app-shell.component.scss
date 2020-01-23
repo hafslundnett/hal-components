@@ -1,21 +1,51 @@
+@import "~@hafslundnett/hdd-style/utilities/breakpoints";
+
 .shell-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    hal-toolbar {
+      display: flex;
+      position: sticky;
+      top: 0;
+    }
 }
 
 .body {
-    max-width: calc(100% - 64px);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0%;
+
+  .sidenav-container {
+    width: 66px;
+    height: 100%;
+  }
+
+  .main-content {
     flex: 1 1 0%;
+    padding: 5px 6px;
+    box-sizing: border-box;
     
-    .main-content {
-      margin: 15px auto;
-      width: 94%;
-      box-sizing: border-box;
-    }
-    
-    .small-size {
-      width: 100%;
-      padding: 0 6px;
+    @include breakpoint-up(Earth) {
+      padding: 15px 3%;
     }
   }
+}
+
+// .body {
+//     max-width: calc(100% - 64px);
+//     flex: 1 1 0%;
+    
+//     .main-content {
+//       margin: 15px auto;
+//       width: 94%;
+//       box-sizing: border-box;
+//     }
+    
+//     .small-size {
+//       width: 100%;
+//       padding: 0 6px;
+//     }
+//   }
   
