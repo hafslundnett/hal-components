@@ -3,7 +3,7 @@ name: PublishNPM
 on: 
   push:
     branches:
-      - master
+      - auto-publish
 
 jobs:
   build:
