@@ -1,4 +1,4 @@
-<div class="hdd-dropdown_content is-active" *ngIf="showAutocomplete"> 
+<div class="hdd-dropdown_content is-active" *ngIf="showAutocomplete" [@autoCompleteAnimation]="filteredOptions.length"> 
   <div 
     class="hdd-dropdown_content_item" 
     *ngFor="let option of filteredOptions; let i = index" 
