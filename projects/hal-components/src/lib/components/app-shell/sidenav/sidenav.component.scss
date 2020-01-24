@@ -28,7 +28,7 @@ $header-top: 66px;
   display: flex;
   background: var(--hdd-color-white);
   height: calc(100% - #{$header-top});
-  z-index: 50;
+  z-index: 9;
   overflow: hidden;
   box-shadow: $shadow-light;
   transition: 0.4s width cubic-bezier(0.4, 0, 0.1, 1);
