@@ -63,7 +63,6 @@ export class SelectorDocComponent implements OnInit {
   <hal-selector
     [selectOptions]="selectOptions"
     [(selected)]="selectedEx2"
-    (selectedChange)="someMethod($event)"
     [label]="selectedLabelEx2"
     [placeholder]="'Placeholder'"
     [multipleChoices]="true"
@@ -122,9 +121,5 @@ placeholder = 'Placeholder';`;
   constructor() { }
 
   ngOnInit() { }
-
-  someMethod(selected: string) {
-    // console.log('Some method was called: ' + selected);
-  }
 
 }
