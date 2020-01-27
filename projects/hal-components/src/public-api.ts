@@ -45,6 +45,9 @@ export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts-popup.module
 
 export * from './lib/components/loading-spinner/loading-spinner.module';
 
+export * from './lib/components/paginator/paginator.module';
+export * from './lib/components/paginator/pagination';
+
 export * from './lib/components/selector/selector.module';
 export * from './lib/components/selector/select-option.interface';
 
