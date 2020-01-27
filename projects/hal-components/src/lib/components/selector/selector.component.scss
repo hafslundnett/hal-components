@@ -81,14 +81,39 @@ $select-border-width: 1px;
       color: var(--hdd-color-white);
     }
 
-    // Remove mat-checkboxes for multiple
-    .mat-pseudo-checkbox {
-      display: none;
+    &:hover {
+      .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
+        border: 1px solid var(--hdd-color-white);
+        background: var(--hdd-color-primary);
+      }
     }
 
     .selected-icon {
       padding-right: var(--hdd-spacing-primary);
       visibility: hidden;
+    }
+
+    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
+      border-radius: 4px;
+      border: 1px solid var(--hdd-color-primary);
+      background: var(--hdd-color-white);
+      width: 18px;
+      height: 18px;
+    }
+
+    .mat-pseudo-checkbox-disabled {
+      border-radius: 4px;
+      border: 1px solid;
+      width: 18px;
+      height: 18px;
+    }
+
+    .mat-pseudo-checkbox::after {
+      color: var(--hdd-color-white);
+      height: 5px;
+      width: 10px;
+      top: 3px;
+      left: 2px;
     }
 
     &-disabled {
@@ -120,8 +145,20 @@ $select-border-width: 1px;
         color: var(--hdd-color-white);
       }
 
+      &:hover {
+        .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
+          border: 1px solid var(--hdd-color-white);
+          background: var(--hdd-color-primary);
+        }
+      }
+
       .selected-icon {
         visibility: visible;
+      }
+
+      .mat-pseudo-checkbox {
+        border-radius: 4px;
+        background: var(--hdd-color-primary);
       }
     }
   }
