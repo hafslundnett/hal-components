@@ -49,7 +49,7 @@ export * from './lib/components/paginator/paginator.module';
 export * from './lib/components/paginator/pagination';
 
 export * from './lib/components/selector/selector.module';
-export * from './lib/components/selector/select-data.interface';
+export * from './lib/components/selector/select-option.interface';
 
 export * from './lib/components/autocomplete/autocomplete.module';
 export * from './lib/components/autocomplete/autocomplete-item.interface';
