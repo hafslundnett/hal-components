@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { User } from './user-menu/user.interface';
 
-// TODO rename header
 @Component({
   selector: 'hal-header',
   templateUrl: './header.component.html',
