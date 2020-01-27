@@ -15,12 +15,18 @@
     [ngClass]="{'is-small': isSmall}"
     [multiple]="multipleChoices"
   >
-    <mat-option 
-      *ngFor="let data of selectData" 
-      [value]="data.value"
-      [disabled]="isChoiceDisabled(data.value)"
+    <mat-option
+      *ngIf="multipleChoices && allowSelectAllOption"
+      [value]="allValue"
     >
-      <span class="selected-icon">
+      Marker alle
+    </mat-option>
+    <mat-option 
+      *ngFor="let data of selectOptions" 
+      [value]="data.value"
+      [disabled]="data.disabled"
+    >
+      <span *ngIf="!multipleChoices" class="selected-icon">
         <i class="fal fa-check"></i>
       </span> 
       {{ data.viewValue }}
