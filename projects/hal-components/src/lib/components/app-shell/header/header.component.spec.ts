@@ -1,15 +1,14 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HeaderComponent } from './header.component';
 
-import { ToolbarComponent } from './toolbar.component';
-
-describe('ToolbarComponent', () => {
-  let fixture: ComponentFixture<ToolbarComponent>;
+describe('HeaderComponent', () => {
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToolbarComponent ],
+      declarations: [ HeaderComponent ],
       imports: [
         RouterTestingModule
       ],
@@ -19,12 +18,12 @@ describe('ToolbarComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToolbarComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     fixture.detectChanges();
   });
 
-  it('should render a toolbar element', () => {
-    expect(getElement('h1')).not.toBeNull('Should render a mat-toolbar');
+  it('should render a header element', () => {
+    expect(getElement('h1')).not.toBeNull('Should render a h1');
   });
 
   it('should render a user menu element', () => {
