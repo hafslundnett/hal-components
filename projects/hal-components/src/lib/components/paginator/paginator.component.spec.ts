@@ -31,10 +31,10 @@ describe('PaginatorComponent', () => {
     fixture.detectChanges();
   });
 
-  it('When paginator gets initiated selectData should have same values as pageSizeOptions', () => {
-    expect(component.selectData[0].value).toBe('10');
-    expect(component.selectData[1].value).toBe('20');
-    expect(component.selectData[2].value).toBe('30');
+  it('When paginator gets initiated selectOptions should have same values as pageSizeOptions', () => {
+    expect(component.selectOptions[0].value).toBe('10');
+    expect(component.selectOptions[1].value).toBe('20');
+    expect(component.selectOptions[2].value).toBe('30');
   });
 
   describe('Page size option', () => {
@@ -117,7 +117,7 @@ describe('PaginatorComponent', () => {
       const lastElement = options.length - 1;
       (options.item(lastElement) as HTMLElement).click();
       fixture.detectChanges();
-      expect(component.selectData.length).toEqual(component.availablePageSizes.length + 1);
+      expect(component.selectOptions.length).toEqual(component.availablePageSizes.length + 1);
       expect(component.selectedPageSize).toBe(component.length);
     });
 
@@ -127,7 +127,7 @@ describe('PaginatorComponent', () => {
         length: new SimpleChange(null, component.allowAll, false)
       });
       fixture.detectChanges();
-      expect(component.selectData.length).toEqual(component.availablePageSizes.length);
+      expect(component.selectOptions.length).toEqual(component.availablePageSizes.length);
     });
   });
 
