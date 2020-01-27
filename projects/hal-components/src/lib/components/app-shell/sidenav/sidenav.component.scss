@@ -2,12 +2,12 @@
 
 $foreground-color: var(--hdd-color-grey-dark);
 $selected-color: var(--hdd-color-white);
-$selected-background-color: var(--hdd-color-blue-light1);
+$selected-background-color: var(--hdd-color-blue);
 $icon-size: 24px;
-$sidebar-width: 64px;
-$logo-size: 45px;
-$tile-size: 64px;
+$sidebar-width: 66px;
+$tile-size: 70px;
 $animation: 360ms cubic-bezier(0.6, 0, 0, 1);
+$header-top: 66px;
 
 .space-occupier {
   width: $sidebar-width;
@@ -18,36 +18,23 @@ $animation: 360ms cubic-bezier(0.6, 0, 0, 1);
 
 .sidenav {
   position: fixed;
+  top: $header-top;
+
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  // To stay in place when the top attribute is set on document.body (popup-global)
-  top: 0;
 
   width: $sidebar-width;
   display: flex;
   background: var(--hdd-color-white);
-  height: 100%;
-  z-index: 50;
+  height: calc(100% - #{$header-top});
+  z-index: 9;
   overflow: hidden;
   box-shadow: $shadow-light;
   transition: 0.4s width cubic-bezier(0.4, 0, 0.1, 1);
 
   &.open {
     width: 290px;
-  }
-}
-
-.logo {
-  height: $tile-size;
-  width: $tile-size;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-    transform: scaleY(0.9);
-    height: $logo-size;
   }
 }
 
@@ -62,6 +49,9 @@ mat-nav-list.menu-list {
     color: var(--hdd-color-blue);
     padding-top: 20px;
     padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    max-width: $sidebar-width;
   }
 
   .menu-item {
@@ -71,21 +61,23 @@ mat-nav-list.menu-list {
     font-weight: 500;
 
     .menu-label {
-      padding-left: 24px;
+      padding-left: 18px;
     }
 
     .menu-icon-title {
+      $menu-title-padding: 6px;
       position: absolute;
-      width: $sidebar-width;
+      width: $sidebar-width - ($menu-title-padding * 2);
+      padding: 0 $menu-title-padding;
+      overflow: hidden;
+      text-overflow: ellipsis;
       left: 0;
-      margin-top: 1.2rem;
-      font-weight: normal;
-      font-style: normal;
-      font-size: 0.6rem;
+      margin-top: 1.5rem;
+      font-weight: bold;
+      font-size: 0.75rem;
       text-align: center;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-      color: var(--hdd-color-grey-dark);
+      text-transform: capitalize;
+      color: var(--hdd-color-font-color);
       user-select: none;
     }
 
