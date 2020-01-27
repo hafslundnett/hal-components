@@ -3,7 +3,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 import { Pagination } from './pagination';
 import { DEFAULT_PAGE_SIZE } from './consts';
-import { SelectData } from '../selector/select-data.interface';
+import { SelectOption } from '../selector/select-option.interface';
 
 @Component({
   selector: 'hal-paginator',
@@ -31,7 +31,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   @Output() paginatorChange = new EventEmitter<Pagination>();
 
   pages: number[] = [];
-  selectData: SelectData[] = [];
+  selectOptions: SelectOption[] = [];
   selectedPageSizeSelect: string;
   selectedChange: string;
   selectAllValue = 'selectAllValue';
@@ -94,14 +94,14 @@ export class PaginatorComponent implements OnInit, OnChanges {
 
   private setSelectOptions() {
     this.availablePageSizes = this.getAvailablePageSizes();
-    this.selectData = this.availablePageSizes
+    this.selectOptions = this.availablePageSizes
       .map(option => {
-        const val: SelectData = { value: option.toString(), viewValue: option.toString() };
+        const val: SelectOption = { value: option.toString(), viewValue: option.toString() };
         return val;
       });
     if (this.allowAll) {
-      const selectAll: SelectData = { value: this.selectAllValue, viewValue: 'Alle' };
-      this.selectData.push(selectAll);
+      const selectAll: SelectOption = { value: this.selectAllValue, viewValue: 'Alle' };
+      this.selectOptions.push(selectAll);
     }
   }
 
