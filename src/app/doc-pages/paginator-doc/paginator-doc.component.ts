@@ -9,14 +9,14 @@ import { Pagination } from '@hafslundnett/hal-components';
 })
 export class PaginatorDocComponent implements OnInit {
   paginatorInput: ApiTableRow[] = [
-    { apiInput: '[length]', description: 'The length of entries of your data' },
-    { apiInput: '[pageSizeOptions]', description: 'The page size options that should be available' },
-    { apiInput: '[selectedPageSize]', description: 'The page size initially selected' },
-    { apiInput: '[unit]', description: 'Optional input to change name of elements to select between' },
-    { apiInput: '[selectedPageIndex]', description: 'Optional input sets selected page on index' },
+    { apiInput: '[length]', description: 'The number of elements (total) in the dataset.' },
+    { apiInput: '[pageSizeOptions]', description: 'The page size options that should be available. Default is [10, 20].' },
+    { apiInput: '[selectedPageSize]', description: 'The page size initially selected. Default is 10.' },
+    { apiInput: '[unit]', description: 'Optional input to change name of elements to select between. Default is "elementer".' },
+    { apiInput: '[selectedPageIndex]', description: 'Optional input sets selected page. Default is 0.' },
     { apiInput: '[showPaging]', description: 'Optional input to hide or show paging. Is true by default' },
-    { apiInput: '[allowAll]', description: 'Optional input to hide or show the "Alle" page size option. Is true by default' },
-    { apiInput: '(paginatorChange)', description: 'Detects paginator changes' },
+    { apiInput: '[allowAll]', description: 'Optional input to hide or show the "Alle" page size option. When selecting "Alle" all elements in the dataset will show. Default is true.' },
+    { apiInput: '(paginatorChange)', description: 'Detects paginator changes.' },
   ];
 
   htmlCode = `<hal-paginator
@@ -27,7 +27,7 @@ export class PaginatorDocComponent implements OnInit {
   (paginatorChange)="changePaginator($event)">
 </hal-paginator>`;
 
-  tsCode = `listOfNumbers: number[] = Array.from(Array(5).keys());
+  tsCode = `listOfNumbers: number[] = Array.from(Array(25).keys());
 slicedList: number[];
 pagination: Pagination = {
   pageSize: 0,
@@ -59,7 +59,7 @@ updatePaginatorValues(changes): void {
   this.pagination.pageSize = changes.pageSize;
 }`;
 
-  listOfNumbers: number[] = Array.from(Array(5).keys());
+  listOfNumbers: number[] = Array.from(Array(25).keys());
   slicedList: number[];
   pagination: Pagination = {
     pageSize: 0,
@@ -75,15 +75,6 @@ updatePaginatorValues(changes): void {
     this.pagination.pageIndex = 0;
     this.pagination.pageSize = 2;
     this.changePaginator();
-
-    setTimeout(() => {
-      this.listOfNumbers = Array.from(Array(25).keys());
-      this.pagination.length = this.listOfNumbers.length;
-      this.slicedList = this.listOfNumbers.slice(
-        this.pagination.pageSize * this.pagination.pageIndex,
-        this.pagination.pageSize * (this.pagination.pageIndex + 1)
-      );
-    }, 1000);
   }
 
   changePaginator(changes?: SimpleChanges): void {
