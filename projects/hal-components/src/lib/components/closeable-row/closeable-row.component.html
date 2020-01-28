@@ -1,6 +1,11 @@
 <mat-accordion #topLevelElement class="closable-root">
-  <mat-expansion-panel [expanded]="startExpanded" (afterCollapse)="toggle()" (opened)="toggle()">
-    <mat-expansion-panel-header>
+  <mat-expansion-panel 
+    [expanded]="startExpanded" 
+    (afterCollapse)="toggle()" 
+    (afterExpand)="toggle()" 
+    [ngClass]="showOverflow ? 'overflow-visible' : ''"
+    >
+    <mat-expansion-panel-header (click)="headerClicked()">
       <mat-panel-title>
         <ng-content select="RowHeader"></ng-content>
       </mat-panel-title>

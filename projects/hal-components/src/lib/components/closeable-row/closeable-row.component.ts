@@ -15,6 +15,8 @@ export class CloseableRowComponent implements OnInit, AfterViewInit {
 
   showContent = false;
   toggleEnabled = false;
+  showOverflow = false;
+  isChangingState = false;
 
   constructor() { }
 
@@ -22,11 +24,13 @@ export class CloseableRowComponent implements OnInit, AfterViewInit {
     if (this.noPadding) {
       this.topLevelElement.nativeElement.style.cssText = '--body-padding: 0px 0px;';
     } else {
-      this.topLevelElement.nativeElement.style.cssText = '--body-padding: 16px 24px;';
+      this.topLevelElement.nativeElement.style.cssText = '--body-padding: var(--hdd-spacing-2) var(--hdd-spacing-3);';
     }
     this.showContent = this.startExpanded;
+    if (this.startExpanded) {
+      this.showOverflow = true;
+    }
   }
-
   ngAfterViewInit() {
     // to omit any init emit
     this.toggleEnabled = true;
@@ -38,5 +42,21 @@ export class CloseableRowComponent implements OnInit, AfterViewInit {
     }
     this.showContent = !this.showContent;
     this.newOpenState.emit(this.showContent);
+
+    this.isChangingState = false;
+    if (this.showContent) {
+        requestAnimationFrame(() => {
+        this.showOverflow = true;
+      });
+    }
+  }
+
+  headerClicked() {
+    this.isChangingState = true;
+    if (this.showContent) {
+      requestAnimationFrame(() => {
+        this.showOverflow = false;
+      });
+    }
   }
 }
