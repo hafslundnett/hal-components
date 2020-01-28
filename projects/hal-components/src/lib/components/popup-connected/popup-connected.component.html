@@ -8,8 +8,10 @@
   [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
   (detach)="onClose()"
 >
-  <div class="animation-wrapper" @scaleUp role="dialog">
-    <div class="arrow-above" *ngIf="relativePositionY === 'below'"></div>
+  <div class="animation-wrapper" @popUpAnimation role="dialog">
+    <div 
+      *ngIf="!alignTop"
+      [ngClass]="!alignRight ? 'arrow-above' : 'arrow-above-right'"></div>
     <div 
       class="connected-popup-body" 
       [ngClass]="small ? 'small-popup' : 'normal-popup'" 
@@ -22,6 +24,8 @@
       </button>
       <ng-content></ng-content>
     </div>
-    <div class="arrow-below" *ngIf="relativePositionY === 'above'"></div>
+    <div 
+      *ngIf="alignTop"
+      [ngClass]="!alignRight ? 'arrow-below' : 'arrow-below-right'"></div>
   </div>
 </ng-template>

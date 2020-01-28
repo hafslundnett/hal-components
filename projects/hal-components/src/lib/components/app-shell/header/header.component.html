@@ -1,0 +1,14 @@
+<div class="hdd-header_logo">
+  <a class="center-flex" [routerLink]="['']">
+    <img class="logo" src="assets/logo.svg" alt="Hafslundnett logo">
+  </a>
+</div>
+<h1 class="hdd-header_title"><ng-content></ng-content></h1>
+
+<hal-user-menu  
+  class="hdd-header-user"
+  [user]="user"
+  [settingsPagePath]="settingsPagePath" 
+  [signOutPagePath]="signOutPagePath" 
+  [appListDomainUrl]="appListDomainUrl"
+></hal-user-menu>

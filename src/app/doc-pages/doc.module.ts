@@ -18,6 +18,7 @@ import { LoadingSpinnerDocModule } from './loading-spinner-doc/loading-spinner-d
 import { SchematicDocModule } from './schematic-doc/schematic-doc.module';
 import { SelectorDocModule } from './selector-doc/selector-doc.module';
 import { AutocompleteDocModule } from './autocomplete-doc/autocomplete-doc.module';
+import { PaginatorDocModule } from './paginator-doc/paginator-doc.module';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { AutocompleteDocModule } from './autocomplete-doc/autocomplete-doc.modul
     LoadingSpinnerDocModule,
     SchematicDocModule,
     SelectorDocModule,
-    AutocompleteDocModule
+    AutocompleteDocModule,
+    PaginatorDocModule
   ],
 })
 export class DocModule { }

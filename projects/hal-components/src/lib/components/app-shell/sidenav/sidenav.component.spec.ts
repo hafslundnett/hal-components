@@ -59,11 +59,6 @@ describe('SidenavComponent', () => {
     expect(menuElements.length).toBe(0);
   });
 
-  it('should show a image within the hafslund logo link', () => {
-    const menuElements: HTMLAnchorElement[] = getElements('.logo');
-    expect(menuElements.length).toBe(1);
-  });
-
   function getElement(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector);
   }

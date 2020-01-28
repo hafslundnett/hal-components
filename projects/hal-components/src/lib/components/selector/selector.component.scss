@@ -6,8 +6,8 @@ $select-small-padding-sides: 10px;
 $form-select-border-radius: 0.25rem;
 $select-border-width: 1px;
 
-@function get-subtract-padding() {
-  @return $select-padding-left + $select-padding-right;
+@function get-subtract-padding($padding1, $padding2) {
+  @return $padding1 + $padding2;
 }
 
 @function get-subtract-border() {
@@ -16,13 +16,14 @@ $select-border-width: 1px;
 
 .hal-selector {
   margin: 0;
+  padding: 0;
   
   .selector-label-disabled {
     color: var(--hdd-color-grey) !important;
   }
 
   .mat-select {
-    width: calc(100% - #{get-subtract-padding()} - #{get-subtract-border()});
+    width: calc(100% - #{get-subtract-padding($select-padding-left, $select-padding-right)} - #{get-subtract-border()});
     background: var(--hdd-color-white);
     color: var(--hdd-color-black);
     border: 1px solid var(--hdd-color-grey);
@@ -62,6 +63,7 @@ $select-border-width: 1px;
     }
 
     &.is-small {
+      width: calc(100% - #{get-subtract-padding($select-small-padding-sides, $select-small-padding-sides)} - #{get-subtract-border()});
       padding: $select-small-padding-top-bottom $select-small-padding-sides;
       font-size: 14px;
       text-align: right;
@@ -81,14 +83,39 @@ $select-border-width: 1px;
       color: var(--hdd-color-white);
     }
 
-    // Remove mat-checkboxes for multiple
-    .mat-pseudo-checkbox {
-      display: none;
+    &:hover {
+      .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
+        border: 1px solid var(--hdd-color-white);
+        background: var(--hdd-color-primary);
+      }
     }
 
     .selected-icon {
       padding-right: var(--hdd-spacing-primary);
       visibility: hidden;
+    }
+
+    .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
+      border-radius: 4px;
+      border: 1px solid var(--hdd-color-primary);
+      background: var(--hdd-color-white);
+      width: 18px;
+      height: 18px;
+    }
+
+    .mat-pseudo-checkbox-disabled {
+      border-radius: 4px;
+      border: 1px solid;
+      width: 18px;
+      height: 18px;
+    }
+
+    .mat-pseudo-checkbox::after {
+      color: var(--hdd-color-white);
+      height: 5px;
+      width: 10px;
+      top: 3px;
+      left: 2px;
     }
 
     &-disabled {
@@ -120,8 +147,20 @@ $select-border-width: 1px;
         color: var(--hdd-color-white);
       }
 
+      &:hover {
+        .mat-pseudo-checkbox:not(.mat-pseudo-checkbox-disabled) {
+          border: 1px solid var(--hdd-color-white);
+          background: var(--hdd-color-primary);
+        }
+      }
+
       .selected-icon {
         visibility: visible;
+      }
+
+      .mat-pseudo-checkbox {
+        border-radius: 4px;
+        background: var(--hdd-color-primary);
       }
     }
   }

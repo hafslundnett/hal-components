@@ -1,15 +1,17 @@
 <div class="shell-container">
-  <hal-sidenav [menuItems]="menuItems"></hal-sidenav>
-  <div class="body">
-    <hal-toolbar 
-      [user]="user"
-      [settingsPagePath]="settingsPagePath"
-      [signOutPagePath]="signOutPagePath"
-      [appListDomainUrl]="appListDomainUrl"
-    >
-      <ng-content select="pageTitle"></ng-content>
-    </hal-toolbar>
-    <div class="main-content" ngClass.lt-lg="small-size">
+  <hal-header 
+    [user]="user"
+    [settingsPagePath]="settingsPagePath"
+    [signOutPagePath]="signOutPagePath"
+    [appListDomainUrl]="appListDomainUrl"
+  >
+    <ng-content select="pageTitle"></ng-content>
+  </hal-header>
+  <div class="body"> 
+    <div class="sidenav-container">
+      <hal-sidenav [menuItems]="menuItems" [menuIconsFolder]="menuIconsFolder"></hal-sidenav>
+    </div>
+    <div class="main-content">
       <ng-content select="pageContent"></ng-content>
     </div>
   </div>
