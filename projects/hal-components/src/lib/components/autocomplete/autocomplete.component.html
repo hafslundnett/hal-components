@@ -5,8 +5,7 @@
     (click)="optionClicked(option)"
     [ngClass]="{ 'is-active': activeIndex === i }"
   >
-  <span class="highlighted">{{ option.label | highlightLetters: inputText }}</span>
-  <span>{{ option.label | highlightRestLetters: inputText }}</span>
-  
- </div>
+  <span id="autocompleteItems">
+    {{option.label}}</div>
+  </span>
 </div>

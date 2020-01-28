@@ -148,4 +148,11 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
     });
   }
 
+  private highligther() {
+    const highlithletters = document.getElementById('autocompleteItems');
+    // check if any of the charakters match the search string.
+    // TODO
+    // Add style to those array elements
+    // TODO
+  }
 }
