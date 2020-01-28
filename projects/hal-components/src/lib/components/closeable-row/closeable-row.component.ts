@@ -24,7 +24,7 @@ export class CloseableRowComponent implements OnInit, AfterViewInit {
     if (this.noPadding) {
       this.topLevelElement.nativeElement.style.cssText = '--body-padding: 0px 0px;';
     } else {
-      this.topLevelElement.nativeElement.style.cssText = '--body-padding: 16px 24px;';
+      this.topLevelElement.nativeElement.style.cssText = '--body-padding: var(--hdd-spacing-2) var(--hdd-spacing-3);';
     }
     this.showContent = this.startExpanded;
     if (this.startExpanded) {
