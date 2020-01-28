@@ -14,4 +14,8 @@
 - [ ] Yes (remember to link)
 - [ ] No
 
+## Have you added/updated the necessary tests?
+- [ ] Yes
+- [ ] No, not needed
+
 ## Describe PR briefly:
