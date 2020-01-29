@@ -34,15 +34,14 @@ describe('SelectorComponent', () => {
       fixture = TestBed.createComponent(SelectorComponent);
       component = fixture.componentInstance;
       component.multipleChoices = true;
-      component.selectData = [
+      component.selectOptions = [
         {value: 'Alt1', viewValue: 'Alternative 1'},
         {value: 'Alt2', viewValue: 'Alternative 2'},
-        {value: 'Alt3', viewValue: 'Alternative 3'},
+        {value: 'Alt3', viewValue: 'Alternative 3', disabled: true},
       ];
       component.selected = 'Alt2';
       component.placeholder = 'PlaceholderTest';
       component.label = 'LabelTest';
-      component.choiceDisabled = 'Alt3';
       matSelect = fixture.debugElement.query(By.css('mat-select')).context;
       fixture.detectChanges();
     });
@@ -63,21 +62,41 @@ describe('SelectorComponent', () => {
         expect(component.selected.length).toEqual(2);
       });
     });
+
+    describe('If allowSelectAllOption is true', () => {
+      beforeEach(() => {
+        component.allowSelectAllOption = true;
+        fixture.detectChanges();
+        const selectElement: HTMLElement = getElement('mat-select .mat-select-trigger');
+        selectElement.click();
+        fixture.detectChanges();
+      });
+      it('Should be able to select option "Marker alle"', () => {
+        component.selected = [];
+        fixture.detectChanges();
+        const options = document.querySelectorAll('mat-option');
+        (options.item(0) as HTMLElement).click();
+        fixture.detectChanges();
+
+        const options2: MatOption[] = matSelect.options.toArray();
+        expect(options2.find(opt => opt.value === component.allValue)).toBeTruthy();
+        expect(component.selected.length).toEqual(3);
+      });
+    });
   });
 
   describe('Singel select', () => {
     beforeEach(() => {
       fixture = TestBed.createComponent(SelectorComponent);
       component = fixture.componentInstance;
-      component.selectData = [
+      component.selectOptions = [
         {value: 'Alt1', viewValue: 'Alternative 1'},
         {value: 'Alt2', viewValue: 'Alternative 2'},
-        {value: 'Alt3', viewValue: 'Alternative 3'},
+        {value: 'Alt3', viewValue: 'Alternative 3', disabled: true},
       ];
       component.selected = 'Alt2';
       component.placeholder = 'PlaceholderTest';
       component.label = 'LabelTest';
-      component.choiceDisabled = 'Alt3';
       matSelect = fixture.debugElement.query(By.css('mat-select')).context;
       fixture.detectChanges();
     });
@@ -98,9 +117,9 @@ describe('SelectorComponent', () => {
       });
     });
 
-    it('Should have same amount of options as defined in selectData', () => {
+    it('Should have same amount of options as defined in selectOptions', () => {
       const options: MatOption[] = matSelect.options.toArray();
-      expect(options.length).toBe(component.selectData.length);
+      expect(options.length).toBe(component.selectOptions.length);
     });
 
     it('Selected should be same as sent in value', () => {

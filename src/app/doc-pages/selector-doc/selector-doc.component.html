@@ -28,17 +28,16 @@
       <code><pre>import {{ '{' }} Selector {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
     </hal-doc-import-line>
     <hal-doc-import-line>
-      <code><pre>import {{ '{' }} SelectData {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+      <code><pre>import {{ '{' }} SelectOption {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
     </hal-doc-import-line>
   
     <h2 class="doc-subtitle">Examples</h2>
     <div class="example-container">
       <div class="example">
         <hal-selector 
-          [selectData]="selectData" 
+          [selectOptions]="selectOptions" 
           [(selected)]="selectedEx1"
           [label]="selectedLabelEx1" 
-          [choiceDisabled]="choiceDisabled"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx1">Selected data: <b>{{ selectedEx1 }}</b></h2>
@@ -46,12 +45,12 @@
     <div class="example-container">
       <div class="example">
         <hal-selector 
-          [selectData]="selectData" 
+          [selectOptions]="selectOptions" 
           [(selected)]="selectedEx2"
-          (selectedChange)="someMethod($event)"
           [label]="selectedLabelEx2" 
           [placeholder]="placeholder"
           [multipleChoices]="true"
+          [allowSelectAllOption]="true"
         ></hal-selector>
       </div>
       <h2 *ngIf="selectedEx2.length>0">
@@ -62,7 +61,7 @@
     <div class="example-container">
       <div class="example">
         <hal-selector 
-          [selectData]="selectData" 
+          [selectOptions]="selectOptions" 
           [(selected)]="selectedEx3"
           [label]="selectedLabelEx3"
           [disabled]="true" 
@@ -72,7 +71,7 @@
     <div class="example-container">
       <div class="small-example">
         <hal-selector 
-          [selectData]="selectSmallData" 
+          [selectOptions]="selectSmallOptions" 
           [(selected)]="selectedEx4"
           [isSmall]="true"
           [noLabel]="true"

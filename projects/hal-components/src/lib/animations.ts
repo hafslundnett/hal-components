@@ -101,6 +101,25 @@ export const listAnimation: AnimationTriggerMetadata = trigger('listAnimation', 
   ])
 ]);
 
+export const popUpAnimation: AnimationTriggerMetadata = trigger('popUpAnimation', [
+  state(
+    'void',
+    style({
+      opacity: 0,
+      transform: 'scale(0.7)'
+    })
+  ),
+  state(
+    '*',
+    style({
+      opacity: 1,
+      transform: 'scale(1)'
+    })
+  ),
+  transition('void => *', animate(`150ms`)),
+  transition('* => void', animate(`150ms`))
+]);
+
 export const autoCompleteAnimation: AnimationTriggerMetadata = trigger('autoCompleteAnimation', [
   transition('* => *', [
     query(

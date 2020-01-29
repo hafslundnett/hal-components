@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuElement } from '@hafslundnett/hal-components';
 import { User } from '@hafslundnett/hal-components';
+import { Pages } from '../shared/models/pages.enum';
 
 @Component({
   selector: 'hal-shell',
@@ -10,9 +11,9 @@ import { User } from '@hafslundnett/hal-components';
 export class ShellComponent implements OnInit {
 
   menuItems: MenuElement[] = [
-    { url: 'welcome', svgName: 'overview.svg', title: 'Front page', groupTitle: 'HAL', iconTitle: 'home' },
-    { url: 'getting-started', svgName: 'analysis.svg', title: 'Getting Started', iconTitle: 'Install' },
-    { url: 'hdd', svgName: 'analysis.svg', title: 'HDD', iconTitle: 'hdd' },
+    { url: Pages.Welcome, svgName: 'overview.svg', title: 'Front page', groupTitle: 'HAL', iconTitle: 'home' },
+    { url: Pages.GettingStarted, svgName: 'analysis.svg', title: 'Getting Started', iconTitle: 'Install' },
+    { url: Pages.Hdd, svgName: 'analysis.svg', title: 'HDD', iconTitle: 'hdd' },
   ];
   user: User = { email: 'jan.greger@gmail.com', name: 'Jan Greger Hemb', thumbnail: undefined};
   settingsPagePath = 'settings-page';

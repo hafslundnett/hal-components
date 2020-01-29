@@ -11,6 +11,7 @@ export class AppShellDocComponent implements OnInit {
   api: ApiTableRow[] = [
     // tslint:disable-next-line:max-line-length
     { apiInput: '[menuItems]', description: 'List of the menu elements with url, svg file name, title, iconTitle and potentially groupTitle' },
+    { apiInput: '[menuIconsFolder]', description: 'The name of the sub-folder in the assets folder with the active and default icons' },
     { apiInput: '[user]', description: 'The current active user' },
     { apiInput: '[settingsPagePath]', description: 'URL to settings page in your application' },
     { apiInput: '[signOutPagePath]', description: 'URL to sign out page in your application. That page should auto sign out the user' },

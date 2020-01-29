@@ -1,0 +1,69 @@
+$paging-button-size: 32px;
+$paginator-width: 71px;
+$arrow-button-gap: 6px;
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  line-height: 150%;
+  letter-spacing: 0.15px;
+
+  .dropdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .paginator-selector {
+      display: inline-block;
+      width: $paginator-width;
+      margin: 0 var(--hdd-spacing-primary);
+    }
+  }
+
+  .page-navigation {
+    display: flex;
+    align-items: center;
+
+    .dots {
+      color: var(--hdd-color-primary);
+      margin: 0 10px;
+    }
+
+    .hdd-button-icon {
+      width: $paging-button-size;
+      height: $paging-button-size;
+    }
+    
+    // Should maybe be generalized in hdd (as some kind of toggle button)
+    .arrow-button {
+      font-size: 1rem;
+      &.hidden {
+        display: none;
+      }
+    }
+
+    .arrow-button:first-child {
+      margin-right: 4px;
+    }
+
+    .paginator-button {
+      margin: 0 4px;
+      font-size: 0.875rem;
+      &.is-selected {
+        background-color: var(--hdd-color-primary);
+        color: var(--hdd-color-white);
+        outline: none;
+        &:active {
+          background-color: var(--hdd-color-blue-dark);
+        }
+      }
+    }
+
+    .arrow-button:last-child {
+      margin-left: 4px;
+    }
+  }
+}
