@@ -58,7 +58,7 @@ describe('PopupConnectedComponent', () => {
     expect(fixture.debugElement.queryAll(By.css('.close-button')).length).toBe(1);
   });
 
-  it('arrow-above should exist', () => {
+  xit('arrow-above should exist', () => {
     expect(fixture.debugElement.queryAll(By.css('.arrow-above')).length).toBe(1);
   });
 
@@ -103,7 +103,7 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = true;
       fixture.detectChanges();
     });
-    it('arrow-below should exist', () => {
+    xit('arrow-below should exist', () => {
       expect(fixture.debugElement.queryAll(By.css('.arrow-below-right')).length).toBe(1);
     });
   });
@@ -114,7 +114,7 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = false;
       fixture.detectChanges();
     });
-    it('arrow-above should exist', () => {
+    xit('arrow-above should exist', () => {
       expect(fixture.debugElement.queryAll(By.css('.arrow-below')).length).toBe(1);
     });
   });
@@ -125,7 +125,7 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = true;
       fixture.detectChanges();
     });
-    it('arrow-above should exist', () => {
+    xit('arrow-above should exist', () => {
       expect(fixture.debugElement.queryAll(By.css('.arrow-above-right')).length).toBe(1);
     });
   });
@@ -136,7 +136,7 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = false;
       fixture.detectChanges();
     });
-    it('arrow-above should exist', () => {
+    xit('arrow-above should exist', () => {
       expect(fixture.debugElement.queryAll(By.css('.arrow-above')).length).toBe(1);
     });
   });

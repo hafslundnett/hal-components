@@ -20,7 +20,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   @Output() popupClose: EventEmitter<void> = new EventEmitter();
 
   scrollStrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
-  position: ConnectionPositionPair;
+  position: ConnectionPositionPair[];
 
   constructor(private overlay: Overlay) {
   }
@@ -32,7 +32,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     this.position = this.getPosition();
   }
 
-  getPosition() {
+  getPosition(): ConnectionPositionPair[] {
     if (this.alignTop === true && this.alignRight === false) {
       return this.getPositionTopLeft();
     } else if (this.alignTop === true && this.alignRight === true) {
@@ -46,29 +46,70 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     }
   }
 
-  getPositionTopLeft() {
-    return new ConnectionPositionPair(
-      { originX: 'end', originY: 'top' },
-      { overlayX: 'end', overlayY: 'bottom' }
-    );
+  getPositionTopLeft(): ConnectionPositionPair[] {
+    return [
+      {
+        originX: 'end',
+        originY: 'top',
+        overlayX: 'end',
+        overlayY: 'bottom'
+      },
+      {
+        originX: 'end',
+        originY: 'bottom',
+        overlayX: 'end',
+        overlayY: 'top'
+      },
+    ];
   }
-  getPositionTopRight() {
-    return new ConnectionPositionPair(
-      { originX: 'start', originY: 'top' },
-      { overlayX: 'start', overlayY: 'bottom' }
-    );
+  getPositionTopRight(): ConnectionPositionPair[] {
+    return [
+      {
+        originX: 'start',
+        originY: 'top',
+        overlayX: 'start',
+        overlayY: 'bottom'
+      },
+      {
+        originX: 'start',
+        originY: 'bottom',
+        overlayX: 'start',
+        overlayY: 'top'
+      },
+    ];
+
   }
-  getPositionBottomLeft() {
-    return new ConnectionPositionPair(
-      { originX: 'end', originY: 'bottom' },
-      { overlayX: 'end', overlayY: 'top' }
-    );
+  getPositionBottomLeft(): ConnectionPositionPair[] {
+    return [
+      {
+        originX: 'end',
+        originY: 'bottom',
+        overlayX: 'end',
+        overlayY: 'top'
+      },
+      {
+        originX: 'end',
+        originY: 'top',
+        overlayX: 'end',
+        overlayY: 'bottom'
+      },
+    ];
   }
-  getPositionBottomRight() {
-    return new ConnectionPositionPair(
-      { originX: 'start', originY: 'bottom' },
-      { overlayX: 'start', overlayY: 'top' }
-    );
+  getPositionBottomRight(): ConnectionPositionPair[] {
+    return [
+      {
+        originX: 'start',
+        originY: 'bottom',
+        overlayX: 'start',
+        overlayY: 'top'
+      },
+      {
+        originX: 'start',
+        originY: 'top',
+        overlayX: 'start',
+        overlayY: 'bottom'
+      },
+    ];
   }
 
   onClose() {
