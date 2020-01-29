@@ -41,7 +41,7 @@ $arrow-button-gap: 6px;
     .arrow-button {
       font-size: 1rem;
       &.hidden {
-        display: none;
+        visibility: hidden;
       }
     }
 
