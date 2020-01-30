@@ -1,6 +1,6 @@
 import { HighlightAutocomplete } from './highlight-autocomplete.pipe';
 
-fdescribe('Pipe: HighlightAutocomplete1e', () => {
+describe('Pipe: HighlightAutocomplete1e', () => {
   it('create an instance', () => {
     const pipe = new HighlightAutocomplete();
     expect(pipe).toBeTruthy();
