@@ -4,10 +4,15 @@ import { AutocompleteComponent } from './autocomplete.component';
 import { HighlightAutocomplete } from './highlight-autocomplete.pipe';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [AutocompleteComponent, HighlightAutocomplete],
-  exports: [AutocompleteComponent]
+   imports: [
+      CommonModule
+   ],
+   declarations: [
+      AutocompleteComponent,
+      HighlightAutocomplete
+   ],
+   exports: [
+      AutocompleteComponent
+   ]
 })
 export class AutocompleteModule { }
