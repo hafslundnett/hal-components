@@ -131,6 +131,31 @@ describe('CloseableRowComponent', () => {
     });
   });
 
+  describe('should have overflow visible panel is expanded', () => {
+
+    beforeEach(() => {
+      component.startExpanded = true;
+      component.toggleEnabled = true;
+      fixture.detectChanges();
+    });
+
+    it('shoud have overflow visible when panel is expanded', () => {
+      expect(component.showOverflow).toBeTruthy();
+    });
+  });
+
+  describe('should have overflow hidden when panel is closed', () => {
+
+    beforeEach(() => {
+      component.startExpanded = false;
+      fixture.detectChanges();
+    });
+
+    it('shoud have overflow visible when panel is expanded', () => {
+      expect(component.showOverflow).toBeFalsy();
+    });
+  });
+
   function getElementStyle(selector: string) {
     return fixture.debugElement.nativeElement.querySelector(selector).style.cssText;
   }

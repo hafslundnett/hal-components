@@ -1,11 +1,13 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { AutocompleteItem } from './autocomplete-item.interface';
 import { fromEvent, Subscription } from 'rxjs';
+import { autoCompleteAnimation } from '../../animations';
 
 @Component({
   selector: 'hal-autocomplete',
   templateUrl: './autocomplete.component.html',
-  styleUrls: ['./autocomplete.component.scss']
+  styleUrls: ['./autocomplete.component.scss'],
+  animations: [autoCompleteAnimation]
 })
 export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
 
