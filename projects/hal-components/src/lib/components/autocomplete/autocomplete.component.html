@@ -5,11 +5,7 @@
     (click)="optionClicked(option)"
     [ngClass]="{ 'is-active': activeIndex === i }"
   >
-    <span style="white-space: nowrap;">
-      {{option.label | filterFirst: inputText}}
-    <mark class="highlighted">{{option.label| highlightLetters: inputText }}</mark>
-    
-    {{option.label | filterLast: inputText}}
+    <span [innerHTML]="option.label | highlightAutocomplete: inputText">
     </span>
   </div>
 </div>

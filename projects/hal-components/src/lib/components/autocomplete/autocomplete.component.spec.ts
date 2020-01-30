@@ -4,6 +4,7 @@ import { AutocompleteItem } from './autocomplete-item.interface';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HighlightAutocomplete } from './highlight-autocomplete.pipe';
 
 const options: AutocompleteItem[] = [
   {
@@ -48,7 +49,7 @@ class TestComponent {
   }
 }
 
-describe('AutocompleteComponent', () => {
+fdescribe('AutocompleteComponent', () => {
   let component: AutocompleteComponent;
   let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
@@ -56,7 +57,7 @@ describe('AutocompleteComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [NoopAnimationsModule],
-      declarations: [AutocompleteComponent, TestComponent]
+      declarations: [AutocompleteComponent, TestComponent, HighlightAutocomplete]
     })
       .compileComponents();
   }));
