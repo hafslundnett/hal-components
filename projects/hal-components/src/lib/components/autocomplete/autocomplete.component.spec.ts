@@ -3,6 +3,7 @@ import { AutocompleteComponent } from './autocomplete.component';
 import { AutocompleteItem } from './autocomplete-item.interface';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 const options: AutocompleteItem[] = [
   {
@@ -54,6 +55,7 @@ describe('AutocompleteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [NoopAnimationsModule],
       declarations: [AutocompleteComponent, TestComponent]
     })
       .compileComponents();

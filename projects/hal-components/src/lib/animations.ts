@@ -119,3 +119,22 @@ export const popUpAnimation: AnimationTriggerMetadata = trigger('popUpAnimation'
   transition('void => *', animate(`150ms`)),
   transition('* => void', animate(`150ms`))
 ]);
+
+export const autoCompleteAnimation: AnimationTriggerMetadata = trigger('autoCompleteAnimation', [
+  transition('* => *', [
+    query(
+      ':enter',
+      animate(
+        '60ms',
+        keyframes([
+          style({ opacity: 0, height: 0, offset: 0 }),
+          style({ opacity: 1, height: '*', offset: 1 })
+        ])
+      ),
+      { optional: true }
+    ),
+    query(':leave', animate('60ms', style({ height: 0, opacity: 0 })), {
+      optional: true
+    })
+  ])
+]);
