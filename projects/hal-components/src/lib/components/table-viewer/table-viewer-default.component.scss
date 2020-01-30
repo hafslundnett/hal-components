@@ -6,3 +6,8 @@
         top: 64px; // header top height
     }
 }
+
+.table-viewer-paginator {
+    display: block;
+    padding: var(--hdd-spacing-2) var(--hdd-spacing-1);
+}
