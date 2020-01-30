@@ -125,7 +125,7 @@ export const autoCompleteAnimation: AnimationTriggerMetadata = trigger('autoComp
     query(
       ':enter',
       animate(
-        '100ms',
+        '60ms',
         keyframes([
           style({ opacity: 0, height: 0, offset: 0 }),
           style({ opacity: 1, height: '*', offset: 1 })
@@ -133,7 +133,7 @@ export const autoCompleteAnimation: AnimationTriggerMetadata = trigger('autoComp
       ),
       { optional: true }
     ),
-    query(':leave', animate('100ms', style({ height: 0, opacity: 0 })), {
+    query(':leave', animate('60ms', style({ height: 0, opacity: 0 })), {
       optional: true
     })
   ])
