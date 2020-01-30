@@ -49,7 +49,7 @@ class TestComponent {
   }
 }
 
-fdescribe('AutocompleteComponent', () => {
+describe('AutocompleteComponent', () => {
   let component: AutocompleteComponent;
   let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
