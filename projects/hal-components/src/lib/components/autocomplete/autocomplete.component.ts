@@ -148,11 +148,21 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
     });
   }
 
-  private highligther() {
-    const highlithletters = document.getElementById('autocompleteItems');
-    // check if any of the charakters match the search string.
-    // TODO
-    // Add style to those array elements
-    // TODO
-  }
+  // public highligther() {
+
+  //   // tslint:disable-next-line:prefer-for-of
+  //   for (let i = 0; i < this.filteredOptions.length; i++) {
+  //     if (!this.inputText) {
+  //       return '<span>' + this.filteredOptions[i].label + '</span>';
+  //     }
+
+  //     // er inne på noe her..... men returner en ferdig liste over alle elemeneten som matcher.
+  //     // return this.filteredOptions[i].label.replace(new RegExp(this.inputText, 'gi'), match => {
+  //     //   return '<span>' + match + '</span>' +
+  //     //     '<span class="highlighted">' + match + '</span>' +
+  //     //    '<span>' + match + '</span>'
+  //     //   ;
+  //     // });
+  //   }
+  // }
 }

@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AutocompleteComponent } from './autocomplete.component';
-import { HighlightLetters } from './higlight-letter.pipe';
-import { HighlightRestLetters } from './highlight-rest.pipe';
+import { HighlightLetters } from './highlight-letters.pipe';
+import { FilterFirst } from './filter-first.pipe';
+import { FilterLast } from './filter-last.pipe';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [AutocompleteComponent, HighlightLetters, HighlightRestLetters],
+  declarations: [AutocompleteComponent, HighlightLetters, FilterFirst, FilterLast],
   exports: [AutocompleteComponent]
 })
 export class AutocompleteModule { }

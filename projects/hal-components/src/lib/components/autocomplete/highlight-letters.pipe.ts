@@ -11,6 +11,24 @@ export class HighlightLetters implements PipeTransform {
         if (!searchText) {
             return;
         }
+        /*
+            On match on first letter or substring, take out match and return.
+            else, return nothing.
+        */
+
+        if (InputOption.toLowerCase().includes(searchText.toLowerCase())) {
+
+            const matchIndex = InputOption.toLowerCase().search(searchText.toLowerCase());
+            console.log(matchIndex);
+            const result = InputOption.substring(matchIndex, searchText.length);
+
+            console.log(result);
+            if (result.toLowerCase() === searchText.toLowerCase()) {
+            }
+            return result;
+
+            // console.log(searchText);
+        }
 
         // if (InputOption.includes(searchText)) {
         //     const boldText = InputOption.slice(0, searchText.length);
