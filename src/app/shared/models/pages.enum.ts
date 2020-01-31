@@ -22,4 +22,5 @@ export enum Pages {
   Schematic = 'schematic',
   SelectorDoc = 'selector-doc',
   Autocomplete = 'autocomplete',
+  CheckboxFilter = 'checkbox-filter-doc',
 }

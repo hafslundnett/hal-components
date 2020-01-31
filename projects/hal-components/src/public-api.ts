@@ -53,3 +53,5 @@ export * from './lib/components/selector/select-option.interface';
 
 export * from './lib/components/autocomplete/autocomplete.module';
 export * from './lib/components/autocomplete/autocomplete-item.interface';
+
+export * from './lib/components/checkbox-filter/checkbox-filter.module';

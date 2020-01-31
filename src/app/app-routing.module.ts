@@ -25,6 +25,7 @@ import { SchematicDocComponent } from './doc-pages/schematic-doc/schematic-doc.c
 import { SelectorDocComponent } from './doc-pages/selector-doc/selector-doc.component';
 import { AutocompleteDocComponent } from './doc-pages/autocomplete-doc/autocomplete-doc.component';
 import { PaginatorDocComponent } from './doc-pages/paginator-doc/paginator-doc.component';
+import { CheckboxFilterDocComponent } from './doc-pages/checkbox-filter-doc/checkbox-filter-doc.component';
 
 const routes: Routes = [
   {
@@ -128,6 +129,10 @@ const routes: Routes = [
       {
         path: Pages.Autocomplete,
         component: AutocompleteDocComponent
+      },
+      {
+        path: Pages.CheckboxFilter,
+        component: CheckboxFilterDocComponent
       },
     ]
   }

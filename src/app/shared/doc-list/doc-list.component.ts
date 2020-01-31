@@ -84,6 +84,12 @@ export class DocListComponent implements OnInit {
       cardIcon: 'fa-bars',
       docUrl: Pages.Autocomplete
     },
+    {
+      cardTitle: 'Checkbox Filter',
+      cardSubtitle: 'Checkboxes to filter on options',
+      cardIcon: 'fa-tasks',
+      docUrl: Pages.CheckboxFilter
+    },
   ];
 
   services: DocListItem[] = [

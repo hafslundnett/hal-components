@@ -19,6 +19,7 @@ import { SchematicDocModule } from './schematic-doc/schematic-doc.module';
 import { SelectorDocModule } from './selector-doc/selector-doc.module';
 import { AutocompleteDocModule } from './autocomplete-doc/autocomplete-doc.module';
 import { PaginatorDocModule } from './paginator-doc/paginator-doc.module';
+import { CheckboxFilterDocModule } from './checkbox-filter-doc/checkbox-filter-doc.module';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { PaginatorDocModule } from './paginator-doc/paginator-doc.module';
     SchematicDocModule,
     SelectorDocModule,
     AutocompleteDocModule,
-    PaginatorDocModule
+    PaginatorDocModule,
+    CheckboxFilterDocModule,
   ],
 })
 export class DocModule { }
