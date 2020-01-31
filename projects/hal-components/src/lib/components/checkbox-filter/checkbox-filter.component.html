@@ -1,3 +1,20 @@
-<p>
-  checkbox-filter works!
-</p>
+
+
+<div class="hdd-form_field">
+  <span class="hdd-form_field_title">Checkboxes</span>
+  <label class="hdd-form_checkbox" *ngFor="let option of filterOptions">
+    <input type="checkbox" checked="option.checked">
+    <span class="hdd-form_checkbox_mark"></span>
+    <span class="hdd-form_checkbox_label">{{ option.viewValue }}</span>
+  </label>
+  <label class="hdd-form_checkbox">
+    <input type="checkbox">
+    <span class="hdd-form_checkbox_mark"></span>
+    <span class="hdd-form_checkbox_label">Unpicked checkbox</span>
+  </label>
+  <label class="hdd-form_checkbox is-invalid">
+    <input type="checkbox">
+    <span class="hdd-form_checkbox_mark"></span>
+    <span class="hdd-form_checkbox_label">Invalid checkbox</span>
+  </label>
+</div>

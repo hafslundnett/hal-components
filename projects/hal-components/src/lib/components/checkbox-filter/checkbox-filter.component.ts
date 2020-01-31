@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FilterOption } from './filter-option';
 
 @Component({
   selector: 'hal-checkbox-filter',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkbox-filter.component.scss']
 })
 export class CheckboxFilterComponent implements OnInit {
+
+  @Input() filterOptions: FilterOption;
 
   constructor() { }
 
