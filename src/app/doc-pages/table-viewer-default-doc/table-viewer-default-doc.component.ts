@@ -57,6 +57,18 @@ setOnlyName() {
 setAll() {
   this.filteredTableConfig = this.tableConfig;
 }
+
+addRow() {
+  // just pushing will not allow angular to detect the change. Need a new array
+  this.tableData = [
+    ...this.tableData,
+    {
+      age: 12,
+      name: 'Stoffer',
+      role: 'Asker'
+    }
+  ];
+}
   `;
   htmlCode = `<hal-table-viewer-default
   [tableData]="tableData"
@@ -64,6 +76,7 @@ setAll() {
   [tableConfigStatic]="tableConfigStatic"
   [sliceSize]="sliceSize"
   [filteredTableConfig]="filteredTableConfig"
+  [paginationOptions]="[5, 10, 20]"
 ></hal-table-viewer-default>`;
 
   apiTableRowsDefaultViewer: ApiTableRow[] = [
@@ -73,6 +86,7 @@ setAll() {
     { apiInput: '[tableConfig]', description: 'The config for the table' },
     { apiInput: '[tableConfigStatic]', description: 'The static version of the config for the table' },
     { apiInput: '[stickyHeader]', description: 'If header should be sticky' },
+    { apiInput: '[paginationOptions]', description: 'Setting this will enable pagination. Set the pagination size options (elements pr page) with an array. The page-size option to see everything in the table will be added by automatically.' },
   ];
 
   detailsTabColumnProps: ApiTableRow[] = [
@@ -95,6 +109,18 @@ setAll() {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addRow() {
+    // just pushing will not allow angular to detect the change. Need a new array
+    this.tableData = [
+      ...this.tableData,
+      {
+        age: 12,
+        name: 'Stoffer',
+        role: 'Asker'
+      }
+    ];
   }
 
   setOnlyName() {

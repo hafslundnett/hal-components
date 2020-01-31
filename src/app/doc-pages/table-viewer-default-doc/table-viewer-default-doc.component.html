@@ -14,11 +14,11 @@
   </p>
 
   <p class="doc-info">
-    For pagination, use the paginator (TODO), and add a sliceSize for desired page size
+    For pagination, set the paginationOptions to the desired elements pr page.
   </p>
 
   <p class="doc-info">
-    NB! Add the table inside a container with horizontal scroll ff you want a table that scrolls horizontally due to it large size 
+    NB! Add the table inside a container with horizontal scroll if you want a table that scrolls horizontally due to it large size 
   </p>
 
   <!-- TODO add container with horizontal scroll if too wide -->
@@ -43,6 +43,9 @@
       <button type="button" (click)="setRandomOrder()" class="hdd-button">
         <span>Show random order</span>
       </button>
+      <button type="button" (click)="addRow()" class="hdd-button">
+        <span>Add row</span>
+      </button>
     </div>
     <hal-table-viewer-default 
       [tableData]="tableData"
@@ -51,6 +54,7 @@
       [sliceSize]="sliceSize" 
       [filteredTableConfig]="filteredTableConfig"
       [stickyHeader]="true"
+      [paginationOptions]="[5, 10, 20]"
     ></hal-table-viewer-default>
   </div>
 
