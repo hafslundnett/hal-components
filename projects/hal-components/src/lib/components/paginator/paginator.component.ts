@@ -81,7 +81,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
         this.selectedPageSizeSelect = this.selectedPageSize.toString();
 
         if (!this.pageSizeOptions.some(current => current.toString() === this.selectedPageSizeSelect)) {
-          console.warn('PageSize not on available page sizes');
+          console.warn('selectedPageSize is not an option in the given pageSizeOptions');
         }
       }
     }

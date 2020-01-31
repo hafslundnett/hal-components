@@ -86,7 +86,7 @@ addRow() {
     { apiInput: '[tableConfig]', description: 'The config for the table' },
     { apiInput: '[tableConfigStatic]', description: 'The static version of the config for the table' },
     { apiInput: '[stickyHeader]', description: 'If header should be sticky' },
-    { apiInput: '[paginationOptions]', description: 'An array of the possible elements per page. One for everything will also be added automatically' },
+    { apiInput: '[paginationOptions]', description: 'Setting this will enable pagination. Set the pagination size options (elements pr page) with an array. The page-size option to see everything in the table will be added by automatically.' },
   ];
 
   detailsTabColumnProps: ApiTableRow[] = [
