@@ -8,7 +8,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   // Virker å være fiksa, prøv å test mot korrekt klasse nå.
-  styleUrls: ['./popup-connected.component.spec.scss'],
   template: `
   <div class="testingBox">
     <button
