@@ -36,8 +36,7 @@ jobs:
       with:
         args: yarn build-hal-schematics
         
-    - name: Publish
-      run: npm publish ./dist/hal-components/
+    - run: npm publish ./dist/hal-components/
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
 
