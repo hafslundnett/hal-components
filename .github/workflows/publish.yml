@@ -3,11 +3,11 @@ name: PublishNPM
 on: 
   push:
     branches:
-      - auto-publish
+      - trunk
 
 jobs:
   build:
-    name: Install and Build
+    name: Build and Publish
     runs-on: ubuntu-latest
     
     strategy:
