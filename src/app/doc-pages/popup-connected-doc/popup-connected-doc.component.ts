@@ -25,11 +25,11 @@ export class PopupConnectedDocComponent implements OnInit {
     },
     {
       apiInput: '[alignTop]',
-      description: 'Optional input to change the position of the popup in relation tot the element its connected to, on top or below. Options: true, false. Where false is default and aligns to below.'
+      description: 'Optional input to change the position of the popup in relation tot the element its connected to, on top or below. Options: true, false. Where false is defualt and aligns to below.'
     },
     {
       apiInput: '[alignRight]',
-      description: 'Optional input to change the alignement of the popup in relation tot the element its connected to. Options: true, false. Where false is default and aligns to the left.'
+      description: 'Optional input to change the alignement of the popup in relation tot the element its connected to. Options: true, false. Where false is defualt and aligns to the left.'
     },
     {
       apiInput: '(popupClose)',
