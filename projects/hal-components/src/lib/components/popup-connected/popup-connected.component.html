@@ -4,28 +4,37 @@
   [cdkConnectedOverlayOpen]="isOpen"
   [cdkConnectedOverlayPositions]="position"
   (backdropClick)="onClose()"
+  (positionChange)="onPositionChange($event)"
   [cdkConnectedOverlayHasBackdrop]="true"
   [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
   (detach)="onClose()"
 >
   <div class="animation-wrapper" @popUpAnimation role="dialog">
-    <!-- <div 
-      *ngIf="!alignTop"
-      [ngClass]="!alignRight ? 'arrow-above' : 'arrow-above-right'"></div> -->
     <div 
-      class="connected-popup-body" 
-      [ngClass]="small ? 'small-popup' : 'normal-popup'" 
-      cdkTrapFocus 
-      cdkTrapFocusAutoCapture
+    *ngIf="!currentTopAlignment && !currentHorizontalStartAlignment"
+    [ngClass]="!currentTopAlignment ? 'arrow-above' : ''">
+    </div>
+    <div 
+    *ngIf="!currentTopAlignment && currentHorizontalStartAlignment"
+    [ngClass]="!currentHorizontalStartAlignment ? '' : 'arrow-above-right'">
+    </div>
+    <div 
+    class="connected-popup-body" 
+    [ngClass]="small ? 'small-popup' : 'normal-popup'" 
+    cdkTrapFocus 
+    cdkTrapFocusAutoCapture
     >
       <button class="close-button" (click)="onClose()" *ngIf="!small">
-        Lukk
-        <i class="fal fa-times"></i>
+      Lukk
+      <i class="fal fa-times"></i>
       </button>
       <ng-content></ng-content>
     </div>
-    <!-- <div 
-      *ngIf="alignTop"
-      [ngClass]="!alignRight ? 'arrow-below' : 'arrow-below-right'"></div> -->
+    <div *ngIf="currentTopAlignment && !currentHorizontalStartAlignment"
+    [ngClass]="!currentTopAlignment ? '' : 'arrow-below'">
+    </div>
+    <div *ngIf="currentTopAlignment && currentHorizontalStartAlignment"
+    [ngClass]="!currentHorizontalStartAlignment ? '' : 'arrow-below-right'">
+    </div>
   </div>
 </ng-template>
