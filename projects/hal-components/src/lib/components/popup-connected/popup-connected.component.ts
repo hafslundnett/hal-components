@@ -1,6 +1,7 @@
-import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges, NgZone } from '@angular/core';
 import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay } from '@angular/cdk/overlay';
 import { popUpAnimation } from '../../animations';
+import { topLeft, topRight, bottomLeft, bottomRight } from './poup-connections-positions.constants';
 export type popupPosition = 'above' | 'below';
 
 @Component({
@@ -22,7 +23,10 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   scrollStrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
   position: ConnectionPositionPair[];
 
-  constructor(private overlay: Overlay) {
+  currentTopAlignment = false;
+  currentHorizontalStartAlignment = false;
+
+  constructor(private overlay: Overlay, public zone: NgZone) {
   }
 
   ngOnInit() {
@@ -47,73 +51,34 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   }
 
   getPositionTopLeft(): ConnectionPositionPair[] {
-    return [
-      {
-        originX: 'end',
-        originY: 'top',
-        overlayX: 'end',
-        overlayY: 'bottom'
-      },
-      {
-        originX: 'end',
-        originY: 'bottom',
-        overlayX: 'end',
-        overlayY: 'top'
-      },
-    ];
+    return [topLeft, topRight, bottomLeft, bottomRight];
   }
   getPositionTopRight(): ConnectionPositionPair[] {
-    return [
-      {
-        originX: 'start',
-        originY: 'top',
-        overlayX: 'start',
-        overlayY: 'bottom'
-      },
-      {
-        originX: 'start',
-        originY: 'bottom',
-        overlayX: 'start',
-        overlayY: 'top'
-      },
-    ];
-
+    return [topRight, topLeft, bottomRight, bottomLeft];
   }
   getPositionBottomLeft(): ConnectionPositionPair[] {
-    return [
-      {
-        originX: 'end',
-        originY: 'bottom',
-        overlayX: 'end',
-        overlayY: 'top'
-      },
-      {
-        originX: 'end',
-        originY: 'top',
-        overlayX: 'end',
-        overlayY: 'bottom'
-      },
-    ];
+    return [bottomLeft, bottomRight, topLeft, topRight];
   }
   getPositionBottomRight(): ConnectionPositionPair[] {
-    return [
-      {
-        originX: 'start',
-        originY: 'bottom',
-        overlayX: 'start',
-        overlayY: 'top'
-      },
-      {
-        originX: 'start',
-        originY: 'top',
-        overlayX: 'start',
-        overlayY: 'bottom'
-      },
-    ];
+    return [bottomRight, bottomLeft, topRight, topLeft];
   }
 
   onClose() {
     this.isOpen = false;
     this.popupClose.emit();
+  }
+
+  onPositionChange(connectionPairInUse: ConnectionPositionPair) {
+    const currentPostion = JSON.stringify(connectionPairInUse);
+    if (currentPostion.includes(`"originY":"top"`)) {
+      this.zone.run(() => this.currentTopAlignment = true);
+    } else {
+      this.zone.run(() => this.currentTopAlignment = false);
+    }
+    if (currentPostion.includes(`"originX":"start"`)) {
+      this.zone.run(() => this.currentHorizontalStartAlignment = true);
+    } else {
+      this.zone.run(() => this.currentHorizontalStartAlignment = false);
+    }
   }
 }

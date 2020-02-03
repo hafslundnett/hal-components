@@ -7,18 +7,27 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
+  // Virker å være fiksa, prøv å test mot korrekt klasse nå.
+  styleUrls: ['./popup-connected.component.spec.scss'],
   template: `
-    <button cdkOverlayOrigin #trigger="cdkOverlayOrigin">Open popup</button>
-    <hal-popup-connected
-      [isOpen]="isOpen"
-      [small]="small"
-      [origin]="trigger"
-      [alignTop]="istop"
-      [alignRight]="isRight"
-      (popupClose)="isOpen = false"
-    >
-      <p name="popup-content">I'm the content</p>
-    </hal-popup-connected>
+  <div class="testingBox">
+    <button
+      class="testbutton"
+      cdkOverlayOrigin
+      #trigger="cdkOverlayOrigin"
+      (click)="isOpen = !isOpen"
+      >Open popup</button>
+      <hal-popup-connected
+        [isOpen]="isOpen"
+        [small]="small"
+        [origin]="trigger"
+        [alignTop]="istop"
+        [alignRight]="isRight"
+        (popupClose)="isOpen = false"
+      >
+        <p name="popup-content">I'm the content</p>
+      </hal-popup-connected>
+  </div>
   `
 })
 class TestComponent {
@@ -28,7 +37,7 @@ class TestComponent {
   isRight = false;
 }
 
-describe('PopupConnectedComponent', () => {
+fdescribe('PopupConnectedComponent', () => {
   let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
@@ -58,7 +67,7 @@ describe('PopupConnectedComponent', () => {
     expect(fixture.debugElement.queryAll(By.css('.close-button')).length).toBe(1);
   });
 
-  xit('arrow-above should exist', () => {
+  it('arrow-above should exist', () => {
     expect(fixture.debugElement.queryAll(By.css('.arrow-above')).length).toBe(1);
   });
 
@@ -103,8 +112,8 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = true;
       fixture.detectChanges();
     });
-    xit('arrow-below should exist', () => {
-      expect(fixture.debugElement.queryAll(By.css('.arrow-below-right')).length).toBe(1);
+    it('arrow-below should exist', () => {
+      expect(fixture.debugElement.queryAll(By.css('.arrow-above-right')).length).toBe(1);
     });
   });
 
@@ -114,8 +123,8 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = false;
       fixture.detectChanges();
     });
-    xit('arrow-above should exist', () => {
-      expect(fixture.debugElement.queryAll(By.css('.arrow-below')).length).toBe(1);
+    it('arrow-above should exist', () => {
+      expect(fixture.debugElement.queryAll(By.css('.arrow-above-right')).length).toBe(1);
     });
   });
 
@@ -125,7 +134,7 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = true;
       fixture.detectChanges();
     });
-    xit('arrow-above should exist', () => {
+    it('arrow-above should exist', () => {
       expect(fixture.debugElement.queryAll(By.css('.arrow-above-right')).length).toBe(1);
     });
   });
@@ -136,8 +145,8 @@ describe('PopupConnectedComponent', () => {
       testComponent.isRight = false;
       fixture.detectChanges();
     });
-    xit('arrow-above should exist', () => {
-      expect(fixture.debugElement.queryAll(By.css('.arrow-above')).length).toBe(1);
+    it('arrow-above should exist', () => {
+      expect(fixture.debugElement.queryAll(By.css('.arrow-above-right')).length).toBe(1);
     });
   });
 
