@@ -10,6 +10,7 @@
     "build-hal": "ng build hal-components",
     "build-hal-s": "ng build hal-components && yarn build-hal-schematics",
     "build-hal-schematics": "cd projects/hal-components && yarn build",
+    "build-hal-schematics-win": "cd projects/hal-components && yarn build-windows",
     "watch-hal": "ng build hal-components --watch",
     "test-hal": "ng test hal-components",
     "commit": "git cz",
@@ -20,7 +21,7 @@
     "cypress": "cypress open",
     "test-install-schema": "npm run link-hal-schematic && ng add @hafslundnett/hal-components",
     "link-hal-schematic": "npm link dist/hal-components",
-    "publish": "cd ./dist/hal-components/ && npm publish"
+    "publish": "cd ./dist/hal-components/ && ls"
   },
   "private": true,
   "dependencies": {
