@@ -24,6 +24,7 @@ import { GettingStartedComponent } from './getting-started/getting-started.compo
 import { SchematicDocComponent } from './doc-pages/schematic-doc/schematic-doc.component';
 import { SelectorDocComponent } from './doc-pages/selector-doc/selector-doc.component';
 import { AutocompleteDocComponent } from './doc-pages/autocomplete-doc/autocomplete-doc.component';
+import { PaginatorDocComponent } from './doc-pages/paginator-doc/paginator-doc.component';
 
 const routes: Routes = [
   {
@@ -111,6 +112,10 @@ const routes: Routes = [
       {
         path: Pages.LoadingSpinnerDoc,
         component: LoadingSpinnerDocComponent
+      },
+      {
+        path: Pages.PaginatorDoc,
+        component: PaginatorDocComponent
       },
       {
         path: Pages.Schematic,

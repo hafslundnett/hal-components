@@ -5,7 +5,7 @@
 export * from './lib/components/app-shell/app-shell.module';
 
 export * from './lib/components/app-shell/sidenav/sidenav.menu-element.interface';
-export * from './lib/components/app-shell/toolbar/user-menu/user.interface';
+export * from './lib/components/app-shell/header/user-menu/user.interface';
 
 export * from './lib/components/svg-element/svg-element.module';
 export * from './lib/services/svg/svg.service';
@@ -45,8 +45,11 @@ export * from './lib/services/keyboard-shortcuts/keyboard-shortcuts-popup.module
 
 export * from './lib/components/loading-spinner/loading-spinner.module';
 
+export * from './lib/components/paginator/paginator.module';
+export * from './lib/components/paginator/pagination-config.interface';
+
 export * from './lib/components/selector/selector.module';
-export * from './lib/components/selector/select-data.interface';
+export * from './lib/components/selector/select-option.interface';
 
 export * from './lib/components/autocomplete/autocomplete.module';
 export * from './lib/components/autocomplete/autocomplete-item.interface';

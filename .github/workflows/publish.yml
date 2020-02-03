@@ -32,10 +32,10 @@ jobs:
       with:
         args: yarn build-hal
         
-    # - name: BuildScema
-    #   uses: ianwalter/puppeteer@v2.0.0
-    #   with:
-    #     args: yarn build-hal-schematics
+    - name: BuildScema
+      uses: ianwalter/puppeteer@v2.0.0
+      with:
+        args: yarn build-hal-schematics
         
   publish-npm:
     needs: build

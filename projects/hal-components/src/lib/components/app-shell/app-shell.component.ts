@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuElement } from './sidenav/sidenav.menu-element.interface';
-import { User } from './toolbar/user-menu/user.interface';
+import { User } from './header/user-menu/user.interface';
 
 @Component({
   selector: 'hal-app-shell',
@@ -14,6 +14,7 @@ export class AppShellComponent implements OnInit {
   @Input() signOutPagePath = 'logout';
   @Input() appListDomainUrl = 'hafslundnett.io';
   @Input() menuItems: MenuElement[];
+  @Input() menuIconsFolder = 'sideMenu';
 
   constructor() { }
 

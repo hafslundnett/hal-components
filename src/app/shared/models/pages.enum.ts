@@ -18,6 +18,7 @@ export enum Pages {
   FeedbackDoc = 'feedback-doc',
   KeyboardShortcutsDoc = 'keyboard-shortcuts-doc',
   LoadingSpinnerDoc = 'loading-spinner-doc',
+  PaginatorDoc = 'paginator-doc',
   Schematic = 'schematic',
   SelectorDoc = 'selector-doc',
   Autocomplete = 'autocomplete',

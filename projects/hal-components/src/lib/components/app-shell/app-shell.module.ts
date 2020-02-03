@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { AppShellComponent } from './app-shell.component';
 import { RouterModule } from '@angular/router';
 import { SidenavModule } from './sidenav/sidenav.module';
-import { ToolbarModule } from './toolbar/toolbar.module';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     SidenavModule,
-    ToolbarModule
+    HeaderModule
   ],
   declarations: [AppShellComponent],
   exports: [AppShellComponent]

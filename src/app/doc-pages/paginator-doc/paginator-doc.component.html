@@ -1,0 +1,53 @@
+<div class="doc-page-container">
+
+  <h1 class="doc-title">Paginator Component</h1>
+
+  <p class="doc-info">
+    Pagination enables tables content (client or server-side) to be divided up into smaller pages that can be navigated using this paginator.
+  </p>
+
+  <div class="doc-info-use">
+    <h2><i class="fal fa-check-circle doc-info-use-icons icon-green"></i> <b>When to use:</b></h2>
+    <p>
+      When a table with many rows needs to be divided into easier to handle pages
+    </p>
+  </div>
+
+  <div class="doc-info-use">
+    <h2><i class="fal fa-times-circle doc-info-use-icons icon-red"></i> <b>When not to use:</b></h2>
+    <p>
+      When the content is not a table.
+    </p>
+  </div>
+
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} PaginatorModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+  <hal-doc-import-line>
+    <code><pre>import {{ '{' }} PaginationConfig {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
+  </hal-doc-import-line>
+
+  <h2 class="doc-subtitle">Examples</h2>
+
+  <div class="example-entries" style="margin-bottom: 10px">
+    <div *ngFor="let value of slicedList">{{ value }}</div>
+  </div>
+  <hal-divider class="divider-margin"></hal-divider>
+  <div class="example-container">
+    <hal-paginator 
+      [length]="pagination?.length"
+      [pageSizeOptions]="pageSizeOptions"
+      [selectedPageSize]="pagination?.pageSize"
+      [selectedPageIndex]="pagination?.pageIndex"
+      (paginatorChange)="changePaginator($event)">
+    </hal-paginator>
+  </div>
+
+  <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>
+  <hal-code-highlighter [isTS]="true" [code]="tsCode"></hal-code-highlighter>
+
+  <hal-doc-api-table [apiTableHeader]="'Input'" [apiTableRows]="paginatorInput"></hal-doc-api-table>
+
+</div>
+
+<hal-doc-list></hal-doc-list>
