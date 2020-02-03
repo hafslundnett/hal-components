@@ -1,20 +1,23 @@
 
 
-<div class="hdd-form_field">
-  <span class="hdd-form_field_title">Checkboxes</span>
+<div class="hdd-form_field checkbox-filter-container">
+
+  <span class="hdd-form_field_title" *ngIf="filterTitle.length > 0">{{ filterTitle }}</span>
+  <div class="hdd-form_input" *ngIf="allowSearchField">
+    <i class="fal fa-search"></i>
+    <input placeholder="Søk..." />
+    <i class="fal fa-times" aria-label="Clear text"></i>
+  </div>
+  <label class="hdd-form_checkbox" *ngIf="allowMarkAllOption">
+    <input type="checkbox">
+    <span class="hdd-form_checkbox_mark"></span>
+    <span class="hdd-form_checkbox_label">(Merk alt)</span>
+    <span *ngIf="displayQuantityTags" class="hdd-badge is-blue">{{ sumOfQuantity }}</span>
+  </label>
   <label class="hdd-form_checkbox" *ngFor="let option of filterOptions">
-    <input type="checkbox" checked="option.checked">
+    <input type="checkbox" [checked]="option.checked">
     <span class="hdd-form_checkbox_mark"></span>
     <span class="hdd-form_checkbox_label">{{ option.viewValue }}</span>
-  </label>
-  <label class="hdd-form_checkbox">
-    <input type="checkbox">
-    <span class="hdd-form_checkbox_mark"></span>
-    <span class="hdd-form_checkbox_label">Unpicked checkbox</span>
-  </label>
-  <label class="hdd-form_checkbox is-invalid">
-    <input type="checkbox">
-    <span class="hdd-form_checkbox_mark"></span>
-    <span class="hdd-form_checkbox_label">Invalid checkbox</span>
+    <span *ngIf="displayQuantityTags" class="hdd-badge is-blue">{{ option.quantity }}</span>
   </label>
 </div>

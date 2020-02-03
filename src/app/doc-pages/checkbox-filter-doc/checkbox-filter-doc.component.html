@@ -12,8 +12,22 @@
 
   <h2 class="doc-subtitle">Examples</h2>
 
-  <div class="example-container">
-    <hal-checkbox-filter></hal-checkbox-filter>
+  <div class="example-container example-flex">
+    <div class="example-box">
+      <hal-checkbox-filter
+        [filterOptions]="ansattOptions"
+        [allowMarkAllOption]="false"
+        [filterTitle]="ansattTitle"
+      ></hal-checkbox-filter>
+    </div>
+    <div class="example-box">
+      <hal-checkbox-filter
+        [filterOptions]="ansattOptions"
+        [filterTitle]="ansattTitle"
+        [allowSearchField]="false"
+        [displayQuantityTags]="true"
+      ></hal-checkbox-filter>
+    </div>
   </div>
 
   <hal-code-highlighter [isHTML]="true" [code]="htmlCode"></hal-code-highlighter>

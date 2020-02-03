@@ -15,11 +15,15 @@ export class CheckboxFilterDocComponent implements OnInit {
 
   htmlCode = `<hal-checkbox-filter></hal-checkbox-filter>`;
 
-  filterOptions: FilterOption[] = [
-    {value: '1', viewValue: 'filter 1', checked: false},
-    {value: '2', viewValue: 'filter 1'},
-    {value: '3', viewValue: 'filter 1', checked: true}
+  ansattOptions: FilterOption[] = [
+    {value: '1', viewValue: 'A53416@hafslund.no',  quantity: 10},
+    {value: '2', viewValue: 'A43416@hafslund.no', quantity: 13},
+    {value: '3', viewValue: 'A23416@hafslund.no', quantity: 8, checked: true},
+    {value: '4', viewValue: 'A63416@hafslund.no', quantity: 29},
+    {value: '5', viewValue: 'A73416@hafslund.no', quantity: 20},
   ];
+
+  ansattTitle = 'Ansattnummer';
 
   constructor() { }
 

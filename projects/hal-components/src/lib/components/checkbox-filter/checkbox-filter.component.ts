@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { FilterOption } from './filter-option';
 
 @Component({
@@ -8,7 +8,13 @@ import { FilterOption } from './filter-option';
 })
 export class CheckboxFilterComponent implements OnInit {
 
-  @Input() filterOptions: FilterOption;
+  @Input() filterOptions: FilterOption[];
+  @Input() allowMarkAllOption = true;
+  @Input() filterTitle = '';
+  @Input() allowSearchField = true;
+  @Input() displayQuantityTags = false;
+
+  sumOfQuantity = 200;
 
   constructor() { }
 
