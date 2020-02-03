@@ -1,9 +1,9 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges, OnInit, ElementRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges, OnInit, ElementRef, ɵConsole } from '@angular/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
-import { Pagination } from './pagination';
 import { DEFAULT_PAGE_SIZE } from './consts';
 import { SelectOption } from '../selector/select-option.interface';
+import { PaginationConfig } from './pagination-config.interface';
 
 @Component({
   selector: 'hal-paginator',
@@ -28,7 +28,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   }
   private _showPaging = true;
 
-  @Output() paginatorChange = new EventEmitter<Pagination>();
+  @Output() paginatorChange = new EventEmitter<PaginationConfig>();
 
   pages: number[] = [];
   selectOptions: SelectOption[] = [];
@@ -79,6 +79,10 @@ export class PaginatorComponent implements OnInit, OnChanges {
         this.selectedPageSizeSelect = this.selectAllValue;
       } else {
         this.selectedPageSizeSelect = this.selectedPageSize.toString();
+
+        if (!this.pageSizeOptions.some(current => current.toString() === this.selectedPageSizeSelect)) {
+          console.warn('selectedPageSize is not an option in the given pageSizeOptions');
+        }
       }
     }
   }

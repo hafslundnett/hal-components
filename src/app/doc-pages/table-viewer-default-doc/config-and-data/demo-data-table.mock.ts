@@ -21,4 +21,24 @@ export const TableDemoData: DemoData[] = [
     age: 77,
     role: 'UX'
   },
+  {
+    name: 'Per',
+    age: 54,
+    role: 'Backend'
+  },
+  {
+    name: 'Kim',
+    age: 22,
+    role: 'Design'
+  },
+  {
+    name: 'Tom',
+    age: 12,
+    role: 'Kid'
+  },
+  {
+    name: 'Tine',
+    age: 122,
+    role: 'Legacy'
+  },
 ];
