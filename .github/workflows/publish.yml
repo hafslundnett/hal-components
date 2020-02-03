@@ -37,8 +37,13 @@ jobs:
         args: yarn build-hal-schematics
         
     - name: Publish
-      run: cd ./dist/hal-components/
-      run: ls
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - run: cd ./dist/hal-components/
+    - run: ls
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
 
