@@ -138,7 +138,7 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
   private onBlur() {
     setTimeout(() => {
       this.showAutocomplete = false;
-    }, 100);
+    }, 150);
     this.hasFocus = false;
   }
 
