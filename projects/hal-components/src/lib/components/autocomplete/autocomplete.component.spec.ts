@@ -243,16 +243,3 @@ describe('AutocompleteComponent', () => {
     return fixture.debugElement.queryAll(By.css(css));
   }
 });
-
-// entering text, then removing all gives all options
-
-/*
-describe('giving input focus', () => {
-  beforeEach(() => {
-
-  });
-  it('will display autocomplete', () => {
-
-  });
-});
-*/
