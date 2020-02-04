@@ -1,12 +1,18 @@
 {
   "name": "@hafslundnett/hal-components",
-  "version": "4.0.2",
+  "version": "4.2.0",
   "scripts": {
-    "build": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json",
-    "copy:schemas": "cp --parents schematics/*/schema.json ..\\..\\dist\\hal-components\\",
-    "copy:files": "cp --parents -p schematics/*/files/** ..\\..\\dist\\hal-components\\",
-    "copy:collection": "cp schematics/collection.json ..\\..\\dist\\hal-components\\schematics\\collection.json",
-    "postbuild": "npm run copy:schemas && npm run copy:files && npm run copy:collection"
+    "build-windows": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json && npm run postbuild-windows",
+    "postbuild-windows": "npm run copy:schemas-windows && npm run copy:files-windows && npm run copy:collection-windows",
+    "copy:schemas-windows": "cp --parents schematics/*/schema.json ..\\..\\dist\\hal-components\\",
+    "copy:files-windows": "cp --parents -p schematics/*/files/** ..\\..\\dist\\hal-components\\",
+    "copy:collection-windows": "cp schematics/collection.json ..\\..\\dist\\hal-components\\schematics\\collection.json",
+    "linux-only-below": "",
+    "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json && npm run postbuild-linux",
+    "postbuild-linux": "npm run copy:schemas && npm run copy:files && npm run copy:collection",
+    "copy:schemas": "cp --parents schematics/*/schema.json ../../dist/hal-components/",
+    "copy:files": "cp --parents -p schematics/*/files/** ../../dist/hal-components/",
+    "copy:collection": "cp schematics/collection.json ../../dist/hal-components/schematics/collection.json"
   },
   "peerDependencies": {
     "@angular/common": "^8.1.3",

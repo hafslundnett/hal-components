@@ -1,8 +1,13 @@
-@import '~@hafslundnett/hdd-style/variables/shadows';
+@import "~@hafslundnett/hdd-style/variables/shadows";
 
 .logo {
   width: 40px;
   height: 40px;
+}
+
+.hdd-header_title {
+  // sidenav is 66 px wide, need to push right to center
+  margin-left: 66px;
 }
 
 .center-flex {

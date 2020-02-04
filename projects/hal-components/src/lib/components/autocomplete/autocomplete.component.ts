@@ -11,7 +11,7 @@ import { autoCompleteAnimation } from '../../animations';
 })
 export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
 
-  @Input() inputText: string;
+  @Input() inputText: AutocompleteItem['label'];
   @Input() options: AutocompleteItem[];
   @Input() inputElement: any;
 
@@ -117,6 +117,9 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
     if (this.activeIndex < 0 || this.activeIndex > this.filteredOptions.length) {
       return;
     }
+    if (this.filteredOptions.length === 0) {
+      return;
+    }
     this.optionSelected.emit(this.filteredOptions[this.activeIndex]);
     this.showAutocomplete = false;
   }
@@ -135,7 +138,7 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
   private onBlur() {
     setTimeout(() => {
       this.showAutocomplete = false;
-    }, 100);
+    }, 150);
     this.hasFocus = false;
   }
 
@@ -147,5 +150,4 @@ export class AutocompleteComponent implements OnInit, OnChanges, OnDestroy {
       return currentOption.label.toLowerCase().includes(currentValue.toLowerCase());
     });
   }
-
 }

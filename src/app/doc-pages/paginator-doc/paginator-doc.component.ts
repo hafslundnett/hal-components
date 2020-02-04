@@ -1,6 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ApiTableRow } from 'src/app/shared/models/api-table-row.interface';
-import { Pagination } from '@hafslundnett/hal-components';
+import { PaginationConfig } from '@hafslundnett/hal-components';
 
 @Component({
   selector: 'hal-paginator-doc',
@@ -29,7 +29,7 @@ export class PaginatorDocComponent implements OnInit {
 
   tsCode = `listOfNumbers: number[] = Array.from(Array(25).keys());
 slicedList: number[];
-pagination: Pagination = {
+pagination: PaginationConfig = {
   pageSize: 0,
   pageIndex: 0,
   length: 0
@@ -61,7 +61,7 @@ updatePaginatorValues(changes): void {
 
   listOfNumbers: number[] = Array.from(Array(25).keys());
   slicedList: number[];
-  pagination: Pagination = {
+  pagination: PaginationConfig = {
     pageSize: 0,
     pageIndex: 0,
     length: 0

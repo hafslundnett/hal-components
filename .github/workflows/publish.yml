@@ -1,0 +1,43 @@
+name: PublishNPM
+
+on: 
+  push:
+    branches:
+      - trunk
+
+jobs:
+  build:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [12.x]
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        registry-url: https://registry.npmjs.org/
+       
+    - name: Install
+      uses: ianwalter/puppeteer@v2.0.0
+      with:
+        args: yarn
+        
+    - name: BuildHAL
+      uses: ianwalter/puppeteer@v2.0.0
+      with:
+        args: yarn build-hal
+        
+    - name: BuildScema
+      uses: ianwalter/puppeteer@v2.0.0
+      with:
+        args: yarn build-hal-schematics
+
+    - run: npm publish ./dist/hal-components/
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+

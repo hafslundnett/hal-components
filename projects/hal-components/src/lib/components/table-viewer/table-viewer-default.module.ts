@@ -11,6 +11,7 @@ import { TableViewerDefaultComponent } from './table-viewer-default.component';
 import { DisplayConfigPipe } from './pipes/display-config/display-config.pipe';
 import { DisplayConfigFindCssPipe } from './pipes/display-config-find-css/display-config-find-css.pipe';
 import { IsColumnSortablePipe } from './pipes/is-column-sortable/is-column-sortable.pipe';
+import { PaginatorModule } from '../paginator/paginator.module';
 
 // TODO remove unused modules
 @NgModule({
@@ -24,6 +25,7 @@ import { IsColumnSortablePipe } from './pipes/is-column-sortable/is-column-sorta
     MatSelectModule,
     OverlayModule,
     CommonModule,
+    PaginatorModule
   ],
   declarations: [
     TableViewerDefaultComponent,
