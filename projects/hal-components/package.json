@@ -1,6 +1,6 @@
 {
   "name": "@hafslundnett/hal-components",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "scripts": {
     "build-windows": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json && npm run postbuild-windows",
     "postbuild-windows": "npm run copy:schemas-windows && npm run copy:files-windows && npm run copy:collection-windows",

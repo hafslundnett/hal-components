@@ -7,24 +7,18 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
-  // Virker å være fiksa, prøv å test mot korrekt klasse nå.
   template: `
-    <button
-      class="testbutton"
-      cdkOverlayOrigin
-      #trigger="cdkOverlayOrigin"
-      (click)="isOpen = !isOpen"
-      >Open popup</button>
-      <hal-popup-connected
-        [isOpen]="isOpen"
-        [small]="small"
-        [origin]="trigger"
-        [alignTop]="istop"
-        [alignRight]="isRight"
-        (popupClose)="isOpen = false"
-      >
-        <p name="popup-content">I'm the content</p>
-      </hal-popup-connected>
+    <button cdkOverlayOrigin #trigger="cdkOverlayOrigin">Open popup</button>
+    <hal-popup-connected
+      [isOpen]="isOpen"
+      [small]="small"
+      [origin]="trigger"
+      [alignTop]="istop"
+      [alignRight]="isRight"
+      (popupClose)="isOpen = false"
+    >
+      <p name="popup-content">I'm the content</p>
+    </hal-popup-connected>
   `
 })
 class TestComponent {
@@ -34,7 +28,7 @@ class TestComponent {
   isRight = false;
 }
 
-fdescribe('PopupConnectedComponent', () => {
+describe('PopupConnectedComponent', () => {
   let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
 
@@ -103,7 +97,8 @@ fdescribe('PopupConnectedComponent', () => {
     });
   });
 
-  // TODO find way to test this overlay
+  // TODO: Test overlay behaviour on alignement inputs.
+
   // describe('Setting alignTop to true & alignRight to true', () => {
   //   beforeEach(() => {
   //     testComponent.istop = true;

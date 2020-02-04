@@ -24,7 +24,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   position: ConnectionPositionPair[];
 
   currentTopAlignment = false;
-  currentHorizontalStartAlignment = false;
+  currentRightAlignment = false;
 
   constructor(private overlay: Overlay, public zone: NgZone) {
   }
@@ -76,9 +76,9 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
       this.zone.run(() => this.currentTopAlignment = false);
     }
     if (currentPostion.includes(`"originX":"start"`)) {
-      this.zone.run(() => this.currentHorizontalStartAlignment = true);
+      this.zone.run(() => this.currentRightAlignment = true);
     } else {
-      this.zone.run(() => this.currentHorizontalStartAlignment = false);
+      this.zone.run(() => this.currentRightAlignment = false);
     }
   }
 }

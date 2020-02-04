@@ -11,12 +11,12 @@
 >
   <div class="animation-wrapper" @popUpAnimation role="dialog">
     <div 
-    *ngIf="!currentTopAlignment && !currentHorizontalStartAlignment"
+    *ngIf="!currentTopAlignment && !currentRightAlignment"
     [ngClass]="!currentTopAlignment ? 'arrow-above' : ''">
     </div>
     <div 
-    *ngIf="!currentTopAlignment && currentHorizontalStartAlignment"
-    [ngClass]="!currentHorizontalStartAlignment ? '' : 'arrow-above-right'">
+    *ngIf="!currentTopAlignment && currentRightAlignment"
+    [ngClass]="!currentRightAlignment ? '' : 'arrow-above-right'">
     </div>
     <div 
     class="connected-popup-body" 
@@ -30,11 +30,11 @@
       </button>
       <ng-content></ng-content>
     </div>
-    <div *ngIf="currentTopAlignment && !currentHorizontalStartAlignment"
+    <div *ngIf="currentTopAlignment && !currentRightAlignment"
     [ngClass]="!currentTopAlignment ? '' : 'arrow-below'">
     </div>
-    <div *ngIf="currentTopAlignment && currentHorizontalStartAlignment"
-    [ngClass]="!currentHorizontalStartAlignment ? '' : 'arrow-below-right'">
+    <div *ngIf="currentTopAlignment && currentRightAlignment"
+    [ngClass]="!currentRightAlignment ? '' : 'arrow-below-right'">
     </div>
   </div>
 </ng-template>
