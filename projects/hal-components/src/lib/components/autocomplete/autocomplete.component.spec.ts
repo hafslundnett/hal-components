@@ -4,6 +4,7 @@ import { AutocompleteItem } from './autocomplete-item.interface';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HighlightAutocomplete } from './highlight-autocomplete.pipe';
 
 const options: AutocompleteItem[] = [
   {
@@ -56,7 +57,7 @@ describe('AutocompleteComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [NoopAnimationsModule],
-      declarations: [AutocompleteComponent, TestComponent]
+      declarations: [AutocompleteComponent, TestComponent, HighlightAutocomplete]
     })
       .compileComponents();
   }));
@@ -242,16 +243,3 @@ describe('AutocompleteComponent', () => {
     return fixture.debugElement.queryAll(By.css(css));
   }
 });
-
-// entering text, then removing all gives all options
-
-/*
-describe('giving input focus', () => {
-  beforeEach(() => {
-
-  });
-  it('will display autocomplete', () => {
-
-  });
-});
-*/

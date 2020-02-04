@@ -4,5 +4,8 @@
     *ngFor="let option of filteredOptions; let i = index" 
     (click)="optionClicked(option)"
     [ngClass]="{ 'is-active': activeIndex === i }"
-  >{{option.label}}</div>
+  >
+    <span [innerHTML]="option.label | highlightAutocomplete: inputText">
+    </span>
+  </div>
 </div>
