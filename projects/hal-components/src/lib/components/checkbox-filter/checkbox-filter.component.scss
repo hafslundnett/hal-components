@@ -1,27 +1,37 @@
+$checkbox-filter-height: 280px;
+$title-height: 14px; // Same as font-size for label 
+$search-height: 41px;
+$options-height: calc(#{$checkbox-filter-height} - (#{$title-height} + var(--hdd-spacing-2) + var(--hdd-spacing-2)));
+
 .checkbox-filter {
   width: auto;
-  max-height: 270px;
+  max-height: $checkbox-filter-height;
 
-  padding: var(--hdd-spacing-2);
   border-radius: 4px;
   background: var(--hdd-color-white);
 
-  &_search {
-    margin-bottom: var(--hdd-spacing-1);
-    height: 41px;
+  &_title {
+    height: $title-height;
+    padding: var(--hdd-spacing-2) var(--hdd-spacing-2) 0 var(--hdd-spacing-2);
+  }
 
-    + .checkbox-filter_options {
-      max-height: calc(230px - (41px + var(--hdd-spacing-1))); // 41px + spacing -> height of search-field
+  &_search {
+    height: $search-height;
+    margin: var(--hdd-spacing-2);
+
+    + .checkbox-filter_divider + .checkbox-filter_options {
+      max-height: calc(#{$options-height} - (#{$search-height} + var(--hdd-spacing-2) + var(--hdd-spacing-2))); 
     }
   }
 
   &_options {
-    max-height: 230px;
+    max-height: $options-height;
     overflow-y: auto;
 
     .hdd-form_checkbox {
+      height: 22px;
       margin: 0;
-      padding: var(--hdd-spacing-1);
+      padding: var(--hdd-spacing-1) var(--hdd-spacing-2);
 
       &:hover,
       &:active,

@@ -1,13 +1,17 @@
 
 
 <div class="hdd-form_field checkbox-filter">
-  <span class="hdd-form_field_title" *ngIf="filterTitle.length > 0">{{ filterTitle }}</span>
+  <span class="hdd-form_field_title checkbox-filter_title" *ngIf="filterTitle.length > 0">{{ filterTitle }}</span>
   
+  <hal-divider light class="checkbox-filter_divider" *ngIf="allowSearchField"></hal-divider>
+
   <div class="hdd-form_input checkbox-filter_search" *ngIf="allowSearchField">
     <i class="fal fa-search"></i>
     <input placeholder="Søk..." />
     <i class="fal fa-times" aria-label="Clear text"></i>
   </div>
+
+  <hal-divider light class="checkbox-filter_divider"></hal-divider>
 
   <div class="checkbox-filter_options">
     <label class="hdd-form_checkbox" *ngIf="allowMarkAllOption">
