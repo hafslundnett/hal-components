@@ -20,7 +20,11 @@ export class CheckboxFilterDocComponent implements OnInit {
     {value: '2', viewValue: 'A43416@hafslund.no', quantity: 13},
     {value: '3', viewValue: 'A23416@hafslund.no', quantity: 8, checked: true},
     {value: '4', viewValue: 'A63416@hafslund.no', quantity: 29},
-    {value: '5', viewValue: 'A73416@hafslund.no', quantity: 20},
+    {value: '6', viewValue: 'A53416@hafslund.no',  quantity: 16},
+    {value: '7', viewValue: 'A43416@hafslund.no', quantity: 13},
+    {value: '8', viewValue: 'A23416@hafslund.no', quantity: 8, checked: true},
+    {value: '9', viewValue: 'A63416@hafslund.no', quantity: 29},
+    {value: '10', viewValue: 'A73416@hafslund.no', quantity: 20},
   ];
 
   ansattTitle = 'Ansattnummer';

@@ -14,11 +14,41 @@ export class CheckboxFilterComponent implements OnInit {
   @Input() allowSearchField = true;
   @Input() displayQuantityTags = false;
 
-  sumOfQuantity = 200;
+  sumOfQuantity = 0;
+  checkedOptions: FilterOption[];
+  allChecked = false;
 
   constructor() { }
 
   ngOnInit() {
+    this.initCheckedOptions();
+    this.initSumOfQuantites();
+  }
+
+  initCheckedOptions(): void {
+    this.checkedOptions = this.filterOptions.filter(option => option.checked === true);
+  }
+
+  initSumOfQuantites(): void {
+    this.filterOptions.forEach(option => {
+      this.sumOfQuantity += option.quantity;
+    });
+  }
+
+  onCheckedChange(): void {
+    console.log(this.allChecked);
+  }
+
+  selectAllOptions(): void {
+    this.checkedOptions = this.filterOptions;
+  }
+
+  deselectAllOptions(): void {
+    this.checkedOptions = [];
+  }
+
+  deselectAllOption(): void {
+    this.allChecked = false;
   }
 
 }

@@ -1,11 +1,37 @@
-.checkbox-filter-container {
-  width: 230px;
+.checkbox-filter {
+  width: auto;
+  max-height: 270px;
 
-  .checkbox-filter_main-title {
-    margin-bottom: var(--hdd-spacing-2);
+  padding: var(--hdd-spacing-2);
+  border-radius: 4px;
+  background: var(--hdd-color-white);
+
+  &_search {
+    margin-bottom: var(--hdd-spacing-1);
+    height: 41px;
+
+    + .checkbox-filter_options {
+      max-height: calc(230px - (41px + var(--hdd-spacing-1))); // 41px + spacing -> height of search-field
+    }
   }
 
-  .hdd-form_input {
-    margin-bottom: var(--hdd-spacing-2);
+  &_options {
+    max-height: 230px;
+    overflow-y: auto;
+
+    .hdd-form_checkbox {
+      margin: 0;
+      padding: var(--hdd-spacing-1);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: var(--hdd-color-blue-light3);
+      }
+
+      &.hdd-badge {
+        margin: 0 var(--hdd-spacing-2) !important;
+      }
+    }
   }
 }
