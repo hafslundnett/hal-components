@@ -11,30 +11,32 @@
 >
   <div class="animation-wrapper" @popUpAnimation role="dialog">
     <div 
-    *ngIf="!currentTopAlignment && !currentRightAlignment"
-    [ngClass]="!currentTopAlignment ? 'arrow-above' : ''">
+      *ngIf="!currentTopAlignment && !currentRightAlignment"
+      [ngClass]="!currentTopAlignment ? 'arrow-above' : ''">
     </div>
     <div 
-    *ngIf="!currentTopAlignment && currentRightAlignment"
-    [ngClass]="!currentRightAlignment ? '' : 'arrow-above-right'">
+      *ngIf="!currentTopAlignment && currentRightAlignment"
+      [ngClass]="!currentRightAlignment ? '' : 'arrow-above-right'">
     </div>
     <div 
-    class="connected-popup-body" 
-    [ngClass]="small ? 'small-popup' : 'normal-popup'" 
-    cdkTrapFocus 
-    cdkTrapFocusAutoCapture
+      class="connected-popup-body" 
+      [ngClass]="small ? 'small-popup' : 'normal-popup'" 
+      cdkTrapFocus 
+      cdkTrapFocusAutoCapture
     >
       <button class="close-button" (click)="onClose()" *ngIf="!small">
-      Lukk
-      <i class="fal fa-times"></i>
+        Lukk
+        <i class="fal fa-times"></i>
       </button>
       <ng-content></ng-content>
     </div>
-    <div *ngIf="currentTopAlignment && !currentRightAlignment"
-    [ngClass]="!currentTopAlignment ? '' : 'arrow-below'">
+    <div 
+      *ngIf="currentTopAlignment && !currentRightAlignment"
+      [ngClass]="!currentTopAlignment ? '' : 'arrow-below'">
     </div>
-    <div *ngIf="currentTopAlignment && currentRightAlignment"
-    [ngClass]="!currentRightAlignment ? '' : 'arrow-below-right'">
+    <div 
+      *ngIf="currentTopAlignment && currentRightAlignment"
+      [ngClass]="!currentRightAlignment ? '' : 'arrow-below-right'">
     </div>
   </div>
 </ng-template>
