@@ -3,7 +3,6 @@ import { SvgDocModule } from './svg-doc/svg-doc.module';
 import { PopupGlobalDocModule } from './popup-global-doc/popup-global-doc.module';
 import { PopupConnectedDocModule } from './popup-connected-doc/popup-connected-doc.module';
 import { BroadcastHandlerDocModule } from './broadcast-handler-doc/broadcast-handler-doc.module';
-import { DividerDocModule } from './divider-doc/divider-doc.module';
 import { AppShellDocModule } from './app-shell-doc/app-shell-doc.module';
 import { CloseablerowdocModule } from './closeable-row-doc/closeable-row-doc.module';
 import { BoolToTextDocModule } from './bool-to-text-doc/bool-to-text-doc.module';
@@ -26,7 +25,6 @@ import { PaginatorDocModule } from './paginator-doc/paginator-doc.module';
     PopupGlobalDocModule,
     PopupConnectedDocModule,
     BroadcastHandlerDocModule,
-    DividerDocModule,
     AppShellDocModule,
     CloseablerowdocModule,
     BoolToTextDocModule,

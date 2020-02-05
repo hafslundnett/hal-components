@@ -17,8 +17,6 @@ export * from './lib/components/popup-connected/popup-connected.module';
 export * from './lib/services/broadcast-handler/broadcast-handler.service';
 export * from './lib/services/broadcast-handler/broadcast-handler-types';
 
-export * from './lib/components/divider/divider.module';
-
 export * from './lib/components/closeable-row/closeable-row.module';
 export * from './lib/pipes/bool-to-text/bool-to-text.module';
 

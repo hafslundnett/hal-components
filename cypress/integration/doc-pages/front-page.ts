@@ -16,12 +16,6 @@ describe('Front-Page Navigation Test', () => {
 
         cy.url().should('eq', 'http://localhost:4200/popup-connected-doc');
 
-        // navigate to divider doc page
-        cy.get('hal-doc-card').contains('Divider Component').parent('.hdd-card_header_text').parent('.hdd-card_header')
-            .siblings('.hdd-card_actions').contains('View more').click();
-
-        cy.url().should('eq', 'http://localhost:4200/divider-doc');
-
         // navigate to closeable-row doc page
         cy.get('hal-doc-card').contains('Closeable Row').parent('.hdd-card_header_text').parent('.hdd-card_header')
             .siblings('.hdd-card_actions').contains('View more').click();
