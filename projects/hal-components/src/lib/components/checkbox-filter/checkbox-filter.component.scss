@@ -39,8 +39,8 @@ $options-height: calc(#{$checkbox-filter-height} - (#{$title-height} + var(--hdd
         background: var(--hdd-color-blue-light3);
       }
 
-      &.hdd-badge {
-        margin: 0 var(--hdd-spacing-2) !important;
+      .hdd-badge {
+        margin: 0 var(--hdd-spacing-1) 0 var(--hdd-spacing-2);
       }
     }
   }
