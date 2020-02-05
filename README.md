@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/%40hafslundnett%2Fhal-components.svg)](https://badge.fury.io/js/%40hafslundnett%2Fhal-components)
 [![npm size](https://badgen.net/bundlephobia/minzip/@hafslundnett/hal-components)](https://bundlephobia.com/result?p=@hafslundnett/hal-components)
+![githubActions](https://github.com/hafslundnett/hal-components/workflows/PublishNPM/badge.svg)
+
 
 This is the repository for <a href='https://hal-components.hafslundnett.io'>Hafslund Angular Libary(HAL)</a>
 
