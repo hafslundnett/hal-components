@@ -15,6 +15,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   @Input() small = false;
   @Input() isOpen = false;
   @Input() origin: CdkOverlayOrigin;
+  // initial position for popup
   @Input() alignTop = false;
   @Input() alignRight = false;
 
@@ -23,8 +24,9 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   scrollStrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
   position: ConnectionPositionPair[];
 
-  currentTopAlignment = false;
-  currentRightAlignment = false;
+  // decides pointing arrows in html
+  currentAlignTop = false;
+  currentAlignRight = false;
 
   constructor(private overlay: Overlay, public zone: NgZone) {
   }
@@ -36,6 +38,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     this.position = this.getPosition();
   }
 
+  // return prefered position and fallback positions for the popup
   getPosition(): ConnectionPositionPair[] {
     if (this.alignTop === true && this.alignRight === false) {
       return this.getPositionTopLeft();
@@ -50,6 +53,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     }
   }
 
+  // positions for popup with fallback positions
   getPositionTopLeft(): ConnectionPositionPair[] {
     return [topLeft, topRight, bottomLeft, bottomRight];
   }
@@ -68,17 +72,18 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     this.popupClose.emit();
   }
 
+  // triggered on positionchange event from cdk, updatedes variables for connected arrow position
   onPositionChange(connectionPairInUse: ConnectionPositionPair) {
     const currentPostion = JSON.stringify(connectionPairInUse);
     if (currentPostion.includes(`"originY":"top"`)) {
-      this.zone.run(() => this.currentTopAlignment = true);
+      this.zone.run(() => this.currentAlignTop = true);
     } else {
-      this.zone.run(() => this.currentTopAlignment = false);
+      this.zone.run(() => this.currentAlignTop = false);
     }
     if (currentPostion.includes(`"originX":"start"`)) {
-      this.zone.run(() => this.currentRightAlignment = true);
+      this.zone.run(() => this.currentAlignRight = true);
     } else {
-      this.zone.run(() => this.currentRightAlignment = false);
+      this.zone.run(() => this.currentAlignRight = false);
     }
   }
 }
