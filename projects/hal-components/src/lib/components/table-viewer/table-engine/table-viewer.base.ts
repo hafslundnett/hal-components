@@ -54,11 +54,10 @@ export class TableViewerBase implements OnInit, AfterViewInit, OnChanges, OnDest
 
     if (this.paginationOptions) {
       this.setupPagination();
-    } else {
-      // for improving speed:
-      // https://github.com/angular/components/issues/11953#issuecomment-461434437
       this.initialTableDataLoaded = true;
+    } else {
       this.updateDataSource();
+      this.initialTableDataLoaded = true;
     }
   }
 
