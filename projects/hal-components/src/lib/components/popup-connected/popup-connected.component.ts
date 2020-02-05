@@ -1,6 +1,7 @@
-import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges, NgZone } from '@angular/core';
 import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay } from '@angular/cdk/overlay';
 import { popUpAnimation } from '../../animations';
+import { topLeft, topRight, bottomLeft, bottomRight } from './poup-connections-positions.constants';
 export type popupPosition = 'above' | 'below';
 
 @Component({
@@ -14,15 +15,20 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   @Input() small = false;
   @Input() isOpen = false;
   @Input() origin: CdkOverlayOrigin;
+  // initial position for popup
   @Input() alignTop = false;
   @Input() alignRight = false;
 
   @Output() popupClose: EventEmitter<void> = new EventEmitter();
 
   scrollStrategy: ScrollStrategy = this.overlay.scrollStrategies.reposition();
-  position: ConnectionPositionPair;
+  position: ConnectionPositionPair[];
 
-  constructor(private overlay: Overlay) {
+  // decides pointing arrows in html
+  currentAlignTop = false;
+  currentAlignRight = false;
+
+  constructor(private overlay: Overlay, public zone: NgZone) {
   }
 
   ngOnInit() {
@@ -32,7 +38,8 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     this.position = this.getPosition();
   }
 
-  getPosition() {
+  // return prefered position and fallback positions for the popup
+  getPosition(): ConnectionPositionPair[] {
     if (this.alignTop === true && this.alignRight === false) {
       return this.getPositionTopLeft();
     } else if (this.alignTop === true && this.alignRight === true) {
@@ -46,33 +53,37 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
     }
   }
 
-  getPositionTopLeft() {
-    return new ConnectionPositionPair(
-      { originX: 'end', originY: 'top' },
-      { overlayX: 'end', overlayY: 'bottom' }
-    );
+  // positions for popup with fallback positions
+  getPositionTopLeft(): ConnectionPositionPair[] {
+    return [topLeft, topRight, bottomLeft, bottomRight];
   }
-  getPositionTopRight() {
-    return new ConnectionPositionPair(
-      { originX: 'start', originY: 'top' },
-      { overlayX: 'start', overlayY: 'bottom' }
-    );
+  getPositionTopRight(): ConnectionPositionPair[] {
+    return [topRight, topLeft, bottomRight, bottomLeft];
   }
-  getPositionBottomLeft() {
-    return new ConnectionPositionPair(
-      { originX: 'end', originY: 'bottom' },
-      { overlayX: 'end', overlayY: 'top' }
-    );
+  getPositionBottomLeft(): ConnectionPositionPair[] {
+    return [bottomLeft, bottomRight, topLeft, topRight];
   }
-  getPositionBottomRight() {
-    return new ConnectionPositionPair(
-      { originX: 'start', originY: 'bottom' },
-      { overlayX: 'start', overlayY: 'top' }
-    );
+  getPositionBottomRight(): ConnectionPositionPair[] {
+    return [bottomRight, bottomLeft, topRight, topLeft];
   }
 
   onClose() {
     this.isOpen = false;
     this.popupClose.emit();
+  }
+
+  // triggered on positionchange event from cdk, updatedes variables for connected arrow position
+  onPositionChange(connectionPairInUse: ConnectionPositionPair) {
+    const currentPostion = JSON.stringify(connectionPairInUse);
+    if (currentPostion.includes(`"originY":"top"`)) {
+      this.zone.run(() => this.currentAlignTop = true);
+    } else {
+      this.zone.run(() => this.currentAlignTop = false);
+    }
+    if (currentPostion.includes(`"originX":"start"`)) {
+      this.zone.run(() => this.currentAlignRight = true);
+    } else {
+      this.zone.run(() => this.currentAlignRight = false);
+    }
   }
 }

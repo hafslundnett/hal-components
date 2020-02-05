@@ -2,16 +2,22 @@
   cdkConnectedOverlay
   [cdkConnectedOverlayOrigin]="origin"
   [cdkConnectedOverlayOpen]="isOpen"
-  [cdkConnectedOverlayPositions]="[position]"
+  [cdkConnectedOverlayPositions]="position"
   (backdropClick)="onClose()"
+  (positionChange)="onPositionChange($event)"
   [cdkConnectedOverlayHasBackdrop]="true"
   [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
   (detach)="onClose()"
 >
   <div class="animation-wrapper" @popUpAnimation role="dialog">
     <div 
-      *ngIf="!alignTop"
-      [ngClass]="!alignRight ? 'arrow-above' : 'arrow-above-right'"></div>
+      *ngIf="!currentAlignTop && !currentAlignRight"
+      [ngClass]="!currentAlignTop ? 'arrow-above' : ''">
+    </div>
+    <div 
+      *ngIf="!currentAlignTop && currentAlignRight"
+      [ngClass]="!currentAlignRight ? '' : 'arrow-above-right'">
+    </div>
     <div 
       class="connected-popup-body" 
       [ngClass]="small ? 'small-popup' : 'normal-popup'" 
@@ -25,7 +31,12 @@
       <ng-content></ng-content>
     </div>
     <div 
-      *ngIf="alignTop"
-      [ngClass]="!alignRight ? 'arrow-below' : 'arrow-below-right'"></div>
+      *ngIf="currentAlignTop && !currentAlignRight"
+      [ngClass]="!currentAlignTop ? '' : 'arrow-below'">
+    </div>
+    <div 
+      *ngIf="currentAlignTop && currentAlignRight"
+      [ngClass]="!currentAlignRight ? '' : 'arrow-below-right'">
+    </div>
   </div>
 </ng-template>

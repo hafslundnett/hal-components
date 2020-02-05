@@ -12,7 +12,8 @@
     PopupConnectedComponent is a popup which is connected to an origin element.
     The default position of the popup is below the origin it is connected to.
     To be able to connect to an origin the CdkOverlayOrigin directive should be used on the origin element.
-    The popup is also animated to appear and dissapear smoothly.
+    The popup is also animated to appear and dissapear smoothly. Default position of the popup with no direction inputs
+    are below the origin element, and horizontally left aligned. 
   </p>
   <p class="doc-info">
     This feature is build on top of the CDK Overlay API:<br>
@@ -34,6 +35,13 @@
       The connected popup should not be used for information that is not relevant to the user's goals.
     </p>
   </div>
+  <div class="doc-info-use">
+    <h2><b>❗NB: </b></h2>
+      <p>
+        The popup will autoadjust its position if there is not enough space for the overlay component.
+        If placed on the right side with not enough space it will attempt to autoadjust its position until it fits on the screen. 
+      </p> 
+  </div>
 
   <hal-doc-import-line>
     <code><pre>import {{ '{' }} PopupConnectedModule {{ '}' }} from '@hafslundnett/hal-components';</pre></code>
@@ -46,43 +54,72 @@
   <h2 class="doc-subtitle">Example</h2>
   <div class="doc-info example-flex">
     <div class="example-box">
-      <button type="button" (click)="popupTopIsOpen = !popupTopIsOpen" class="hdd-button" cdkOverlayOrigin
+      <button 
+        type="button" 
+        (click)="popupTopIsOpen = !popupTopIsOpen" 
+        class="hdd-button" 
+        cdkOverlayOrigin
         #popupTopTrigger="cdkOverlayOrigin">
         <span>Open popup on top</span>
       </button>
-      <hal-popup-connected [isOpen]="popupTopIsOpen" [small]="true" [origin]="popupTopTrigger"
-        [alignTop]="isTop" (popupClose)="popupTopIsOpen = false">
+      <hal-popup-connected 
+        [isOpen]="popupTopIsOpen" 
+        [origin]="popupTopTrigger"
+        [alignTop]="isTop" 
+        (popupClose)="popupTopIsOpen = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>
     </div>
 
     <div class="example-box">
-      <button type="button" (click)="popupTopIsOpenRightAligned = !popupTopIsOpenRightAligned" class="hdd-button"
-        cdkOverlayOrigin #popupTopTriggerRight="cdkOverlayOrigin">
+      <button 
+        type="button" 
+        (click)="popupTopIsOpenRightAligned = !popupTopIsOpenRightAligned" 
+        class="hdd-button"
+        cdkOverlayOrigin 
+        #popupTopTriggerRight="cdkOverlayOrigin">
         <span>Right aligned popup on top </span>
       </button>
-      <hal-popup-connected [isOpen]="popupTopIsOpenRightAligned" [small]="true" [origin]="popupTopTriggerRight"
-        [alignTop]="isTop" [alignRight]="IsRight" (popupClose)="popupTopIsOpenRightAligned = false">
+      <hal-popup-connected 
+        [isOpen]="popupTopIsOpenRightAligned" 
+        [origin]="popupTopTriggerRight"
+        [alignTop]="isTop" 
+        [alignRight]="IsRight" 
+        (popupClose)="popupTopIsOpenRightAligned = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>
     </div>
 
     <div class="example-box">
-      <button type="button" (click)="popupIsOpen = !popupIsOpen" class="hdd-button" cdkOverlayOrigin
+      <button 
+        type="button" 
+        (click)="popupIsOpen = !popupIsOpen" 
+        class="hdd-button" 
+        cdkOverlayOrigin
         #popupTrigger="cdkOverlayOrigin">
         <span>Open popup below</span>
       </button>
-      <hal-popup-connected [isOpen]="popupIsOpen" [origin]="popupTrigger" (popupClose)="popupIsOpen = false">
+      <hal-popup-connected 
+        [isOpen]="popupIsOpen" 
+        [small]="true" 
+        [origin]="popupTrigger" 
+        (popupClose)="popupIsOpen = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>
     </div>
 
     <div class="example-box">
-      <button type="button" (click)="popupIsOpenRightAligned = !popupIsOpenRightAligned" class="hdd-button"
+      <button 
+        type="button" 
+        (click)="popupIsOpenRightAligned = !popupIsOpenRightAligned" 
+        class="hdd-button"
         cdkOverlayOrigin #popupTriggerRight="cdkOverlayOrigin">
         <span>Right aligned popup below</span>
       </button>
-      <hal-popup-connected [isOpen]="popupIsOpenRightAligned" [origin]="popupTriggerRight" [alignRight]="IsRight"
+      <hal-popup-connected 
+        [isOpen]="popupIsOpenRightAligned" 
+        [small]="true" [origin]="popupTriggerRight" 
+        [alignRight]="IsRight"
         (popupClose)="popupIsOpenRightAligned = false">
         <hal-popup-connected-example></hal-popup-connected-example>
       </hal-popup-connected>
