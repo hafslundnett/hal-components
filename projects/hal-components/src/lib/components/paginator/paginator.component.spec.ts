@@ -1,5 +1,5 @@
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { MatSelectModule } from '@angular/material/select';
 
 import { PaginatorComponent } from './paginator.component';
@@ -112,13 +112,42 @@ describe('PaginatorComponent', () => {
       fixture.detectChanges();
     });
 
-    it('should include "Alle" by default and when selected, should have value length of entries', () => {
-      const options = document.querySelectorAll('mat-option');
-      const lastElement = options.length - 1;
-      (options.item(lastElement) as HTMLElement).click();
-      fixture.detectChanges();
-      expect(component.selectOptions.length).toEqual(component.availablePageSizes.length + 1);
-      expect(component.selectedPageSize).toBe(component.length);
+    describe('When "Alle" is selected', () => {
+      beforeEach(() => {
+        const options = document.querySelectorAll('mat-option');
+        const lastElement = options.length - 1;
+        (options.item(lastElement) as HTMLElement).click();
+        fixture.detectChanges();
+      });
+
+      it('should have value length of entries', () => {
+        expect(component.selectOptions.length).toEqual(component.availablePageSizes.length + 1);
+        expect(component.selectedPageSize).toBe(component.length);
+      });
+
+      describe('setting a bigger length', () => {
+        const newLength = 1500;
+        beforeEach(fakeAsync(() => {
+          component.length = newLength;
+          component.ngOnChanges({
+            length: new SimpleChange(null, component.length, false)
+          });
+          fixture.detectChanges();
+          tick(100); // for the requestAnimationFrame
+          fixture.detectChanges();
+        }));
+
+        it('should not have any pagination buttons', () => {
+          const buttons = getElementsByCss('.paginator-button');
+          expect(buttons.length).toBe(0);
+        });
+
+        it('should have and updated selectedPageSize value ', () => {
+          expect(component.selectedPageSize).toBe(newLength);
+        });
+
+      });
+
     });
 
     it('should not display "Alle" if allowAll is false', () => {
@@ -171,5 +200,9 @@ describe('PaginatorComponent', () => {
 
   function getElementByCss(className: string) {
     return fixture.debugElement.query(By.css(className));
+  }
+
+  function getElementsByCss(className: string) {
+    return fixture.debugElement.queryAll(By.css(className));
   }
 });
