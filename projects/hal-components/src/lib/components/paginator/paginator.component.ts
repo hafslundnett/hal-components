@@ -36,6 +36,7 @@ export class PaginatorComponent implements OnInit, OnChanges {
   selectedChange: string;
   selectAllValue = 'selectAllValue';
   availablePageSizes: number[] = [];
+  allChoiceActive = false;
 
   constructor() { }
 
@@ -43,8 +44,12 @@ export class PaginatorComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.selectedPageSize || changes.pageSizeOptions || changes.length || changes.allowAll) {
+    if (changes.selectedPageSize || changes.pageSizeOptions || changes.allowAll || (changes.length && !this.allChoiceActive)) {
       this.initPaginator();
+    }
+
+    if (changes.length && this.allChoiceActive) {
+      this.updateAllSelectedValue();
     }
   }
 
@@ -58,7 +63,13 @@ export class PaginatorComponent implements OnInit, OnChanges {
   }
 
   setPageSize(pageSize: string) {
-    pageSize === this.selectAllValue ? this.selectedPageSize = this.length : this.selectedPageSize = +pageSize;
+    if (pageSize === this.selectAllValue) {
+      this.allChoiceActive = true;
+      this.selectedPageSize = this.length;
+    } else {
+      this.allChoiceActive = false;
+      this.selectedPageSize = +pageSize;
+    }
     this.setNumberOfPages();
     this.selectedPageIndex = 0;
 
@@ -66,6 +77,18 @@ export class PaginatorComponent implements OnInit, OnChanges {
       length: this.length,
       pageIndex: 0,
       pageSize: this.selectedPageSize
+    });
+  }
+
+  private updateAllSelectedValue() {
+    requestAnimationFrame(() => {
+      this.selectedPageSize = this.length;
+      this.setNumberOfPages();
+      this.paginatorChange.emit({
+        length: this.length,
+        pageIndex: 0,
+        pageSize: this.selectedPageSize
+      });
     });
   }
 
