@@ -36,7 +36,7 @@ export class AppListComponent implements OnInit, OnChanges {
       subdomain: 'adls'
     },
     {
-      name: 'Smartvann',
+      name: 'SV',
       icon: 'fa-plane',
       url: '',
       subdomain: 'smartvann'
@@ -46,6 +46,12 @@ export class AppListComponent implements OnInit, OnChanges {
       icon: 'fa-plane',
       url: '',
       subdomain: 'jordfeil'
+    },
+    {
+      name: 'PP',
+      icon: 'fa-plane',
+      url: '',
+      subdomain: 'process-portfolio'
     },
   ];
 
