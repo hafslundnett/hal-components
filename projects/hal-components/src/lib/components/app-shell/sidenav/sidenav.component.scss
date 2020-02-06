@@ -19,6 +19,7 @@ $header-top: 66px;
 .sidenav {
   position: fixed;
   top: $header-top;
+  box-sizing: content-box;
 
   flex-direction: column;
   align-items: flex-start;
@@ -53,7 +54,7 @@ mat-nav-list.menu-list {
     font-size: 0.75rem;
     max-width: $sidebar-width;
   }
-
+  
   .menu-item {
     height: $tile-size;
     white-space: nowrap;
@@ -79,6 +80,7 @@ mat-nav-list.menu-list {
       text-transform: capitalize;
       color: var(--hdd-color-font-color);
       user-select: none;
+      box-sizing: content-box;
     }
 
     &:not(.active) {
@@ -137,3 +139,4 @@ mat-nav-list.menu-list {
     }
   }
 }
+
