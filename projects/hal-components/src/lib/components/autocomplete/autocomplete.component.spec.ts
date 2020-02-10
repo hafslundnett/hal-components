@@ -231,7 +231,6 @@ describe('AutocompleteComponent', () => {
       });
       it('will display all choices', () => {
         const autocompleteElements = getAllElementByCSS('.hdd-dropdown_content_item');
-        console.log(autocompleteElements);
         expect(autocompleteElements.length).toBe(options.length);
       });
     });
