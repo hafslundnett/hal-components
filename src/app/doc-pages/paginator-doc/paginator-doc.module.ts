@@ -5,7 +5,7 @@ import { CodeHighlighterModule } from 'src/app/shared/code-highlighter/code-high
 import { DocListModule } from 'src/app/shared/doc-list/doc-list.module';
 import { DocApiTableModule } from 'src/app/shared/doc-api-table/doc-api-table.module';
 import { DocImportLineModule } from 'src/app/shared/doc-import-line/doc-import-line.module';
-import { PaginatorModule, DividerModule } from '@hafslundnett/hal-components';
+import { PaginatorModule } from '@hafslundnett/hal-components';
 
 @NgModule({
   imports: [
@@ -14,8 +14,7 @@ import { PaginatorModule, DividerModule } from '@hafslundnett/hal-components';
     DocListModule,
     DocApiTableModule,
     DocImportLineModule,
-    PaginatorModule,
-    DividerModule
+    PaginatorModule
   ],
   declarations: [PaginatorDocComponent],
   exports: [PaginatorDocComponent]

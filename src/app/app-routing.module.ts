@@ -8,7 +8,6 @@ import { SvgDocComponent } from './doc-pages/svg-doc/svg-doc.component';
 import { PopupGlobalDocComponent } from './doc-pages/popup-global-doc/popup-global-doc.component';
 import { PopupConnectedDocComponent } from './doc-pages/popup-connected-doc/popup-connected-doc.component';
 import { BroadcastHandlerDocComponent } from './doc-pages/broadcast-handler-doc/broadcast-handler-doc.component';
-import { DividerDocComponent } from './doc-pages/divider-doc/divider-doc.component';
 import { CloseableRowDocComponent } from './doc-pages/closeable-row-doc/closeable-row-doc.component';
 import { BoolToTextDocComponent } from './doc-pages/bool-to-text-doc/bool-to-text-doc.component';
 import { ResizerDocComponent } from './doc-pages/resizer-doc/resizer-doc.component';
@@ -64,10 +63,6 @@ const routes: Routes = [
       {
         path: Pages.BroadcastHandlerDoc,
         component: BroadcastHandlerDocComponent
-      },
-      {
-        path: Pages.DividerDoc,
-        component: DividerDocComponent
       },
       {
         path: Pages.Closeablerowdoc,

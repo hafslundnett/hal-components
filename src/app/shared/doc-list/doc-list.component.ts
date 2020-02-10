@@ -25,12 +25,6 @@ export class DocListComponent implements OnInit {
       docUrl: Pages.PopupConnectedDoc
     },
     {
-      cardTitle: 'Divider Component',
-      cardSubtitle: 'Component to divide UI elements',
-      cardIcon: 'fa-columns',
-      docUrl: Pages.DividerDoc
-    },
-    {
       cardTitle: 'Closeable Row',
       cardSubtitle: 'An expandable row',
       cardIcon: 'fa-expand',

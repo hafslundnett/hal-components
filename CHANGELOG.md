@@ -1,3 +1,10 @@
+# Update [5.0.0]
+
+## Breaking changes
+
+### HAL-Divider:
+Removed Hal-Divider, use replacement from HDD: `<hr class="hdd-divider">`, or `<hr class="hdd-divider is-light">` for a light theme. 
+
 # Update [4.0.0]
 
 ## Breaking changes
