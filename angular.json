@@ -158,5 +158,8 @@
       }
     }
   },
-  "defaultProject": "hal-playground"
+  "defaultProject": "hal-playground",
+  "cli": {
+    "analytics": "7c135c57-bff5-4ca9-8e43-3bef6fb0d699"
+  }
 }

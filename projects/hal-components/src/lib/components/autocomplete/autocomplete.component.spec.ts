@@ -44,7 +44,6 @@ class TestComponent {
   inputText = '';
   options = options;
   optionSelected(event) {
-    console.log('event', event);
     this.inputText = event.label;
   }
 }
@@ -151,10 +150,11 @@ describe('AutocompleteComponent', () => {
     });
 
     describe('writing Greger', () => {
-      beforeEach(() => {
+      // TODO why do we need fakeAsync? Needed as of Angular 9
+      beforeEach(fakeAsync(() => {
         testComponent.inputText = 'Greger';
         fixture.detectChanges();
-      });
+      }));
       it('gives two options', () => {
         const autocompleteElements = getAllElementByCSS('.hdd-dropdown_content_item');
         expect(autocompleteElements).toBeTruthy();
@@ -218,18 +218,20 @@ describe('AutocompleteComponent', () => {
     });
 
     describe('entering some text, then removing it all', () => {
-      beforeEach(() => {
+      // TODO why do we need fakeAsync? Needed as of Angular 9
+      beforeEach(fakeAsync(() => {
         testComponent.inputText = 'Greger';
         fixture.detectChanges();
         testComponent.inputText = '';
         fixture.detectChanges();
-      });
+      }));
       it('will display autocomplete', () => {
         const autocomplete = getElementByCSS('.hdd-dropdown_content');
         expect(autocomplete).toBeTruthy();
       });
       it('will display all choices', () => {
         const autocompleteElements = getAllElementByCSS('.hdd-dropdown_content_item');
+        console.log(autocompleteElements);
         expect(autocompleteElements.length).toBe(options.length);
       });
     });

@@ -7,7 +7,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectorComponent } from './selector.component';
 import { By } from '@angular/platform-browser';
-import { MatSelectModule, MatOptionModule, MatOption, MatSelect } from '@angular/material';
+import { MatOptionModule, MatOption } from '@angular/material/core';
+import { MatSelectModule, MatSelect } from '@angular/material/select';
 
 describe('SelectorComponent', () => {
   let component: SelectorComponent;
