@@ -4,7 +4,10 @@ import { User } from './user-menu/user.interface';
 @Component({
   selector: 'hal-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  host: {
+    class: 'hdd-header'
+  }
 })
 export class HeaderComponent implements OnInit {
 
@@ -12,9 +15,6 @@ export class HeaderComponent implements OnInit {
   @Input() settingsPagePath: string;
   @Input() signOutPagePath: string;
   @Input() appListDomainUrl: string;
-
-  // will set hdd-header on this angular component
-  @HostBinding('class.hdd-header') hddHeader = true;
 
   constructor() {}
 
