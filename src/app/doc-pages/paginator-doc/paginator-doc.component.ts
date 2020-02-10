@@ -77,7 +77,7 @@ updatePaginatorValues(changes): void {
     this.changePaginator();
   }
 
-  changePaginator(changes?: SimpleChanges): void {
+  changePaginator(changes?: PaginationConfig): void {
     if (changes) {
       this.updatePaginatorValues(changes);
     }

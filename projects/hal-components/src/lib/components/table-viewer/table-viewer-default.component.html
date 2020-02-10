@@ -48,11 +48,12 @@
 
 <ng-container *ngIf="paginationOptions">
   <hal-paginator 
+    *ngIf="pagination"
     class="table-viewer-paginator"
-    [length]="pagination?.length"
+    [length]="pagination.length"
     [pageSizeOptions]="paginationOptions"
-    [selectedPageSize]="pagination?.pageSize"
-    [selectedPageIndex]="pagination?.pageIndex"
+    [selectedPageSize]="pagination.pageSize"
+    [selectedPageIndex]="pagination.pageIndex"
     (paginatorChange)="newPaginatorEvent($event)">
   </hal-paginator>
 </ng-container>
