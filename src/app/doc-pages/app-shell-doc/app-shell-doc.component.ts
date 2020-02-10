@@ -32,6 +32,9 @@ export class AppShellDocComponent implements OnInit {
   <ng-container ngProjectAs="pageContent">
     <router-outlet></router-outlet>
   </ng-container>
+  <ng-container ngProjectAs="extraHeaderIcons">
+    <!-- Extra icons to be added to the left of the app switcher -->
+  </ng-container>
 </hal-app-shell>`;
 
   tsCode = `menuItems: MenuElement[] = [

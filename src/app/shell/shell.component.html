@@ -1,7 +1,7 @@
-<hal-app-shell 
-  [menuItems]="menuItems" 
-  [user]="user" 
-  [settingsPagePath]="settingsPagePath" 
+<hal-app-shell
+  [menuItems]="menuItems"
+  [user]="user"
+  [settingsPagePath]="settingsPagePath"
   [signOutPagePath]="signOutPagePath"
 >
   <ng-container ngProjectAs="pageTitle">
@@ -9,5 +9,8 @@
   </ng-container>
   <ng-container ngProjectAs="pageContent">
     <router-outlet></router-outlet>
+  </ng-container>
+  <ng-container ngProjectAs="extraHeaderIcons">
+    <!-- Extra icons to be added to the left of the app switcher -->
   </ng-container>
 </hal-app-shell>
