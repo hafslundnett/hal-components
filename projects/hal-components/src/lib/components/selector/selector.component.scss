@@ -64,7 +64,7 @@ $select-border-width: 1px;
     }
 
     &.is-small {
-      width: calc(#{$select-small-size} - #{get-subtract-padding($select-small-padding-sides, $select-small-padding-sides)} - #{get-subtract-border()});
+      width: $select-small-size;
       padding: $select-small-padding-top-bottom $select-small-padding-sides;
       font-size: 14px;
       text-align: right;
