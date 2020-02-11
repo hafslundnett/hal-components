@@ -1,6 +1,7 @@
 $select-padding-top-bottom: 7px;
 $select-padding-left: 16px;
 $select-padding-right: 18px;
+$select-small-size: 71px;
 $select-small-padding-top-bottom: 4px;
 $select-small-padding-sides: 10px;
 $form-select-border-radius: 0.25rem;
@@ -63,7 +64,7 @@ $select-border-width: 1px;
     }
 
     &.is-small {
-      width: calc(100% - #{get-subtract-padding($select-small-padding-sides, $select-small-padding-sides)} - #{get-subtract-border()});
+      width: calc(#{$select-small-size} - #{get-subtract-padding($select-small-padding-sides, $select-small-padding-sides)} - #{get-subtract-border()});
       padding: $select-small-padding-top-bottom $select-small-padding-sides;
       font-size: 14px;
       text-align: right;
