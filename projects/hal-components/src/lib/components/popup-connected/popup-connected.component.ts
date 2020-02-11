@@ -1,5 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter, OnChanges, SimpleChanges, NgZone } from '@angular/core';
-import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay } from '@angular/cdk/overlay';
+import { CdkOverlayOrigin, ConnectionPositionPair, ScrollStrategy, Overlay, ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 import { popUpAnimation } from '../../animations';
 import { topLeft, topRight, bottomLeft, bottomRight } from './poup-connections-positions.constants';
 export type popupPosition = 'above' | 'below';
@@ -73,7 +73,7 @@ export class PopupConnectedComponent implements OnInit, OnChanges {
   }
 
   // triggered on positionchange event from cdk, updatedes variables for connected arrow position
-  onPositionChange(connectionPairInUse: ConnectionPositionPair) {
+  onPositionChange(connectionPairInUse: ConnectedOverlayPositionChange) {
     const currentPostion = JSON.stringify(connectionPairInUse);
     if (currentPostion.includes(`"originY":"top"`)) {
       this.zone.run(() => this.currentAlignTop = true);

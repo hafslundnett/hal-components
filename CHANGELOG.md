@@ -2,6 +2,13 @@
 
 ## Breaking changes
 
+### Angular 9
+Updated to angular 9. Should not have any breaking changes.
+
+# Update [5.0.0]
+
+## Breaking changes
+
 ### HAL-Divider:
 Removed Hal-Divider, use replacement from HDD: `<hr class="hdd-divider">`, or `<hr class="hdd-divider is-light">` for a light theme. 
 

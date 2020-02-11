@@ -37,10 +37,11 @@
 
   <div class="example-container">
     <hal-paginator 
-      [length]="pagination?.length"
+      *ngIf="pagination"
+      [length]="pagination.length"
       [pageSizeOptions]="pageSizeOptions"
-      [selectedPageSize]="pagination?.pageSize"
-      [selectedPageIndex]="pagination?.pageIndex"
+      [selectedPageSize]="pagination.pageSize"
+      [selectedPageIndex]="pagination.pageIndex"
       (paginatorChange)="changePaginator($event)">
     </hal-paginator>
   </div>

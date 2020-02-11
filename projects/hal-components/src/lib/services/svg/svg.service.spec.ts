@@ -12,8 +12,8 @@ describe('Service: Svg', () => {
       imports: [HttpClientTestingModule]
     });
 
-    httpMock = TestBed.get(HttpTestingController);
-    svgService = TestBed.get(SvgService);
+    httpMock = TestBed.inject(HttpTestingController);
+    svgService = TestBed.inject(SvgService);
   });
 
   it('should start', () => {
