@@ -25,7 +25,7 @@ export class SelectorDocComponent implements OnInit {
   ];
   selectedEx1 = 'Alt1';
   selectedEx2 = [];
-  selectedEx3 = undefined;
+  selectedEx3 = ''; // undefined?
   selectedEx4 = '10';
   choiceDisabled = 'Alt3';
   selectedChange: string;

@@ -15,7 +15,6 @@ class TestComponent {}
 
 describe('Service: PopupGlobal', () => {
 
-  let injector: TestBed;
   let popupGlobalService: PopupGlobalService;
   let testComponent: TestComponent;
   let fixture: ComponentFixture<TestComponent>;
@@ -27,8 +26,7 @@ describe('Service: PopupGlobal', () => {
       declarations: [TestComponent],
     });
 
-    injector = getTestBed();
-    popupGlobalService = injector.get(PopupGlobalService);
+    popupGlobalService = TestBed.inject(PopupGlobalService);
     overlayRef = popupGlobalService.setupOverlay();
   });
 

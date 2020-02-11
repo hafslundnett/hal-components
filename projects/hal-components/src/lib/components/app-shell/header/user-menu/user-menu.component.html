@@ -28,7 +28,9 @@
       {{ user?.name }}
     </div>
     <div class="hdd-user-menu_email">
-      {{ user?.email | lowercase }}
+      <ng-container *ngIf="user">
+        {{ user.email | lowercase }}
+      </ng-container>
     </div>
     <div class="hdd-user-menu_menu-element">
       <a class="hdd-button has-icon is-transparent" [routerLink]="['', settingsPagePath]"><i
