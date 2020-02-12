@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "build-hal": "ng build hal-components",
+    "build-hal": "ng build hal-components --prod",
     "build-hal-s": "ng build hal-components && yarn build-hal-schematics",
     "build-hal-schematics": "cd projects/hal-components && npm run build",
     "build-hal-schematics-win": "cd projects/hal-components && yarn build-windows",
