@@ -1,18 +1,11 @@
 $select-padding-top-bottom: 7px;
 $select-padding-left: 16px;
 $select-padding-right: 18px;
+$select-small-size: 71px;
 $select-small-padding-top-bottom: 4px;
 $select-small-padding-sides: 10px;
 $form-select-border-radius: 0.25rem;
 $select-border-width: 1px;
-
-@function get-subtract-padding($padding1, $padding2) {
-  @return $padding1 + $padding2;
-}
-
-@function get-subtract-border() {
-  @return $select-border-width * 2;
-}
 
 .hal-selector {
   margin: 0;
@@ -23,7 +16,7 @@ $select-border-width: 1px;
   }
 
   .mat-select {
-    width: calc(100% - #{get-subtract-padding($select-padding-left, $select-padding-right)} - #{get-subtract-border()});
+    width: 100%;
     background: var(--hdd-color-white);
     color: var(--hdd-color-black);
     border: 1px solid var(--hdd-color-grey);
@@ -63,7 +56,7 @@ $select-border-width: 1px;
     }
 
     &.is-small {
-      width: calc(100% - #{get-subtract-padding($select-small-padding-sides, $select-small-padding-sides)} - #{get-subtract-border()});
+      width: $select-small-size;
       padding: $select-small-padding-top-bottom $select-small-padding-sides;
       font-size: 14px;
       text-align: right;
